@@ -2,7 +2,7 @@ clean: true
 objc: true
 umbrella_header: NookoSDK/NookoSDK.h
 framework_root: NookoSDK
-readme: NookoSDK/Readme.md
+readme: Readme.md
 
 module_version: 0.0.1
 
