@@ -1,0 +1,52 @@
+clean: true
+objc: true
+umbrella_header: NookoSDK/NookoSDK.h
+framework_root: NookoSDK
+readme: NookoSDK/Readme.md
+
+module_version: 0.0.1
+
+author: Mumble
+author_url: https://mumbleideas.it/
+theme: apple
+
+custom_categories:
+  - name: NKManager
+    children:
+    - NKManager 
+    - NKMetaInfo
+  - name: NKParameter
+    children: 
+    - NKParameter
+    - NKSortParameter
+    - NKPaginationParameter
+    - NKFilterParameter
+    - NKGeofenceParameter
+    - NKGeneralParameter
+  - name: NKProject
+    children:
+    - NKProject
+  - name: NKBlock
+    children:
+    - NKBlock
+  - name: NKSection
+    children:
+    - NKSection
+  - name: NKElement
+    children:
+    - NKElement
+    - NKTextElement
+    - NKImagesElement
+    - NKImage
+    - NKMediaElement
+    - NKMedia
+    - NKCheckboxElement
+    - NKWysiwygElement
+    - NKDateElement
+    - NKAddressElement
+    - NKDropdownElement
+    - NKGeneralElement
+  - name: NKApiManager
+    children:
+    - NKApiManager
+    - NKResponse
