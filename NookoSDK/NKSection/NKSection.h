@@ -13,12 +13,17 @@
 /**
  This class represents a Nooko section.
  */
-@interface NKSection : NSObject
+@interface NKSection : NSObject <NSCoding, NSSecureCoding>
 
 /**
  The id of the section.
  */
 @property (nonatomic, assign) NSInteger sectionId;
+
+/**
+ The order of the section.
+ */
+@property (nonatomic, assign) NSInteger order;
 
 /**
  The elements of the section. The key of the dictionary is the name of the element, the value is an instance of a NKElement that represents the object.
@@ -29,11 +34,12 @@
  Initializes a section with a sectionId and the elements returned by the api.
  
  @param sectionId The id of the section.
+ @param order The id order the section.
  @param elements The elements of the section as returned by the REST api.
  
  @return a newly created NKSection initialized with the sectionId and elements.
  */
-- (instancetype _Nonnull) initWithSectionId: (NSInteger) sectionId Elements: (NSDictionary * _Nullable) elements;
+- (instancetype _Nonnull) initWithSectionId: (NSInteger) sectionId Order: (NSInteger) order Elements: (NSDictionary * _Nullable) elements;
 
 /**
  Initializes a section with the dictionary returned by the api.

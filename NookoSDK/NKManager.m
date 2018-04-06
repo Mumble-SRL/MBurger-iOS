@@ -7,6 +7,7 @@
 //
 
 #import "NKManager.h"
+#import "NKApiManager.h"
 
 @implementation NKManager
 
@@ -21,7 +22,23 @@
 
 - (void) getProjectWithSuccess: (void (^)(NKProject * project)) success
                        Failure: (void (^)(NSError *error)) failure {
-    //TODO: implement
+    [NKApiManager callApiWithApiToken:self.apiToken
+                               Locale:[self localeForApi]
+                              ApiName:@"project"
+                           HTTPMethod:NKHTTPMethodGet
+                           Parameters:nil
+                     HeaderParameters:nil
+                              Success:^(NKResponse *response) {
+                                  NKProject *project = [[NKProject alloc] initWithDictionary:response.payload];
+                                  if (success){
+                                      success(project);
+                                  }
+                              }
+                              Failure:^(NSError *error) {
+                                  if (failure){
+                                      failure(error);
+                                  }
+                              }];
 }
 
 - (void) getBlocksWithParameters: (NSArray <id<NKParameter>> *) parameters
@@ -42,22 +59,91 @@
                      AndElements: (BOOL) includeElements
                          Success: (void (^)(NSArray <NKBlock *> *blocks, NKMetaInfo *metaInfo)) success
                          Failure: (void (^)(NSError *error)) failure{
-    //TODO: implement
+    NSMutableDictionary *parametersMutable = [[NSMutableDictionary alloc] init];
+    if (includeSections){
+        if (includeElements){
+            parametersMutable[@"include"] = @"sections.elemets";
+        }
+        else {
+            parametersMutable[@"include"] = @"sections";
+        }
+    }
+    for (id <NKParameter> parameter in parameters){
+        [parametersMutable addEntriesFromDictionary:parameter.parameterRepresentation];
+    }
+    [NKApiManager callApiWithApiToken:self.apiToken
+                               Locale:[self localeForApi]
+                              ApiName:@"blocks"
+                           HTTPMethod:NKHTTPMethodGet
+                           Parameters:parametersMutable
+                     HeaderParameters:nil
+                              Success:^(NKResponse *response) {
+                                  NKMetaInfo *metaInfo = [[NKMetaInfo alloc] initWithDictionary:response.payload[@"meta"]];
+                                  NSMutableArray *blocks = [[NSMutableArray alloc] init];
+                                  dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+                                      NSArray *items = response.payload[@"items"];
+                                      for (NSDictionary *blockDictionary in items){
+                                          [blocks addObject:[[NKBlock alloc] initWithDictionary:blockDictionary]];
+                                      }
+                                      dispatch_async(dispatch_get_main_queue(), ^(void){
+                                          if (success){
+                                              success(blocks, metaInfo);
+                                          }
+                                      });
+                                  });
+                              }
+                              Failure:^(NSError *error) {
+                                  if (failure){
+                                      failure(error);
+                                  }
+                              }];
 }
 
-- (void) getSectionsWithParameters: (NSArray <id<NKParameter>> *) parameters
-                           BlockId: (NSInteger) blockId
-                           Success: (void (^)(NSArray <NKSection *> *sections, NKMetaInfo *metaInfo)) success
-                           Failure: (void (^)(NSError *error)) failure{
-    [self getSectionsWithParameters:parameters BlockId:blockId IncludeElements:FALSE Success:success Failure:failure];
+- (void) getSectionsWithBlockId: (NSInteger) blockId
+                     Parameters: (NSArray <id<NKParameter>> *) parameters
+                        Success: (void (^)(NSArray <NKSection *> *sections, NKMetaInfo *metaInfo)) success
+                        Failure: (void (^)(NSError *error)) failure{
+    [self getSectionsWithBlockId:blockId Parameters:parameters IncludeElements:FALSE Success:success Failure:failure];
 }
 
-- (void) getSectionsWithParameters: (NSArray <id<NKParameter>> *) parameters
-                           BlockId: (NSInteger) blockId
-                   IncludeElements: (BOOL) includeElements
-                           Success: (void (^)(NSArray <NKSection *> *sections, NKMetaInfo *metaInfo)) success
-                           Failure: (void (^)(NSError *error)) failure{
-    //TODO: implement
+- (void) getSectionsWithBlockId: (NSInteger) blockId
+                     Parameters: (NSArray <id<NKParameter>> *) parameters
+                IncludeElements: (BOOL) includeElements
+                        Success: (void (^)(NSArray <NKSection *> *sections, NKMetaInfo *metaInfo)) success
+                        Failure: (void (^)(NSError *error)) failure{
+    NSMutableDictionary *parametersMutable = [[NSMutableDictionary alloc] init];
+    if (includeElements){
+        parametersMutable[@"include"] = @"elements";
+    }
+    for (id <NKParameter> parameter in parameters){
+        [parametersMutable addEntriesFromDictionary:parameter.parameterRepresentation];
+    }
+    [NKApiManager callApiWithApiToken:self.apiToken
+                               Locale:[self localeForApi]
+                              ApiName:[NSString stringWithFormat:@"blocks/%ld/sections", (long) blockId]
+                           HTTPMethod:NKHTTPMethodGet
+                           Parameters:parametersMutable
+                     HeaderParameters:nil
+                              Success:^(NKResponse *response) {
+                                  NKMetaInfo *metaInfo = [[NKMetaInfo alloc] initWithDictionary:response.payload[@"meta"]];
+                                  NSMutableArray *sections = [[NSMutableArray alloc] init];
+                                  dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+                                      NSArray *items = response.payload[@"items"];
+                                      for (NSDictionary *sectionDictionary in items){
+                                          [sections addObject:[[NKSection alloc] initWithDictionary:sectionDictionary]];
+                                      }
+                                      dispatch_async(dispatch_get_main_queue(), ^(void){
+                                          if (success){
+                                              success(sections, metaInfo);
+                                          }
+                                      });
+                                  });
+                              }
+                              Failure:^(NSError *error) {
+                                  if (failure){
+                                      failure(error);
+                                  }
+                              }];
 }
 
 - (void) getSectionWithId: (NSInteger) sectionId
@@ -71,6 +157,42 @@
                   Success:(void (^)(NKSection *))success
                   Failure:(void (^)(NSError *))failure {
     //TODO: implement
+    NSMutableDictionary *parametersMutable = [[NSMutableDictionary alloc] init];
+    if (includeElements){
+        parametersMutable[@"include"] = @"elements";
+    }
+    [NKApiManager callApiWithApiToken:self.apiToken
+                               Locale:[self localeForApi]
+                              ApiName:[NSString stringWithFormat:@"sections/%ld", (long) sectionId]
+                           HTTPMethod:NKHTTPMethodGet
+                           Parameters:parametersMutable
+                     HeaderParameters:nil
+                              Success:^(NKResponse *response) {
+                                  NKSection *section = [[NKSection alloc] initWithDictionary:response.payload];
+                                  if (success){
+                                      success(section);
+                                  }
+                              }
+                              Failure:^(NSError *error) {
+                                  if (failure){
+                                      failure(error);
+                                  }
+                              }];
+}
+
+- (NSString *) localeForApi {
+    if (self.locale){
+        return [self stringForLocale:self.locale];
+    }
+    NSArray *preferredLanguages = [NSLocale preferredLanguages];
+    if (preferredLanguages.count > 0){
+        return [preferredLanguages.firstObject substringToIndex:2];
+    }
+    return [self stringForLocale:[NSLocale currentLocale]];
+}
+
+- (NSString *) stringForLocale: (NSLocale *) locale {
+    return [locale.localeIdentifier substringToIndex:2];
 }
 
 - (NSDictionary *) buildDictionaryFromParameters: (NSArray <id<NKParameter>> *) parameters{

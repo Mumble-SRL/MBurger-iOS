@@ -13,7 +13,7 @@
 /**
  This class represents a Nooko block.
  */
-@interface NKBlock : NSObject
+@interface NKBlock : NSObject <NSCoding, NSSecureCoding>
 
 /**
  The id of the block.
@@ -21,9 +21,19 @@
 @property (nonatomic, assign) NSInteger blockId;
 
 /**
- The name of the block.
+ The title of the block.
  */
-@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain, nonnull) NSString *title;
+
+/**
+ The subtitle of the block.
+ */
+@property (nonatomic, retain, nonnull) NSString *subtitle;
+
+/**
+ The order index of the block.
+ */
+@property (nonatomic, assign) NSInteger order;
 
 /**
  The sections of the block.
@@ -34,12 +44,13 @@
  Initializes a block with a blockId and the sections returned by the api.
  
  @param blockId The id of the block.
- @param name The name of the block.
+ @param title The title of the block.
+ @param order The order index of the block.
  @param sections The sections of the block.
  
  @return a newly created NKBlock initialized with the blockId and sections.
  */
-- (instancetype _Nonnull) initWithBlockId: (NSInteger) blockId Name: (NSString *) name Sections: (NSArray <NKSection *> * _Nullable) sections;
+- (instancetype _Nonnull) initWithBlockId: (NSInteger) blockId Title: (NSString *) title Subtitle: (NSString *) subtitle Order: (NSInteger) order Sections: (NSArray <NKSection *> * _Nullable) sections;
 
 /**
  Initializes a block with the dictionary returned by the api.

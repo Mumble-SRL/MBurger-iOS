@@ -21,10 +21,11 @@
 
 @implementation NKSection
 
-- (instancetype) initWithSectionId: (NSInteger) sectionId Elements: (NSDictionary *) elements{
+- (instancetype) initWithSectionId: (NSInteger) sectionId Order: (NSInteger) order Elements: (NSDictionary *) elements{
     self = [super init];
     if (self){
         self.sectionId = sectionId;
+        self.order = order;
         self.elements = elements;
     }
     return self;
@@ -32,6 +33,7 @@
 
 - (instancetype) initWithDictionary: (NSDictionary *) dictionary{
     NSInteger sectionId = [dictionary[@"id"] integerValue];
+    NSInteger order = [dictionary[@"order"] integerValue];
     NSDictionary *elements = nil;
     if (dictionary[@"elements"] != nil && dictionary[@"elements"] != [NSNull null]){
         NSDictionary *elementsDictionaryFromApi = dictionary[@"elements"];
@@ -47,7 +49,7 @@
             elements = elementsMutable;
         }
     }
-    return [self initWithSectionId:sectionId Elements:elements];
+    return [self initWithSectionId:sectionId Order:order Elements:elements];
 }
 
 /**
@@ -118,6 +120,30 @@
     
     return object;
 }
+
+#pragma mark - NSCoding-NSSecureCoding
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
+    self = [super init];
+    if (self){
+        self.sectionId = [aDecoder decodeIntegerForKey:@"sectionId"];
+        self.order = [aDecoder decodeIntegerForKey:@"order"];
+        self.elements = [aDecoder decodeObjectOfClass:NSDictionary.class forKey:@"elements"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder{
+    [aCoder encodeInteger:_sectionId forKey:@"sectionId"];
+    [aCoder encodeInteger:_order forKey:@"order"];
+    [aCoder encodeObject:_elements forKey:@"elements"];
+}
+
++ (BOOL) supportsSecureCoding {
+    return TRUE;
+}
+
+#pragma mark - Description
 
 -(NSString *)description {
     return [NSString stringWithFormat:@"NKSection with id: %ld", (long) self.sectionId];

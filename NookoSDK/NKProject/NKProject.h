@@ -11,7 +11,7 @@
 /**
  This class represents a Nooko project.
  */
-@interface NKProject : NSObject
+@interface NKProject : NSObject <NSCoding, NSSecureCoding>
 
 /**
  The id of the project.

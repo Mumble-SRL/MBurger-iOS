@@ -9,6 +9,19 @@
 #import <Foundation/Foundation.h>
 #import "NKResponse.h"
 
+/// The type of Http methods accepted
+typedef NS_ENUM(NSUInteger, NKHTTPMethod) {
+    /// Get method
+    NKHTTPMethodGet,
+    /// Post method
+    NKHTTPMethodPost,
+    /// Patch method
+    NKHTTPMethodPatch,
+    /// Put method
+    NKHTTPMethodPut,
+    /// Delete method
+    NKHTTPMethodDelte,
+};
 
 /**
  This class is responsible to make all the networking requests to the Nooko Api, NKManager is built above this class.
@@ -20,16 +33,16 @@
  @param apiToken The api token used to call the Nooko Api.
  @param locale The locale passed to the api call.
  @param apiName The name of the api to call.
- @param httpMethod The http method used to call the api, it can be 'GET', 'POST', 'PUT', 'PATCH', 'DELETE', if its value is not recognized the api will be called using the 'GET' method.
+ @param httpMethod The http method used to call the api.
  @param parameters The parameters passed with the api call.
  @param headerParameters The parameters passed in the header of the request with the api call.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the response of the api (a NKResponse).
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
  */
-- (void) callApiWithApiToken: (NSString  * _Nonnull) apiToken
-                      Locale: (NSLocale * _Nullable) locale
++ (void) callApiWithApiToken: (NSString  * _Nonnull) apiToken
+                      Locale: (NSString * _Nullable) locale
                      ApiName: (NSString * _Nonnull) apiName
-                  HTTPMethod: (NSString *) httpMethod
+                  HTTPMethod: (NKHTTPMethod) httpMethod
                   Parameters: (NSDictionary * _Nullable) parameters
             HeaderParameters: (NSDictionary * _Nullable) headerParameters
                      Success: (void (^ _Nullable)(NKResponse * _Nonnull response)) success

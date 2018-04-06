@@ -20,17 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    NKTextElement *titleElement = [[NKTextElement alloc] initWithElementId:1 Name:@"Title" Text:@"Titolo della news"];
-    NKTextElement *contentElement = [[NKTextElement alloc] initWithElementId:2 Name:@"Description" Text:@"Descrizione della news"];
-    NKAddressElement *addressElement = [[NKAddressElement alloc] initWithElementId:4 Name:@"Address" Address:@"via Panini 9" Latitude:100 Longitude:200.2];
-
-    NKSection *news = [[NKSection alloc] initWithSectionId:1 Elements:nil];
-    NSMutableDictionary *elements = [[NSMutableDictionary alloc] init];
-    elements[titleElement.name] = titleElement;
-    elements[contentElement.name] = contentElement;
-    elements[addressElement.name] = addressElement;
-    news.elements = elements;
-    
+    /*
     News *n1 = [[News alloc] init];
     [news mapElementsToObject:n1 withMapping:@{@"Title" : @"title",
                                                @"Description" : @"newsContent",
@@ -45,6 +35,32 @@
     } Failure:^(NSError * _Nonnull error) {
         
     }];
+    */
+    
+    [NKManager sharedManager].apiToken = @"26c96ab3c9a67f45cc2e9bff35869bfd8a778cb0";
+    
+    /*
+    [[NKManager sharedManager] getProjectWithSuccess:^(NKProject *project) {
+        
+    } Failure:^(NSError *error) {
+        
+    }];
+    
+    */
+    [[NKManager sharedManager] getBlocksWithParameters:nil Success:^(NSArray<NKBlock *> * _Nonnull blocks, NKMetaInfo * _Nonnull metaInfo) {
+        [[NKManager sharedManager] getSectionsWithBlockId:[blocks objectAtIndex:1].blockId Parameters:nil Success:^(NSArray<NKSection *> *sections, NKMetaInfo *metaInfo) {
+            [[NKManager sharedManager] getSectionWithId:sections.firstObject.sectionId IncludeElements: TRUE Success:^(NKSection * section) {
+                
+            } Failure:^(NSError * _Nonnull error) {
+                
+            }];
+        } Failure:^(NSError *error) {
+            
+        }];
+    } Failure:^(NSError * _Nonnull error) {
+        
+    }];
+    
 }
 
 

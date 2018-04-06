@@ -14,18 +14,13 @@
 @interface NKResponse : NSObject
 
 /**
- The status code of the api.
- */
-@property (nonatomic, assign) NSInteger statusCode;
-
-/**
  The payload of the response.
  */
 @property (nonatomic, retain, nullable) NSDictionary *payload;
 
 /**
-The response object created by AFNetworking when the API is called.
+The task object created by AFNetworking when the API is called.
  */
-@property (nonatomic, retain, nullable) NSURLSessionDataTask *dataTask;
+@property (nonatomic, retain, nullable) NSURLSessionTask *dataTask;
 
 @end

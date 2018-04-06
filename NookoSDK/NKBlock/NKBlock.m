@@ -10,11 +10,13 @@
 
 @implementation NKBlock
 
-- (NKBlock *) initWithBlockId: (NSInteger) blockId Name: (NSString *) name Sections: (NSArray <NKSection *> *) sections{
+- (NKBlock *) initWithBlockId: (NSInteger) blockId Title: (NSString *) title Subtitle: (NSString *) subtitle Order: (NSInteger) order Sections: (NSArray <NKSection *> *) sections{
     self = [super init];
     if (self){
         self.blockId = blockId;
-        self.name = name;
+        self.title = title;
+        self.subtitle = subtitle;
+        self.order = order;
         if (sections){
             self.sections = sections;
         }
@@ -24,7 +26,9 @@
 
 - (instancetype) initWithDictionary: (NSDictionary *) dictionary{
     NSInteger blockId = [dictionary[@"id"] integerValue];
-    NSString *blockName = dictionary[@"name"];
+    NSString *blockTitle = dictionary[@"title"];
+    NSString *blockSubtitle = dictionary[@"subtitle"];
+    NSInteger order = [dictionary[@"order"] integerValue];
     NSArray *sections = nil;
     if (dictionary[@"sections"] != nil && dictionary[@"sections"] != [NSNull null]){
         NSArray *sectionsDictionaries = dictionary[@"sections"];
@@ -34,8 +38,34 @@
         }
         sections = sectionsMutable;
     }
-    return [self initWithBlockId:blockId Name:blockName Sections:sections];
+    return [self initWithBlockId:blockId Title:blockTitle Subtitle:blockSubtitle Order:order Sections:sections];
 }
+
+#pragma mark - NSCoding-NSSecureCoding
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
+    self = [super init];
+    if (self){
+        self.title = [aDecoder decodeObjectOfClass:NSString.class forKey:@"title"];
+        self.subtitle = [aDecoder decodeObjectOfClass:NSString.class forKey:@"title"];
+        self.order = [aDecoder decodeIntegerForKey:@"order"];
+        self.sections = [aDecoder decodeObjectOfClass:NSArray.class forKey:@"sections"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder{
+    [aCoder encodeObject:_title forKey:@"title"];
+    [aCoder encodeObject:_subtitle forKey:@"subtitle"];
+    [aCoder encodeInteger:_order forKey:@"order"];
+    [aCoder encodeObject:_sections forKey:@"sections"];
+}
+
++ (BOOL) supportsSecureCoding {
+    return TRUE;
+}
+
+#pragma mark - Description
 
 -(NSString *)description {
     return [NSString stringWithFormat:@"NKBlock with id: %ld", (long) self.blockId];

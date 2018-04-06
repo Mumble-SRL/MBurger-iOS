@@ -26,18 +26,18 @@
 /**
  The total number of elements of that type on Nooko.
  */
-@property (nonatomic, assign) NSInteger count;
+@property (nonatomic, assign) NSInteger total;
 
 /**
  Initializes a meta info object with the properties.
  
  @param from The starting index.
  @param to The ending index.
- @param count The total number of elements of that type on Nooko.
+ @param total The total number of elements of that type on Nooko.
 
  @return a newly created NKMetaInfo initialized with the data passed.
  */
-- (instancetype _Nonnull) initWithFrom: (NSInteger) from To: (NSInteger) to Count: (NSInteger) count;
+- (instancetype _Nonnull) initWithFrom: (NSInteger) from To: (NSInteger) to Total: (NSInteger) total;
 
 /**
  Initializes a meta info object with the dictionary returned by the api.
