@@ -30,11 +30,12 @@
  
  @param elementId The id of the element.
  @param name The name of the element.
+ @param order The order of the element.
  @param options The options for the element.
  @param selectedOption The selected option.
  
  @return a newly created NKDropdownElement initialized with the parameters passed.
  */
-- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Options: (NSArray <NSString *> * _Nullable) options SelectedOptions: (NSString *) selectedOption;
+- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Order: (NSInteger) order Options: (NSArray <NSString *> * _Nullable) options SelectedOptions: (NSString *) selectedOption;
 
 @end

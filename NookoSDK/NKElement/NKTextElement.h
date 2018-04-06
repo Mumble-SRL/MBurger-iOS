@@ -25,10 +25,11 @@
 
  @param elementId The id of the element.
  @param name The name of the element.
+ @param order The order of the element.
  @param text The text of the element.
  
  @return a newly created NKTextElement initialized with the elementId, the name and the value passed.
 */
-- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Text: (NSString * _Nullable) text;
+- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Order: (NSInteger) order Text: (NSString * _Nullable) text;
 
 @end

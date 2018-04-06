@@ -10,8 +10,8 @@
 
 @implementation NKMediaElement
 
-- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Medias: (NSArray <NKMedia *> *) medias MediaType: (NKMediaType) mediaType{
-    self = [super initWithElementId:elementId Name:name Type:NKElementTypeMedia];
+- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Order: (NSInteger) order Medias: (NSArray <NKMedia *> *) medias MediaType: (NKMediaType) mediaType{
+    self = [super initWithElementId:elementId Name:name Order:order Type:NKElementTypeMedia];
     if (self){
         self.medias = medias;
         self.mediaType = mediaType;
@@ -22,6 +22,7 @@
 - (instancetype) initWithDictionary: (NSDictionary *) dictionary{
     NSInteger elementId = [dictionary[@"id"] integerValue];
     NSString *name = dictionary[@"name"];
+    NSInteger order = [dictionary[@"order"] integerValue];
     NSArray *medias = nil;
     NKMediaType mediaType = [self mediaTypeForElementType:dictionary[@"type"]];
     if (dictionary[@"value"] != nil && dictionary[@"value"] != [NSNull null]){
@@ -35,7 +36,7 @@
         }
         medias = mediaMutable;
     }
-    return [self initWithElementId:elementId Name:name Medias:medias MediaType:mediaType];
+    return [self initWithElementId:elementId Name:name Order:order Medias:medias MediaType:mediaType];
 }
 
 - (NKMediaType) mediaTypeForElementType: (NSString *) elementType {

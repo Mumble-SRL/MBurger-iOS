@@ -10,8 +10,8 @@
 
 @implementation NKImagesElement
 
-- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Images: (NSArray <NKImage *> *) images{
-    self = [super initWithElementId:elementId Name:name Type:NKElementTypeImages];
+- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Order: (NSInteger) order Images: (NSArray <NKImage *> *) images{
+    self = [super initWithElementId:elementId Name:name Order:order Type:NKElementTypeImages];
     if (self){
         self.images = images;
     }
@@ -21,6 +21,7 @@
 - (instancetype) initWithDictionary: (NSDictionary *) dictionary{
     NSInteger elementId = [dictionary[@"id"] integerValue];
     NSString *name = dictionary[@"name"];
+    NSInteger order = [dictionary[@"order"] integerValue];
     NSArray *images = nil;
     if (dictionary[@"value"] != nil && dictionary[@"value"] != [NSNull null]){
         NSMutableArray *imagesMutable = [[NSMutableArray alloc] init];
@@ -33,7 +34,7 @@
         }
         images = imagesMutable;
     }
-    return [self initWithElementId:elementId Name:name Images:images];
+    return [self initWithElementId:elementId Name:name Order:order Images:images];
 }
 
 #pragma mark - Value

@@ -11,8 +11,8 @@
 
 @implementation NKWysiwygElement
 
-- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Wysiwyg: (NSString *) wysiwyg{
-    self = [super initWithElementId:elementId Name:name Type:NKElementTypeWysiwyg];
+- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Order: (NSInteger) order Wysiwyg: (NSString *) wysiwyg{
+    self = [super initWithElementId:elementId Name:name Order:order Type:NKElementTypeWysiwyg];
     if (self){
         self.wysiwyg = wysiwyg;
     }
@@ -22,8 +22,9 @@
 - (instancetype) initWithDictionary: (NSDictionary *) dictionary{
     NSInteger elementId = [dictionary[@"id"] integerValue];
     NSString *name = dictionary[@"name"];
+    NSInteger order = [dictionary[@"order"] integerValue];
     NSString *wysiwyg = dictionary[@"value"];
-    return [self initWithElementId:elementId Name:name Wysiwyg:wysiwyg];
+    return [self initWithElementId:elementId Name:name Order:order Wysiwyg:wysiwyg];
 }
 
 #pragma mark - Value

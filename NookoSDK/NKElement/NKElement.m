@@ -10,11 +10,12 @@
 
 @implementation NKElement
 
-- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Type: (NKElementType) elementType{
+- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Order: (NSInteger) order Type: (NKElementType) elementType{
     self = [super init];
     if (self){
         self.elementId = elementId;
         self.name = name;
+        self.order = order;
         self.elementType = elementType;
     }
     return self;
@@ -23,8 +24,9 @@
 - (instancetype) initWithDictionary: (NSDictionary *) dictionary{
     NSInteger elementId = [dictionary[@"id"] integerValue];
     NSString *name = dictionary[@"name"];
+    NSInteger order = [dictionary[@"order"] integerValue];
     NKElementType elementType = NKElementTypeUndefined;
-    return [self initWithElementId:elementId Name:name Type:elementType];
+    return [self initWithElementId:elementId Name:name Order:order Type:elementType];
 }
 
 - (id) value{

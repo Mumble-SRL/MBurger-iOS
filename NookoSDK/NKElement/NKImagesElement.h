@@ -25,11 +25,12 @@
 
  @param elementId The id of the element.
  @param name The name of the element.
+ @param order The order of the element.
  @param images The images of the element.
  
  @return a newly created NKImageElement initialized with the elementId, the name and the value passed.
  */
-- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Images: (NSArray <NKImage *> * _Nullable) images;
+- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Order: (NSInteger) order Images: (NSArray <NKImage *> * _Nullable) images;
 
 /**
  It returns the first image of the element if exists.

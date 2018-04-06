@@ -47,20 +47,12 @@
     }];
     
     */
-    [[NKManager sharedManager] getBlocksWithParameters:nil Success:^(NSArray<NKBlock *> * _Nonnull blocks, NKMetaInfo * _Nonnull metaInfo) {
-        [[NKManager sharedManager] getSectionsWithBlockId:[blocks objectAtIndex:1].blockId Parameters:nil Success:^(NSArray<NKSection *> *sections, NKMetaInfo *metaInfo) {
-            [[NKManager sharedManager] getSectionWithId:sections.firstObject.sectionId IncludeElements: TRUE Success:^(NKSection * section) {
-                
-            } Failure:^(NSError * _Nonnull error) {
-                
-            }];
-        } Failure:^(NSError *error) {
-            
-        }];
+    
+    [[NKManager sharedManager] getBlocksWithParameters:nil IncludingSections:TRUE AndElements:TRUE Success:^(NSArray<NKBlock *> * _Nonnull blocks, NKMetaInfo * _Nonnull metaInfo) {
+        
     } Failure:^(NSError * _Nonnull error) {
         
     }];
-    
 }
 
 

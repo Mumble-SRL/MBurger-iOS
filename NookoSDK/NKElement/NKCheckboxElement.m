@@ -10,8 +10,8 @@
 
 @implementation NKCheckboxElement
 
-- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Checked: (BOOL) checked{
-    self = [super initWithElementId:elementId Name:name Type:NKElementTypeCheckbox];
+- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Order: (NSInteger) order Checked: (BOOL) checked{
+    self = [super initWithElementId:elementId Name:name Order:order Type:NKElementTypeCheckbox];
     if (self){
         self.checked = checked;
     }
@@ -21,8 +21,9 @@
 - (instancetype) initWithDictionary: (NSDictionary *) dictionary{
     NSInteger elementId = [dictionary[@"id"] integerValue];
     NSString *name = dictionary[@"name"];
+    NSInteger order = [dictionary[@"order"] integerValue];
     BOOL checked = [dictionary[@"value"] boolValue];
-    return [self initWithElementId:elementId Name:name Checked:checked];
+    return [self initWithElementId:elementId Name:name Order:order Checked:checked];
 }
 
 #pragma mark - Value

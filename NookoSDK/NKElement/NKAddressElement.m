@@ -10,12 +10,12 @@
 
 @implementation NKAddressElement
 
-- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Address: (NSString *) address Latitude: (CLLocationDegrees) latitude Longitude: (CLLocationDegrees) longitude{
-    return [self initWithElementId:elementId Name:name Address:address Coordinate:CLLocationCoordinate2DMake(latitude, longitude)];
+- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Order: (NSInteger) order Address: (NSString *) address Latitude: (CLLocationDegrees) latitude Longitude: (CLLocationDegrees) longitude{
+    return [self initWithElementId:elementId Name:name Order:order Address:address Coordinate:CLLocationCoordinate2DMake(latitude, longitude)];
 }
 
-- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Address: (NSString *) address Coordinate: (CLLocationCoordinate2D) coordinate{
-    self = [super initWithElementId:elementId Name:name Type:NKElementTypeAddress];
+- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Order: (NSInteger) order Address: (NSString *) address Coordinate: (CLLocationCoordinate2D) coordinate{
+    self = [super initWithElementId:elementId Name:name Order:order Type:NKElementTypeAddress];
     if (self){
         self.address = address;
         self.coordinate = coordinate;
@@ -26,11 +26,12 @@
 - (instancetype) initWithDictionary: (NSDictionary *) dictionary{
     NSInteger elementId = [dictionary[@"id"] integerValue];
     NSString *name = dictionary[@"name"];
+    NSInteger order = [dictionary[@"order"] integerValue];
     NSDictionary *addressDictionary = dictionary[@"value"];
     NSString *address = addressDictionary[@"address"];
     double latitude = [addressDictionary[@"latitude"] doubleValue];
     double longitude = [addressDictionary[@"longitude"] doubleValue];
-    return [self initWithElementId:elementId Name:name Address:address Latitude:latitude Longitude:longitude];
+    return [self initWithElementId:elementId Name:name Order:order Address:address Latitude:latitude Longitude:longitude];
 }
 
 #pragma mark - Value

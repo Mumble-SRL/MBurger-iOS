@@ -10,8 +10,8 @@
 
 @implementation NKTextElement
 
-- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Text: (NSString *) text{
-    self = [super initWithElementId:elementId Name:name Type:NKElementTypeText];
+- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Order: (NSInteger) order Text: (NSString *) text{
+    self = [super initWithElementId:elementId Name:name Order:order Type:NKElementTypeText];
     if (self){
         self.text = text;
     }
@@ -21,8 +21,9 @@
 - (instancetype) initWithDictionary: (NSDictionary *) dictionary{
     NSInteger elementId = [dictionary[@"id"] integerValue];
     NSString *name = dictionary[@"name"];
+    NSInteger order = [dictionary[@"order"] integerValue];
     NSString *text = dictionary[@"value"];
-    return [self initWithElementId:elementId Name:name Text:text];
+    return [self initWithElementId:elementId Name:name Order:order Text:text];
 }
 
 #pragma mark - Value

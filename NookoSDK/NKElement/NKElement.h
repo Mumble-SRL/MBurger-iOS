@@ -47,6 +47,11 @@ typedef NS_ENUM(NSUInteger, NKElementType) {
 @property (nonatomic, retain, nonnull) NSString *name;
 
 /**
+ The order of the element.
+ */
+@property (nonatomic, assign) NSInteger order;
+
+/**
  The type of the element.
  */
 @property (nonatomic, assign) NKElementType elementType;
@@ -56,11 +61,12 @@ typedef NS_ENUM(NSUInteger, NKElementType) {
  
  @param elementId The id of the element.
  @param name The name of the element.
+ @param order The order of the element.
  @param elementType The type of the element.
  
  @return a newly created NKElement initialized with the elementId and type.
  */
-- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Type: (NKElementType) elementType;
+- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Order: (NSInteger) order Type: (NKElementType) elementType;
 
 /**
  Initializes an element with the dictionary returned by the api.

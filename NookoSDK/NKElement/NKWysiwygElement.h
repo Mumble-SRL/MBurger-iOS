@@ -26,11 +26,12 @@
 
  @param elementId The id of the element.
  @param name The name of the element.
+ @param order The order of the element.
  @param wysiwyg The wysiwyg HTML string.
  
  @return a newly created NKWysiwygElement initialized with the elementId, the name and the value passed.
  */
-- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Wysiwyg: (NSString * _Nullable) wysiwyg;
+- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Order: (NSInteger) order Wysiwyg: (NSString * _Nullable) wysiwyg;
 
 /**
  Creates and returns the attributed string representing the value, if the HTML can be parsed.

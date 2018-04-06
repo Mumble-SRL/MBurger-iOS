@@ -25,10 +25,11 @@
 
  @param elementId The id of the element.
  @param name The name of the element.
+ @param order The order of the element.
  @param checked If the checkbox is checked.
  
  @return a newly created NKCheckboxElement initialized with the elementId, the name and the value passed.
  */
-- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Checked: (BOOL) checked;
+- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Order: (NSInteger) order Checked: (BOOL) checked;
 
 @end

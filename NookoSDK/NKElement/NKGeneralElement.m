@@ -10,10 +10,11 @@
 
 @implementation NKGeneralElement
 
-- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Value: (id) value{
-    self = [super initWithElementId:elementId Name:name Type:NKElementTypeUndefined];
+- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Order: (NSInteger) order Value: (id) value Type: (NSString *) type{
+    self = [super initWithElementId:elementId Name:name Order:order Type:NKElementTypeUndefined];
     if (self){
         self.generalValue = value;
+        self.type = type;
     }
     return self;
 }
@@ -21,8 +22,10 @@
 - (instancetype) initWithDictionary: (NSDictionary *) dictionary{
     NSInteger elementId = [dictionary[@"id"] integerValue];
     NSString *name = dictionary[@"name"];
+    NSInteger order = [dictionary[@"order"] integerValue];
     id value = dictionary[@"value"];
-    return [self initWithElementId:elementId Name:name Value:value];
+    NSString *type = dictionary[@"type"];
+    return [self initWithElementId:elementId Name:name Order:order Value:value Type: type];
 }
 
 #pragma mark - Value

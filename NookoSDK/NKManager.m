@@ -62,7 +62,7 @@
     NSMutableDictionary *parametersMutable = [[NSMutableDictionary alloc] init];
     if (includeSections){
         if (includeElements){
-            parametersMutable[@"include"] = @"sections.elemets";
+            parametersMutable[@"include"] = @"sections.elements";
         }
         else {
             parametersMutable[@"include"] = @"sections";
