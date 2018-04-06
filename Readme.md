@@ -3,6 +3,6 @@
 </p>
 
 # NoookoSDK
-![Documentation badge](https://img.shields.io/badge/Documentation-100%25-brightgreen.svg)
+![Documentation badge](https://gitlab.mumbleserver.it/iOS/NookoSDK/raw/master/docs/badge.svg)
 
 TODO: write `Readme.md`
