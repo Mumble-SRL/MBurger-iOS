@@ -15,18 +15,18 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "VAInstrumentation"
-  s.version      = "1.0.4"
-  s.summary      = "VAInstrumentation SDK."
+  s.name         = "NookoSDK"
+  s.version      = "0.0.1"
+  s.summary      = "Nooko SDK."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = "VAInstrumentation SDK"
+  s.description  = "An iOS client SDK, written in Objective C, to interact with the Nooko API."
 
-  s.homepage     = "https://gitlab.mumbleserver.it/Lollo/VAInstrumentation"
+  s.homepage     = "https://gitlab.mumbleserver.it/iOS/NookoSDK"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -63,7 +63,7 @@ Pod::Spec.new do |s|
   #
 
   s.platform     = :ios
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -79,7 +79,7 @@ Pod::Spec.new do |s|
   #
 
   s.source       = { git: 'https://gitlab.mumbleserver.it/Lollo/VAInstrumentation' }
-  s.source_files = "VAInstrumentation/*.{h,m,swift}", "VAInstrumentation/**/*.{h,m,swift}"
+  s.source_files = "NookoSDK/*.{h,m,swift}", "NookoSDK/**/*.{h,m,swift}"
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -101,11 +101,6 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-  s.resources = "VAInstrumentation/**/*.xcdatamodeld"
-  s.resource_bundles = {
-    'VAInstrumentation' => ['VAInstrumentation/InviteCode/*.{lproj,storyboard}']
-  }
-
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
 
@@ -115,7 +110,7 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  # s.framework  = "SomeFramework"
+  s.framework  = "MapKit"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
   # s.library   = "iconv"
@@ -132,4 +127,5 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
 
+  s.dependency = 'AFNetworking' '~> 3.0'
 end
