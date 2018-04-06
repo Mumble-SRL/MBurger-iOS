@@ -144,6 +144,9 @@
                 <a href="../Enums/NKElementType.html">NKElementType</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Enums/NKHTTPMethod.html">NKHTTPMethod</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/NKMediaType.html">NKMediaType</a>
               </li>
             </ul>
@@ -631,9 +634,9 @@ Don&rsquo;t allocate an instance of NKManager yourself.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)NKManager(im)getSectionsWithParameters:BlockId:Success:Failure:"></a>
-                    <a name="//apple_ref/objc/Method/-getSectionsWithParameters:BlockId:Success:Failure:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)NKManager(im)getSectionsWithParameters:BlockId:Success:Failure:">-getSectionsWithParameters:BlockId:Success:Failure:</a>
+                    <a name="/c:objc(cs)NKManager(im)getSectionsWithBlockId:Parameters:Success:Failure:"></a>
+                    <a name="//apple_ref/objc/Method/-getSectionsWithBlockId:Parameters:Success:Failure:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)NKManager(im)getSectionsWithBlockId:Parameters:Success:Failure:">-getSectionsWithBlockId:Parameters:Success:Failure:</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -644,7 +647,7 @@ Don&rsquo;t allocate an instance of NKManager yourself.</p>
                         <p>Retrieve the sections of the block with the specified id.</p>
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
-    This function calls <code><a href="../Classes/NKManager.html#/c:objc(cs)NKManager(im)getSectionsWithParameters:BlockId:IncludeElements:Success:Failure:">-[NKManager getSectionsWithParameters:BlockId:IncludeElements:Success:Failure:]</a></code> with the default value of &lsquo;false&rsquo; for the parameter &lsquo;includeElements&rsquo;
+    This function calls <code>-[NKManager getSectionsWithParameters:BlockId:IncludeElements:Success:Failure:]</code> with the default value of &lsquo;false&rsquo; for the parameter &lsquo;includeElements&rsquo;
 
 </div>
 <div class="aside aside-see">
@@ -658,17 +661,17 @@ Don&rsquo;t allocate an instance of NKManager yourself.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="nf">getSectionsWithParameters</span><span class="p">:(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/NKParameter.html">NKParameter</a></span><span class="o">&gt;&gt;</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">parameters</span>
-                  <span class="nf">BlockId</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">blockId</span>
-                  <span class="nf">Success</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n"><a href="../Classes/NKSection.html">NKSection</a></span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">,</span>
-                                             <span class="n"><a href="../Classes/NKMetaInfo.html">NKMetaInfo</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="n">success</span>
-                  <span class="n">Failure</span><span class="o">:</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="n">failure</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">getSectionsWithBlockId</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">blockId</span>
+                    <span class="nf">Parameters</span><span class="p">:(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/NKParameter.html">NKParameter</a></span><span class="o">&gt;&gt;</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">parameters</span>
+                       <span class="nf">Success</span><span class="p">:</span>
+                           <span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n"><a href="../Classes/NKSection.html">NKSection</a></span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">,</span>
+                                              <span class="n"><a href="../Classes/NKMetaInfo.html">NKMetaInfo</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="n">success</span>
+                       <span class="n">Failure</span><span class="o">:</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="n">failure</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getSectionsWith</span><span class="p">(</span><span class="n">_</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Protocols/NKParameter.html">NKParameter</a></span><span class="p">]?,</span> <span class="nv">blockId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="p">(([</span><span class="kt"><a href="../Classes/NKSection.html">NKSection</a></span><span class="p">],</span> <span class="kt"><a href="../Classes/NKMetaInfo.html">NKMetaInfo</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getSectionsWithBlockId</span><span class="p">(</span><span class="n">_</span> <span class="nv">blockId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Protocols/NKParameter.html">NKParameter</a></span><span class="p">]?,</span> <span class="nv">success</span><span class="p">:</span> <span class="p">(([</span><span class="kt"><a href="../Classes/NKSection.html">NKSection</a></span><span class="p">],</span> <span class="kt"><a href="../Classes/NKMetaInfo.html">NKMetaInfo</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -679,24 +682,24 @@ Don&rsquo;t allocate an instance of NKManager yourself.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>parameters</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An optional array of parameters used to sort, filter orpaginate the blocks returned.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
                                 <em>blockId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
                                   <p>The id of the block that has the sections.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>parameters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional array of parameters used to sort, filter orpaginate the blocks returned.</p>
                                 </div>
                               </td>
                             </tr>
@@ -733,9 +736,9 @@ Don&rsquo;t allocate an instance of NKManager yourself.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)NKManager(im)getSectionsWithParameters:BlockId:IncludeElements:Success:Failure:"></a>
-                    <a name="//apple_ref/objc/Method/-getSectionsWithParameters:BlockId:IncludeElements:Success:Failure:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)NKManager(im)getSectionsWithParameters:BlockId:IncludeElements:Success:Failure:">-getSectionsWithParameters:BlockId:IncludeElements:Success:Failure:</a>
+                    <a name="/c:objc(cs)NKManager(im)getSectionsWithBlockId:Parameters:IncludeElements:Success:Failure:"></a>
+                    <a name="//apple_ref/objc/Method/-getSectionsWithBlockId:Parameters:IncludeElements:Success:Failure:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)NKManager(im)getSectionsWithBlockId:Parameters:IncludeElements:Success:Failure:">-getSectionsWithBlockId:Parameters:IncludeElements:Success:Failure:</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -755,18 +758,18 @@ Don&rsquo;t allocate an instance of NKManager yourself.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="nf">getSectionsWithParameters</span><span class="p">:(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/NKParameter.html">NKParameter</a></span><span class="o">&gt;&gt;</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">parameters</span>
-                  <span class="nf">BlockId</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">blockId</span>
-          <span class="nf">IncludeElements</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">includeElements</span>
-                  <span class="nf">Success</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n"><a href="../Classes/NKSection.html">NKSection</a></span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">,</span>
-                                             <span class="n"><a href="../Classes/NKMetaInfo.html">NKMetaInfo</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="n">success</span>
-                  <span class="n">Failure</span><span class="o">:</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="n">failure</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">getSectionsWithBlockId</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">blockId</span>
+                    <span class="nf">Parameters</span><span class="p">:(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/NKParameter.html">NKParameter</a></span><span class="o">&gt;&gt;</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">parameters</span>
+               <span class="nf">IncludeElements</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">includeElements</span>
+                       <span class="nf">Success</span><span class="p">:</span>
+                           <span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n"><a href="../Classes/NKSection.html">NKSection</a></span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">,</span>
+                                              <span class="n"><a href="../Classes/NKMetaInfo.html">NKMetaInfo</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="n">success</span>
+                       <span class="n">Failure</span><span class="o">:</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="n">failure</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getSectionsWith</span><span class="p">(</span><span class="n">_</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Protocols/NKParameter.html">NKParameter</a></span><span class="p">]?,</span> <span class="nv">blockId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">includeElements</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="p">(([</span><span class="kt"><a href="../Classes/NKSection.html">NKSection</a></span><span class="p">],</span> <span class="kt"><a href="../Classes/NKMetaInfo.html">NKMetaInfo</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getSectionsWithBlockId</span><span class="p">(</span><span class="n">_</span> <span class="nv">blockId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Protocols/NKParameter.html">NKParameter</a></span><span class="p">]?,</span> <span class="nv">includeElements</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="p">(([</span><span class="kt"><a href="../Classes/NKSection.html">NKSection</a></span><span class="p">],</span> <span class="kt"><a href="../Classes/NKMetaInfo.html">NKMetaInfo</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -777,24 +780,24 @@ Don&rsquo;t allocate an instance of NKManager yourself.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>parameters</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An optional array of parameters used to sort, filter orpaginate the blocks returned.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
                                 <em>blockId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
                                   <p>The id of the block that has the sections.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>parameters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional array of parameters used to sort, filter orpaginate the blocks returned.</p>
                                 </div>
                               </td>
                             </tr>
@@ -853,7 +856,7 @@ Don&rsquo;t allocate an instance of NKManager yourself.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Retrieve the section with the specified id.</p>
+                        <p>Retrieve the section with the specified id and all.</p>
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     This function calls <code><a href="../Classes/NKManager.html#/c:objc(cs)NKManager(im)getSectionWithId:IncludeElements:Success:Failure:">-[NKManager getSectionWithId:IncludeElements:Success:Failure:]</a></code> with the default value of &lsquo;false&rsquo; for the parameter &lsquo;includeElements&rsquo;
@@ -1017,7 +1020,7 @@ Don&rsquo;t allocate an instance of NKManager yourself.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2018-04-05)</p>
+          <p>&copy; 2018 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2018-04-06)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

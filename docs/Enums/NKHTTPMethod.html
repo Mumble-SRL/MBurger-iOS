@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>NKResponse Class Reference</title>
+    <title>NKHTTPMethod Enumeration Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/objc/Class/NKResponse" class="dashAnchor"></a>
-    <a title="NKResponse Class Reference"></a>
+    <a name="//apple_ref/objc/Enum/NKHTTPMethod" class="dashAnchor"></a>
+    <a title="NKHTTPMethod Enumeration Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html"> Docs</a> (100% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
         <img id="carat" src="../img/carat.png" />
-        NKResponse Class Reference
+        NKHTTPMethod Enumeration Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -156,14 +156,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>NKResponse</h1>
+            <h1>NKHTTPMethod</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">NKResponse</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+                  <pre class="highlight objective_c"><code><span class="k">enum</span> <span class="n">NKHTTPMethod</span> <span class="p">{}</span></code></pre>
 
                 </div>
               </div>
-            <p>This class represent a response from the Nooko api.</p>
+            <p>The type of Http methods accepted</p>
 
           </section>
           <section class="section task-group-section">
@@ -172,9 +172,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)NKResponse(py)payload"></a>
-                    <a name="//apple_ref/objc/Property/payload" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)NKResponse(py)payload">payload</a>
+                    <a name="/c:@E@NKHTTPMethod@NKHTTPMethodGet"></a>
+                    <a name="//apple_ref/objc/Case/NKHTTPMethodGet" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@E@NKHTTPMethod@NKHTTPMethodGet">NKHTTPMethodGet</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -182,19 +182,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The payload of the response.</p>
+                        <p>Get method</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSDictionary</span> <span class="o">*</span><span class="n">payload</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="n">NKHTTPMethodGet</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">payload</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="k">get</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
 
                         </div>
                       </div>
@@ -204,9 +204,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)NKResponse(py)dataTask"></a>
-                    <a name="//apple_ref/objc/Property/dataTask" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)NKResponse(py)dataTask">dataTask</a>
+                    <a name="/c:@E@NKHTTPMethod@NKHTTPMethodPost"></a>
+                    <a name="//apple_ref/objc/Case/NKHTTPMethodPost" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@E@NKHTTPMethod@NKHTTPMethodPost">NKHTTPMethodPost</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -214,19 +214,115 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The task object created by AFNetworking when the API is called.</p>
+                        <p>Post method</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSURLSessionTask</span> <span class="o">*</span><span class="n">dataTask</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="n">NKHTTPMethodPost</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">dataTask</span><span class="p">:</span> <span class="kt">URLSessionTask</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">post</span> <span class="o">=</span> <span class="mi">1</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@E@NKHTTPMethod@NKHTTPMethodPatch"></a>
+                    <a name="//apple_ref/objc/Case/NKHTTPMethodPatch" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@E@NKHTTPMethod@NKHTTPMethodPatch">NKHTTPMethodPatch</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Patch method</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="n">NKHTTPMethodPatch</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">patch</span> <span class="o">=</span> <span class="mi">2</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@E@NKHTTPMethod@NKHTTPMethodPut"></a>
+                    <a name="//apple_ref/objc/Case/NKHTTPMethodPut" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@E@NKHTTPMethod@NKHTTPMethodPut">NKHTTPMethodPut</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Put method</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="n">NKHTTPMethodPut</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">put</span> <span class="o">=</span> <span class="mi">3</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@E@NKHTTPMethod@NKHTTPMethodDelte"></a>
+                    <a name="//apple_ref/objc/Case/NKHTTPMethodDelte" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@E@NKHTTPMethod@NKHTTPMethodDelte">NKHTTPMethodDelte</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Delete method</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="n">NKHTTPMethodDelte</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">delte</span> <span class="o">=</span> <span class="mi">4</span></code></pre>
 
                         </div>
                       </div>

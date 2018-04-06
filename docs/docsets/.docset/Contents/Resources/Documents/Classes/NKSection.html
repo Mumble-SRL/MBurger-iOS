@@ -144,6 +144,9 @@
                 <a href="../Enums/NKElementType.html">NKElementType</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Enums/NKHTTPMethod.html">NKHTTPMethod</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/NKMediaType.html">NKMediaType</a>
               </li>
             </ul>
@@ -156,7 +159,7 @@
             <h1>NKSection</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">NKSection</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">NKSection</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n">NSCoding</span><span class="p">,</span> <span class="n">NSSecureCoding</span><span class="o">&gt;</span></code></pre>
 
                 </div>
               </div>
@@ -201,6 +204,38 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/c:objc(cs)NKSection(py)order"></a>
+                    <a name="//apple_ref/objc/Property/order" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)NKSection(py)order">order</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The order of the section.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">NSInteger</span> <span class="n">order</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">order</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/c:objc(cs)NKSection(py)elements"></a>
                     <a name="//apple_ref/objc/Property/elements" class="dashAnchor"></a>
                     <a class="token" href="#/c:objc(cs)NKSection(py)elements">elements</a>
@@ -233,9 +268,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)NKSection(im)initWithSectionId:Elements:"></a>
-                    <a name="//apple_ref/objc/Method/-initWithSectionId:Elements:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)NKSection(im)initWithSectionId:Elements:">-initWithSectionId:Elements:</a>
+                    <a name="/c:objc(cs)NKSection(im)initWithSectionId:Order:Elements:"></a>
+                    <a name="//apple_ref/objc/Method/-initWithSectionId:Order:Elements:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)NKSection(im)initWithSectionId:Order:Elements:">-initWithSectionId:Order:Elements:</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -251,12 +286,13 @@
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nf">initWithSectionId</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">sectionId</span>
+                                     <span class="nf">Order</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">order</span>
                                   <span class="nf">Elements</span><span class="p">:(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">elements</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">sectionId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">elements</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">sectionId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">order</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">elements</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span></code></pre>
 
                         </div>
                       </div>
@@ -273,6 +309,18 @@
                               <td>
                                 <div>
                                   <p>The id of the section.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>order</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The id order the section.</p>
                                 </div>
                               </td>
                             </tr>
@@ -481,7 +529,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2018-04-05)</p>
+          <p>&copy; 2018 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2018-04-06)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
