@@ -3,5 +3,6 @@
 </p>
 
 # NoookoSDK
+![Documentation badge](https://img.shields.io/badge/Documentation-100%25-brightgreen.svg)
 
 TODO: write `Readme.md`
