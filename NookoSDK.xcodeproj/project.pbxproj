@@ -40,7 +40,6 @@
 		66AF677C206E7111003FD62F /* NKProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF677B206E7111003FD62F /* NKProject.m */; };
 		66AF677F206E7609003FD62F /* NKGeneralElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF677E206E7609003FD62F /* NKGeneralElement.m */; };
 		66AF6782206E7979003FD62F /* NKAddressElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF6781206E7979003FD62F /* NKAddressElement.m */; };
-		66F9259D2074C17F00C850F3 /* blocksResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 66F9259C2074C17F00C850F3 /* blocksResponse.json */; };
 		66F925A02074DFC300C850F3 /* NKDropdownElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F9259F2074DFC300C850F3 /* NKDropdownElement.m */; };
 		66F925AB20751BA600C850F3 /* NKImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F925AA20751BA600C850F3 /* NKImage.m */; };
 		66F925AE20751FA800C850F3 /* NKMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F925AD20751FA800C850F3 /* NKMedia.m */; };
@@ -125,7 +124,6 @@
 		66AF677E206E7609003FD62F /* NKGeneralElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKGeneralElement.m; sourceTree = "<group>"; };
 		66AF6780206E7979003FD62F /* NKAddressElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKAddressElement.h; sourceTree = "<group>"; };
 		66AF6781206E7979003FD62F /* NKAddressElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKAddressElement.m; sourceTree = "<group>"; };
-		66F9259C2074C17F00C850F3 /* blocksResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = blocksResponse.json; sourceTree = "<group>"; };
 		66F9259E2074DFC300C850F3 /* NKDropdownElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKDropdownElement.h; sourceTree = "<group>"; };
 		66F9259F2074DFC300C850F3 /* NKDropdownElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKDropdownElement.m; sourceTree = "<group>"; };
 		66F925A920751BA600C850F3 /* NKImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKImage.h; sourceTree = "<group>"; };
@@ -167,7 +165,6 @@
 				66004BD02076605900C57A6C /* LaunchScreen.storyboard */,
 				66AF6740206E3236003FD62F /* Info.plist */,
 				66AF6741206E3236003FD62F /* main.m */,
-				66F9259C2074C17F00C850F3 /* blocksResponse.json */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -451,7 +448,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				66AF673C206E3236003FD62F /* Assets.xcassets in Resources */,
-				66F9259D2074C17F00C850F3 /* blocksResponse.json in Resources */,
 				66004BD12076605900C57A6C /* LaunchScreen.storyboard in Resources */,
 				66004BCF2076604A00C57A6C /* Main.storyboard in Resources */,
 				666DB42A2073C8FA00185529 /* Readme.md in Resources */,
