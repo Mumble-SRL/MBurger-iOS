@@ -3,6 +3,6 @@
 </p>
 
 # NoookoSDK
-![Documentation badge](/docs/badge.svg)
+![Documentation badge](docs_badge.svg)
 
 TODO: write `Readme.md`
