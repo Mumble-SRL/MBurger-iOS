@@ -205,9 +205,9 @@ It is the counterpart of the &lsquo;text&rsquo; and &lsquo;textelement&rsquo; ty
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)NKTextElement(im)initWithElementId:Name:Text:"></a>
-                    <a name="//apple_ref/objc/Method/-initWithElementId:Name:Text:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)NKTextElement(im)initWithElementId:Name:Text:">-initWithElementId:Name:Text:</a>
+                    <a name="/c:objc(cs)NKTextElement(im)initWithElementId:Name:Order:Text:"></a>
+                    <a name="//apple_ref/objc/Method/-initWithElementId:Name:Order:Text:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)NKTextElement(im)initWithElementId:Name:Order:Text:">-initWithElementId:Name:Order:Text:</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -218,7 +218,7 @@ It is the counterpart of the &lsquo;text&rsquo; and &lsquo;textelement&rsquo; ty
                         <p>Initializes a text element with an elementId and its value.</p>
 <div class="aside aside-see">
     <p class="aside-title">See</p>
-    <p>This function calls the super initializer <code><a href="../Classes/NKElement.html#/c:objc(cs)NKElement(im)initWithElementId:Name:Type:">-[NKElement initWithElementId:Name:Type:]</a></code></p>
+    <p>This function calls the super initializer <code>-[NKElement initWithElementId:Name:Type:]</code></p>
 
 </div>
 
@@ -229,12 +229,13 @@ It is the counterpart of the &lsquo;text&rsquo; and &lsquo;textelement&rsquo; ty
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nf">initWithElementId</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">elementId</span>
                                       <span class="nf">Name</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">name</span>
+                                     <span class="nf">Order</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">order</span>
                                       <span class="nf">Text</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">text</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">elementId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">elementId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">order</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span></code></pre>
 
                         </div>
                       </div>
@@ -263,6 +264,18 @@ It is the counterpart of the &lsquo;text&rsquo; and &lsquo;textelement&rsquo; ty
                               <td>
                                 <div>
                                   <p>The name of the element.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>order</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The order of the element.</p>
                                 </div>
                               </td>
                             </tr>

@@ -204,9 +204,41 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)NKGeneralElement(im)initWithElementId:Name:Value:"></a>
-                    <a name="//apple_ref/objc/Method/-initWithElementId:Name:Value:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)NKGeneralElement(im)initWithElementId:Name:Value:">-initWithElementId:Name:Value:</a>
+                    <a name="/c:objc(cs)NKGeneralElement(py)type"></a>
+                    <a name="//apple_ref/objc/Property/type" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)NKGeneralElement(py)type">type</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The type of the element retuned by the api.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">type</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)NKGeneralElement(im)initWithElementId:Name:Order:Value:Type:"></a>
+                    <a name="//apple_ref/objc/Method/-initWithElementId:Name:Order:Value:Type:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)NKGeneralElement(im)initWithElementId:Name:Order:Value:Type:">-initWithElementId:Name:Order:Value:Type:</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -218,7 +250,7 @@
 This function calls the super initializer initWithElementId:Name:Type</p>
 <div class="aside aside-see">
     <p class="aside-title">See</p>
-    <p>This function calls the super initializer <code><a href="../Classes/NKElement.html#/c:objc(cs)NKElement(im)initWithElementId:Name:Type:">-[NKElement initWithElementId:Name:Type:]</a></code></p>
+    <p>This function calls the super initializer <code>-[NKElement initWithElementId:Name:Type:]</code></p>
 
 </div>
 
@@ -229,12 +261,14 @@ This function calls the super initializer initWithElementId:Name:Type</p>
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nf">initWithElementId</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">elementId</span>
                                       <span class="nf">Name</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="nv">name</span>
-                                     <span class="nf">Value</span><span class="p">:(</span><span class="n">id</span> <span class="n">_Nullable</span><span class="p">)</span><span class="nv">value</span><span class="p">;</span></code></pre>
+                                     <span class="nf">Order</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">order</span>
+                                     <span class="nf">Value</span><span class="p">:(</span><span class="n">id</span> <span class="n">_Nullable</span><span class="p">)</span><span class="nv">value</span>
+                                      <span class="nf">Type</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">type</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">elementId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">elementId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">order</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?,</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -269,12 +303,36 @@ This function calls the super initializer initWithElementId:Name:Type</p>
                             <tr>
                               <td>
                                 <code>
+                                <em>order</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The order of the element.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
                                 <em>value</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
                                   <p>The value representing the element.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The type of the element retuned by the api.</p>
                                 </div>
                               </td>
                             </tr>
