@@ -19,6 +19,8 @@
 		660E866720760734008DF597 /* NKGeofenceParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E866620760734008DF597 /* NKGeofenceParameter.m */; };
 		660E866A20760741008DF597 /* NKGeneralParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E866920760741008DF597 /* NKGeneralParameter.m */; };
 		666DB42A2073C8FA00185529 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 666DB4292073C8FA00185529 /* Readme.md */; };
+		667F407D2077ADEB00B18D16 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 667F407C2077ADEB00B18D16 /* NewsTableViewCell.m */; };
+		667F40802077B3D500B18D16 /* NKElementFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 667F407F2077B3D500B18D16 /* NKElementFactory.m */; };
 		66AF6734206E3236003FD62F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF6733206E3236003FD62F /* AppDelegate.m */; };
 		66AF6737206E3236003FD62F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF6736206E3236003FD62F /* ViewController.m */; };
 		66AF673C206E3236003FD62F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66AF673B206E3236003FD62F /* Assets.xcassets */; };
@@ -78,6 +80,10 @@
 		660E866920760741008DF597 /* NKGeneralParameter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKGeneralParameter.m; sourceTree = "<group>"; };
 		660E866C2076088B008DF597 /* NKParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKParameter.h; sourceTree = "<group>"; };
 		666DB4292073C8FA00185529 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		667F407B2077ADEB00B18D16 /* NewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
+		667F407C2077ADEB00B18D16 /* NewsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
+		667F407E2077B3D500B18D16 /* NKElementFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKElementFactory.h; sourceTree = "<group>"; };
+		667F407F2077B3D500B18D16 /* NKElementFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKElementFactory.m; sourceTree = "<group>"; };
 		66AF672F206E3236003FD62F /* NookoSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NookoSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66AF6732206E3236003FD62F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		66AF6733206E3236003FD62F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -151,10 +157,11 @@
 			children = (
 				66AF6732206E3236003FD62F /* AppDelegate.h */,
 				66AF6733206E3236003FD62F /* AppDelegate.m */,
+				66DDF8412077A7E40023091E /* Model */,
 				66AF6735206E3236003FD62F /* ViewController.h */,
 				66AF6736206E3236003FD62F /* ViewController.m */,
-				660839222073B8A800432DE7 /* News.h */,
-				660839232073B8A800432DE7 /* News.m */,
+				667F407B2077ADEB00B18D16 /* NewsTableViewCell.h */,
+				667F407C2077ADEB00B18D16 /* NewsTableViewCell.m */,
 				66004BCE2076604A00C57A6C /* Main.storyboard */,
 				66AF673B206E3236003FD62F /* Assets.xcassets */,
 				66004BD02076605900C57A6C /* LaunchScreen.storyboard */,
@@ -287,6 +294,8 @@
 				66F9259F2074DFC300C850F3 /* NKDropdownElement.m */,
 				66AF677D206E7609003FD62F /* NKGeneralElement.h */,
 				66AF677E206E7609003FD62F /* NKGeneralElement.m */,
+				667F407E2077B3D500B18D16 /* NKElementFactory.h */,
+				667F407F2077B3D500B18D16 /* NKElementFactory.m */,
 			);
 			path = NKElement;
 			sourceTree = "<group>";
@@ -307,6 +316,15 @@
 				66AF677B206E7111003FD62F /* NKProject.m */,
 			);
 			path = NKProject;
+			sourceTree = "<group>";
+		};
+		66DDF8412077A7E40023091E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				660839222073B8A800432DE7 /* News.h */,
+				660839232073B8A800432DE7 /* News.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CFF734D8419A5B3101336F10 /* Pods */ = {
@@ -486,9 +504,11 @@
 			files = (
 				66AF675D206E38ED003FD62F /* NKSection.m in Sources */,
 				66AF6768206E4AD1003FD62F /* NKImagesElement.m in Sources */,
+				667F40802077B3D500B18D16 /* NKElementFactory.m in Sources */,
 				66F925AB20751BA600C850F3 /* NKImage.m in Sources */,
 				66AF6771206E63E2003FD62F /* NKWysiwygElement.m in Sources */,
 				66AF6760206E3A1F003FD62F /* NKElement.m in Sources */,
+				667F407D2077ADEB00B18D16 /* NewsTableViewCell.m in Sources */,
 				66AF677C206E7111003FD62F /* NKProject.m in Sources */,
 				660E865E2076070C008DF597 /* NKSortParameter.m in Sources */,
 				660E866A20760741008DF597 /* NKGeneralParameter.m in Sources */,

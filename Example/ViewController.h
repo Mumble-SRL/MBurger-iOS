@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>{
+    NSArray *news;
+    UIRefreshControl *refreshControl;
+}
 
+@property IBOutlet UITableView *tableView;
 
 @end
 

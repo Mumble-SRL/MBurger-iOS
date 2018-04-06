@@ -26,7 +26,7 @@
     NSString *mimeType = dictionary[@"mime_type"];
     NSInteger size = [dictionary[@"size"] integerValue];
     //TODO: remove url
-    NSString *mediaUrlString = [NSString stringWithFormat:@"https://www.nooko2.mumbleserver.it%@", dictionary[@"url"]];
+    NSString *mediaUrlString = dictionary[@"url"];
     NSURL *mediaUrl = [NSURL URLWithString:mediaUrlString];
     return [self initWithId:mediaId Url:mediaUrl MimeType:mimeType Size:size];
 }

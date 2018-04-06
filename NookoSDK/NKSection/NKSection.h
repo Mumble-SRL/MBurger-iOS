@@ -51,7 +51,7 @@
 - (instancetype _Nonnull) initWithDictionary: (NSDictionary * _Nonnull) dictionary;
 
 /**
- *  Copy a set of elements values from this Entry to a custom object. This is very useful if you want to initialize a custom object you created with the values of the elements of this section. If the mapping cannot be done because the two classes are incopatible it will be skipped
+ *  Copy a set of elements values from this Entry to a custom object. This is very useful if you want to initialize a custom object you created with the values of the elements of this section. The properties of elements can be queried with the dot notation, e.g. image.firstImage.url, if no property is queried the object mapped is the value of the element, for example if it's a NKTextElement it will map the string value.
  *
  *  @param object     The object that will be filled with this data.
  *  @param mapping    A dictionary with the mapping to fill the data of the object.
@@ -59,14 +59,5 @@
  *  @return The mapped object mapped.
  */
 - (id) mapElementsToObject: (NSObject *) object withMapping: (NSDictionary *) mapping;
-
-/**
- Returns a NKElement object based on the tyoe of element specified in the dictionary.
- 
- @param elementDictionary The dictionary returned by the api.
- 
- @return a newly created NKElement initialized with the data of the dictionary, if the type field of the dictionary cannot be represented by the implemented type of the SDK this functions returns a NKGeneralElement with the dictionary as the value.
- */
-- (NKElement *) elementForDictionary: (NSDictionary *) elementDictionary;
 
 @end

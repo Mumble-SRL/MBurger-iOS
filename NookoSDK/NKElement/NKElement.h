@@ -32,7 +32,7 @@ typedef NS_ENUM(NSUInteger, NKElementType) {
 
 /**
  This class represents the base class for all general Nooko elements. All the specialized elements are subclasses of this class.
- @note You should not use this class directly because it doesn't have the value property. If you want a genereal element use the NKGeneralElement class
+ @note You should not use this class directly because it doesn't have the value property. If you want a genereal element use the `NKGeneralElement` class
  */
 @interface NKElement : NSObject <NSCoding, NSSecureCoding>
 

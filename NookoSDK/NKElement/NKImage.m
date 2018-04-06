@@ -25,8 +25,7 @@
     NSInteger imageId = [dictionary[@"id"] integerValue];
     NSString *mimeType = dictionary[@"mime_type"];
     NSInteger size = [dictionary[@"size"] integerValue];
-    //TODO: remove url
-    NSString *imageUrlString = [NSString stringWithFormat:@"https://www.nooko2.mumbleserver.it%@", dictionary[@"url"]];
+    NSString *imageUrlString = dictionary[@"url"];
     NSURL *imageUrl = [NSURL URLWithString:imageUrlString];
     return [self initWithId:imageId Url:imageUrl MimeType:mimeType Size:size];
 }

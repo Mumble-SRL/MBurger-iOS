@@ -14,11 +14,6 @@
 @property NSString *title;
 @property NSString *newsContent;
 @property NSURL *imageUrl;
-
-@property NSString *address;
-@property double lat;
-@property double lng;
-@property NSNumber *coordinateLat;
-
+@property NSString *link;
 
 @end
