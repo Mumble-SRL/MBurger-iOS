@@ -19,7 +19,7 @@
 
 @implementation NKElementFactory
 
-+ (NKElement *) elementForDictionary: (NSDictionary *) elementDictionary {
++ (NKElement *) elementsForDictionary: (NSDictionary *) elementDictionary {
     NSString *typeString = elementDictionary[@"type"];
     if ([typeString isEqualToString:@"text"] || [typeString isEqualToString:@"textarea"]){
         return [[NKTextElement alloc] initWithDictionary:elementDictionary];

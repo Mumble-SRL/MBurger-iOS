@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="-148" y="-181"/>
         </scene>
-        <!--View Controller-->
+        <!--News List View Controller-->
         <scene sceneID="xDg-Wx-S97">
             <objects>
-                <viewController id="BxL-ht-1yE" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BxL-ht-1yE" customClass="NewsListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rgd-Ab-hxq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -91,11 +91,83 @@
                     <navigationItem key="navigationItem" id="Nbb-0x-Rba"/>
                     <connections>
                         <outlet property="tableView" destination="dj1-wG-Y6E" id="eVD-Rp-mgs"/>
+                        <segue destination="2GY-HC-GDS" kind="show" identifier="showDetail" id="akT-pN-3jm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BpI-F7-b9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="533.60000000000002" y="-181.25937031484258"/>
+        </scene>
+        <!--News Detail View Controller-->
+        <scene sceneID="HcE-26-aSq">
+            <objects>
+                <viewController id="2GY-HC-GDS" customClass="NewsDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z4A-pR-out">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfj-1A-c6y">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kuZ-3f-Svx">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="187.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="kuZ-3f-Svx" secondAttribute="height" multiplier="2:1" id="pVi-Y7-fvc"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fks-KP-OFX">
+                                        <rect key="frame" x="20" y="207.5" width="335" height="31.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="hnt-rc-7cr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAO-hw-nX9">
+                                        <rect key="frame" x="20" y="247" width="335" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="PwI-vs-nx2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="gAO-hw-nX9" secondAttribute="bottom" constant="20" id="2KI-aD-GAF"/>
+                                    <constraint firstAttribute="trailing" secondItem="kuZ-3f-Svx" secondAttribute="trailing" id="APM-e3-fqA"/>
+                                    <constraint firstItem="fks-KP-OFX" firstAttribute="top" secondItem="kuZ-3f-Svx" secondAttribute="bottom" constant="20" id="F5R-1s-dBp"/>
+                                    <constraint firstItem="gAO-hw-nX9" firstAttribute="leading" secondItem="fks-KP-OFX" secondAttribute="leading" id="Jb1-L9-LeD"/>
+                                    <constraint firstItem="gAO-hw-nX9" firstAttribute="top" secondItem="fks-KP-OFX" secondAttribute="bottom" constant="8" id="Jx1-CS-L4f"/>
+                                    <constraint firstItem="gAO-hw-nX9" firstAttribute="trailing" secondItem="fks-KP-OFX" secondAttribute="trailing" id="T4J-h7-oGw"/>
+                                    <constraint firstItem="kuZ-3f-Svx" firstAttribute="centerX" secondItem="vfj-1A-c6y" secondAttribute="centerX" id="Y5N-Rw-hgK"/>
+                                    <constraint firstAttribute="trailing" secondItem="fks-KP-OFX" secondAttribute="trailing" constant="20" id="cKK-P9-lkM"/>
+                                    <constraint firstItem="kuZ-3f-Svx" firstAttribute="top" secondItem="vfj-1A-c6y" secondAttribute="top" id="dca-re-m2e"/>
+                                    <constraint firstItem="kuZ-3f-Svx" firstAttribute="leading" secondItem="vfj-1A-c6y" secondAttribute="leading" id="iWP-3S-j2c"/>
+                                    <constraint firstItem="fks-KP-OFX" firstAttribute="leading" secondItem="vfj-1A-c6y" secondAttribute="leading" constant="20" id="m2M-HK-CNd"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vfj-1A-c6y" firstAttribute="leading" secondItem="KrL-qa-HYh" secondAttribute="leading" id="9xJ-di-qD5"/>
+                            <constraint firstItem="KrL-qa-HYh" firstAttribute="bottom" secondItem="vfj-1A-c6y" secondAttribute="bottom" id="AX3-3d-aB4"/>
+                            <constraint firstItem="KrL-qa-HYh" firstAttribute="trailing" secondItem="vfj-1A-c6y" secondAttribute="trailing" id="FKp-Dt-lWe"/>
+                            <constraint firstItem="vfj-1A-c6y" firstAttribute="top" secondItem="z4A-pR-out" secondAttribute="top" id="fVf-2s-6xk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KrL-qa-HYh"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="kuZ-3f-Svx" id="otl-XV-XJQ"/>
+                        <outlet property="labelContent" destination="gAO-hw-nX9" id="iHj-Jf-gYW"/>
+                        <outlet property="labelTitle" destination="fks-KP-OFX" id="umz-Ne-Fub"/>
+                        <outlet property="scrollView" destination="vfj-1A-c6y" id="oWD-3c-hTu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="db2-kn-Fcw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1188" y="-181"/>
         </scene>
     </scenes>
 </document>

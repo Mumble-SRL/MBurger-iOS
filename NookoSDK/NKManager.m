@@ -246,7 +246,7 @@
                                   NSMutableDictionary *elementsMutable = [[NSMutableDictionary alloc] init];
                                   for (NSString *key in elementsDictionaryFromApi.allKeys){
                                       NSDictionary *objectDict = elementsDictionaryFromApi[key];
-                                      NKElement *e = [NKElementFactory elementForDictionary:objectDict];
+                                      NKElement *e = [NKElementFactory elementsForDictionary:objectDict];
                                       if (e){
                                           elementsMutable[key] = e;
                                       }

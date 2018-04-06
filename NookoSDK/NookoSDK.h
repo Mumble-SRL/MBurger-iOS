@@ -33,6 +33,7 @@
 #import "NKAddressElement.h"
 #import "NKDropdownElement.h"
 #import "NKGeneralElement.h"
+#import "NKElementFactory.h"
 #import "NKApiManager.h"
 #import "NKResponse.h"
 

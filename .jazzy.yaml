@@ -46,6 +46,7 @@ custom_categories:
     - NKAddressElement
     - NKDropdownElement
     - NKGeneralElement
+    - NKElementFactory
   - name: NKApiManager
     children:
     - NKApiManager
