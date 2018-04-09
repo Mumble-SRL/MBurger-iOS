@@ -135,7 +135,7 @@
     }
     [NKApiManager callApiWithApiToken:self.apiToken
                                Locale:[self localeForApi]
-                              ApiName:[NSString stringWithFormat:@"blocks/%ld", blockId]
+                              ApiName:[NSString stringWithFormat:@"blocks/%ld", (long) blockId]
                            HTTPMethod:NKHTTPMethodGet
                            Parameters:parametersMutable
                      HeaderParameters:nil
