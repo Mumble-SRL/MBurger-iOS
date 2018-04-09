@@ -40,3 +40,50 @@ CocoaPods is the preferred methot to install the library.
 To install the library manually drag and drop the folder `NookoSDK` to your project structure in XCode. 
 
 Note that `NookoSDK` has `AFNetworking (3.0)` as a dependency, so you have to install also this library.
+
+# Initialization
+
+To initialize the SDK you have to create a token through the [dashboard](https://nooko3.mumbleserver.it/). Click on the settings icon on the top-right and create a API Key specifiyng the permissions.
+
+In your `AppDelegate` `application:didFinishLaunchingWithOptions:` initialize the SDK like the following:
+
+```
+#import "AppDelegate.h"
+#import "NookoSDK.h"
+
+@interface AppDelegate ()
+
+@end
+
+@implementation AppDelegate
+
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [NKManager sharedManager].apiToken = @"26c96ab3c9a67f45cc2e9bff35869bfd8a778cb0";
+    
+    return YES;
+}
+```
+
+You will not be able to interact with the SDK if you don't initialize it with a correct token/key.
+
+# Usage
+
+# Project
+
+
+# Blocks
+
+
+# Sections
+
+# Object mapping
+
+# Serialization
+
+# Contacts
+
+# License
+
+NookoSDK is released under the MIT license. See [LICENSE](https://gitlab.mumbleserver.it/iOS/NookoSDK/raw/master/LICENSE) for details.
