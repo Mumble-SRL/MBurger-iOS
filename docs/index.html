@@ -197,6 +197,8 @@ end
 
 <p>To initialize the SDK you have to create a token through the <a href="https://nooko3.mumbleserver.it/">dashboard</a>. Click on the settings icon on the top-right and create a API Key specifiyng the permissions.</p>
 
+<p><img src="https://gitlab.mumbleserver.it/iOS/NookoSDK/raw/master/Images/api_token.png" alt="Dashboard image"></p>
+
 <p>In your <code>AppDelegate</code> <code>application:didFinishLaunchingWithOptions:</code> initialize the SDK like the following:</p>
 <pre class="highlight objective_c"><code><span class="cp">#import "AppDelegate.h"
 #import "NookoSDK.h"
@@ -322,7 +324,7 @@ NSMutableArray *newsArray = [[NSMutableArray alloc] init];
 
 <p>As you can see in the example you can point to the property of the object using the dot notation. If it&rsquo;s not defined any property the SDK will use the value of the element object (calling the value function).</p>
 
-<p>You can find a complete example in the sample app in the Example directory.</p>
+<p>You can find a complete example in the Example project.</p>
 <h1 id='serialization' class='heading'>Serialization</h1>
 
 <p>All the model objects implement the <code>NSCoding</code> and <code>NSSecureCoding</code> protocol so you can serialize and deserialize them without having to implement it. Below the list of objects that implement those protocols</p>
