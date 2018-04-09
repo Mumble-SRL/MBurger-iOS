@@ -82,6 +82,11 @@ You will not be able to interact with the SDK if you don't initialize it with a 
 
 # Serialization
 
+# Documentation
+
+For further information, you can check out the full SDK Reference in the [docs](https://gitlab.mumbleserver.it/iOS/NookoSDK/tree/master/docs) folder.
+
+
 # Contacts
 
 You can contuct us at [info@mumbleideas.it](mailto:https://gitlab.mumbleserver.it/iOS/NookoSDK/raw/master/LICENSE).
