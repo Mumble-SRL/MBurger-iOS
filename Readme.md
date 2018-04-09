@@ -44,6 +44,9 @@ Note that `NookoSDK` has `AFNetworking (3.0)` as a dependency, so you have to in
 
 To initialize the SDK you have to create a token through the [dashboard](https://nooko3.mumbleserver.it/). Click on the settings icon on the top-right and create a API Key specifiyng the permissions.
 
+
+![Dashboard image](https://gitlab.mumbleserver.it/iOS/NookoSDK/raw/master/Images/api_token.png)
+
 In your `AppDelegate` `application:didFinishLaunchingWithOptions:` initialize the SDK like the following:
 
 ```
