@@ -14,7 +14,6 @@ CocoaPods is a dependency manager for iOS, which automates and simplifies the pr
 
 ```
 $ gem install cocoapods
-
 ```
 
 To integrate the NookoSDK into your Xcode project using CocoaPods, specify it in your Podfile:
@@ -70,11 +69,21 @@ You will not be able to interact with the SDK if you don't initialize it with a 
 
 # Usage
 
+All the interactions with the SDK will be trought the `NKManager` singleton class.
+
 # Project
 
+You can retrieve the informations of the project like this:
+
+```
+[[NKManager sharedManager] getProjectWithSuccess:^(NKProject *project) {
+        
+} Failure:^(NSError *error) {
+	NSLog(@"There was an error: %@", error.localizedDescription);
+}];
+```
 
 # Blocks
-
 
 # Sections
 

@@ -26,6 +26,12 @@
     self.tableView.dataSource = self;
     self.tableView.tableFooterView = [UIView new];
 
+    [[NKManager sharedManager] getProjectWithSuccess:^(NKProject *project) {
+        
+    } Failure:^(NSError *error) {
+        NSLog(@"There was an error: %@", error.localizedDescription);
+    }];
+    
     [self loadNews];
 }
 

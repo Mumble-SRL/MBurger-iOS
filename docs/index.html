@@ -221,6 +221,30 @@ end
 <h1 id='sections' class='heading'>Sections</h1>
 <h1 id='object-mapping' class='heading'>Object mapping</h1>
 <h1 id='serialization' class='heading'>Serialization</h1>
+
+<p>All the model objects implement the <code>NSCoding</code> and <code>NSSecureCoding</code> protocol so you can serialize and deserialize them without having to implement it. Below the list of objects that implement those protocols</p>
+
+<ul>
+<li><code><a href="Classes/NKProject.html">NKProject</a></code></li>
+<li><code><a href="Classes/NKBlock.html">NKBlock</a></code></li>
+<li><code><a href="Classes/NKSection.html">NKSection</a></code></li>
+<li><code><a href="Classes/NKElement.html">NKElement</a></code></li>
+<li><code><a href="Classes/NKTextElement.html">NKTextElement</a></code></li>
+<li><code><a href="Classes/NKImagesElement.html">NKImagesElement</a></code></li>
+<li><code><a href="Classes/NKImage.html">NKImage</a></code></li>
+<li><code><a href="Classes/NKMediaElement.html">NKMediaElement</a></code></li>
+<li><code><a href="Classes/NKFile.html">NKFile</a></code></li>
+<li><code><a href="Classes/NKCheckboxElement.html">NKCheckboxElement</a></code></li>
+<li><code><a href="Classes/NKWysiwygElement.html">NKWysiwygElement</a></code></li>
+<li><code><a href="Classes/NKDateElement.html">NKDateElement</a></code></li>
+<li><code><a href="Classes/NKAddressElement.html">NKAddressElement</a></code></li>
+<li><code><a href="Classes/NKDropdownElement.html">NKDropdownElement</a></code></li>
+<li><code>NKPollElement</code></li>
+<li><code><a href="Classes/NKGeneralElement.html">NKGeneralElement</a></code></li>
+</ul>
+<h1 id='equality' class='heading'>Equality</h1>
+
+<p>All the model objects implement the <code>isEqual:</code> function based on the corresponding id. So for example an NKSection will result equal to another NKSection object if they have the same <code>sectionId</code>.</p>
 <h1 id='documentation' class='heading'>Documentation</h1>
 
 <p>For further information, you can check out the full SDK Reference in the <a href="https://gitlab.mumbleserver.it/iOS/NookoSDK/tree/master/docs">docs</a> folder.</p>

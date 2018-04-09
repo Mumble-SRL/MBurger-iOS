@@ -12,7 +12,7 @@
 @interface News : NSObject
 
 @property NSString *title;
-@property NSString *newsContent;
+@property NSString *content;
 @property NSURL *imageUrl;
 @property NSString *link;
 
