@@ -84,6 +84,8 @@ You will not be able to interact with the SDK if you don't initialize it with a 
 
 # Contacts
 
+You can contuct us at [info@mumbleideas.it](mailto:https://gitlab.mumbleserver.it/iOS/NookoSDK/raw/master/LICENSE).
+
 # License
 
 NookoSDK is released under the MIT license. See [LICENSE](https://gitlab.mumbleserver.it/iOS/NookoSDK/raw/master/LICENSE) for details.
