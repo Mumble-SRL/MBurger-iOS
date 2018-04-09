@@ -26,6 +26,9 @@ target 'TargetName' do
 end
 ```
 
+If you use Swift rememember to add `use_frameworks!` before the pod declaration.
+
+
 Then, run the following command:
 
 ```
@@ -41,13 +44,15 @@ To install the library manually drag and drop the folder `NookoSDK` to your proj
 Note that `NookoSDK` has `AFNetworking (3.0)` as a dependency, so you have to install also this library.
 
 # Initialization
-q
+
 To initialize the SDK you have to create a token through the [dashboard](https://nooko3.mumbleserver.it/). Click on the settings icon on the top-right and create a API Key specifiyng the permissions.
 
 
 ![Dashboard image](https://gitlab.mumbleserver.it/iOS/NookoSDK/raw/master/Images/api_token.png)
 
 In your `AppDelegate` `application:didFinishLaunchingWithOptions:` initialize the SDK like the following:
+
+Objective-c:
 
 ```
 #import "AppDelegate.h"
@@ -62,9 +67,22 @@ In your `AppDelegate` `application:didFinishLaunchingWithOptions:` initialize th
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [NKManager sharedManager].apiToken = @"26c96ab3c9a67f45cc2e9bff35869bfd8a778cb0";
+    [NKManager sharedManager].apiToken = @"YOUR_API_TOKEN";
     
     return YES;
+}
+```
+
+Swift:
+
+```
+import NookoSDK
+
+...
+
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        NKManager.shared().apiToken = "YOUR_API_TOKEN"
+    return true
 }
 ```
 
