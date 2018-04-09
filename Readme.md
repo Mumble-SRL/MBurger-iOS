@@ -82,6 +82,30 @@ You will not be able to interact with the SDK if you don't initialize it with a 
 
 # Serialization
 
+All the model objects implement the `NSCoding` and `NSSecureCoding` protocol so you can serialize and deserialize them without having to implement it. Below the list of objects that implement those protocols
+
+* `NKProject`
+* `NKBlock`
+* `NKSection`
+* `NKElement`
+* `NKTextElement`
+* `NKImagesElement`
+* `NKImage`
+* `NKMediaElement`
+* `NKFile`
+* `NKCheckboxElement`
+* `NKWysiwygElement`
+* `NKDateElement`
+* `NKAddressElement`
+* `NKDropdownElement`
+* `NKPollElement`
+* `NKGeneralElement`
+
+# Equality
+
+All the model objects implement the `isEqual:` function based on the corresponding id. So for example an NKSection will result equal to another NKSection object if they have the same `sectionId`.
+
+
 # Documentation
 
 For further information, you can check out the full SDK Reference in the [docs](https://gitlab.mumbleserver.it/iOS/NookoSDK/tree/master/docs) folder.

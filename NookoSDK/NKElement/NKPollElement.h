@@ -28,7 +28,7 @@
 /**
  This class represents a Nooko poll element, the property ansers contains the answers the user can give to a the poll.
  */
-@interface NKPollElement : NKElement
+@interface NKPollElement : NKElement <NSCoding, NSSecureCoding>
 
 /**
  The possible answes for the poll.
