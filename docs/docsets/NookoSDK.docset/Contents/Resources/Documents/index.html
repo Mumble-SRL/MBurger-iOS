@@ -167,7 +167,11 @@
 </p>
 <h1 id='noookosdk' class='heading'>NoookoSDK</h1>
 
-<p>NookoSDK is a client libary, written in Objective C, that can be used to interact with the <a href="https://nooko3.mumbleserver.it/login">Nooko</a> API. The minimum deplaoyment target for the library is iOS 10.0.</p>
+<p>NookoSDK is a client libary, written in Objective-C, that can be used to interact with the <a href="https://nooko3.mumbleserver.it/login">Nooko</a> API. The minimum deplaoyment target for the library is iOS 10.0.</p>
+
+<blockquote>
+<p>Even this is a library written in Objective-C it can be integrated and used also in Swift projects. The example code below will be in both languages.</p>
+</blockquote>
 <h1 id='installation' class='heading'>Installation</h1>
 <h1 id='installation-with-cocoapods' class='heading'>Installation with CocoaPods</h1>
 
@@ -182,6 +186,8 @@ target 'TargetName' do
     pod 'NookoSDK', git: 'https://gitlab.mumbleserver.it/iOS/NookoSDK'
 end
 </code></pre>
+
+<p>If you use Swift rememember to add <code>use_frameworks!</code> before the pod declaration.</p>
 
 <p>Then, run the following command:</p>
 <pre class="highlight plaintext"><code>$ pod install
@@ -200,6 +206,8 @@ end
 <p><img src="https://gitlab.mumbleserver.it/iOS/NookoSDK/raw/master/Images/api_token.png" alt="Dashboard image"></p>
 
 <p>In your <code>AppDelegate</code> <code>application:didFinishLaunchingWithOptions:</code> initialize the SDK like the following:</p>
+
+<p><strong>Objective-c</strong>:</p>
 <pre class="highlight objective_c"><code><span class="cp">#import "AppDelegate.h"
 #import "NookoSDK.h"
 </span>
@@ -212,10 +220,21 @@ end
 
 <span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">application</span><span class="p">:(</span><span class="n">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="nf">didFinishLaunchingWithOptions</span><span class="p">:(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">launchOptions</span> <span class="p">{</span>
 
-    <span class="p">[</span><span class="n">NKManager</span> <span class="nf">sharedManager</span><span class="p">].</span><span class="n">apiToken</span> <span class="o">=</span> <span class="s">@"26c96ab3c9a67f45cc2e9bff35869bfd8a778cb0"</span><span class="p">;</span>
+    <span class="p">[</span><span class="n">NKManager</span> <span class="nf">sharedManager</span><span class="p">].</span><span class="n">apiToken</span> <span class="o">=</span> <span class="s">@"YOUR_API_TOKEN"</span><span class="p">;</span>
 
     <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
 <span class="p">}</span>
+</code></pre>
+
+<p><strong>Swift</strong>:</p>
+<pre class="highlight plaintext"><code>import NookoSDK
+
+...
+
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -&gt; Bool {
+        NKManager.shared().apiToken = "YOUR_API_TOKEN"
+    return true
+}
 </code></pre>
 
 <p>You will not be able to interact with the SDK if you don&rsquo;t initialize it with a correct token/key.</p>
@@ -225,20 +244,40 @@ end
 <h1 id='project' class='heading'>Project</h1>
 
 <p>You can retrieve the informations of the project like this:</p>
+
+<p><strong>Objective-C</strong>:</p>
 <pre class="highlight plaintext"><code>[[NKManager sharedManager] getProjectWithSuccess:^(NKProject *project) {
 
 } Failure:^(NSError *error) {
     NSLog(@"There was an error: %@", error.localizedDescription);
 }];
 </code></pre>
+
+<p><strong>Swift</strong>:</p>
+<pre class="highlight plaintext"><code>NKManager.shared().getProjectWithSuccess({ (project) in
+
+    }) {(error) in
+
+}
+</code></pre>
 <h1 id='blocks' class='heading'>Blocks</h1>
 
 <p>You can retrieve the blocks of the project with the function <code>getBlocksWithParameters:Success:Failure</code> like this:</p>
+
+<p><strong>Objective-C</strong>:</p>
 <pre class="highlight plaintext"><code>[[NKManager sharedManager] getBlocksWithParameters:nil Success:^(NSArray&lt;NKBlock *&gt; *blocks, NKPaginationInfo *pagintaionInfo) {
 
 } Failure:^(NSError *error) {
 
 }];
+</code></pre>
+
+<p><strong>Swift</strong>:</p>
+<pre class="highlight plaintext"><code>NKManager.shared().getBlocksWith(nil, success: { (blocks, paginationInfos) in
+
+}) { (error) in
+
+}
 </code></pre>
 
 <p>The parameter <code>parameters</code> is an optional array of objects that conforms to the <code><a href="Protocols/NKParameter.html">NKParameter</a></code> protocol passed to the nooko api as parameter. The majorityof the parameters that can be passed to the apis are already defined in the SDK and can be used after the initialization:</p>
@@ -253,6 +292,8 @@ end
 <p>If you want to pass another type of parameter you can use the <code><a href="Classes/NKGeneralParameter.html">NKGeneralParameter</a></code> class that can be initialized with a key and a value that will be passed to the apis.</p>
 
 <p>So if you want to include a pagination parameter you can do like this:</p>
+
+<p><strong>Objective-C</strong>:</p>
 <pre class="highlight plaintext"><code>NKPaginationParameter *paginationParam = [[NKPaginationParameter alloc] initWithSkip:0 Take:10];
 [[NKManager sharedManager] getBlocksWithParameters:@[paginationParam] Success:^(NSArray&lt;NKBlock *&gt; *blocks, NKPaginationInfo *pagintaionInfo) {
 
@@ -261,31 +302,70 @@ end
 }];
 </code></pre>
 
+<p><strong>Swift</strong>:</p>
+<pre class="highlight plaintext"><code>let paginationParam = NKPaginationParameter(skip: 0, take: 10)
+NKManager.shared().getBlocksWith([paginationParam], success: { (blocks, paginationInfos) in
+
+}) { (error) in
+
+}
+</code></pre>
+
 <p>There are two other versions of the <code>getBlocksWithParameters:Success:Failure</code>, one that take an adiitional parameter <code>includingSections</code> (a boolean that indicate whether or not include, for each block, the sections), and another that takes <code>includingSections</code> and <code>includeElements</code> (a boolean value that do the same thing but for the elements of the sections).</p>
 
 <p>So you could retrieve the informations of all the blocks, all the sections of the blocks and all the elements of the sections with this call:</p>
+
+<p><strong>Objective-C</strong>:</p>
 <pre class="highlight plaintext"><code>[[NKManager sharedManager] getBlocksWithParameters:nil IncludingSections:TRUE AndElements: TRUE Success:^(NSArray&lt;NKBlock *&gt; *blocks, NKPaginationInfo *pagintaionInfo) {
 
 } Failure:^(NSError *error) {
 
 }];
 </code></pre>
+
+<p><strong>Swift</strong>:</p>
+<pre class="highlight plaintext"><code>NKManager.shared().getBlocksWith(nil, includingSections: true, andElements: true, success: { (blocks, paginationInfos) in
+
+}) { (error) in
+
+}
+</code></pre>
 <h1 id='sections' class='heading'>Sections</h1>
 
 <p>You can retrieve all the sections with a block with the given id with the function <code>getBlocksWithParameters:Success:Failure</code> like this:</p>
-<pre class="highlight plaintext"><code>[[NKManager sharedManager] getSectionsWithBlockId: THE_BLOCK_ID Parameters:nil Success:^(NSArray&lt;NKSection *&gt; *sections, NKPaginationInfo *pagintaionInfo) {
+
+<p><strong>Objective-C</strong>:</p>
+<pre class="highlight plaintext"><code>[[NKManager sharedManager] getSectionsWithBlockId:THE_BLOCK_ID Parameters:nil Success:^(NSArray&lt;NKSection *&gt; *sections, NKPaginationInfo *pagintaionInfo) {
 
 } Failure:^(NSError *error) {
 
 }];
 </code></pre>
 
+<p><strong>Swift</strong>:</p>
+<pre class="highlight plaintext"><code>NKManager.shared().getSectionsWithBlockId(THE_BLOCK_ID, parameters: nil, success: { (sections, paginationInfos) in
+
+}) { (error) in
+
+} 
+</code></pre>
+
 <p>Like for the blocks there&rsquo;s a version of this function that takes a bool <code>includeElements</code> that indicate to include or not the elements of the section se if you want to retrieve all the sections of a block and their elements you can call:</p>
+
+<p><strong>Objective-C</strong>:</p>
 <pre class="highlight plaintext"><code>[[NKManager sharedManager] getSectionsWithBlockId:THE_BLOCK_ID IncludeElement:TRUE Parameters:nil Success:^(NSArray&lt;NKSection *&gt; *sections, NKPaginationInfo *pagintaionInfo) {
 
 } Failure:^(NSError *error) {
 
 }];
+</code></pre>
+
+<p><strong>Swift</strong>:</p>
+<pre class="highlight plaintext"><code>NKManager.shared().getSectionsWithBlockId(THE_BLOCK_ID, parameters: nil, includeElements: true, success: { (sections, paginationInfos) in
+
+}) { (error) in
+
+}
 </code></pre>
 <h1 id='object-mapping' class='heading'>Object mapping</h1>
 
