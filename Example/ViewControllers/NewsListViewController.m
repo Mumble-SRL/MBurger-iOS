@@ -25,11 +25,11 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.tableFooterView = [UIView new];
-
-    [[NKManager sharedManager] getProjectWithSuccess:^(NKProject *project) {
+    
+    [[NKManager sharedManager] getSectionsWithBlockId:12 Parameters:nil Success:^(NSArray<NKSection *> *sections, NKPaginationInfo *pagintaionInfo) {
         
     } Failure:^(NSError *error) {
-        NSLog(@"There was an error: %@", error.localizedDescription);
+        
     }];
     
     [self loadNews];
@@ -43,7 +43,7 @@
 - (void) loadNews {
     NSInteger newsBlockId = 12;
     NSDictionary *mappingDictionary = @{@"title" : @"title",
-                                        @"content" : @"newsContent",
+                                        @"content" : @"content",
                                         @"image.firstImage.url" : @"imageUrl",
                                         @"link" : @"link"};
     NSMutableArray *newsArray = [[NSMutableArray alloc] init];

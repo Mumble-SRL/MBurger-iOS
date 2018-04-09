@@ -29,7 +29,7 @@
     });
 
     self.labelTitle.text = self.news.title;
-    self.labelContent.text = self.news.newsContent;
+    self.labelContent.text = self.news.content;
 }
 
 - (void)didReceiveMemoryWarning {

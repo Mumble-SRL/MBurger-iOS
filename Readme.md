@@ -4,7 +4,7 @@
 
 # NoookoSDK
 
-NookoSDK is a client libary, written in Objective C, that can be used to interact with the [Nooko](https://nooko3.mumbleserver.it/login) API.
+NookoSDK is a client libary, written in Objective C, that can be used to interact with the [Nooko](https://nooko3.mumbleserver.it/login) API. The minimum deplaoyment target for the library is iOS 10.0.
 
 # Installation
 
@@ -69,7 +69,7 @@ You will not be able to interact with the SDK if you don't initialize it with a 
 
 # Usage
 
-All the interactions with the SDK will be trought the `NKManager` singleton class.
+All the interactions with the SDK will be trought the `NKManager` singleton class. All the api calls have a plurarl/singular version so for example you can retrieve the list of blocks of the project or you can retrieve a single block giving its id.
 
 # Project
 
@@ -85,9 +85,111 @@ You can retrieve the informations of the project like this:
 
 # Blocks
 
+You can retrieve the blocks of the project with the function `getBlocksWithParameters:Success:Failure` like this:
+
+```
+[[NKManager sharedManager] getBlocksWithParameters:nil Success:^(NSArray<NKBlock *> *blocks, NKPaginationInfo *pagintaionInfo) {
+     
+} Failure:^(NSError *error) {
+        
+}];
+```
+
+The parameter `parameters` is an optional array of objects that conforms to the `NKParameter` protocol passed to the nooko api as parameter. The majorityof the parameters that can be passed to the apis are already defined in the SDK and can be used after the initialization:
+
+* `NKSortParameter`
+* `NKPaginationParameter`
+* `NKFilterParameter`
+* `NKGeofenceParameter`
+
+If you want to pass another type of parameter you can use the `NKGeneralParameter` class that can be initialized with a key and a value that will be passed to the apis.
+
+So if you want to include a pagination parameter you can do like this:
+
+```
+NKPaginationParameter *paginationParam = [[NKPaginationParameter alloc] initWithSkip:0 Take:10];
+[[NKManager sharedManager] getBlocksWithParameters:@[paginationParam] Success:^(NSArray<NKBlock *> *blocks, NKPaginationInfo *pagintaionInfo) {
+        
+} Failure:^(NSError *error) {
+        
+}];
+```
+There are two other versions of the `getBlocksWithParameters:Success:Failure`, one that take an adiitional parameter `includingSections` (a boolean that indicate whether or not include, for each block, the sections), and another that takes `includingSections` and `includeElements` (a boolean value that do the same thing but for the elements of the sections).
+
+So you could retrieve the informations of all the blocks, all the sections of the blocks and all the elements of the sections with this call:
+
+```
+[[NKManager sharedManager] getBlocksWithParameters:nil IncludingSections:TRUE AndElements: TRUE Success:^(NSArray<NKBlock *> *blocks, NKPaginationInfo *pagintaionInfo) {
+        
+} Failure:^(NSError *error) {
+
+}];
+```
+
 # Sections
 
+You can retrieve all the sections with a block with the given id with the function `getBlocksWithParameters:Success:Failure` like this:
+
+```
+[[NKManager sharedManager] getSectionsWithBlockId: THE_BLOCK_ID Parameters:nil Success:^(NSArray<NKSection *> *sections, NKPaginationInfo *pagintaionInfo) {
+        
+} Failure:^(NSError *error) {
+        
+}];
+```
+
+Like for the blocks there's a version of this function that takes a bool `includeElements` that indicate to include or not the elements of the section se if you want to retrieve all the sections of a block and their elements you can call:
+
+```
+[[NKManager sharedManager] getSectionsWithBlockId:THE_BLOCK_ID IncludeElement:TRUE Parameters:nil Success:^(NSArray<NKSection *> *sections, NKPaginationInfo *pagintaionInfo) {
+        
+} Failure:^(NSError *error) {
+        
+}];
+```
+
 # Object mapping
+
+The `NKSection` class has a commodity function that can be used to map the elements of the section to a custom object created by you. For Exaple if you have a `News` object like this
+
+```
+#import <Foundation/Foundation.h>
+
+@interface News : NSObject
+
+@property NSString *title;
+@property NSString *content;
+@property NSURL *imageUrl;
+@property NSString *link;
+
+@end
+```
+
+And a block in Nooko that represent a news you could create and populate an array of news object like this:
+
+```
+NSInteger newsBlockId = 12;
+NSDictionary *mappingDictionary = @{@"title" : @"title",
+                                    @"content" : @"content",
+                                    @"image.firstImage.url" : @"imageUrl",
+                                    @"link" : @"link"};
+NSMutableArray *newsArray = [[NSMutableArray alloc] init];
+[[NKManager sharedManager] getBlockWithBlockId:newsBlockId Parameters:nil IncludingSections:YES AndElements:YES Success:^(NKBlock *block) {
+   for (NKSection *section in block.sections){
+        News *n = [[News alloc] init];
+        [section mapElementsToObject:n withMapping:mappingDictionary];
+        [newsArray addObject:n];
+    }
+    self->news = newsArray;
+    [self.tableView reloadData];
+ } Failure:^(NSError * _Nonnull error) {
+    [self showError:error];
+ }];
+```
+
+As you can see in the example you can point to the property of the object using the dot notation. If it's not defined any property the SDK will use the value of the element object (calling the value function).
+
+You can find a complete example in the sample app in the Example directory.
 
 # Serialization
 
