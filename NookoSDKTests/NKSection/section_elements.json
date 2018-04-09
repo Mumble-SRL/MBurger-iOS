@@ -1,0 +1,103 @@
+
+{
+    "id": 96,
+    "order": 3,
+    "all_locales": false,
+    "show_in_app": true,
+    "available_at": 1516006500,
+    "updated_at": 1520603520,
+    "elements": {
+        "title": {
+            "id": 351,
+            "name": "title",
+            "type": "text",
+            "order": 1,
+            "value": "ewrgw"
+        },
+        "content": {
+            "id": 352,
+            "name": "content",
+            "type": "textarea",
+            "order": 2,
+            "value": "werg"
+        },
+        "link": {
+            "id": 353,
+            "name": "link",
+            "type": "text",
+            "order": 3,
+            "value": ""
+        },
+        "image": {
+            "id": 354,
+            "name": "image",
+            "type": "image",
+            "order": 4,
+            "value": [
+                      {
+                      "id": 147,
+                      "url": "/storage/147/conversions/medium.jpg",
+                      "size": 45166,
+                      "mime_type": "image/jpeg"
+                      },
+                      {
+                      "id": 173,
+                      "url": "/storage/173/conversions/medium.jpg",
+                      "size": 45166,
+                      "mime_type": "image/jpeg"
+                      },
+                      {
+                      "id": 174,
+                      "url": "/storage/174/conversions/medium.jpg",
+                      "size": 9459,
+                      "mime_type": "image/jpeg"
+                      },
+                      {
+                      "id": 175,
+                      "url": "/storage/175/conversions/medium.jpg",
+                      "size": 16816,
+                      "mime_type": "image/jpeg"
+                      },
+                      {
+                      "id": 176,
+                      "url": "/storage/176/conversions/medium.jpg",
+                      "size": 12302,
+                      "mime_type": "image/jpeg"
+                      },
+                      {
+                      "id": 177,
+                      "url": "/storage/177/conversions/medium.jpg",
+                      "size": 211645,
+                      "mime_type": "image/png"
+                      },
+                      {
+                      "id": 178,
+                      "url": "/storage/178/conversions/medium.jpg",
+                      "size": 184595,
+                      "mime_type": "image/jpeg"
+                      }
+                      ]
+        },
+        "availability": {
+            "id": 355,
+            "name": "availability",
+            "type": "availability",
+            "order": 5,
+            "value": ""
+        },
+        "push": {
+            "id": 356,
+            "name": "push",
+            "type": "push",
+            "order": 6,
+            "value": ""
+        },
+        "": {
+            "id": 357,
+            "name": "",
+            "type": "beacon",
+            "order": 9,
+            "value": ""
+        }
+    }
+}

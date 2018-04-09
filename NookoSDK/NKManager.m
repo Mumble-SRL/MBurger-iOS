@@ -43,14 +43,14 @@
 }
 
 - (void) getBlocksWithParameters: (NSArray <id<NKParameter>> *) parameters
-                         Success: (void (^)(NSArray <NKBlock *> *blocks, NKMetaInfo *metaInfo)) success
+                         Success: (void (^)(NSArray <NKBlock *> *blocks, NKPaginationInfo *pagintaionInfo)) success
                          Failure: (void (^)(NSError * error)) failure{
     [self getBlocksWithParameters:parameters IncludingSections:FALSE AndElements:FALSE Success:success Failure:failure];
 }
 
 - (void) getBlocksWithParameters: (NSArray <id<NKParameter>> *) parameters
                IncludingSections: (BOOL) includeSections
-                         Success: (void (^)(NSArray <NKBlock *> *blocks, NKMetaInfo *metaInfo)) success
+                         Success: (void (^)(NSArray <NKBlock *> *blocks, NKPaginationInfo *pagintaionInfo)) success
                          Failure: (void (^)(NSError *error)) failure{
     [self getBlocksWithParameters:parameters IncludingSections:includeSections AndElements:FALSE Success:success Failure:failure];
 }
@@ -58,7 +58,7 @@
 - (void) getBlocksWithParameters: (NSArray <id<NKParameter>> *) parameters
                IncludingSections: (BOOL) includeSections
                      AndElements: (BOOL) includeElements
-                         Success: (void (^)(NSArray <NKBlock *> *blocks, NKMetaInfo *metaInfo)) success
+                         Success: (void (^)(NSArray <NKBlock *> *blocks, NKPaginationInfo *pagintaionInfo)) success
                          Failure: (void (^)(NSError *error)) failure{
     NSMutableDictionary *parametersMutable = [[NSMutableDictionary alloc] init];
     if (includeSections){
@@ -79,7 +79,7 @@
                            Parameters:parametersMutable
                      HeaderParameters:nil
                               Success:^(NKResponse *response) {
-                                  NKMetaInfo *metaInfo = [[NKMetaInfo alloc] initWithDictionary:response.payload[@"meta"]];
+                                  NKPaginationInfo *pagintaionInfo = [[NKPaginationInfo alloc] initWithDictionary:response.payload[@"meta"]];
                                   NSMutableArray *blocks = [[NSMutableArray alloc] init];
                                   dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
                                       NSArray *items = response.payload[@"items"];
@@ -88,7 +88,7 @@
                                       }
                                       dispatch_async(dispatch_get_main_queue(), ^(void){
                                           if (success){
-                                              success(blocks, metaInfo);
+                                              success(blocks, pagintaionInfo);
                                           }
                                       });
                                   });
@@ -154,7 +154,7 @@
 
 - (void) getSectionsWithBlockId: (NSInteger) blockId
                      Parameters: (NSArray <id<NKParameter>> *) parameters
-                        Success: (void (^)(NSArray <NKSection *> *sections, NKMetaInfo *metaInfo)) success
+                        Success: (void (^)(NSArray <NKSection *> *sections, NKPaginationInfo *pagintaionInfo)) success
                         Failure: (void (^)(NSError *error)) failure{
     [self getSectionsWithBlockId:blockId Parameters:parameters IncludeElements:FALSE Success:success Failure:failure];
 }
@@ -162,7 +162,7 @@
 - (void) getSectionsWithBlockId: (NSInteger) blockId
                      Parameters: (NSArray <id<NKParameter>> *) parameters
                 IncludeElements: (BOOL) includeElements
-                        Success: (void (^)(NSArray <NKSection *> *sections, NKMetaInfo *metaInfo)) success
+                        Success: (void (^)(NSArray <NKSection *> *sections, NKPaginationInfo *pagintaionInfo)) success
                         Failure: (void (^)(NSError *error)) failure{
     NSMutableDictionary *parametersMutable = [[NSMutableDictionary alloc] init];
     if (includeElements){
@@ -178,7 +178,7 @@
                            Parameters:parametersMutable
                      HeaderParameters:nil
                               Success:^(NKResponse *response) {
-                                  NKMetaInfo *metaInfo = [[NKMetaInfo alloc] initWithDictionary:response.payload[@"meta"]];
+                                  NKPaginationInfo *paginationInfo = [[NKPaginationInfo alloc] initWithDictionary:response.payload[@"meta"]];
                                   NSMutableArray *sections = [[NSMutableArray alloc] init];
                                   dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
                                       NSArray *items = response.payload[@"items"];
@@ -187,7 +187,7 @@
                                       }
                                       dispatch_async(dispatch_get_main_queue(), ^(void){
                                           if (success){
-                                              success(sections, metaInfo);
+                                              success(sections, paginationInfo);
                                           }
                                       });
                                   });

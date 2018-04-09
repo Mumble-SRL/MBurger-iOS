@@ -6,14 +6,14 @@
 //  Copyright © 2018 Mumble. All rights reserved.
 //
 
-#import "NKMedia.h"
+#import "NKFile.h"
 
-@implementation NKMedia
+@implementation NKFile
 
-- (instancetype) initWithId: (NSInteger) mediaId Url: (NSURL *) url MimeType: (NSString *) mimeType Size: (NSInteger) size{
+- (instancetype) initWithId: (NSInteger) fileId Url: (NSURL *) url MimeType: (NSString *) mimeType Size: (NSInteger) size{
     self = [super init];
     if (self){
-        self.mediaId = mediaId;
+        self.fileId = fileId;
         self.url = url;
         self.mimeType = mimeType;
         self.size = size;
@@ -22,13 +22,13 @@
 }
 
 - (instancetype) initWithDictionary: (NSDictionary *) dictionary{
-    NSInteger mediaId = [dictionary[@"id"] integerValue];
+    NSInteger fileId = [dictionary[@"id"] integerValue];
     NSString *mimeType = dictionary[@"mime_type"];
     NSInteger size = [dictionary[@"size"] integerValue];
     //TODO: remove url
     NSString *mediaUrlString = dictionary[@"url"];
     NSURL *mediaUrl = [NSURL URLWithString:mediaUrlString];
-    return [self initWithId:mediaId Url:mediaUrl MimeType:mimeType Size:size];
+    return [self initWithId:fileId Url:mediaUrl MimeType:mimeType Size:size];
 }
 
 #pragma mark - NSCoding-NSSecureCoding
@@ -36,7 +36,7 @@
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{
     self = [super init];
     if (self){
-        self.mediaId = [aDecoder decodeIntegerForKey:@"mediaId"];
+        self.fileId = [aDecoder decodeIntegerForKey:@"fileId"];
         self.url = [aDecoder decodeObjectOfClass:NSURL.class forKey:@"url"];
         self.mimeType = [aDecoder decodeObjectOfClass:NSString.class forKey:@"mimeType"];
         self.size = [aDecoder decodeIntegerForKey:@"size"];
@@ -45,7 +45,7 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder{
-    [aCoder encodeInteger:_mediaId forKey:@"mediaId"];
+    [aCoder encodeInteger:_fileId forKey:@"fileId"];
     [aCoder encodeObject:_url forKey:@"url"];
     [aCoder encodeObject:_mimeType forKey:@"mimeType"];
     [aCoder encodeInteger:_size forKey:@"size"];

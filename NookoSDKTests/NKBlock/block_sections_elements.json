@@ -1,0 +1,247 @@
+{
+    "id": 13,
+    "order": 1,
+    "title": "News",
+    "subtitle": "",
+    "url_title": "news",
+    "is_single": false,
+    "is_separator": false,
+    "is_treeview": false,
+    "parent_id": null,
+    "sections": [
+                 {
+                 "id": 96,
+                 "order": 3,
+                 "all_locales": false,
+                 "show_in_app": true,
+                 "available_at": 1516006500,
+                 "updated_at": 1520603520,
+                 "elements": {
+                 "title": {
+                 "id": 351,
+                 "name": "title",
+                 "type": "text",
+                 "order": 1,
+                 "value": "ewrgw"
+                 },
+                 "content": {
+                 "id": 352,
+                 "name": "content",
+                 "type": "textarea",
+                 "order": 2,
+                 "value": "werg"
+                 },
+                 "link": {
+                 "id": 353,
+                 "name": "link",
+                 "type": "text",
+                 "order": 3,
+                 "value": ""
+                 },
+                 "image": {
+                 "id": 354,
+                 "name": "image",
+                 "type": "image",
+                 "order": 4,
+                 "value": [
+                           {
+                           "id": 147,
+                           "url": "/storage/147/conversions/medium.jpg",
+                           "size": 45166,
+                           "mime_type": "image/jpeg"
+                           },
+                           {
+                           "id": 173,
+                           "url": "/storage/173/conversions/medium.jpg",
+                           "size": 45166,
+                           "mime_type": "image/jpeg"
+                           },
+                           {
+                           "id": 174,
+                           "url": "/storage/174/conversions/medium.jpg",
+                           "size": 9459,
+                           "mime_type": "image/jpeg"
+                           },
+                           {
+                           "id": 175,
+                           "url": "/storage/175/conversions/medium.jpg",
+                           "size": 16816,
+                           "mime_type": "image/jpeg"
+                           },
+                           {
+                           "id": 176,
+                           "url": "/storage/176/conversions/medium.jpg",
+                           "size": 12302,
+                           "mime_type": "image/jpeg"
+                           },
+                           {
+                           "id": 177,
+                           "url": "/storage/177/conversions/medium.jpg",
+                           "size": 211645,
+                           "mime_type": "image/png"
+                           },
+                           {
+                           "id": 178,
+                           "url": "/storage/178/conversions/medium.jpg",
+                           "size": 184595,
+                           "mime_type": "image/jpeg"
+                           }
+                           ]
+                 },
+                 "availability": {
+                 "id": 355,
+                 "name": "availability",
+                 "type": "availability",
+                 "order": 5,
+                 "value": ""
+                 },
+                 "push": {
+                 "id": 356,
+                 "name": "push",
+                 "type": "push",
+                 "order": 6,
+                 "value": ""
+                 },
+                 "": {
+                 "id": 357,
+                 "name": "",
+                 "type": "beacon",
+                 "order": 9,
+                 "value": ""
+                 }
+                 }
+                 },
+                 {
+                 "id": 98,
+                 "order": 4,
+                 "all_locales": false,
+                 "show_in_app": true,
+                 "available_at": 1503648577,
+                 "updated_at": 1503648577,
+                 "elements": {
+                 "title": {
+                 "id": 359,
+                 "name": "title",
+                 "type": "text",
+                 "order": 1,
+                 "value": "ceqw"
+                 },
+                 "content": {
+                 "id": 360,
+                 "name": "content",
+                 "type": "textarea",
+                 "order": 2,
+                 "value": "cqew"
+                 },
+                 "link": {
+                 "id": 361,
+                 "name": "link",
+                 "type": "text",
+                 "order": 3,
+                 "value": "http://google.com"
+                 },
+                 "image": {
+                 "id": 362,
+                 "name": "image",
+                 "type": "image",
+                 "order": 4,
+                 "value": [
+                           {
+                           "id": 148,
+                           "url": "/storage/148/conversions/medium.jpg",
+                           "size": 250833,
+                           "mime_type": "image/png"
+                           }
+                           ]
+                 },
+                 "availability": {
+                 "id": 363,
+                 "name": "availability",
+                 "type": "availability",
+                 "order": 5,
+                 "value": ""
+                 },
+                 "push": {
+                 "id": 364,
+                 "name": "push",
+                 "type": "push",
+                 "order": 6,
+                 "value": ""
+                 },
+                 "": {
+                 "id": 365,
+                 "name": "",
+                 "type": "beacon",
+                 "order": 9,
+                 "value": ""
+                 }
+                 }
+                 },
+                 {
+                 "id": 99,
+                 "order": 6,
+                 "all_locales": false,
+                 "show_in_app": true,
+                 "available_at": 1504081020,
+                 "updated_at": 1503649203,
+                 "elements": {
+                 "title": {
+                 "id": 366,
+                 "name": "title",
+                 "type": "text",
+                 "order": 1,
+                 "value": "def3"
+                 },
+                 "content": {
+                 "id": 367,
+                 "name": "content",
+                 "type": "textarea",
+                 "order": 2,
+                 "value": "r3f3"
+                 },
+                 "link": {
+                 "id": 368,
+                 "name": "link",
+                 "type": "text",
+                 "order": 3,
+                 "value": ""
+                 },
+                 "image": {
+                 "id": 369,
+                 "name": "image",
+                 "type": "image",
+                 "order": 4,
+                 "value": [
+                           {
+                           "id": 149,
+                           "url": "/storage/149/conversions/medium.jpg",
+                           "size": 71146,
+                           "mime_type": "image/jpeg"
+                           }
+                           ]
+                 },
+                 "availability": {
+                 "id": 370,
+                 "name": "availability",
+                 "type": "availability",
+                 "order": 5,
+                 "value": ""
+                 },
+                 "push": {
+                 "id": 371,
+                 "name": "push",
+                 "type": "push",
+                 "order": 6,
+                 "value": ""
+                 },
+                 "": {
+                 "id": 372,
+                 "name": "",
+                 "type": "beacon",
+                 "order": 9,
+                 "value": ""
+                 }
+                 }
+                 }
+                 ]
+}

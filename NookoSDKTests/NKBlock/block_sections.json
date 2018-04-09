@@ -1,0 +1,37 @@
+{
+    "id": 13,
+    "order": 1,
+    "title": "News",
+    "subtitle": "",
+    "url_title": "news",
+    "is_single": false,
+    "is_separator": false,
+    "is_treeview": false,
+    "parent_id": null,
+    "sections": [
+                 {
+                 "id": 96,
+                 "order": 3,
+                 "all_locales": false,
+                 "show_in_app": true,
+                 "available_at": 1516006500,
+                 "updated_at": 1520603520
+                 },
+                 {
+                 "id": 98,
+                 "order": 4,
+                 "all_locales": false,
+                 "show_in_app": true,
+                 "available_at": 1503648577,
+                 "updated_at": 1503648577
+                 },
+                 {
+                 "id": 99,
+                 "order": 6,
+                 "all_locales": false,
+                 "show_in_app": true,
+                 "available_at": 1504081020,
+                 "updated_at": 1503649203
+                 }
+                 ]
+}

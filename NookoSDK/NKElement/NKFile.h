@@ -9,14 +9,14 @@
 #import <Foundation/Foundation.h>
 
 /**
- This class represents a media.
+ This class represents a file.
  */
-@interface NKMedia : NSObject <NSCoding, NSSecureCoding>
+@interface NKFile : NSObject <NSCoding, NSSecureCoding>
 
 /**
- The id of the media.
+ The id of the file.
  */
-@property (nonatomic, assign) NSInteger mediaId;
+@property (nonatomic, assign) NSInteger fileId;
 
 /**
  The url of the media.
@@ -36,14 +36,14 @@
 /**
  Initializes an image with the id, url, mimeType and size.
  
- @param mediaId The id of the media.
+ @param fileId The id of the file.
  @param url The url of the element.
  @param mimeType The Mime Type of the element.
  @param size The size of the image.
  
  @return a newly created NKImageElement initialized with the elementId, the name and the value passed.
  */
-- (instancetype _Nonnull) initWithId: (NSInteger) mediaId Url: (NSURL * _Nonnull) url MimeType: (NSString * _Nonnull) mimeType Size: (NSInteger) size;
+- (instancetype _Nonnull) initWithId: (NSInteger) fileId Url: (NSURL * _Nonnull) url MimeType: (NSString * _Nonnull) mimeType Size: (NSInteger) size;
 
 /**
  Initializes a media with the dictionary returned by the api.

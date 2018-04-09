@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "NKProject.h"
 #import "NKBlock.h"
-#import "NKMetaInfo.h"
+#import "NKPaginationInfo.h"
 #import "NKParameter.h"
 
 /**
  The manager of the SDK, this is your entry point for all the calls you do with Nooko.
  All the api calls have two blocks as parameters called when the api completes, one (Success) for the succes case and one for the failure (Failure). These blocks are pushed in the main thread by the SDK.
- When the return of the api is na array it's returned also a `NKMetaInfo` object with the information about the pagination (total number of elements and the range of the elements returned)
+ When the return of the api is na array it's returned also a `NKPaginationInfo` object with the information about the pagination (total number of elements and the range of the elements returned)
  */
 @interface NKManager : NSObject
 
@@ -53,7 +53,7 @@ The API token used to make all the requests to the api.
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
  */
 - (void) getBlocksWithParameters: (NSArray <id<NKParameter>> * _Nullable) parameters
-                         Success: (void (^ _Nullable)(NSArray <NKBlock *> * _Nonnull blocks, NKMetaInfo * _Nonnull metaInfo)) success
+                         Success: (void (^ _Nullable)(NSArray <NKBlock *> * _Nonnull blocks, NKPaginationInfo * _Nonnull pagintaionInfo)) success
                          Failure: (void (^ _Nullable)(NSError * _Nonnull error)) failure;
 
 /**
@@ -67,7 +67,7 @@ The API token used to make all the requests to the api.
  */
 - (void) getBlocksWithParameters: (NSArray <id<NKParameter>> * _Nullable) parameters
                IncludingSections: (BOOL) includeSections
-                         Success: (void (^ _Nullable)(NSArray <NKBlock *> * _Nonnull blocks, NKMetaInfo * _Nonnull metaInfo)) success
+                         Success: (void (^ _Nullable)(NSArray <NKBlock *> * _Nonnull blocks, NKPaginationInfo * _Nonnull pagintaionInfo)) success
                          Failure: (void (^ _Nullable)(NSError * _Nonnull error)) failure;
 
 /**
@@ -82,7 +82,7 @@ The API token used to make all the requests to the api.
 - (void) getBlocksWithParameters: (NSArray <id<NKParameter>> * _Nullable) parameters
                IncludingSections: (BOOL) includeSections
                      AndElements: (BOOL) includeElements
-                         Success: (void (^ _Nullable)(NSArray <NKBlock *> * _Nonnull blocks, NKMetaInfo * _Nonnull metaInfo)) success
+                         Success: (void (^ _Nullable)(NSArray <NKBlock *> * _Nonnull blocks, NKPaginationInfo * _Nonnull pagintaionInfo)) success
                          Failure: (void (^ _Nullable)(NSError * _Nonnull error)) failure;
 
 /**
@@ -143,7 +143,7 @@ The API token used to make all the requests to the api.
  */
 - (void) getSectionsWithBlockId: (NSInteger) blockId
                      Parameters: (NSArray <id<NKParameter>> * _Nullable) parameters
-                        Success: (void (^ _Nullable)(NSArray <NKSection *> * _Nonnull sections, NKMetaInfo * _Nonnull metaInfo)) success
+                        Success: (void (^ _Nullable)(NSArray <NKSection *> * _Nonnull sections, NKPaginationInfo * _Nonnull pagintaionInfo)) success
                         Failure: (void (^ _Nullable)(NSError * _Nonnull error)) failure;
 /**
  Retrieve the sections of the block with the specified id.
@@ -157,7 +157,7 @@ The API token used to make all the requests to the api.
 - (void) getSectionsWithBlockId: (NSInteger) blockId
                      Parameters: (NSArray <id<NKParameter>> * _Nullable) parameters
                 IncludeElements: (BOOL) includeElements
-                        Success: (void (^ _Nullable)(NSArray <NKSection *> * _Nonnull sections, NKMetaInfo * _Nonnull metaInfo)) success
+                        Success: (void (^ _Nullable)(NSArray <NKSection *> * _Nonnull sections, NKPaginationInfo * _Nonnull pagintaionInfo)) success
                         Failure: (void (^ _Nullable)(NSError * _Nonnull error)) failure;
 
 /**

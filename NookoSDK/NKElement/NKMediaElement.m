@@ -10,7 +10,7 @@
 
 @implementation NKMediaElement
 
-- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Order: (NSInteger) order Medias: (NSArray <NKMedia *> *) medias MediaType: (NKMediaType) mediaType{
+- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Order: (NSInteger) order Medias: (NSArray <NKFile *> *) medias MediaType: (NKMediaType) mediaType{
     self = [super initWithElementId:elementId Name:name Order:order Type:NKElementTypeMedia];
     if (self){
         self.medias = medias;
@@ -29,7 +29,7 @@
         NSMutableArray *mediaMutable = [[NSMutableArray alloc] init];
         NSArray *mediaFromapi = dictionary[@"value"];
         for (NSDictionary *mediaDictionary in mediaFromapi){
-            NKMedia *media = [[NKMedia alloc] initWithDictionary:mediaDictionary];
+            NKFile *media = [[NKFile alloc] initWithDictionary:mediaDictionary];
             if (media){
                 [mediaMutable addObject:media];
             }
@@ -81,7 +81,7 @@
     return @"File";
 }
 
-- (NKMedia * _Nullable) firstMedia{
+- (NKFile * _Nullable) firstMedia{
     if (self.medias.count > 0){
         return self.medias.firstObject;
     }

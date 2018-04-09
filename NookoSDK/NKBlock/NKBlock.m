@@ -41,13 +41,21 @@
     return [self initWithBlockId:blockId Title:blockTitle Subtitle:blockSubtitle Order:order Sections:sections];
 }
 
+- (BOOL) isEqual:(id)object {
+    if ([object isKindOfClass:[NKBlock class]]){
+        return [(NKBlock *) object blockId] == self.blockId;
+    }
+    return FALSE;
+}
+
 #pragma mark - NSCoding-NSSecureCoding
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{
     self = [super init];
     if (self){
+        self.blockId = [aDecoder decodeIntegerForKey:@"blockId"];
         self.title = [aDecoder decodeObjectOfClass:NSString.class forKey:@"title"];
-        self.subtitle = [aDecoder decodeObjectOfClass:NSString.class forKey:@"title"];
+        self.subtitle = [aDecoder decodeObjectOfClass:NSString.class forKey:@"subtitle"];
         self.order = [aDecoder decodeIntegerForKey:@"order"];
         self.sections = [aDecoder decodeObjectOfClass:NSArray.class forKey:@"sections"];
     }
@@ -55,6 +63,7 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder{
+    [aCoder encodeInteger:_blockId forKey:@"blockId"];
     [aCoder encodeObject:_title forKey:@"title"];
     [aCoder encodeObject:_subtitle forKey:@"subtitle"];
     [aCoder encodeInteger:_order forKey:@"order"];

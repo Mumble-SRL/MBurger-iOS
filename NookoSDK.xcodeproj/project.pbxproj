@@ -12,13 +12,21 @@
 		6608391E2073A56600432DE7 /* NKApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6608391D2073A56600432DE7 /* NKApiManager.m */; };
 		660839212073A5FA00432DE7 /* NKResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 660839202073A5FA00432DE7 /* NKResponse.m */; };
 		660839242073B8A800432DE7 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 660839232073B8A800432DE7 /* News.m */; };
-		660E865A2076023A008DF597 /* NKMetaInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E86592076023A008DF597 /* NKMetaInfo.m */; };
+		660E865A2076023A008DF597 /* NKPaginationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E86592076023A008DF597 /* NKPaginationInfo.m */; };
 		660E865E2076070C008DF597 /* NKSortParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E865D2076070C008DF597 /* NKSortParameter.m */; };
 		660E86612076071B008DF597 /* NKPaginationParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E86602076071B008DF597 /* NKPaginationParameter.m */; };
 		660E866420760726008DF597 /* NKFilterParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E866320760726008DF597 /* NKFilterParameter.m */; };
 		660E866720760734008DF597 /* NKGeofenceParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E866620760734008DF597 /* NKGeofenceParameter.m */; };
 		660E866A20760741008DF597 /* NKGeneralParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E866920760741008DF597 /* NKGeneralParameter.m */; };
 		666DB42A2073C8FA00185529 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 666DB4292073C8FA00185529 /* Readme.md */; };
+		667F21D8207B56A900C4CA92 /* NKblockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 667F21D7207B56A900C4CA92 /* NKblockTests.m */; };
+		667F21DA207B573200C4CA92 /* block_sections_elements.json in Resources */ = {isa = PBXBuildFile; fileRef = 667F21D9207B573200C4CA92 /* block_sections_elements.json */; };
+		667F21DC207B580100C4CA92 /* block.json in Resources */ = {isa = PBXBuildFile; fileRef = 667F21DB207B580100C4CA92 /* block.json */; };
+		667F21DE207B585300C4CA92 /* block_sections.json in Resources */ = {isa = PBXBuildFile; fileRef = 667F21DD207B585300C4CA92 /* block_sections.json */; };
+		667F21E4207B5BD800C4CA92 /* NKSectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 667F21E3207B5BD800C4CA92 /* NKSectionTests.m */; };
+		667F21E7207B5C0700C4CA92 /* section_elements.json in Resources */ = {isa = PBXBuildFile; fileRef = 667F21E5207B5C0700C4CA92 /* section_elements.json */; };
+		667F21E8207B5C0700C4CA92 /* section.json in Resources */ = {isa = PBXBuildFile; fileRef = 667F21E6207B5C0700C4CA92 /* section.json */; };
+		667F21EB207B606400C4CA92 /* NKPollElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 667F21EA207B606400C4CA92 /* NKPollElement.m */; };
 		667F407D2077ADEB00B18D16 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 667F407C2077ADEB00B18D16 /* NewsTableViewCell.m */; };
 		667F40802077B3D500B18D16 /* NKElementFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 667F407F2077B3D500B18D16 /* NKElementFactory.m */; };
 		667F40832077B76200B18D16 /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 667F40822077B76200B18D16 /* NewsDetailViewController.m */; };
@@ -26,7 +34,7 @@
 		66AF6737206E3236003FD62F /* NewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF6736206E3236003FD62F /* NewsListViewController.m */; };
 		66AF673C206E3236003FD62F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66AF673B206E3236003FD62F /* Assets.xcassets */; };
 		66AF6742206E3236003FD62F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF6741206E3236003FD62F /* main.m */; };
-		66AF674C206E3236003FD62F /* NookoSDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF674B206E3236003FD62F /* NookoSDKTests.m */; };
+		66AF674C206E3236003FD62F /* NKProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF674B206E3236003FD62F /* NKProjectTests.m */; };
 		66AF6759206E325E003FD62F /* NKManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF6758206E325E003FD62F /* NKManager.m */; };
 		66AF675D206E38ED003FD62F /* NKSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF675C206E38ED003FD62F /* NKSection.m */; };
 		66AF6760206E3A1F003FD62F /* NKElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF675F206E3A1F003FD62F /* NKElement.m */; };
@@ -42,7 +50,7 @@
 		66AF6782206E7979003FD62F /* NKAddressElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF6781206E7979003FD62F /* NKAddressElement.m */; };
 		66F925A02074DFC300C850F3 /* NKDropdownElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F9259F2074DFC300C850F3 /* NKDropdownElement.m */; };
 		66F925AB20751BA600C850F3 /* NKImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F925AA20751BA600C850F3 /* NKImage.m */; };
-		66F925AE20751FA800C850F3 /* NKMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F925AD20751FA800C850F3 /* NKMedia.m */; };
+		66F925AE20751FA800C850F3 /* NKFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F925AD20751FA800C850F3 /* NKFile.m */; };
 		CC1337E9351A16F132D873AB /* libPods-NookoSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 387B3A1D27ED0DFB36EC61F7 /* libPods-NookoSDK.a */; };
 /* End PBXBuildFile section */
 
@@ -66,8 +74,8 @@
 		660839202073A5FA00432DE7 /* NKResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKResponse.m; sourceTree = "<group>"; };
 		660839222073B8A800432DE7 /* News.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		660839232073B8A800432DE7 /* News.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
-		660E86582076023A008DF597 /* NKMetaInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKMetaInfo.h; sourceTree = "<group>"; };
-		660E86592076023A008DF597 /* NKMetaInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKMetaInfo.m; sourceTree = "<group>"; };
+		660E86582076023A008DF597 /* NKPaginationInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKPaginationInfo.h; sourceTree = "<group>"; };
+		660E86592076023A008DF597 /* NKPaginationInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKPaginationInfo.m; sourceTree = "<group>"; };
 		660E865C2076070C008DF597 /* NKSortParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKSortParameter.h; sourceTree = "<group>"; };
 		660E865D2076070C008DF597 /* NKSortParameter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKSortParameter.m; sourceTree = "<group>"; };
 		660E865F2076071B008DF597 /* NKPaginationParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKPaginationParameter.h; sourceTree = "<group>"; };
@@ -80,6 +88,15 @@
 		660E866920760741008DF597 /* NKGeneralParameter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKGeneralParameter.m; sourceTree = "<group>"; };
 		660E866C2076088B008DF597 /* NKParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKParameter.h; sourceTree = "<group>"; };
 		666DB4292073C8FA00185529 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		667F21D7207B56A900C4CA92 /* NKblockTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKblockTests.m; sourceTree = "<group>"; };
+		667F21D9207B573200C4CA92 /* block_sections_elements.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = block_sections_elements.json; sourceTree = "<group>"; };
+		667F21DB207B580100C4CA92 /* block.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = block.json; sourceTree = "<group>"; };
+		667F21DD207B585300C4CA92 /* block_sections.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = block_sections.json; sourceTree = "<group>"; };
+		667F21E3207B5BD800C4CA92 /* NKSectionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKSectionTests.m; sourceTree = "<group>"; };
+		667F21E5207B5C0700C4CA92 /* section_elements.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = section_elements.json; sourceTree = "<group>"; };
+		667F21E6207B5C0700C4CA92 /* section.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = section.json; sourceTree = "<group>"; };
+		667F21E9207B606400C4CA92 /* NKPollElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKPollElement.h; sourceTree = "<group>"; };
+		667F21EA207B606400C4CA92 /* NKPollElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKPollElement.m; sourceTree = "<group>"; };
 		667F407B2077ADEB00B18D16 /* NewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
 		667F407C2077ADEB00B18D16 /* NewsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
 		667F407E2077B3D500B18D16 /* NKElementFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKElementFactory.h; sourceTree = "<group>"; };
@@ -95,7 +112,7 @@
 		66AF6740206E3236003FD62F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66AF6741206E3236003FD62F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		66AF6747206E3236003FD62F /* NookoSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NookoSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		66AF674B206E3236003FD62F /* NookoSDKTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NookoSDKTests.m; sourceTree = "<group>"; };
+		66AF674B206E3236003FD62F /* NKProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKProjectTests.m; sourceTree = "<group>"; };
 		66AF674D206E3236003FD62F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66AF6757206E325E003FD62F /* NKManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKManager.h; sourceTree = "<group>"; };
 		66AF6758206E325E003FD62F /* NKManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKManager.m; sourceTree = "<group>"; };
@@ -128,8 +145,8 @@
 		66F9259F2074DFC300C850F3 /* NKDropdownElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKDropdownElement.m; sourceTree = "<group>"; };
 		66F925A920751BA600C850F3 /* NKImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKImage.h; sourceTree = "<group>"; };
 		66F925AA20751BA600C850F3 /* NKImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKImage.m; sourceTree = "<group>"; };
-		66F925AC20751FA800C850F3 /* NKMedia.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKMedia.h; sourceTree = "<group>"; };
-		66F925AD20751FA800C850F3 /* NKMedia.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKMedia.m; sourceTree = "<group>"; };
+		66F925AC20751FA800C850F3 /* NKFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKFile.h; sourceTree = "<group>"; };
+		66F925AD20751FA800C850F3 /* NKFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKFile.m; sourceTree = "<group>"; };
 		70254884B91E6CB2A2CD5706 /* Pods-NookoSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NookoSDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-NookoSDK/Pods-NookoSDK.release.xcconfig"; sourceTree = "<group>"; };
 		91C5A5C85F062608E05397EB /* Pods-NookoSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NookoSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NookoSDK/Pods-NookoSDK.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -180,13 +197,13 @@
 			path = NKApiManager;
 			sourceTree = "<group>";
 		};
-		660E86572076021F008DF597 /* NKMetaInfo */ = {
+		660E86572076021F008DF597 /* NKPaginationInfo */ = {
 			isa = PBXGroup;
 			children = (
-				660E86582076023A008DF597 /* NKMetaInfo.h */,
-				660E86592076023A008DF597 /* NKMetaInfo.m */,
+				660E86582076023A008DF597 /* NKPaginationInfo.h */,
+				660E86592076023A008DF597 /* NKPaginationInfo.m */,
 			);
-			path = NKMetaInfo;
+			path = NKPaginationInfo;
 			sourceTree = "<group>";
 		};
 		660E865B207606D4008DF597 /* NKParameter */ = {
@@ -205,6 +222,35 @@
 				660E866920760741008DF597 /* NKGeneralParameter.m */,
 			);
 			path = NKParameter;
+			sourceTree = "<group>";
+		};
+		667F21D5207B53F500C4CA92 /* NKProject */ = {
+			isa = PBXGroup;
+			children = (
+				66AF674B206E3236003FD62F /* NKProjectTests.m */,
+			);
+			path = NKProject;
+			sourceTree = "<group>";
+		};
+		667F21D6207B569400C4CA92 /* NKBlock */ = {
+			isa = PBXGroup;
+			children = (
+				667F21DB207B580100C4CA92 /* block.json */,
+				667F21DD207B585300C4CA92 /* block_sections.json */,
+				667F21D9207B573200C4CA92 /* block_sections_elements.json */,
+				667F21D7207B56A900C4CA92 /* NKblockTests.m */,
+			);
+			path = NKBlock;
+			sourceTree = "<group>";
+		};
+		667F21E2207B5BC100C4CA92 /* NKSection */ = {
+			isa = PBXGroup;
+			children = (
+				667F21E6207B5C0700C4CA92 /* section.json */,
+				667F21E5207B5C0700C4CA92 /* section_elements.json */,
+				667F21E3207B5BD800C4CA92 /* NKSectionTests.m */,
+			);
+			path = NKSection;
 			sourceTree = "<group>";
 		};
 		667F40842077BA8E00B18D16 /* ViewControllers */ = {
@@ -253,7 +299,9 @@
 		66AF674A206E3236003FD62F /* NookoSDKTests */ = {
 			isa = PBXGroup;
 			children = (
-				66AF674B206E3236003FD62F /* NookoSDKTests.m */,
+				667F21D5207B53F500C4CA92 /* NKProject */,
+				667F21D6207B569400C4CA92 /* NKBlock */,
+				667F21E2207B5BC100C4CA92 /* NKSection */,
 				66AF674D206E3236003FD62F /* Info.plist */,
 			);
 			path = NookoSDKTests;
@@ -265,7 +313,7 @@
 				66AF675A206E3784003FD62F /* NookoSDK.h */,
 				66AF6757206E325E003FD62F /* NKManager.h */,
 				66AF6758206E325E003FD62F /* NKManager.m */,
-				660E86572076021F008DF597 /* NKMetaInfo */,
+				660E86572076021F008DF597 /* NKPaginationInfo */,
 				660E865B207606D4008DF597 /* NKParameter */,
 				66AF6779206E7106003FD62F /* NKProject */,
 				66AF6775206E6F77003FD62F /* NKBlock */,
@@ -298,8 +346,8 @@
 				66F925AA20751BA600C850F3 /* NKImage.m */,
 				66AF6769206E4BBD003FD62F /* NKMediaElement.h */,
 				66AF676A206E4BBD003FD62F /* NKMediaElement.m */,
-				66F925AC20751FA800C850F3 /* NKMedia.h */,
-				66F925AD20751FA800C850F3 /* NKMedia.m */,
+				66F925AC20751FA800C850F3 /* NKFile.h */,
+				66F925AD20751FA800C850F3 /* NKFile.m */,
 				66AF676C206E62AA003FD62F /* NKCheckboxElement.h */,
 				66AF676D206E62AA003FD62F /* NKCheckboxElement.m */,
 				66AF676F206E63E2003FD62F /* NKWysiwygElement.h */,
@@ -310,6 +358,8 @@
 				66AF6781206E7979003FD62F /* NKAddressElement.m */,
 				66F9259E2074DFC300C850F3 /* NKDropdownElement.h */,
 				66F9259F2074DFC300C850F3 /* NKDropdownElement.m */,
+				667F21E9207B606400C4CA92 /* NKPollElement.h */,
+				667F21EA207B606400C4CA92 /* NKPollElement.m */,
 				66AF677D206E7609003FD62F /* NKGeneralElement.h */,
 				66AF677E206E7609003FD62F /* NKGeneralElement.m */,
 				667F407E2077B3D500B18D16 /* NKElementFactory.h */,
@@ -458,6 +508,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				667F21E8207B5C0700C4CA92 /* section.json in Resources */,
+				667F21DC207B580100C4CA92 /* block.json in Resources */,
+				667F21DA207B573200C4CA92 /* block_sections_elements.json in Resources */,
+				667F21E7207B5C0700C4CA92 /* section_elements.json in Resources */,
+				667F21DE207B585300C4CA92 /* block_sections.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +578,7 @@
 				66AF6768206E4AD1003FD62F /* NKImagesElement.m in Sources */,
 				667F40802077B3D500B18D16 /* NKElementFactory.m in Sources */,
 				66F925AB20751BA600C850F3 /* NKImage.m in Sources */,
+				667F21EB207B606400C4CA92 /* NKPollElement.m in Sources */,
 				66AF6771206E63E2003FD62F /* NKWysiwygElement.m in Sources */,
 				66AF6760206E3A1F003FD62F /* NKElement.m in Sources */,
 				667F407D2077ADEB00B18D16 /* NewsTableViewCell.m in Sources */,
@@ -535,11 +591,11 @@
 				6608391E2073A56600432DE7 /* NKApiManager.m in Sources */,
 				66AF676E206E62AA003FD62F /* NKCheckboxElement.m in Sources */,
 				660E86612076071B008DF597 /* NKPaginationParameter.m in Sources */,
-				660E865A2076023A008DF597 /* NKMetaInfo.m in Sources */,
+				660E865A2076023A008DF597 /* NKPaginationInfo.m in Sources */,
 				66AF677F206E7609003FD62F /* NKGeneralElement.m in Sources */,
 				66AF6765206E3B93003FD62F /* NKTextElement.m in Sources */,
 				660839212073A5FA00432DE7 /* NKResponse.m in Sources */,
-				66F925AE20751FA800C850F3 /* NKMedia.m in Sources */,
+				66F925AE20751FA800C850F3 /* NKFile.m in Sources */,
 				660839242073B8A800432DE7 /* News.m in Sources */,
 				660E866420760726008DF597 /* NKFilterParameter.m in Sources */,
 				66AF6742206E3236003FD62F /* main.m in Sources */,
@@ -557,7 +613,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66AF674C206E3236003FD62F /* NookoSDKTests.m in Sources */,
+				667F21E4207B5BD800C4CA92 /* NKSectionTests.m in Sources */,
+				667F21D8207B56A900C4CA92 /* NKblockTests.m in Sources */,
+				66AF674C206E3236003FD62F /* NKProjectTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

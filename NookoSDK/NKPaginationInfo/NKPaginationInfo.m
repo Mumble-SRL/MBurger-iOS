@@ -1,14 +1,14 @@
 //
-//  NKMetaInfo.m
+//  NKPaginationInfo.m
 //  NookoSDK
 //
 //  Created by Lorenzo Oliveto on 05/04/18.
 //  Copyright © 2018 Mumble. All rights reserved.
 //
 
-#import "NKMetaInfo.h"
+#import "NKPaginationInfo.h"
 
-@implementation NKMetaInfo
+@implementation NKPaginationInfo
 
 - (instancetype) initWithFrom: (NSInteger) from To: (NSInteger) to Total: (NSInteger) total{
     self = [super init];

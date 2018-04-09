@@ -14,7 +14,7 @@ custom_categories:
   - name: NKManager
     children:
     - NKManager 
-    - NKMetaInfo
+    - NKPaginationInfo
   - name: NKParameter
     children: 
     - NKParameter
@@ -39,7 +39,7 @@ custom_categories:
     - NKImagesElement
     - NKImage
     - NKMediaElement
-    - NKMedia
+    - NKFile
     - NKCheckboxElement
     - NKWysiwygElement
     - NKDateElement

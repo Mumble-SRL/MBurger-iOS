@@ -33,6 +33,13 @@
     return nil;
 }
 
+- (BOOL) isEqual:(id)object {
+    if ([object isKindOfClass:[NKElement class]]){
+        return [(NKElement *) object elementId] == self.elementId;
+    }
+    return FALSE;
+}
+
 #pragma mark - NSCoding-NSSecureCoding
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{

@@ -7,7 +7,7 @@
 //
 
 #import "NKElement.h"
-#import "NKMedia.h"
+#import "NKFile.h"
 
 /// The type of media
 typedef NS_ENUM(NSUInteger, NKMediaType) {
@@ -34,7 +34,7 @@ typedef NS_ENUM(NSUInteger, NKMediaType) {
 /**
  The medias of the element.
  */
-@property (nonatomic, retain, nullable) NSArray <NKMedia *> *medias;
+@property (nonatomic, retain, nullable) NSArray <NKFile *> *medias;
 
 /**
  Initializes a media element with an elementId, the name and its value, the mediaURL becomes the value passed by this function.
@@ -48,12 +48,12 @@ typedef NS_ENUM(NSUInteger, NKMediaType) {
 
  @return a newly created NKMediaElement initialized with the elementId, the name, the value passed and the media type.
  */
-- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Order: (NSInteger) order Medias: (NSArray <NKMedia *> * _Nullable) medias MediaType: (NKMediaType) mediaType;
+- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Order: (NSInteger) order Medias: (NSArray <NKFile *> * _Nullable) medias MediaType: (NKMediaType) mediaType;
 
 /**
  It returns the first media of the element if exists.
  @return the frist media.
  */
-- (NKMedia * _Nullable) firstMedia;
+- (NKFile * _Nullable) firstMedia;
 
 @end

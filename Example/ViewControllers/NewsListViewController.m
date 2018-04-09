@@ -25,20 +25,13 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.tableFooterView = [UIView new];
-    
-    [[NKManager sharedManager] getElementsWithSectionId:826 Success:^(NSDictionary * _Nonnull elements) {
-        
-    } Failure:^(NSError * _Nonnull error) {
-        
-    }];
-    
+
     [self loadNews];
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void) loadNews {

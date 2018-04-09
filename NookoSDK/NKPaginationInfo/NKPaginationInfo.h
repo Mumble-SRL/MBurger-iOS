@@ -1,5 +1,5 @@
 //
-//  NKMetaInfo.h
+//  NKPaginationInfo.h
 //  NookoSDK
 //
 //  Created by Lorenzo Oliveto on 05/04/18.
@@ -11,7 +11,7 @@
 /**
  This class contains meta information abaut the pagination, it's usually returned when an array is requested by the api.
  */
-@interface NKMetaInfo : NSObject
+@interface NKPaginationInfo : NSObject
 
 /**
  The starting index.
@@ -35,7 +35,7 @@
  @param to The ending index.
  @param total The total number of elements of that type on Nooko.
 
- @return a newly created NKMetaInfo initialized with the data passed.
+ @return a newly created NKPaginationInfo initialized with the data passed.
  */
 - (instancetype _Nonnull) initWithFrom: (NSInteger) from To: (NSInteger) to Total: (NSInteger) total;
 
@@ -44,7 +44,7 @@
  
  @param dictionary The dictionary returned by the api.
  
- @return a newly created NKMetaInfo initialized with the data of the dictionary.
+ @return a newly created NKPaginationInfo initialized with the data of the dictionary.
  */
 - (instancetype _Nonnull) initWithDictionary: (NSDictionary * _Nonnull) dictionary;
 

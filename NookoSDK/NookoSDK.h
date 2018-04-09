@@ -10,7 +10,7 @@
 #define NookoSDK_h
 
 #import "NKManager.h"
-#import "NKMetaInfo.h"
+#import "NKPaginationInfo.h"
 #import "NKParameter.h"
 #import "NKGeneralParameter.h"
 #import "NKSortParameter.h"
@@ -26,7 +26,7 @@
 #import "NKImagesElement.h"
 #import "NKImage.h"
 #import "NKMediaElement.h"
-#import "NKMedia.h"
+#import "NKFile.h"
 #import "NKCheckboxElement.h"
 #import "NKWysiwygElement.h"
 #import "NKDateElement.h"

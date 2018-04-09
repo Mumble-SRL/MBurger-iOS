@@ -25,6 +25,13 @@
     return [self initWithProjectId:projectId Name:projectName];
 }
 
+- (BOOL) isEqual:(id)object {
+    if ([object isKindOfClass:[NKProject class]]){
+        return [(NKProject *) object projectId] == self.projectId;
+    }
+    return FALSE;
+}
+
 #pragma mark - NSCoding-NSSecureCoding
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{

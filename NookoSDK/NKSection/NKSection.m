@@ -78,6 +78,14 @@
     return object;
 }
 
+- (BOOL) isEqual:(id)object {
+    if ([object isKindOfClass:[NKSection class]]){
+        return [(NKSection *) object sectionId] == self.sectionId;
+    }
+    return FALSE;
+}
+
+
 #pragma mark - NSCoding-NSSecureCoding
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{
