@@ -96,6 +96,9 @@ All the interactions with the SDK will be trought the `NKManager` singleton clas
 
 You can retrieve the informations of the project like this:
 
+Objective-C:
+
+
 ```
 [[NKManager sharedManager] getProjectWithSuccess:^(NKProject *project) {
         
@@ -104,9 +107,22 @@ You can retrieve the informations of the project like this:
 }];
 ```
 
+Swift:
+
+```
+NKManager.shared().getProjectWithSuccess({ (project) in
+            
+    }) {(error) in
+            
+}
+```
+
+
 # Blocks
 
 You can retrieve the blocks of the project with the function `getBlocksWithParameters:Success:Failure` like this:
+
+Objective-C:
 
 ```
 [[NKManager sharedManager] getBlocksWithParameters:nil Success:^(NSArray<NKBlock *> *blocks, NKPaginationInfo *pagintaionInfo) {
@@ -114,6 +130,16 @@ You can retrieve the blocks of the project with the function `getBlocksWithParam
 } Failure:^(NSError *error) {
         
 }];
+```
+
+Swift:
+
+```
+NKManager.shared().getBlocksWith(nil, success: { (blocks, paginationInfos) in
+            
+}) { (error) in
+            
+}
 ```
 
 The parameter `parameters` is an optional array of objects that conforms to the `NKParameter` protocol passed to the nooko api as parameter. The majorityof the parameters that can be passed to the apis are already defined in the SDK and can be used after the initialization:
@@ -127,6 +153,8 @@ If you want to pass another type of parameter you can use the `NKGeneralParamete
 
 So if you want to include a pagination parameter you can do like this:
 
+Objective-C:
+
 ```
 NKPaginationParameter *paginationParam = [[NKPaginationParameter alloc] initWithSkip:0 Take:10];
 [[NKManager sharedManager] getBlocksWithParameters:@[paginationParam] Success:^(NSArray<NKBlock *> *blocks, NKPaginationInfo *pagintaionInfo) {
@@ -135,9 +163,23 @@ NKPaginationParameter *paginationParam = [[NKPaginationParameter alloc] initWith
         
 }];
 ```
+
+Swift:
+
+```
+let paginationParam = NKPaginationParameter(skip: 0, take: 10)
+NKManager.shared().getBlocksWith([paginationParam], success: { (blocks, paginationInfos) in
+            
+}) { (error) in
+            
+}
+```
+
 There are two other versions of the `getBlocksWithParameters:Success:Failure`, one that take an adiitional parameter `includingSections` (a boolean that indicate whether or not include, for each block, the sections), and another that takes `includingSections` and `includeElements` (a boolean value that do the same thing but for the elements of the sections).
 
 So you could retrieve the informations of all the blocks, all the sections of the blocks and all the elements of the sections with this call:
+
+Objective-C:
 
 ```
 [[NKManager sharedManager] getBlocksWithParameters:nil IncludingSections:TRUE AndElements: TRUE Success:^(NSArray<NKBlock *> *blocks, NKPaginationInfo *pagintaionInfo) {
@@ -147,19 +189,43 @@ So you could retrieve the informations of all the blocks, all the sections of th
 }];
 ```
 
+Swift:
+
+```
+NKManager.shared().getBlocksWith(nil, includingSections: true, andElements: true, success: { (blocks, paginationInfos) in
+            
+}) { (error) in
+            
+}
+```
+
 # Sections
 
 You can retrieve all the sections with a block with the given id with the function `getBlocksWithParameters:Success:Failure` like this:
 
+Objective-C:
+
 ```
-[[NKManager sharedManager] getSectionsWithBlockId: THE_BLOCK_ID Parameters:nil Success:^(NSArray<NKSection *> *sections, NKPaginationInfo *pagintaionInfo) {
+[[NKManager sharedManager] getSectionsWithBlockId:THE_BLOCK_ID Parameters:nil Success:^(NSArray<NKSection *> *sections, NKPaginationInfo *pagintaionInfo) {
         
 } Failure:^(NSError *error) {
         
 }];
 ```
 
+Swift:
+
+```
+NKManager.shared().getSectionsWithBlockId(THE_BLOCK_ID, parameters: nil, success: { (sections, paginationInfos) in
+            
+}) { (error) in
+            
+} 
+```
+
 Like for the blocks there's a version of this function that takes a bool `includeElements` that indicate to include or not the elements of the section se if you want to retrieve all the sections of a block and their elements you can call:
+
+Objective-C:
 
 ```
 [[NKManager sharedManager] getSectionsWithBlockId:THE_BLOCK_ID IncludeElement:TRUE Parameters:nil Success:^(NSArray<NKSection *> *sections, NKPaginationInfo *pagintaionInfo) {
@@ -167,6 +233,16 @@ Like for the blocks there's a version of this function that takes a bool `includ
 } Failure:^(NSError *error) {
         
 }];
+```
+
+Swift:
+
+```
+NKManager.shared().getSectionsWithBlockId(THE_BLOCK_ID, parameters: nil, includeElements: true, success: { (sections, paginationInfos) in
+            
+}) { (error) in
+            
+}
 ```
 
 # Object mapping
