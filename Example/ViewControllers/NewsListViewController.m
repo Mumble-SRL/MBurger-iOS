@@ -25,13 +25,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.tableFooterView = [UIView new];
-    
-    [[NKManager sharedManager] getSectionsWithBlockId:12 Parameters:nil Success:^(NSArray<NKSection *> *sections, NKPaginationInfo *pagintaionInfo) {
         
-    } Failure:^(NSError *error) {
-        
-    }];
-    
     [self loadNews];
 }
 

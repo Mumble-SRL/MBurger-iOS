@@ -189,7 +189,7 @@ NSMutableArray *newsArray = [[NSMutableArray alloc] init];
 
 As you can see in the example you can point to the property of the object using the dot notation. If it's not defined any property the SDK will use the value of the element object (calling the value function).
 
-You can find a complete example in the sample app in the Example directory.
+You can find a complete example in the Example project.
 
 # Serialization
 
