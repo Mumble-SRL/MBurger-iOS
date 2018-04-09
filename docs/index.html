@@ -164,7 +164,72 @@
 </p>
 <h1 id='noookosdk' class='heading'>NoookoSDK</h1>
 
-<p>TODO: write <code>Readme.md</code></p>
+<p>NookoSDK is a client libary, written in Objective C, that can be used to interact with the <a href="https://nooko3.mumbleserver.it/login">Nooko</a> API.</p>
+<h1 id='installation' class='heading'>Installation</h1>
+<h1 id='installation-with-cocoapods' class='heading'>Installation with CocoaPods</h1>
+
+<p>CocoaPods is a dependency manager for iOS, which automates and simplifies the process of using 3rd-party libraries in your projects. You can install CocoaPods with the following command:</p>
+<pre class="highlight plaintext"><code>$ gem install cocoapods
+
+</code></pre>
+
+<p>To integrate the NookoSDK into your Xcode project using CocoaPods, specify it in your Podfile:</p>
+<pre class="highlight plaintext"><code>platform :ios, '10.0'
+
+target 'TargetName' do
+    pod 'NookoSDK', git: 'https://gitlab.mumbleserver.it/iOS/NookoSDK'
+end
+</code></pre>
+
+<p>Then, run the following command:</p>
+<pre class="highlight plaintext"><code>$ pod install
+</code></pre>
+
+<p>CocoaPods is the preferred methot to install the library.</p>
+<h1 id='manual-installation' class='heading'>Manual installation</h1>
+
+<p>To install the library manually drag and drop the folder <code>NookoSDK</code> to your project structure in XCode. </p>
+
+<p>Note that <code>NookoSDK</code> has <code>AFNetworking (3.0)</code> as a dependency, so you have to install also this library.</p>
+<h1 id='initialization' class='heading'>Initialization</h1>
+
+<p>To initialize the SDK you have to create a token through the <a href="https://nooko3.mumbleserver.it/">dashboard</a>. Click on the settings icon on the top-right and create a API Key specifiyng the permissions.</p>
+
+<p>In your <code>AppDelegate</code> <code>application:didFinishLaunchingWithOptions:</code> initialize the SDK like the following:</p>
+<pre class="highlight objective_c"><code><span class="cp">#import "AppDelegate.h"
+#import "NookoSDK.h"
+</span>
+<span class="k">@interface</span> <span class="nc">AppDelegate</span> <span class="p">()</span>
+
+<span class="k">@end</span>
+
+<span class="k">@implementation</span> <span class="nc">AppDelegate</span>
+
+
+<span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">application</span><span class="p">:(</span><span class="n">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="nf">didFinishLaunchingWithOptions</span><span class="p">:(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">launchOptions</span> <span class="p">{</span>
+
+    <span class="p">[</span><span class="n">NKManager</span> <span class="nf">sharedManager</span><span class="p">].</span><span class="n">apiToken</span> <span class="o">=</span> <span class="s">@"26c96ab3c9a67f45cc2e9bff35869bfd8a778cb0"</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>You will not be able to interact with the SDK if you don&rsquo;t initialize it with a correct token/key.</p>
+<h1 id='usage' class='heading'>Usage</h1>
+<h1 id='project' class='heading'>Project</h1>
+<h1 id='blocks' class='heading'>Blocks</h1>
+<h1 id='sections' class='heading'>Sections</h1>
+<h1 id='object-mapping' class='heading'>Object mapping</h1>
+<h1 id='serialization' class='heading'>Serialization</h1>
+<h1 id='documentation' class='heading'>Documentation</h1>
+
+<p>For further information, you can check out the full SDK Reference in the <a href="https://gitlab.mumbleserver.it/iOS/NookoSDK/tree/master/docs">docs</a> folder.</p>
+<h1 id='contacts' class='heading'>Contacts</h1>
+
+<p>You can contuct us at <a href="mailto:https://gitlab.mumbleserver.it/iOS/NookoSDK/raw/master/LICENSE">info@mumbleideas.it</a>.</p>
+<h1 id='license' class='heading'>License</h1>
+
+<p>NookoSDK is released under the MIT license. See <a href="https://gitlab.mumbleserver.it/iOS/NookoSDK/raw/master/LICENSE">LICENSE</a> for details.</p>
 
           </section>
         </section>
