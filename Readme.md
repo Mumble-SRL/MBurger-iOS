@@ -263,7 +263,7 @@ The `NKSection` class has a commodity function that can be used to map the eleme
 @end
 ```
 
-And a block in Nooko that represent a news you could create and populate an array of news object like this:
+And a block in Nooko that represent a newsfeed you could create and populate an array of news object like this:
 
 ```
 NSInteger newsBlockId = 12;
@@ -273,13 +273,12 @@ NSDictionary *mappingDictionary = @{@"title" : @"title",
                                     @"link" : @"link"};
 NSMutableArray *newsArray = [[NSMutableArray alloc] init];
 [[NKManager sharedManager] getBlockWithBlockId:newsBlockId Parameters:nil IncludingSections:YES AndElements:YES Success:^(NKBlock *block) {
+   NSMutableArray *newsArray = [[NSMutableArray alloc] init];
    for (NKSection *section in block.sections){
         News *n = [[News alloc] init];
         [section mapElementsToObject:n withMapping:mappingDictionary];
         [newsArray addObject:n];
     }
-    self->news = newsArray;
-    [self.tableView reloadData];
  } Failure:^(NSError * _Nonnull error) {
     [self showError:error];
  }];
