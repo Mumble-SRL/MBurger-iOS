@@ -41,7 +41,7 @@ To install the library manually drag and drop the folder `NookoSDK` to your proj
 Note that `NookoSDK` has `AFNetworking (3.0)` as a dependency, so you have to install also this library.
 
 # Initialization
-
+q
 To initialize the SDK you have to create a token through the [dashboard](https://nooko3.mumbleserver.it/). Click on the settings icon on the top-right and create a API Key specifiyng the permissions.
 
 
