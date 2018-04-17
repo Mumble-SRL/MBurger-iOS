@@ -13,12 +13,13 @@
 
 @implementation NKSection
 
-- (instancetype) initWithSectionId: (NSInteger) sectionId Order: (NSInteger) order Elements: (NSDictionary *) elements{
+- (instancetype) initWithSectionId: (NSInteger) sectionId Order: (NSInteger) order Elements: (NSDictionary *) elements AvailableAt: (NSDate *) availableAt{
     self = [super init];
     if (self){
         self.sectionId = sectionId;
         self.order = order;
         self.elements = elements;
+        self.availableAt = availableAt;
     }
     return self;
 }
@@ -41,7 +42,12 @@
             elements = elementsMutable;
         }
     }
-    return [self initWithSectionId:sectionId Order:order Elements:elements];
+    NSDate *availableAtDate = nil;
+    if (dictionary[@"available_at"] != nil && dictionary[@"available_at"] != [NSNull null]){
+        NSInteger availableAt = [dictionary[@"available_at"] integerValue];
+        availableAtDate = [NSDate dateWithTimeIntervalSince1970:availableAt];
+    }
+    return [self initWithSectionId:sectionId Order:order Elements:elements AvailableAt:availableAtDate];
 }
 
 - (id) mapElementsToObject:(NSObject*)object withMapping:(NSDictionary*)mapping{

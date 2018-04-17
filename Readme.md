@@ -4,7 +4,7 @@
 
 # NoookoSDK
 
-NookoSDK is a client libary, written in Objective-C, that can be used to interact with the [Nooko](https://nooko3.mumbleserver.it/login) API. The minimum deplaoyment target for the library is iOS 10.0.
+NookoSDK is a client libary, written in Objective-C, that can be used to interact with the [Nooko](https://nooko2.mumbleserver.it/login) API. The minimum deplaoyment target for the library is iOS 10.0.
 > Even this is a library written in Objective-C it can be integrated and used also in Swift projects. The example code below will be in both languages.
 
 # Installation
@@ -46,7 +46,7 @@ Note that `NookoSDK` has `AFNetworking (3.0)` as a dependency, so you have to in
 
 # Initialization
 
-To initialize the SDK you have to create a token through the [dashboard](https://nooko3.mumbleserver.it/). Click on the settings icon on the top-right and create a API Key specifiyng the permissions.
+To initialize the SDK you have to create a token through the [dashboard](https://nooko2.mumbleserver.it/). Click on the settings icon on the top-right and create a API Key specifiyng the permissions.
 
 
 ![Dashboard image](https://gitlab.mumbleserver.it/iOS/NookoSDK/raw/master/Images/api_token.png)
@@ -263,7 +263,7 @@ The `NKSection` class has a commodity function that can be used to map the eleme
 @end
 ```
 
-And a block in Nooko that represent a news you could create and populate an array of news object like this:
+And a block in Nooko that represent a newsfeed you could create and populate an array of news object like this:
 
 ```
 NSInteger newsBlockId = 12;
@@ -273,13 +273,12 @@ NSDictionary *mappingDictionary = @{@"title" : @"title",
                                     @"link" : @"link"};
 NSMutableArray *newsArray = [[NSMutableArray alloc] init];
 [[NKManager sharedManager] getBlockWithBlockId:newsBlockId Parameters:nil IncludingSections:YES AndElements:YES Success:^(NKBlock *block) {
+   NSMutableArray *newsArray = [[NSMutableArray alloc] init];
    for (NKSection *section in block.sections){
         News *n = [[News alloc] init];
         [section mapElementsToObject:n withMapping:mappingDictionary];
         [newsArray addObject:n];
     }
-    self->news = newsArray;
-    [self.tableView reloadData];
  } Failure:^(NSError * _Nonnull error) {
     [self showError:error];
  }];
