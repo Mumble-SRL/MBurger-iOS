@@ -48,15 +48,21 @@
 @property (nonatomic, retain, nullable) NSDictionary *elements;
 
 /**
+ The date the section is available.
+*/
+@property (nonatomic, retain, nullable) NSDate *availableAt;
+
+/**
  Initializes a section with a sectionId and the elements returned by the api.
  
  @param sectionId The id of the section.
  @param order The id order the section.
  @param elements The elements of the section as returned by the REST api.
- 
+ @param availableAt The date the section is available.
+
  @return a newly created NKSection initialized with the sectionId and elements.
  */
-- (instancetype _Nonnull) initWithSectionId: (NSInteger) sectionId Order: (NSInteger) order Elements: (NSDictionary * _Nullable) elements;
+- (instancetype _Nonnull) initWithSectionId: (NSInteger) sectionId Order: (NSInteger) order Elements: (NSDictionary * _Nullable) elements AvailableAt: (NSDate * _Nullable) availableAt;
 
 /**
  Initializes a section with the dictionary returned by the api.

@@ -11,7 +11,7 @@
 
 #import "AFNetworking.h"
 
-static NSString *apiBaseUrl = @"https://nooko3.mumbleserver.it/api";
+static NSString *apiBaseUrl = @"https://nooko2.mumbleserver.it/api";
 
 @implementation NKApiManager
 
