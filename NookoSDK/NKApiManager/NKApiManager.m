@@ -46,7 +46,9 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
 
     NSMutableDictionary *totalParametersDictionary = [[NSMutableDictionary alloc] initWithDictionary:parameters];
     totalParametersDictionary[@"locale"] = locale;
-    
+    NSString *deviceIdString = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    totalParametersDictionary[@"device_id"] = deviceIdString;
+
     for (NSString *key in headerParameters.allKeys){
         [manager.requestSerializer setValue:headerParameters[key] forHTTPHeaderField:key];
     }

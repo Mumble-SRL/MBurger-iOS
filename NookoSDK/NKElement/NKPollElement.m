@@ -25,9 +25,10 @@
     NSInteger elementId = [dictionary[@"id"] integerValue];
     NSString *name = dictionary[@"name"];
     NSInteger order = [dictionary[@"order"] integerValue];
-    NSArray *answers = dictionary[@"answers"];
-    NSDate *expirationDate = [NSDate dateWithTimeIntervalSince1970: [dictionary[@"ends_at"] integerValue]];
-    NSArray *results = dictionary[@"results"];
+    NSDictionary *valueDictionary = dictionary[@"value"];
+    NSArray *answers = valueDictionary[@"answers"];
+    NSDate *expirationDate = [NSDate dateWithTimeIntervalSince1970: [valueDictionary[@"ends_at"] integerValue]];
+    NSArray *results = valueDictionary[@"results"];
 
     return [self initWithElementId:elementId Name:name Order:order Answers:answers ExpirationDate:expirationDate Results:results];
 }
