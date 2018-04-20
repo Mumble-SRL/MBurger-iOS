@@ -10,6 +10,10 @@
 
 @implementation NKSortParameter
 
+- (instancetype _Nonnull) initWithField: (NSString * _Nonnull) field{
+    return [self initWithField:field Ascending:true];
+}
+
 - (instancetype) initWithField: (NSString *) field Ascending: (BOOL) ascending{
     self = [super init];
     if (self){
