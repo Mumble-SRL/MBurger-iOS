@@ -42,6 +42,15 @@
 @property (nonatomic, assign) BOOL ascending;
 
 /**
+ Creates and initializes a sort parameter object, the sorting will be ascending.
+ 
+ @param field The filed of the element used to sort.
+
+ @return a newly created NKSortParameter initialized with the data passed.
+ */
+- (instancetype _Nonnull) initWithField: (NSString * _Nonnull) field;
+
+/**
  Creates and initializes a sort parameter object.
  
  @param field The filed of the element used to sort.

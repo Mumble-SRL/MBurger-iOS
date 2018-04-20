@@ -11,10 +11,12 @@
 
 @implementation NKPollElement
 
-- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Order: (NSInteger) order Answers: (NSArray <NSString *> *) answers{
+- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Order: (NSInteger) order Answers: (NSArray <NSString *> *) answers ExpirationDate: (NSDate * _Nullable) expirationDate Results: (NSArray <NSNumber *> * _Nullable) results{
     self = [super initWithElementId:elementId Name:name Order:order Type:NKElementTypeDropDown];
     if (self){
         self.answers = answers;
+        self.expirationDate = expirationDate;
+        self.results = results;
     }
     return self;
 }
@@ -23,8 +25,11 @@
     NSInteger elementId = [dictionary[@"id"] integerValue];
     NSString *name = dictionary[@"name"];
     NSInteger order = [dictionary[@"order"] integerValue];
-    NSArray *answers = dictionary[@"answes"];
-    return [self initWithElementId:elementId Name:name Order:order Answers:answers];
+    NSArray *answers = dictionary[@"answers"];
+    NSDate *expirationDate = [NSDate dateWithTimeIntervalSince1970: [dictionary[@"ends_at"] integerValue]];
+    NSArray *results = dictionary[@"results"];
+
+    return [self initWithElementId:elementId Name:name Order:order Answers:answers ExpirationDate:expirationDate Results:results];
 }
 
 #pragma mark - Value

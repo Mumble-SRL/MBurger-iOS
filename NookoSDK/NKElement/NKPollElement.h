@@ -31,9 +31,19 @@
 @interface NKPollElement : NKElement <NSCoding, NSSecureCoding>
 
 /**
- The possible answes for the poll.
+ The possible answers for the poll.
  */
 @property (nonatomic, retain, nullable) NSArray <NSString *> *answers;
+
+/**
+ The expiration date of the poll.
+ */
+@property (nonatomic, retain, nullable) NSDate *expirationDate;
+
+/**
+ The results of the poll.
+ */
+@property (nonatomic, retain, nullable) NSArray <NSNumber *> *results;
 
 /**
  Initializes a poll element with an elementId, a name and the answers.
@@ -44,9 +54,11 @@
  @param name The name of the element.
  @param order The order of the element.
  @param answers The answers for the element.
- 
+ @param expirationDate The expiration date of the poll.
+ @param results The results of the poll.
+
  @return a newly created NKPollElement initialized with the parameters passed.
  */
-- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Order: (NSInteger) order Answers: (NSArray <NSString *> * _Nullable) answers;
+- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Order: (NSInteger) order Answers: (NSArray <NSString *> * _Nullable) answers ExpirationDate: (NSDate * _Nullable) expirationDate Results: (NSArray <NSNumber *> * _Nullable) results;
 
 @end

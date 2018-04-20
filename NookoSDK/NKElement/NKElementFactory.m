@@ -15,6 +15,7 @@
 #import "NKDateElement.h"
 #import "NKAddressElement.h"
 #import "NKDropdownElement.h"
+#import "NKPollElement.h"
 #import "NKGeneralElement.h"
 
 @implementation NKElementFactory
@@ -47,6 +48,9 @@
     }
     else if ([typeString isEqualToString:@"dropdown"]){
         return [[NKDropdownElement alloc] initWithDictionary:elementDictionary];
+    }
+    else if ([typeString isEqualToString:@"poll"]){
+        return [[NKPollElement alloc] initWithDictionary:elementDictionary];
     }
     return [[NKGeneralElement alloc] initWithDictionary:elementDictionary];
 }
