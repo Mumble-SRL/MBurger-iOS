@@ -75,6 +75,7 @@ The API token used to make all the requests to the api.
 
 /**
  Retrieve the blocks of the project.
+ If includingSections is true the informations about the sections are included in the response.
  @note This function calls `-[NKManager getBlocksWithParameters:IncludingSections:AndElements:Success:Failure:]` with the default value of 'false' for the parameter 'includeElements'
  @see `NKParameter`
  @param parameters An optional array of parameters used to sort, filter orpaginate the blocks returned.
@@ -89,6 +90,8 @@ The API token used to make all the requests to the api.
 
 /**
  Retrieve the blocks of the project.
+ If includeSections is true the informations about the sections are included in the response.
+ If includeElements is true the informations about the elements of the sections are included in the response.
  @see `NKParameter`
  @param parameters An optional array of parameters used to sort, filter orpaginate the blocks returned.
  @param includeSections If true the information of the sections in the blocks are included in the response.
@@ -118,6 +121,7 @@ The API token used to make all the requests to the api.
 
 /**
  Retrieve the block of the project with the specified id.
+ If includeSections is true the informations about the sections are included in the response.
  @note This function calls `-[NKManager getBlockWithBlockId:Parameters:IncludingSections:AndElements:Success:Failure:]` with the default value of 'false' for the parameters 'includeSections' and 'includeElements'
  @see `NKParameter`
  @param blockId The id of the block.
@@ -134,6 +138,8 @@ The API token used to make all the requests to the api.
 
 /**
  Retrieve the block of the project with the specified id.
+ If includeSections is true the informations about the sections are included in the response.
+ If includeElements is true the informations about the elements of the sections are included in the response.
  @see `NKParameter`
  @param blockId The id of the block.
  @param parameters An optional array of parameters used to sort, filter orpaginate the blocks returned.
@@ -164,6 +170,7 @@ The API token used to make all the requests to the api.
                         Failure: (void (^ _Nullable)(NSError * _Nonnull error)) failure;
 /**
  Retrieve the sections of the block with the specified id.
+ If includeElements is true the informations about the elements of the sections are included in the response.
  @see `NKParameter`
  @param blockId The id of the block that has the sections.
  @param parameters An optional array of parameters used to sort, filter orpaginate the blocks returned.
@@ -190,6 +197,7 @@ The API token used to make all the requests to the api.
 
 /**
  Retrieve the section with the specified id.
+ If includeElements is true the informations about the elements of the sections are included in the response.
  @param sectionId The id of the section.
  @param includeElements If true the information of the element in the section are included in the response.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the section returned by the api.
