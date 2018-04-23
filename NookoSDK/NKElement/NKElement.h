@@ -44,7 +44,9 @@ typedef NS_ENUM(NSUInteger, NKElementType) {
     /// An address element
     NKElementTypeAddress,
     /// A dropdown element
-    NKElementTypeDropDown
+    NKElementTypeDropDown,
+    /// A poll element
+    NKElementTypePoll
 };
 
 /**

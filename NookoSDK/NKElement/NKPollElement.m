@@ -11,12 +11,13 @@
 
 @implementation NKPollElement
 
-- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Order: (NSInteger) order Answers: (NSArray <NSString *> *) answers ExpirationDate: (NSDate * _Nullable) expirationDate Results: (NSArray <NSNumber *> * _Nullable) results{
-    self = [super initWithElementId:elementId Name:name Order:order Type:NKElementTypeDropDown];
+- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Order: (NSInteger) order Answers: (NSArray <NSString *> *) answers ExpirationDate: (NSDate * _Nullable) expirationDate Results: (NSArray <NSNumber *> * _Nullable) results MyAnswerIndex: (NSInteger) myAnswerIndex{
+    self = [super initWithElementId:elementId Name:name Order:order Type:NKElementTypePoll];
     if (self){
         self.answers = answers;
         self.expirationDate = expirationDate;
         self.results = results;
+        self.myAnswerIndex = myAnswerIndex;
     }
     return self;
 }
@@ -26,11 +27,26 @@
     NSString *name = dictionary[@"name"];
     NSInteger order = [dictionary[@"order"] integerValue];
     NSDictionary *valueDictionary = dictionary[@"value"];
-    NSArray *answers = valueDictionary[@"answers"];
+    NSArray *answersFromApi = valueDictionary[@"answers"];
+    NSMutableArray *answers = [[NSMutableArray alloc] init];
+    for (id answer in answersFromApi){
+        if (answer != [NSNull null]){
+            [answers addObject:answer];
+        }
+    }
+    
     NSDate *expirationDate = [NSDate dateWithTimeIntervalSince1970: [valueDictionary[@"ends_at"] integerValue]];
-    NSArray *results = valueDictionary[@"results"];
-
-    return [self initWithElementId:elementId Name:name Order:order Answers:answers ExpirationDate:expirationDate Results:results];
+    NSArray *resultsFromApi = valueDictionary[@"results"];
+    NSMutableArray *results = [[NSMutableArray alloc] initWithArray:resultsFromApi];
+    while (results.count != answersFromApi.count) {
+        [results removeLastObject];
+    }
+    
+    NSInteger myAnswer = -1;
+    if (valueDictionary[@"mine"] && valueDictionary[@"mine"] != [NSNull null]){
+        myAnswer = [valueDictionary[@"mine"] integerValue];
+    }
+    return [self initWithElementId:elementId Name:name Order:order Answers:answers ExpirationDate:expirationDate Results:results MyAnswerIndex:myAnswer];
 }
 
 #pragma mark - Value
@@ -45,6 +61,8 @@
     self = [super initWithCoder:aDecoder];
     if (self){
         self.answers = [aDecoder decodeObjectOfClass:NSArray.class forKey:@"answers"];
+        self.expirationDate = [aDecoder decodeObjectOfClass:NSDate.class forKey:@"expirationDate"];
+        self.results = [aDecoder decodeObjectOfClass:NSArray.class forKey:@"results"];
     }
     return self;
 }
@@ -52,6 +70,8 @@
 - (void)encodeWithCoder:(NSCoder *)aCoder{
     [super encodeWithCoder:aCoder];
     [aCoder encodeObject:_answers forKey:@"answers"];
+    [aCoder encodeObject:_expirationDate forKey:@"expirationDate"];
+    [aCoder encodeObject:_results forKey:@"results"];
 }
 
 + (BOOL) supportsSecureCoding {
