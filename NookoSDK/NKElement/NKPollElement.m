@@ -11,12 +11,13 @@
 
 @implementation NKPollElement
 
-- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Order: (NSInteger) order Answers: (NSArray <NSString *> *) answers ExpirationDate: (NSDate * _Nullable) expirationDate Results: (NSArray <NSNumber *> * _Nullable) results{
+- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Order: (NSInteger) order Answers: (NSArray <NSString *> *) answers ExpirationDate: (NSDate * _Nullable) expirationDate Results: (NSArray <NSNumber *> * _Nullable) results MyAnswerIndex: (NSInteger) myAnswerIndex{
     self = [super initWithElementId:elementId Name:name Order:order Type:NKElementTypePoll];
     if (self){
         self.answers = answers;
         self.expirationDate = expirationDate;
         self.results = results;
+        self.myAnswerIndex = myAnswerIndex;
     }
     return self;
 }
@@ -41,7 +42,11 @@
         [results removeLastObject];
     }
     
-    return [self initWithElementId:elementId Name:name Order:order Answers:answers ExpirationDate:expirationDate Results:results];
+    NSInteger myAnswer = -1;
+    if (valueDictionary[@"mine"] && valueDictionary[@"mine"] != [NSNull null]){
+        myAnswer = [valueDictionary[@"mine"] integerValue];
+    }
+    return [self initWithElementId:elementId Name:name Order:order Answers:answers ExpirationDate:expirationDate Results:results MyAnswerIndex:myAnswer];
 }
 
 #pragma mark - Value

@@ -46,6 +46,11 @@
 @property (nonatomic, retain, nullable) NSArray <NSNumber *> *results;
 
 /**
+ My answer to the poll, this value is determined by the device id sended with the api. If I haven't answered yet this poll, this variable will have value -1
+ */
+@property (nonatomic, assign) NSInteger myAnswerIndex;
+
+/**
  Initializes a poll element with an elementId, a name and the answers.
  This function calls the super initializer initWithElementId:Name:Type
  @see `-[NKElement initWithElementId:Name:Type:]`
@@ -56,9 +61,10 @@
  @param answers The answers for the element.
  @param expirationDate The expiration date of the poll.
  @param results The results of the poll.
+ @param myAnswerIndex My answer to the poll.
 
  @return a newly created NKPollElement initialized with the parameters passed.
  */
-- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Order: (NSInteger) order Answers: (NSArray <NSString *> * _Nullable) answers ExpirationDate: (NSDate * _Nullable) expirationDate Results: (NSArray <NSNumber *> * _Nullable) results;
+- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Order: (NSInteger) order Answers: (NSArray <NSString *> * _Nullable) answers ExpirationDate: (NSDate * _Nullable) expirationDate Results: (NSArray <NSNumber *> * _Nullable) results MyAnswerIndex: (NSInteger) myAnswerIndex;
 
 @end
