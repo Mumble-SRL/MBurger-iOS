@@ -49,7 +49,7 @@
     }
     BOOL answered = FALSE;
     if (valueDictionary[@"answered"] && valueDictionary[@"answered"] != [NSNull null]){
-        myAnswer = [valueDictionary[@"answered"] boolValue];
+        answered = [valueDictionary[@"answered"] boolValue];
     }
 
     return [self initWithElementId:elementId Name:name Order:order Answers:answers ExpirationDate:expirationDate Results:results Answered:answered Answer:myAnswer];
