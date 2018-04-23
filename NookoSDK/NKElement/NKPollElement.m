@@ -11,13 +11,14 @@
 
 @implementation NKPollElement
 
-- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Order: (NSInteger) order Answers: (NSArray <NSString *> *) answers ExpirationDate: (NSDate * _Nullable) expirationDate Results: (NSArray <NSNumber *> * _Nullable) results MyAnswerIndex: (NSInteger) myAnswerIndex{
+- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Order: (NSInteger) order Answers: (NSArray <NSString *> *) answers ExpirationDate: (NSDate * _Nullable) expirationDate Results: (NSArray <NSNumber *> * _Nullable) results Answered: (BOOL) answered Answer: (NSInteger) answer{
     self = [super initWithElementId:elementId Name:name Order:order Type:NKElementTypePoll];
     if (self){
         self.answers = answers;
         self.expirationDate = expirationDate;
         self.results = results;
-        self.myAnswerIndex = myAnswerIndex;
+        self.answered = answered;
+        self.answer = answer;
     }
     return self;
 }
@@ -43,10 +44,15 @@
     }
     
     NSInteger myAnswer = -1;
-    if (valueDictionary[@"mine"] && valueDictionary[@"mine"] != [NSNull null]){
-        myAnswer = [valueDictionary[@"mine"] integerValue];
+    if (valueDictionary[@"answer"] && valueDictionary[@"answer"] != [NSNull null]){
+        myAnswer = [valueDictionary[@"answer"] integerValue];
     }
-    return [self initWithElementId:elementId Name:name Order:order Answers:answers ExpirationDate:expirationDate Results:results MyAnswerIndex:myAnswer];
+    BOOL answered = FALSE;
+    if (valueDictionary[@"answered"] && valueDictionary[@"answered"] != [NSNull null]){
+        myAnswer = [valueDictionary[@"answered"] boolValue];
+    }
+
+    return [self initWithElementId:elementId Name:name Order:order Answers:answers ExpirationDate:expirationDate Results:results Answered:answered Answer:myAnswer];
 }
 
 #pragma mark - Value
@@ -63,6 +69,8 @@
         self.answers = [aDecoder decodeObjectOfClass:NSArray.class forKey:@"answers"];
         self.expirationDate = [aDecoder decodeObjectOfClass:NSDate.class forKey:@"expirationDate"];
         self.results = [aDecoder decodeObjectOfClass:NSArray.class forKey:@"results"];
+        self.answered = [aDecoder decodeBoolForKey:@"answered"];
+        self.answer = [aDecoder decodeIntegerForKey:@"answer"];
     }
     return self;
 }
@@ -72,6 +80,8 @@
     [aCoder encodeObject:_answers forKey:@"answers"];
     [aCoder encodeObject:_expirationDate forKey:@"expirationDate"];
     [aCoder encodeObject:_results forKey:@"results"];
+    [aCoder encodeBool:_answered forKey:@"answered"];
+    [aCoder encodeInteger:_answer forKey:@"sanswer"];
 }
 
 + (BOOL) supportsSecureCoding {
