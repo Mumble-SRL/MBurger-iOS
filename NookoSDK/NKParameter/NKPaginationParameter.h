@@ -49,6 +49,6 @@
  
  @return a newly created NKPaginationParameter initialized with the data passed.
  */
-- (instancetype _Nonnull) initWithSkip: (NSInteger) skip Take: (NSInteger) take;
+- (nonnull instancetype) initWithSkip: (NSInteger) skip Take: (NSInteger) take;
 
 @end

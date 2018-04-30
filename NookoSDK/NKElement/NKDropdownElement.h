@@ -53,6 +53,6 @@
  
  @return a newly created NKDropdownElement initialized with the parameters passed.
  */
-- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Order: (NSInteger) order Options: (NSArray <NSString *> * _Nullable) options SelectedOptions: (NSString *) selectedOption;
+- (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Options: (nullable NSArray <NSString *> *) options SelectedOptions: (NSString *) selectedOption;
 
 @end

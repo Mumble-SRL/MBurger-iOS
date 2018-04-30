@@ -47,6 +47,6 @@
  
  @return a newly created NKWysiwygElement initialized with the elementId, the name and the value passed.
  */
-- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Order: (NSInteger) order Date: (NSDate * _Nullable) date;
+- (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Date: (nullable NSDate *) date;
 
 @end

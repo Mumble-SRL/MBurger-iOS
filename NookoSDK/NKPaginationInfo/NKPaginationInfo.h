@@ -54,7 +54,7 @@
 
  @return a newly created NKPaginationInfo initialized with the data passed.
  */
-- (instancetype _Nonnull) initWithFrom: (NSInteger) from To: (NSInteger) to Total: (NSInteger) total;
+- (nonnull instancetype) initWithFrom: (NSInteger) from To: (NSInteger) to Total: (NSInteger) total;
 
 /**
  Initializes a meta info object with the dictionary returned by the api.
@@ -63,6 +63,6 @@
  
  @return a newly created NKPaginationInfo initialized with the data of the dictionary.
  */
-- (instancetype _Nonnull) initWithDictionary: (NSDictionary * _Nonnull) dictionary;
+- (nonnull instancetype) initWithDictionary: (nonnull NSDictionary *) dictionary;
 
 @end

@@ -11,7 +11,7 @@
 
 @implementation NKPollElement
 
-- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Order: (NSInteger) order Answers: (NSArray <NSString *> *) answers ExpirationDate: (NSDate * _Nullable) expirationDate Results: (NSArray <NSNumber *> * _Nullable) results Answered: (BOOL) answered Answer: (NSInteger) answer{
+- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Order: (NSInteger) order Answers: (NSArray <NSString *> *) answers ExpirationDate: (NSDate *) expirationDate Results: (NSArray <NSNumber *> *) results Answered: (BOOL) answered Answer: (NSInteger) answer{
     self = [super initWithElementId:elementId Name:name Order:order Type:NKElementTypePoll];
     if (self){
         self.answers = answers;

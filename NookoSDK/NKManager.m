@@ -102,16 +102,16 @@
 
 - (void) getBlockWithBlockId: (NSInteger) blockId
                   Parameters: (NSArray <id<NKParameter>> *) parameters
-                     Success: (void (^ _Nullable)(NKBlock *block)) success
-                     Failure: (void (^ _Nullable)(NSError *error)) failure{
+                     Success: (void (^)(NKBlock *block)) success
+                     Failure: (void (^)(NSError *error)) failure{
     [self getBlockWithBlockId:blockId Parameters:parameters IncludingSections:FALSE AndElements:FALSE Success:success Failure:failure];
 }
 
 - (void) getBlockWithBlockId: (NSInteger) blockId
                   Parameters: (NSArray <id<NKParameter>> *) parameters
            IncludingSections: (BOOL) includeSections
-                     Success: (void (^ _Nullable)(NKBlock *block)) success
-                     Failure: (void (^ _Nullable)(NSError *error)) failure{
+                     Success: (void (^)(NKBlock *block)) success
+                     Failure: (void (^)(NSError *error)) failure{
     [self getBlockWithBlockId:blockId Parameters:parameters IncludingSections:includeSections AndElements:FALSE Success:success Failure:failure];
 }
 
@@ -119,8 +119,8 @@
                   Parameters: (NSArray <id<NKParameter>> *) parameters
            IncludingSections: (BOOL) includeSections
                  AndElements: (BOOL) includeElements
-                     Success: (void (^ _Nullable)(NKBlock *block)) success
-                     Failure: (void (^ _Nullable)(NSError *error)) failure{
+                     Success: (void (^)(NKBlock *block)) success
+                     Failure: (void (^)(NSError *error)) failure{
     NSMutableDictionary *parametersMutable = [[NSMutableDictionary alloc] init];
     if (includeSections){
         if (includeElements){

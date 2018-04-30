@@ -56,13 +56,13 @@ typedef NS_ENUM(NSUInteger, NKHTTPMethod) {
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the response of the api (a NKResponse).
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
  */
-+ (void) callApiWithApiToken: (NSString  * _Nonnull) apiToken
-                      Locale: (NSString * _Nullable) locale
-                     ApiName: (NSString * _Nonnull) apiName
++ (void) callApiWithApiToken: (nonnull NSString  *) apiToken
+                      Locale: (nullable NSString *) locale
+                     ApiName: (nonnull NSString *) apiName
                   HTTPMethod: (NKHTTPMethod) httpMethod
-                  Parameters: (NSDictionary * _Nullable) parameters
-            HeaderParameters: (NSDictionary * _Nullable) headerParameters
-                     Success: (void (^ _Nullable)(NKResponse * _Nonnull response)) success
-                     Failure: (void (^ _Nullable)(NSError * _Nonnull error)) failure;
+                  Parameters: (nullable NSDictionary *) parameters
+            HeaderParameters: (nullable NSDictionary *) headerParameters
+                     Success: (nullable void (^)(NKResponse * _Nonnull response)) success
+                     Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 @end

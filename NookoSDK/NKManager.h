@@ -41,7 +41,7 @@ Creates and returns a singleton `NKManager`.
 Use this object to make all the subsequent calls to the Nooko apis.
 Don't allocate an instance of NKManager yourself.
  */
-+ (NKManager *_Nonnull) sharedManager;
++ (nonnull NKManager *) sharedManager;
 
 /**
 The API token used to make all the requests to the api.
@@ -58,8 +58,8 @@ The API token used to make all the requests to the api.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the project returned by the api.
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
  */
-- (void) getProjectWithSuccess: (void (^ _Nullable)(NKProject * _Nonnull project)) success
-                       Failure: (void (^ _Nullable)(NSError * _Nonnull error)) failure;
+- (void) getProjectWithSuccess: (nullable void (^)(NKProject * _Nonnull project)) success
+                       Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 /**
  Retrieve the blocks of the project.
@@ -69,13 +69,13 @@ The API token used to make all the requests to the api.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes two arguments: the ararray of blocks returned by the api and the informations about the pagination.
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
  */
-- (void) getBlocksWithParameters: (NSArray <id<NKParameter>> * _Nullable) parameters
-                         Success: (void (^ _Nullable)(NSArray <NKBlock *> * _Nonnull blocks, NKPaginationInfo * _Nonnull pagintaionInfo)) success
-                         Failure: (void (^ _Nullable)(NSError * _Nonnull error)) failure;
+- (void) getBlocksWithParameters: (nullable NSArray <id<NKParameter>> *) parameters
+                         Success: (nullable void (^)(NSArray <NKBlock *> * _Nonnull blocks, NKPaginationInfo * _Nonnull pagintaionInfo)) success
+                         Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 /**
  Retrieve the blocks of the project.
- If includingSections is true the informations about the sections are included in the response.
+ If includeSections is true the informations about the sections are included in the response.
  @note This function calls `-[NKManager getBlocksWithParameters:IncludingSections:AndElements:Success:Failure:]` with the default value of 'false' for the parameter 'includeElements'
  @see `NKParameter`
  @param parameters An optional array of parameters used to sort, filter orpaginate the blocks returned.
@@ -83,10 +83,10 @@ The API token used to make all the requests to the api.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes two arguments: the array of blocks returned by the api and the informations about the pagination.
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
  */
-- (void) getBlocksWithParameters: (NSArray <id<NKParameter>> * _Nullable) parameters
+- (void) getBlocksWithParameters: (nullable NSArray <id<NKParameter>> *) parameters
                IncludingSections: (BOOL) includeSections
-                         Success: (void (^ _Nullable)(NSArray <NKBlock *> * _Nonnull blocks, NKPaginationInfo * _Nonnull pagintaionInfo)) success
-                         Failure: (void (^ _Nullable)(NSError * _Nonnull error)) failure;
+                         Success: (nullable void (^)(NSArray <NKBlock *> * _Nonnull blocks, NKPaginationInfo * _Nonnull pagintaionInfo)) success
+                         Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 /**
  Retrieve the blocks of the project.
@@ -99,11 +99,11 @@ The API token used to make all the requests to the api.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes two arguments: the array of blocks returned by the api and the informations about the pagination.
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
  */
-- (void) getBlocksWithParameters: (NSArray <id<NKParameter>> * _Nullable) parameters
+- (void) getBlocksWithParameters: (nullable NSArray <id<NKParameter>> *) parameters
                IncludingSections: (BOOL) includeSections
                      AndElements: (BOOL) includeElements
-                         Success: (void (^ _Nullable)(NSArray <NKBlock *> * _Nonnull blocks, NKPaginationInfo * _Nonnull pagintaionInfo)) success
-                         Failure: (void (^ _Nullable)(NSError * _Nonnull error)) failure;
+                         Success: (nullable void (^)(NSArray <NKBlock *> * _Nonnull blocks, NKPaginationInfo * _Nonnull pagintaionInfo)) success
+                         Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 /**
  Retrieve the block of the project with the specified id.
@@ -115,9 +115,9 @@ The API token used to make all the requests to the api.
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
  */
 - (void) getBlockWithBlockId: (NSInteger) blockId
-                  Parameters: (NSArray <id<NKParameter>> * _Nullable) parameters
-                     Success: (void (^ _Nullable)(NKBlock * _Nonnull block)) success
-                     Failure: (void (^ _Nullable)(NSError * _Nonnull error)) failure;
+                  Parameters: (nullable NSArray <id<NKParameter>> *) parameters
+                     Success: (nullable void (^)(NKBlock * _Nonnull block)) success
+                     Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 /**
  Retrieve the block of the project with the specified id.
@@ -131,10 +131,10 @@ The API token used to make all the requests to the api.
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
  */
 - (void) getBlockWithBlockId: (NSInteger) blockId
-                  Parameters: (NSArray <id<NKParameter>> * _Nullable) parameters
+                  Parameters: (nullable NSArray <id<NKParameter>> *) parameters
            IncludingSections: (BOOL) includeSections
-                     Success: (void (^ _Nullable)(NKBlock * _Nonnull block)) success
-                     Failure: (void (^ _Nullable)(NSError * _Nonnull error)) failure;
+                     Success: (nullable void (^)(NKBlock * _Nonnull block)) success
+                     Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 /**
  Retrieve the block of the project with the specified id.
@@ -149,11 +149,11 @@ The API token used to make all the requests to the api.
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
  */
 - (void) getBlockWithBlockId: (NSInteger) blockId
-                  Parameters: (NSArray <id<NKParameter>> * _Nullable) parameters
+                  Parameters: (nullable NSArray <id<NKParameter>> *) parameters
            IncludingSections: (BOOL) includeSections
                  AndElements: (BOOL) includeElements
-                     Success: (void (^ _Nullable)(NKBlock * _Nonnull block)) success
-                     Failure: (void (^ _Nullable)(NSError * _Nonnull error)) failure;
+                     Success: (nullable void (^)(NKBlock * _Nonnull block)) success
+                     Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 /**
  Retrieve the sections of the block with the specified id.
@@ -165,9 +165,9 @@ The API token used to make all the requests to the api.
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
  */
 - (void) getSectionsWithBlockId: (NSInteger) blockId
-                     Parameters: (NSArray <id<NKParameter>> * _Nullable) parameters
-                        Success: (void (^ _Nullable)(NSArray <NKSection *> * _Nonnull sections, NKPaginationInfo * _Nonnull pagintaionInfo)) success
-                        Failure: (void (^ _Nullable)(NSError * _Nonnull error)) failure;
+                     Parameters: (nullable NSArray <id<NKParameter>> *) parameters
+                        Success: (nullable void (^)(NSArray <NKSection *> * _Nonnull sections, NKPaginationInfo * _Nonnull pagintaionInfo)) success
+                        Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 /**
  Retrieve the sections of the block with the specified id.
  If includeElements is true the informations about the elements of the sections are included in the response.
@@ -179,10 +179,10 @@ The API token used to make all the requests to the api.
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
  */
 - (void) getSectionsWithBlockId: (NSInteger) blockId
-                     Parameters: (NSArray <id<NKParameter>> * _Nullable) parameters
+                     Parameters: (nullable NSArray <id<NKParameter>> *) parameters
                 IncludeElements: (BOOL) includeElements
-                        Success: (void (^ _Nullable)(NSArray <NKSection *> * _Nonnull sections, NKPaginationInfo * _Nonnull pagintaionInfo)) success
-                        Failure: (void (^ _Nullable)(NSError * _Nonnull error)) failure;
+                        Success: (nullable void (^)(NSArray <NKSection *> * _Nonnull sections, NKPaginationInfo * _Nonnull pagintaionInfo)) success
+                        Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 /**
  Retrieve the section with the specified id and all.
@@ -192,8 +192,8 @@ The API token used to make all the requests to the api.
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
  */
 - (void) getSectionWithId: (NSInteger) sectionId
-                  Success: (void (^ _Nullable)(NKSection * _Nonnull section)) success
-                  Failure: (void (^ _Nullable)(NSError * _Nonnull error)) failure;
+                  Success: (nullable void (^)(NKSection * _Nonnull section)) success
+                  Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 /**
  Retrieve the section with the specified id.
@@ -205,8 +205,8 @@ The API token used to make all the requests to the api.
  */
 - (void) getSectionWithId: (NSInteger) sectionId
           IncludeElements: (BOOL) includeElements
-                  Success: (void (^ _Nullable)(NKSection * _Nonnull section)) success
-                  Failure: (void (^ _Nullable)(NSError * _Nonnull error)) failure;
+                  Success: (nullable void (^)(NKSection * _Nonnull section)) success
+                  Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 /**
  Retrieve the elements of the section with the specified id.
@@ -215,7 +215,7 @@ The API token used to make all the requests to the api.
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
  */
 - (void) getElementsWithSectionId: (NSInteger) sectionId
-                          Success: (void (^ _Nullable)(NSDictionary * _Nonnull elements)) success
-                          Failure: (void (^ _Nullable)(NSError * _Nonnull error)) failure;
+                          Success: (nullable void (^)(NSDictionary * _Nonnull elements)) success
+                          Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 @end

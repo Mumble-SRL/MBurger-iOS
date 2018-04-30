@@ -48,7 +48,7 @@
 
  @return a newly created NKSortParameter initialized with the data passed.
  */
-- (instancetype _Nonnull) initWithField: (NSString * _Nonnull) field;
+- (nonnull instancetype) initWithField: (nonnull NSString *) field;
 
 /**
  Creates and initializes a sort parameter object.
@@ -58,6 +58,6 @@
  
  @return a newly created NKSortParameter initialized with the data passed.
  */
-- (instancetype _Nonnull) initWithField: (NSString * _Nonnull) field Ascending: (BOOL) ascending;
+- (nonnull instancetype) initWithField: (nonnull NSString *) field Ascending: (BOOL) ascending;
 
 @end

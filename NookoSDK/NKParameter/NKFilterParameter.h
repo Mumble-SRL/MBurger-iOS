@@ -49,6 +49,6 @@
  
  @return a newly created NKFilterParameter initialized with the data passed.
  */
-- (instancetype _Nonnull) initWithField: (NSString * _Nonnull) field Value: (NSString * _Nonnull) value;
+- (nonnull instancetype) initWithField: (nonnull NSString *) field Value: (nonnull NSString *) value;
 
 @end

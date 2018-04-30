@@ -67,7 +67,7 @@
  
  @return a newly created NKBlock initialized with the blockId and sections.
  */
-- (instancetype _Nonnull) initWithBlockId: (NSInteger) blockId Title: (NSString *) title Subtitle: (NSString *) subtitle Order: (NSInteger) order Sections: (NSArray <NKSection *> * _Nullable) sections;
+- (nonnull instancetype) initWithBlockId: (NSInteger) blockId Title: (nonnull NSString *) title Subtitle: (nonnull NSString *) subtitle Order: (NSInteger) order Sections: (nullable NSArray <NKSection *> *) sections;
 
 /**
  Initializes a block with the dictionary returned by the api.
@@ -76,6 +76,6 @@
 
  @return a newly created NKBlock initialized with the data of the dictionary.
  */
-- (instancetype _Nonnull) initWithDictionary: (NSDictionary * _Nonnull) dictionary;
+- (nonnull instancetype) initWithDictionary: (nonnull NSDictionary *) dictionary;
 
 @end

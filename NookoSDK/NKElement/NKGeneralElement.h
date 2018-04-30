@@ -53,6 +53,6 @@
 
  @return a newly created NKGeneralElement initialized with the elementId, the name and the value passed.
  */
-- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Order: (NSInteger) order Value: (id _Nullable) value Type: (NSString *) type;
+- (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Value: (nullable id) value Type: (NSString *) type;
 
 @end

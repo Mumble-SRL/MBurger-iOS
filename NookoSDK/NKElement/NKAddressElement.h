@@ -55,7 +55,7 @@
 
  @return a newly created NKAddressElement initialized with the parameters passed.
  */
-- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Order: (NSInteger) order Address: (NSString * _Nullable) address Latitude: (CLLocationDegrees) latitude Longitude: (CLLocationDegrees) longitude;
+- (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Address: (nullable NSString *) address Latitude: (CLLocationDegrees) latitude Longitude: (CLLocationDegrees) longitude;
 
 /**
  Initializes a address element with an elementId, a name, its address and coordinate as CLLocationCoordinate2D.
@@ -70,7 +70,7 @@
  
  @return a newly created NKAddressElement initialized with the parameters passed.
  */
-- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Order: (NSInteger) order Address: (NSString * _Nullable) address Coordinate: (CLLocationCoordinate2D) coordinate;
+- (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Address: (nullable NSString *) address Coordinate: (CLLocationCoordinate2D) coordinate;
 
 /**
  The latitude of the address if exists. If it dowsn't exists it returns 0

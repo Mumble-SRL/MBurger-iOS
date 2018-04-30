@@ -47,6 +47,6 @@
  
  @return a newly created NKTextElement initialized with the elementId, the name and the value passed.
 */
-- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Order: (NSInteger) order Text: (NSString * _Nullable) text;
+- (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Text: (nullable NSString *) text;
 
 @end

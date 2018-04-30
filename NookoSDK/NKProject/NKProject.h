@@ -48,7 +48,7 @@
  
  @return a newly created NKProject initialized with the projectId and name.
  */
-- (instancetype _Nonnull) initWithProjectId: (NSInteger) projectId Name: (NSString * _Nonnull) name;
+- (nonnull instancetype) initWithProjectId: (NSInteger) projectId Name: (nonnull NSString *) name;
 
 /**
  Initializes a project with the dictionary returned by the api.
@@ -57,6 +57,6 @@
  
  @return a newly created NKProject initialized with the data of the dictionary.
  */
-- (instancetype _Nonnull) initWithDictionary: (NSDictionary * _Nonnull) dictionary;
+- (nonnull instancetype) initWithDictionary: (nonnull NSDictionary *) dictionary;
 
 @end

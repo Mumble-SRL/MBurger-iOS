@@ -85,7 +85,7 @@ typedef NS_ENUM(NSUInteger, NKElementType) {
  
  @return a newly created NKElement initialized with the elementId and type.
  */
-- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Order: (NSInteger) order Type: (NKElementType) elementType;
+- (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Type: (NKElementType) elementType;
 
 /**
  Initializes an element with the dictionary returned by the api.
@@ -94,12 +94,12 @@ typedef NS_ENUM(NSUInteger, NKElementType) {
 
  @return a newly created NKElement initialized with the data of the dictionary.
  */
-- (instancetype _Nonnull) initWithDictionary: (NSDictionary * _Nonnull) dictionary;
+- (nonnull instancetype) initWithDictionary: (nonnull NSDictionary *) dictionary;
 
 /**
  The value of the element.
  @return The value of the element, the class of the value depends on the type of element we are calling this function
  */
-- (id _Nullable) value;
+- (nullable id) value;
 
 @end

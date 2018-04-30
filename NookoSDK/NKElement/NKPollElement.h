@@ -71,6 +71,6 @@
 
  @return a newly created NKPollElement initialized with the parameters passed.
  */
-- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Order: (NSInteger) order Answers: (NSArray <NSString *> * _Nullable) answers ExpirationDate: (NSDate * _Nullable) expirationDate Results: (NSArray <NSNumber *> * _Nullable) results Answered: (BOOL) answered Answer: (NSInteger) answer;
+- (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Answers: (nullable NSArray <NSString *> *) answers ExpirationDate: (nullable NSDate *) expirationDate Results: (nullable NSArray <NSNumber *> *) results Answered: (BOOL) answered Answer: (NSInteger) answer;
 
 @end

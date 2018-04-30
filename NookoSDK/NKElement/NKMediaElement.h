@@ -65,12 +65,12 @@ typedef NS_ENUM(NSUInteger, NKMediaType) {
 
  @return a newly created NKMediaElement initialized with the elementId, the name, the value passed and the media type.
  */
-- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Order: (NSInteger) order Medias: (NSArray <NKFile *> * _Nullable) medias MediaType: (NKMediaType) mediaType;
+- (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Medias: (nullable NSArray <NKFile *> *) medias MediaType: (NKMediaType) mediaType;
 
 /**
  It returns the first media of the element if exists.
  @return the frist media.
  */
-- (NKFile * _Nullable) firstMedia;
+- (nullable NKFile *) firstMedia;
 
 @end

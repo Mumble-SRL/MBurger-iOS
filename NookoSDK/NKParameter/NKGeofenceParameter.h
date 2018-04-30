@@ -50,7 +50,7 @@
  
  @return a newly created NKFilterParameter initialized with the data passed.
  */
-- (instancetype _Nonnull) initWithNorthEastCoordinate: (CLLocationCoordinate2D) northEastCoordinate SouthWestCoordinate: (CLLocationCoordinate2D) southWestCoordinate;
+- (nonnull instancetype) initWithNorthEastCoordinate: (CLLocationCoordinate2D) northEastCoordinate SouthWestCoordinate: (CLLocationCoordinate2D) southWestCoordinate;
 
 /**
  Creates and initializes a geofence parameter object.
@@ -62,7 +62,7 @@
 
  @return a newly created NKFilterParameter initialized with the data passed.
  */
-- (instancetype _Nonnull) initWithNorthEastLatitude: (double) northEastLatitude
+- (nonnull instancetype) initWithNorthEastLatitude: (double) northEastLatitude
                         NorthEastLongitude: (double) northEastLongitude
                          SouthWestLatitude: (double) southWestLatitude
                         SouthWestLongitude: (double) southWestLongitude;

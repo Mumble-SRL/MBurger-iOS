@@ -50,7 +50,7 @@
         }
         self->news = newsArray;
         [self.tableView reloadData];
-    } Failure:^(NSError * _Nonnull error) {
+    } Failure:^(NSError * error) {
         [self showError:error];
     }];
 }

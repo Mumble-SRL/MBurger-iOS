@@ -48,7 +48,7 @@
  
  @return a newly created NKWysiwygElement initialized with the elementId, the name and the value passed.
  */
-- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Order: (NSInteger) order Wysiwyg: (NSString * _Nullable) wysiwyg;
+- (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Wysiwyg: (nullable NSString *) wysiwyg;
 
 /**
  Creates and returns the attributed string representing the value, if the HTML can be parsed.
@@ -57,6 +57,6 @@
  
  @see [NSAttributedString initWithData:options:documentAttributes:error:](https://developer.apple.com/documentation/foundation/nsattributedstring/1524613-initwithdata?language=objc)
  */
-- (NSAttributedString * _Nullable) attributedString: (NSError * _Nullable *_Nullable) error;
+- (nullable NSAttributedString *) attributedString: (NSError * _Nullable *_Nullable) error;
 
 @end

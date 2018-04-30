@@ -49,6 +49,6 @@
  
  @return a newly created NKGeneralParameter initialized with the data passed.
  */
-- (instancetype _Nonnull) initWithKey: (NSString * _Nonnull) key Value: (NSString * _Nonnull) value;
+- (nonnull instancetype) initWithKey: (nonnull NSString *) key Value: (nonnull NSString *) value;
 
 @end

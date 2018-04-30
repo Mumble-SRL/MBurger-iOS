@@ -60,7 +60,7 @@
  
  @return a newly created NKImageElement initialized with the elementId, the name and the value passed.
  */
-- (instancetype _Nonnull) initWithId: (NSInteger) fileId Url: (NSURL * _Nonnull) url MimeType: (NSString * _Nonnull) mimeType Size: (NSInteger) size;
+- (nonnull instancetype) initWithId: (NSInteger) fileId Url: (nonnull NSURL *) url MimeType: (nonnull NSString *) mimeType Size: (NSInteger) size;
 
 /**
  Initializes a media with the dictionary returned by the api.
@@ -69,7 +69,7 @@
  
  @return a newly created NKMedia initialized with the data of the dictionary.
  */
-- (instancetype _Nonnull) initWithDictionary: (NSDictionary * _Nonnull) dictionary;
+- (nonnull instancetype) initWithDictionary: (nonnull NSDictionary *) dictionary;
 
 
 @end

@@ -47,6 +47,6 @@
  
  @return a newly created NKCheckboxElement initialized with the elementId, the name and the value passed.
  */
-- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Order: (NSInteger) order Checked: (BOOL) checked;
+- (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Checked: (BOOL) checked;
 
 @end

@@ -279,7 +279,7 @@ NSMutableArray *newsArray = [[NSMutableArray alloc] init];
         [section mapElementsToObject:n withMapping:mappingDictionary];
         [newsArray addObject:n];
     }
- } Failure:^(NSError * _Nonnull error) {
+ } Failure:^(NSError *error) {
     [self showError:error];
  }];
 ```

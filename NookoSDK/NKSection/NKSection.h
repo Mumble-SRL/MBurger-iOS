@@ -62,7 +62,7 @@
 
  @return a newly created NKSection initialized with the sectionId and elements.
  */
-- (instancetype _Nonnull) initWithSectionId: (NSInteger) sectionId Order: (NSInteger) order Elements: (NSDictionary * _Nullable) elements AvailableAt: (NSDate * _Nullable) availableAt;
+- (nonnull instancetype) initWithSectionId: (NSInteger) sectionId Order: (NSInteger) order Elements: (nullable NSDictionary *) elements AvailableAt: (nullable NSDate *) availableAt;
 
 /**
  Initializes a section with the dictionary returned by the api.
@@ -71,7 +71,7 @@
  
  @return a newly created NKSection initialized with the data of the dictionary.
  */
-- (instancetype _Nonnull) initWithDictionary: (NSDictionary * _Nonnull) dictionary;
+- (nonnull instancetype) initWithDictionary: (nonnull NSDictionary *) dictionary;
 
 /**
  *  Copy a set of elements values from this Entry to a custom object. This is very useful if you want to initialize a custom object you created with the values of the elements of this section. The properties of elements can be queried with the dot notation, e.g. image.firstImage.url, if no property is queried the object mapped is the value of the element, for example if it's a NKTextElement it will map the string value.

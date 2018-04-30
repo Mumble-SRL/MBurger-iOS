@@ -34,6 +34,6 @@
  A dictionary of elements that represents the parameter.
  The keys and values of the dictionary are the one passed as parameters to the Nooko api.
  */
-- (NSDictionary * _Nonnull) parameterRepresentation;
+- (nonnull NSDictionary *) parameterRepresentation;
 
 @end

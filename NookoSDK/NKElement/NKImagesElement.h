@@ -47,12 +47,12 @@
  
  @return a newly created NKImageElement initialized with the elementId, the name and the value passed.
  */
-- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Order: (NSInteger) order Images: (NSArray <NKImage *> * _Nullable) images;
+- (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Images: (nullable NSArray <NKImage *> *) images;
 
 /**
  It returns the first image of the element if exists.
  @return the frist image.
  */
-- (NKImage * _Nullable) firstImage;
+- (nullable NKImage *) firstImage;
 
 @end

@@ -81,7 +81,7 @@
     return @"File";
 }
 
-- (NKFile * _Nullable) firstMedia{
+- (NKFile *) firstMedia{
     if (self.medias.count > 0){
         return self.medias.firstObject;
     }
