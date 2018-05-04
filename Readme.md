@@ -23,7 +23,7 @@ To integrate the NookoSDK into your Xcode project using CocoaPods, specify it in
 platform :ios, '10.0'
 
 target 'TargetName' do
-    pod 'NookoSDK', git: 'https://gitlab.mumbleserver.it/iOS/NookoSDK'
+    pod 'NookoSDK', git: 'https://github.com/Mumble-SRL/NookoSDK-Objc.git'
 end
 ```
 
@@ -49,7 +49,7 @@ Note that `NookoSDK` has `AFNetworking (3.0)` as a dependency, so you have to in
 To initialize the SDK you have to create a token through the [dashboard](https://nooko2.mumbleserver.it/). Click on the settings icon on the top-right and create a API Key specifiyng the permissions.
 
 
-![Dashboard image](https://gitlab.mumbleserver.it/iOS/NookoSDK/raw/master/Images/api_token.png)
+![Dashboard image](https://github.com/Mumble-SRL/NookoSDK-Objc.git/raw/master/Images/api_token.png)
 
 In your `AppDelegate` `application:didFinishLaunchingWithOptions:` initialize the SDK like the following:
 
@@ -316,13 +316,13 @@ All the model objects implement the `isEqual:` function based on the correspondi
 
 # Documentation
 
-For further information, you can check out the full SDK Reference in the [docs](https://gitlab.mumbleserver.it/iOS/NookoSDK/tree/master/docs) folder.
+For further information, you can check out the full SDK Reference in the [docs](https://github.com/Mumble-SRL/NookoSDK-Objc.git/tree/master/docs) folder.
 
 
 # Contacts
 
-You can contuct us at [info@mumbleideas.it](mailto:https://gitlab.mumbleserver.it/iOS/NookoSDK/raw/master/LICENSE).
+You can contuct us at [info@mumbleideas.it](mailto:info@mumbleideas.it).
 
 # License
 
-NookoSDK is released under the MIT license. See [LICENSE](https://gitlab.mumbleserver.it/iOS/NookoSDK/raw/master/LICENSE) for details.
+NookoSDK is released under the MIT license. See [LICENSE](https://github.com/Mumble-SRL/NookoSDK-Objc.git/raw/master/LICENSE) for details.
