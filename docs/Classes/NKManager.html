@@ -14,7 +14,8 @@
     <a title="NKManager Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">NookoSDK Docs</a> (100% documented)</p>
+        <p><a href="../index.html">NookoSDK Docs</a> (98% documented)</p>
+        <p class="header-right"><a href="https://github.com/Mumble-SRL/NookoSDK-Objc"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -199,7 +200,7 @@ Don&rsquo;t allocate an instance of NKManager yourself.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">NKManager</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">)</span><span class="n">sharedManager</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">NKManager</span> <span class="o">*</span><span class="p">)</span><span class="n">sharedManager</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -275,6 +276,17 @@ Don&rsquo;t allocate an instance of NKManager yourself.</p>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Project"></a>
+                <a name="//apple_ref/objc/Section/Project" class="dashAnchor"></a>
+                <a href="#/Project">
+                  <h3 class="section-name">Project</h3>
+                </a>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -295,8 +307,8 @@ Don&rsquo;t allocate an instance of NKManager yourself.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">getProjectWithSuccess</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n"><a href="../Classes/NKProject.html">NKProject</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">success</span>
-                      <span class="nf">Failure</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">failure</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">getProjectWithSuccess</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n"><a href="../Classes/NKProject.html">NKProject</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">success</span>
+                      <span class="nf">Failure</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">failure</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -339,6 +351,17 @@ Don&rsquo;t allocate an instance of NKManager yourself.</p>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Blocks"></a>
+                <a name="//apple_ref/objc/Section/Blocks" class="dashAnchor"></a>
+                <a href="#/Blocks">
+                  <h3 class="section-name">Blocks</h3>
+                </a>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -370,10 +393,10 @@ Don&rsquo;t allocate an instance of NKManager yourself.</p>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="nf">getBlocksWithParameters</span><span class="p">:(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/NKParameter.html">NKParameter</a></span><span class="o">&gt;&gt;</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">parameters</span>
-                <span class="nf">Success</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n"><a href="../Classes/NKBlock.html">NKBlock</a></span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">,</span>
+<span class="nf">getBlocksWithParameters</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/NKParameter.html">NKParameter</a></span><span class="o">&gt;&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">parameters</span>
+                <span class="nf">Success</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n"><a href="../Classes/NKBlock.html">NKBlock</a></span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">,</span>
                                            <span class="n"><a href="../Classes/NKPaginationInfo.html">NKPaginationInfo</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="n">success</span>
-                <span class="n">Failure</span><span class="o">:</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="n">failure</span><span class="p">;</span></code></pre>
+                <span class="n">Failure</span><span class="o">:</span><span class="p">(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="n">failure</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -442,7 +465,7 @@ Don&rsquo;t allocate an instance of NKManager yourself.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Retrieve the blocks of the project.
-If includingSections is true the informations about the sections are included in the response.</p>
+If includeSections is true the informations about the sections are included in the response.</p>
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     This function calls <code><a href="../Classes/NKManager.html#/c:objc(cs)NKManager(im)getBlocksWithParameters:IncludingSections:AndElements:Success:Failure:">-[NKManager getBlocksWithParameters:IncludingSections:AndElements:Success:Failure:]</a></code> with the default value of &lsquo;false&rsquo; for the parameter &lsquo;includeElements&rsquo;
@@ -460,11 +483,11 @@ If includingSections is true the informations about the sections are included in
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="nf">getBlocksWithParameters</span><span class="p">:(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/NKParameter.html">NKParameter</a></span><span class="o">&gt;&gt;</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">parameters</span>
+<span class="nf">getBlocksWithParameters</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/NKParameter.html">NKParameter</a></span><span class="o">&gt;&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">parameters</span>
       <span class="nf">IncludingSections</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">includeSections</span>
-                <span class="nf">Success</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n"><a href="../Classes/NKBlock.html">NKBlock</a></span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">,</span>
+                <span class="nf">Success</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n"><a href="../Classes/NKBlock.html">NKBlock</a></span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">,</span>
                                            <span class="n"><a href="../Classes/NKPaginationInfo.html">NKPaginationInfo</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="n">success</span>
-                <span class="n">Failure</span><span class="o">:</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="n">failure</span><span class="p">;</span></code></pre>
+                <span class="n">Failure</span><span class="o">:</span><span class="p">(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="n">failure</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -559,12 +582,12 @@ If includeElements is true the informations about the elements of the sections a
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="nf">getBlocksWithParameters</span><span class="p">:(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/NKParameter.html">NKParameter</a></span><span class="o">&gt;&gt;</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">parameters</span>
+<span class="nf">getBlocksWithParameters</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/NKParameter.html">NKParameter</a></span><span class="o">&gt;&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">parameters</span>
       <span class="nf">IncludingSections</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">includeSections</span>
             <span class="nf">AndElements</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">includeElements</span>
-                <span class="nf">Success</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n"><a href="../Classes/NKBlock.html">NKBlock</a></span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">,</span>
+                <span class="nf">Success</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n"><a href="../Classes/NKBlock.html">NKBlock</a></span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">,</span>
                                            <span class="n"><a href="../Classes/NKPaginationInfo.html">NKPaginationInfo</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="n">success</span>
-                <span class="n">Failure</span><span class="o">:</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="n">failure</span><span class="p">;</span></code></pre>
+                <span class="n">Failure</span><span class="o">:</span><span class="p">(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="n">failure</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -674,9 +697,9 @@ If includeElements is true the informations about the elements of the sections a
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">getBlockWithBlockId</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">blockId</span>
-                 <span class="nf">Parameters</span><span class="p">:(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/NKParameter.html">NKParameter</a></span><span class="o">&gt;&gt;</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">parameters</span>
-                    <span class="nf">Success</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n"><a href="../Classes/NKBlock.html">NKBlock</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">success</span>
-                    <span class="nf">Failure</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">failure</span><span class="p">;</span></code></pre>
+                 <span class="nf">Parameters</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/NKParameter.html">NKParameter</a></span><span class="o">&gt;&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">parameters</span>
+                    <span class="nf">Success</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n"><a href="../Classes/NKBlock.html">NKBlock</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">success</span>
+                    <span class="nf">Failure</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">failure</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -775,10 +798,10 @@ If includeSections is true the informations about the sections are included in t
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">getBlockWithBlockId</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">blockId</span>
-                 <span class="nf">Parameters</span><span class="p">:(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/NKParameter.html">NKParameter</a></span><span class="o">&gt;&gt;</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">parameters</span>
+                 <span class="nf">Parameters</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/NKParameter.html">NKParameter</a></span><span class="o">&gt;&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">parameters</span>
           <span class="nf">IncludingSections</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">includeSections</span>
-                    <span class="nf">Success</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n"><a href="../Classes/NKBlock.html">NKBlock</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">success</span>
-                    <span class="nf">Failure</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">failure</span><span class="p">;</span></code></pre>
+                    <span class="nf">Success</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n"><a href="../Classes/NKBlock.html">NKBlock</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">success</span>
+                    <span class="nf">Failure</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">failure</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -885,11 +908,11 @@ If includeElements is true the informations about the elements of the sections a
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">getBlockWithBlockId</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">blockId</span>
-                 <span class="nf">Parameters</span><span class="p">:(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/NKParameter.html">NKParameter</a></span><span class="o">&gt;&gt;</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">parameters</span>
+                 <span class="nf">Parameters</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/NKParameter.html">NKParameter</a></span><span class="o">&gt;&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">parameters</span>
           <span class="nf">IncludingSections</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">includeSections</span>
                 <span class="nf">AndElements</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">includeElements</span>
-                    <span class="nf">Success</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n"><a href="../Classes/NKBlock.html">NKBlock</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">success</span>
-                    <span class="nf">Failure</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">failure</span><span class="p">;</span></code></pre>
+                    <span class="nf">Success</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n"><a href="../Classes/NKBlock.html">NKBlock</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">success</span>
+                    <span class="nf">Failure</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">failure</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -980,6 +1003,17 @@ If includeElements is true the informations about the elements of the sections a
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Sections"></a>
+                <a name="//apple_ref/objc/Section/Sections" class="dashAnchor"></a>
+                <a href="#/Sections">
+                  <h3 class="section-name">Sections</h3>
+                </a>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -1012,10 +1046,10 @@ If includeElements is true the informations about the elements of the sections a
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span>
 <span class="nf">getSectionsWithBlockId</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">blockId</span>
-            <span class="nf">Parameters</span><span class="p">:(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/NKParameter.html">NKParameter</a></span><span class="o">&gt;&gt;</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">parameters</span>
-               <span class="nf">Success</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n"><a href="../Classes/NKSection.html">NKSection</a></span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">,</span>
+            <span class="nf">Parameters</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/NKParameter.html">NKParameter</a></span><span class="o">&gt;&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">parameters</span>
+               <span class="nf">Success</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n"><a href="../Classes/NKSection.html">NKSection</a></span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">,</span>
                                           <span class="n"><a href="../Classes/NKPaginationInfo.html">NKPaginationInfo</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="n">success</span>
-               <span class="n">Failure</span><span class="o">:</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="n">failure</span><span class="p">;</span></code></pre>
+               <span class="n">Failure</span><span class="o">:</span><span class="p">(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="n">failure</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -1110,11 +1144,11 @@ If includeElements is true the informations about the elements of the sections a
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span>
 <span class="nf">getSectionsWithBlockId</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">blockId</span>
-            <span class="nf">Parameters</span><span class="p">:(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/NKParameter.html">NKParameter</a></span><span class="o">&gt;&gt;</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span><span class="nv">parameters</span>
+            <span class="nf">Parameters</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/NKParameter.html">NKParameter</a></span><span class="o">&gt;&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">parameters</span>
        <span class="nf">IncludeElements</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">includeElements</span>
-               <span class="nf">Success</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n"><a href="../Classes/NKSection.html">NKSection</a></span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">,</span>
+               <span class="nf">Success</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n"><a href="../Classes/NKSection.html">NKSection</a></span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">,</span>
                                           <span class="n"><a href="../Classes/NKPaginationInfo.html">NKPaginationInfo</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="n">success</span>
-               <span class="n">Failure</span><span class="o">:</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="n">failure</span><span class="p">;</span></code></pre>
+               <span class="n">Failure</span><span class="o">:</span><span class="p">(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="n">failure</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -1219,8 +1253,8 @@ If includeElements is true the informations about the elements of the sections a
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">getSectionWithId</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">sectionId</span>
-                 <span class="nf">Success</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n"><a href="../Classes/NKSection.html">NKSection</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">success</span>
-                 <span class="nf">Failure</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">failure</span><span class="p">;</span></code></pre>
+                 <span class="nf">Success</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n"><a href="../Classes/NKSection.html">NKSection</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">success</span>
+                 <span class="nf">Failure</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">failure</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -1298,8 +1332,8 @@ If includeElements is true the informations about the elements of the sections a
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">getSectionWithId</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">sectionId</span>
          <span class="nf">IncludeElements</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">includeElements</span>
-                 <span class="nf">Success</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n"><a href="../Classes/NKSection.html">NKSection</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">success</span>
-                 <span class="nf">Failure</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">failure</span><span class="p">;</span></code></pre>
+                 <span class="nf">Success</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n"><a href="../Classes/NKSection.html">NKSection</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">success</span>
+                 <span class="nf">Failure</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">failure</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -1366,6 +1400,17 @@ If includeElements is true the informations about the elements of the sections a
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Elements"></a>
+                <a name="//apple_ref/objc/Section/Elements" class="dashAnchor"></a>
+                <a href="#/Elements">
+                  <h3 class="section-name">Elements</h3>
+                </a>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -1388,8 +1433,8 @@ If includeElements is true the informations about the elements of the sections a
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">getElementsWithSectionId</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">sectionId</span>
                          <span class="nf">Success</span><span class="p">:</span>
-                             <span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">success</span>
-                         <span class="nf">Failure</span><span class="p">:(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">_Nullable</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">failure</span><span class="p">;</span></code></pre>
+                             <span class="p">(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">success</span>
+                         <span class="nf">Failure</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">failure</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -1446,11 +1491,126 @@ If includeElements is true the informations about the elements of the sections a
                 </li>
               </ul>
             </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Update%20sections"></a>
+                <a name="//apple_ref/objc/Section/Update sections" class="dashAnchor"></a>
+                <a href="#/Update%20sections">
+                  <h3 class="section-name">Update sections</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)NKManager(im)addSectionWithSectionId:Elements:Success:Failure:"></a>
+                    <a name="//apple_ref/objc/Method/-addSectionWithSectionId:Elements:Success:Failure:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)NKManager(im)addSectionWithSectionId:Elements:Success:Failure:">-addSectionWithSectionId:Elements:Success:Failure:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="nf">addSectionWithSectionId</span><span class="p">:</span> <span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span> <span class="n">sectionId</span>
+                        <span class="n">Elements</span><span class="o">:</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">NSArray</span> <span class="o">&lt;</span><span class="n"><a href="../Classes/NKElement.html">NKElement</a></span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span> <span class="n">elements</span>
+                         <span class="n">Success</span><span class="o">:</span> <span class="p">(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n"><a href="../Classes/NKSection.html">NKSection</a></span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">newSection</span><span class="p">))</span> <span class="n">success</span>
+                         <span class="n">Failure</span><span class="o">:</span> <span class="p">(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">error</span><span class="p">))</span> <span class="n">failure</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">addSection</span><span class="p">(</span><span class="n">withSectionId</span> <span class="nv">sectionId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">elements</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/NKElement.html">NKElement</a></span><span class="p">],</span> <span class="nv">success</span><span class="p">:</span> <span class="p">((</span><span class="kt"><a href="../Classes/NKSection.html">NKSection</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)NKManager(im)editSectionWithSectionId:NewElements:Success:Failure:"></a>
+                    <a name="//apple_ref/objc/Method/-editSectionWithSectionId:NewElements:Success:Failure:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)NKManager(im)editSectionWithSectionId:NewElements:Success:Failure:">-editSectionWithSectionId:NewElements:Success:Failure:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="nf">editSectionWithSectionId</span><span class="p">:</span> <span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span> <span class="n">sectionId</span>
+                      <span class="n">NewElements</span><span class="o">:</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">NSArray</span> <span class="o">&lt;</span><span class="n"><a href="../Classes/NKElement.html">NKElement</a></span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span> <span class="n">newElements</span>
+                          <span class="n">Success</span><span class="o">:</span> <span class="p">(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n"><a href="../Classes/NKSection.html">NKSection</a></span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">newSection</span><span class="p">))</span> <span class="n">success</span>
+                          <span class="n">Failure</span><span class="o">:</span> <span class="p">(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">error</span><span class="p">))</span> <span class="n">failure</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">editSection</span><span class="p">(</span><span class="n">withSectionId</span> <span class="nv">sectionId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">newElements</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/NKElement.html">NKElement</a></span><span class="p">],</span> <span class="nv">success</span><span class="p">:</span> <span class="p">((</span><span class="kt"><a href="../Classes/NKSection.html">NKSection</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)NKManager(im)deleteSectionWithSectionId:Success:Failure:"></a>
+                    <a name="//apple_ref/objc/Method/-deleteSectionWithSectionId:Success:Failure:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)NKManager(im)deleteSectionWithSectionId:Success:Failure:">-deleteSectionWithSectionId:Success:Failure:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="nf">deleteSectionWithSectionId</span><span class="p">:</span> <span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span> <span class="n">sectionId</span>
+                            <span class="n">Success</span><span class="o">:</span> <span class="p">(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="kt">void</span><span class="p">))</span> <span class="n">success</span>
+                            <span class="n">Failure</span><span class="o">:</span> <span class="p">(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span> <span class="n">_Nonnull</span> <span class="n">error</span><span class="p">))</span> <span class="n">failure</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">deleteSection</span><span class="p">(</span><span class="n">withSectionId</span> <span class="nv">sectionId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2018-04-23)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2018 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2018-05-07)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

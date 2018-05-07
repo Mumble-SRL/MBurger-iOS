@@ -9,8 +9,6 @@
 
 #import "NKApiManager.h"
 
-#import "AFNetworking.h"
-
 static NSString *apiBaseUrl = @"https://nooko2.mumbleserver.it/api";
 
 @implementation NKApiManager
@@ -26,8 +24,29 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
             HeaderParameters: (NSDictionary *) headerParameters
                      Success: (void (^)(NKResponse *response)) success
                      Failure: (void (^)(NSError *error)) failure{
+    [self callApiWithApiToken:apiToken Locale:locale ApiName:apiName HTTPMethod:httpMethod Parameters:parameters HeaderParameters:headerParameters MultipartForm:nil Success:success Failure:failure];
+}
+
++ (void) callApiWithApiToken: (NSString  *) apiToken
+                      Locale: (NSString *) locale
+                     ApiName: (NSString *) apiName
+                  HTTPMethod: (NKHTTPMethod) httpMethod
+                  Parameters: (NSDictionary *) parameters
+            HeaderParameters: (NSDictionary *) headerParameters
+               MultipartForm: (nullable NSArray <NKMultipartForm *> *) multipartForm
+                     Success: (void (^)(NKResponse *response)) success
+                     Failure: (void (^)(NSError *error)) failure{
     if (apiToken == nil || [apiToken isEqualToString:@""]){
         NSError *error = [[NSError alloc] initWithDomain:@"com.mumble.nooko" code:101 userInfo:@{NSLocalizedDescriptionKey : @"Invalid api token"}];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (failure){
+                failure(error);
+            }
+        });
+        return;
+    }
+    if (multipartForm != nil && httpMethod != NKHTTPMethodPost){
+        NSError *error = [[NSError alloc] initWithDomain:@"com.mumble.nooko" code:102 userInfo:@{NSLocalizedDescriptionKey : @"Can't send multipart form data with a method different than POST"}];
         dispatch_async(dispatch_get_main_queue(), ^{
             if (failure){
                 failure(error);
@@ -99,6 +118,10 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
     AFHTTPRequestOperationFailureHandler failureHandler = ^(NSURLSessionTask *operation, NSError *error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+            if (error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey]){
+                NSString *responseString = [[NSString alloc] initWithData:error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] encoding:NSUTF8StringEncoding];
+                NSLog(@"There was an error: %@", responseString);
+            }
             if (failure){
                 failure(error);
             }
@@ -113,7 +136,28 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
             [manager GET:urlString parameters:totalParametersDictionary progress:nil success:successHandler failure:failureHandler];
             break;
         case NKHTTPMethodPost:
-            [manager POST:urlString parameters:totalParametersDictionary progress:nil success:successHandler failure:failureHandler];
+            if (multipartForm != nil){
+                [manager POST:urlString parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+                    for (NKMultipartForm *form in multipartForm){
+                        NSLog(@"%@", form.name);
+                        if (form.data){
+                            [formData appendPartWithFormData:form.data name:form.name];
+                        }
+                        else if (form.fileURL){
+                            NSError *error = nil;
+                            if (form.mimeType){
+                                [formData appendPartWithFileURL:form.fileURL name:form.name fileName:form.fileURL.lastPathComponent mimeType:form.mimeType error:&error];
+                            }
+                            else {
+                                [formData appendPartWithFileURL:form.fileURL name:form.name error:&error];
+                            }
+                        }
+                    }
+                } progress:nil success:successHandler failure:failureHandler];
+            }
+            else {
+                [manager POST:urlString parameters:totalParametersDictionary progress:nil success:successHandler failure:failureHandler];
+            }
             break;
         case NKHTTPMethodPut:
             [manager PUT:urlString parameters:totalParametersDictionary success:successHandler failure:failureHandler];
@@ -121,7 +165,7 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
         case NKHTTPMethodPatch:
             [manager PATCH:urlString parameters:totalParametersDictionary success:successHandler failure:failureHandler];
             break;
-        case NKHTTPMethodDelte:
+        case NKHTTPMethodDelete:
             [manager DELETE:urlString parameters:totalParametersDictionary success:successHandler failure:failureHandler];
             break;
         default:

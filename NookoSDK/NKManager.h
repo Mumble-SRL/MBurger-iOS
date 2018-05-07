@@ -28,6 +28,7 @@
 #import "NKBlock.h"
 #import "NKPaginationInfo.h"
 #import "NKParameter.h"
+#import "NKUploadableElement.h"
 
 /**
  The manager of the SDK, this is your entry point for all the calls you do with Nooko.
@@ -53,6 +54,8 @@ The API token used to make all the requests to the api.
  */
 @property (readwrite, nonatomic, strong, nullable) NSLocale *locale;
 
+#pragma mark - Project
+
 /**
  Retrieve the informations about the project.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the project returned by the api.
@@ -60,6 +63,8 @@ The API token used to make all the requests to the api.
  */
 - (void) getProjectWithSuccess: (nullable void (^)(NKProject * _Nonnull project)) success
                        Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
+
+#pragma mark - Blocks
 
 /**
  Retrieve the blocks of the project.
@@ -155,6 +160,8 @@ The API token used to make all the requests to the api.
                      Success: (nullable void (^)(NKBlock * _Nonnull block)) success
                      Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
+#pragma mark - Sections
+
 /**
  Retrieve the sections of the block with the specified id.
  @note This function calls `-[NKManager getSectionsWithParameters:BlockId:IncludeElements:Success:Failure:]` with the default value of 'false' for the parameter 'includeElements'
@@ -184,6 +191,7 @@ The API token used to make all the requests to the api.
                         Success: (nullable void (^)(NSArray <NKSection *> * _Nonnull sections, NKPaginationInfo * _Nonnull pagintaionInfo)) success
                         Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
+
 /**
  Retrieve the section with the specified id and all.
  @note This function calls `-[NKManager getSectionWithId:IncludeElements:Success:Failure:]` with the default value of 'false' for the parameter 'includeElements'
@@ -208,6 +216,8 @@ The API token used to make all the requests to the api.
                   Success: (nullable void (^)(NKSection * _Nonnull section)) success
                   Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
+#pragma mark - Elements
+
 /**
  Retrieve the elements of the section with the specified id.
  @param sectionId The id of the section.
@@ -217,5 +227,28 @@ The API token used to make all the requests to the api.
 - (void) getElementsWithSectionId: (NSInteger) sectionId
                           Success: (nullable void (^)(NSDictionary * _Nonnull elements)) success
                           Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
+
+#pragma mark - Update sections
+
+- (void) addSectionToBlockWithBlockId: (NSInteger) blockId
+                             Elements: (nonnull NSArray <NKUploadableElement *> *) elements
+                              Success: (nullable void (^)(void)) success
+                              Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
+
+- (void) editSectionWithSectionId: (NSInteger) sectionId
+                         Elements: (nonnull NSArray <NKUploadableElement *> *) elements
+                          Success: (nullable void (^)(void)) success
+                          Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
+
+/**
+ Remove the section with the specified id.
+ @param sectionId The id of the section.
+ @param success A block object to be executed when the task finishes successfully. This block has no return value and takes no arguments.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
+ */
+- (void) deleteSectionWithSectionId: (NSInteger) sectionId
+                            Success: (nullable void (^)(void)) success
+                            Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
+
 
 @end

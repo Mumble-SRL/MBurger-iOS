@@ -51,7 +51,7 @@ To initialize the SDK you have to create a token through the [dashboard](https:/
 ![Dashboard image](https://raw.githubusercontent.com/Mumble-SRL/NookoSDK-Objc/develop/Images/api_token.png)
 
 In your `AppDelegate` `application:didFinishLaunchingWithOptions:` initialize the SDK like the following:
-
+q
 **Objective-c**:
 
 ```

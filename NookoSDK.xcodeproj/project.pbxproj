@@ -48,6 +48,12 @@
 		66AF677C206E7111003FD62F /* NKProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF677B206E7111003FD62F /* NKProject.m */; };
 		66AF677F206E7609003FD62F /* NKGeneralElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF677E206E7609003FD62F /* NKGeneralElement.m */; };
 		66AF6782206E7979003FD62F /* NKAddressElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF6781206E7979003FD62F /* NKAddressElement.m */; };
+		66D9635F20A0834800037200 /* NKUploadableElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9635E20A0834800037200 /* NKUploadableElement.m */; };
+		66D9636220A0863400037200 /* NKUploadableTextElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9636120A0863400037200 /* NKUploadableTextElement.m */; };
+		66D9636520A0864300037200 /* NKUploadableImageElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9636420A0864300037200 /* NKUploadableImageElement.m */; };
+		66D9636820A0865200037200 /* NKUploadableFileElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9636720A0865200037200 /* NKUploadableFileElement.m */; };
+		66D9636B20A08A9000037200 /* NKMultipartForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9636A20A08A9000037200 /* NKMultipartForm.m */; };
+		66D9636F20A09AA500037200 /* NKUploadableElementsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9636D20A0994D00037200 /* NKUploadableElementsFactory.m */; };
 		66F925A02074DFC300C850F3 /* NKDropdownElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F9259F2074DFC300C850F3 /* NKDropdownElement.m */; };
 		66F925AB20751BA600C850F3 /* NKImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F925AA20751BA600C850F3 /* NKImage.m */; };
 		66F925AE20751FA800C850F3 /* NKFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F925AD20751FA800C850F3 /* NKFile.m */; };
@@ -141,6 +147,18 @@
 		66AF677E206E7609003FD62F /* NKGeneralElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKGeneralElement.m; sourceTree = "<group>"; };
 		66AF6780206E7979003FD62F /* NKAddressElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKAddressElement.h; sourceTree = "<group>"; };
 		66AF6781206E7979003FD62F /* NKAddressElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKAddressElement.m; sourceTree = "<group>"; };
+		66D9635D20A0834800037200 /* NKUploadableElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKUploadableElement.h; sourceTree = "<group>"; };
+		66D9635E20A0834800037200 /* NKUploadableElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKUploadableElement.m; sourceTree = "<group>"; };
+		66D9636020A0863400037200 /* NKUploadableTextElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKUploadableTextElement.h; sourceTree = "<group>"; };
+		66D9636120A0863400037200 /* NKUploadableTextElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKUploadableTextElement.m; sourceTree = "<group>"; };
+		66D9636320A0864300037200 /* NKUploadableImageElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKUploadableImageElement.h; sourceTree = "<group>"; };
+		66D9636420A0864300037200 /* NKUploadableImageElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKUploadableImageElement.m; sourceTree = "<group>"; };
+		66D9636620A0865200037200 /* NKUploadableFileElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKUploadableFileElement.h; sourceTree = "<group>"; };
+		66D9636720A0865200037200 /* NKUploadableFileElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKUploadableFileElement.m; sourceTree = "<group>"; };
+		66D9636920A08A9000037200 /* NKMultipartForm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKMultipartForm.h; sourceTree = "<group>"; };
+		66D9636A20A08A9000037200 /* NKMultipartForm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKMultipartForm.m; sourceTree = "<group>"; };
+		66D9636C20A0994D00037200 /* NKUploadableElementsFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKUploadableElementsFactory.h; sourceTree = "<group>"; };
+		66D9636D20A0994D00037200 /* NKUploadableElementsFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKUploadableElementsFactory.m; sourceTree = "<group>"; };
 		66F9259E2074DFC300C850F3 /* NKDropdownElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKDropdownElement.h; sourceTree = "<group>"; };
 		66F9259F2074DFC300C850F3 /* NKDropdownElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKDropdownElement.m; sourceTree = "<group>"; };
 		66F925A920751BA600C850F3 /* NKImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKImage.h; sourceTree = "<group>"; };
@@ -189,6 +207,8 @@
 		6608391B2073950000432DE7 /* NKApiManager */ = {
 			isa = PBXGroup;
 			children = (
+				66D9636920A08A9000037200 /* NKMultipartForm.h */,
+				66D9636A20A08A9000037200 /* NKMultipartForm.m */,
 				6608391C2073A56600432DE7 /* NKApiManager.h */,
 				6608391D2073A56600432DE7 /* NKApiManager.m */,
 				6608391F2073A5FA00432DE7 /* NKResponse.h */,
@@ -319,6 +339,7 @@
 				66AF6775206E6F77003FD62F /* NKBlock */,
 				66AF6761206E3B08003FD62F /* NKSection */,
 				66AF6762206E3B0F003FD62F /* NKElement */,
+				66D9635B20A07FE200037200 /* NKUploadableElement */,
 				6608391B2073950000432DE7 /* NKApiManager */,
 			);
 			path = NookoSDK;
@@ -384,6 +405,23 @@
 				66AF677B206E7111003FD62F /* NKProject.m */,
 			);
 			path = NKProject;
+			sourceTree = "<group>";
+		};
+		66D9635B20A07FE200037200 /* NKUploadableElement */ = {
+			isa = PBXGroup;
+			children = (
+				66D9635D20A0834800037200 /* NKUploadableElement.h */,
+				66D9635E20A0834800037200 /* NKUploadableElement.m */,
+				66D9636020A0863400037200 /* NKUploadableTextElement.h */,
+				66D9636120A0863400037200 /* NKUploadableTextElement.m */,
+				66D9636320A0864300037200 /* NKUploadableImageElement.h */,
+				66D9636420A0864300037200 /* NKUploadableImageElement.m */,
+				66D9636620A0865200037200 /* NKUploadableFileElement.h */,
+				66D9636720A0865200037200 /* NKUploadableFileElement.m */,
+				66D9636C20A0994D00037200 /* NKUploadableElementsFactory.h */,
+				66D9636D20A0994D00037200 /* NKUploadableElementsFactory.m */,
+			);
+			path = NKUploadableElement;
 			sourceTree = "<group>";
 		};
 		66DDF8412077A7E40023091E /* Model */ = {
@@ -574,8 +612,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66D9636F20A09AA500037200 /* NKUploadableElementsFactory.m in Sources */,
+				66D9635F20A0834800037200 /* NKUploadableElement.m in Sources */,
 				66AF675D206E38ED003FD62F /* NKSection.m in Sources */,
 				66AF6768206E4AD1003FD62F /* NKImagesElement.m in Sources */,
+				66D9636220A0863400037200 /* NKUploadableTextElement.m in Sources */,
 				667F40802077B3D500B18D16 /* NKElementFactory.m in Sources */,
 				66F925AB20751BA600C850F3 /* NKImage.m in Sources */,
 				667F21EB207B606400C4CA92 /* NKPollElement.m in Sources */,
@@ -589,8 +630,10 @@
 				66AF6737206E3236003FD62F /* NewsListViewController.m in Sources */,
 				66AF6782206E7979003FD62F /* NKAddressElement.m in Sources */,
 				6608391E2073A56600432DE7 /* NKApiManager.m in Sources */,
+				66D9636520A0864300037200 /* NKUploadableImageElement.m in Sources */,
 				66AF676E206E62AA003FD62F /* NKCheckboxElement.m in Sources */,
 				660E86612076071B008DF597 /* NKPaginationParameter.m in Sources */,
+				66D9636B20A08A9000037200 /* NKMultipartForm.m in Sources */,
 				660E865A2076023A008DF597 /* NKPaginationInfo.m in Sources */,
 				66AF677F206E7609003FD62F /* NKGeneralElement.m in Sources */,
 				66AF6765206E3B93003FD62F /* NKTextElement.m in Sources */,
@@ -599,6 +642,7 @@
 				660839242073B8A800432DE7 /* News.m in Sources */,
 				660E866420760726008DF597 /* NKFilterParameter.m in Sources */,
 				66AF6742206E3236003FD62F /* main.m in Sources */,
+				66D9636820A0865200037200 /* NKUploadableFileElement.m in Sources */,
 				66AF676B206E4BBD003FD62F /* NKMediaElement.m in Sources */,
 				66AF6759206E325E003FD62F /* NKManager.m in Sources */,
 				66AF6734206E3236003FD62F /* AppDelegate.m in Sources */,

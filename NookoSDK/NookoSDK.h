@@ -54,5 +54,11 @@
 #import "NKElementFactory.h"
 #import "NKApiManager.h"
 #import "NKResponse.h"
+#import "NKMultipartForm.h"
+#import "NKUploadableElement.h"
+#import "NKUploadableTextElement.h"
+#import "NKUploadableImageElement.h"
+#import "NKUploadableFileElement.h"
+#import "NKUploadableElementsFactory.h"
 
 #endif /* NookoSDK_h */

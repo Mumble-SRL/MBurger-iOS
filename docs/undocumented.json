@@ -1,6 +1,26 @@
 {
   "warnings": [
-
+    {
+      "file": "/Users/lorenzoliveto/iOS/NookoSDK/NookoSDK/NKManager.h",
+      "line": 233,
+      "symbol": "NKManager.-addSectionWithSectionId:Elements:Success:Failure:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lorenzoliveto/iOS/NookoSDK/NookoSDK/NKManager.h",
+      "line": 239,
+      "symbol": "NKManager.-editSectionWithSectionId:NewElements:Success:Failure:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/lorenzoliveto/iOS/NookoSDK/NookoSDK/NKManager.h",
+      "line": 245,
+      "symbol": "NKManager.-deleteSectionWithSectionId:Success:Failure:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    }
   ],
   "source_directory": "/Users/lorenzoliveto/iOS/NookoSDK"
 }

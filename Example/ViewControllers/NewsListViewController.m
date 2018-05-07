@@ -40,17 +40,29 @@
                                         @"content" : @"content",
                                         @"image.firstImage.url" : @"imageUrl",
                                         @"link" : @"link"};
-    NSMutableArray *newsArray = [[NSMutableArray alloc] init];
-    [[NKManager sharedManager] getBlockWithBlockId:newsBlockId Parameters:nil IncludingSections:YES AndElements:YES Success:^(NKBlock *block) {
-        self.navigationItem.title = block.title;
-        for (NKSection *section in block.sections){
-            News *n = [[News alloc] init];
-            [section mapElementsToObject:n withMapping:mappingDictionary];
-            [newsArray addObject:n];
-        }
-        self->news = newsArray;
-        [self.tableView reloadData];
-    } Failure:^(NSError * error) {
+    NKUploadableElementsFactory *factory = [[NKUploadableElementsFactory alloc] initWithLocaleIdentifier:@"it"];
+    UIImage *image = [UIImage imageNamed:@"TestImage"];
+    UIImage *image1 = [UIImage imageNamed:@"TestImage1"];
+    NSArray *elements = @[[factory textElementWithName:@"title" Text:@"Nuovo title3"],
+                          [factory textElementWithName:@"content" Text:@"Nuovo contenuto asd"],
+                          [factory imageElementWithName:@"image" Image:image Index:0],
+                          [factory imageElementWithName:@"image" Image:image1 Index:1]];
+    
+    [[NKManager sharedManager] addSectionToBlockWithBlockId:newsBlockId Elements:elements Success:^{
+        NSMutableArray *newsArray = [[NSMutableArray alloc] init];
+        [[NKManager sharedManager] getBlockWithBlockId:newsBlockId Parameters:nil IncludingSections:YES AndElements:YES Success:^(NKBlock *block) {
+            self.navigationItem.title = block.title;
+            for (NKSection *section in block.sections){
+                News *n = [[News alloc] init];
+                [section mapElementsToObject:n withMapping:mappingDictionary];
+                [newsArray addObject:n];
+            }
+            self->news = newsArray;
+            [self.tableView reloadData];
+        } Failure:^(NSError * error) {
+            [self showError:error];
+        }];
+    } Failure:^(NSError * _Nonnull error) {
         [self showError:error];
     }];
 }

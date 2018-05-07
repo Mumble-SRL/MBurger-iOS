@@ -25,6 +25,8 @@
 
 #import <Foundation/Foundation.h>
 #import "NKResponse.h"
+#import "AFNetworking.h"
+#import "NKMultipartForm.h"
 
 /// The type of Http methods accepted
 typedef NS_ENUM(NSUInteger, NKHTTPMethod) {
@@ -37,7 +39,7 @@ typedef NS_ENUM(NSUInteger, NKHTTPMethod) {
     /// Put method
     NKHTTPMethodPut,
     /// Delete method
-    NKHTTPMethodDelte,
+    NKHTTPMethodDelete,
 };
 
 /**
@@ -62,6 +64,16 @@ typedef NS_ENUM(NSUInteger, NKHTTPMethod) {
                   HTTPMethod: (NKHTTPMethod) httpMethod
                   Parameters: (nullable NSDictionary *) parameters
             HeaderParameters: (nullable NSDictionary *) headerParameters
+                     Success: (nullable void (^)(NKResponse * _Nonnull response)) success
+                     Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
+
++ (void) callApiWithApiToken: (nonnull NSString  *) apiToken
+                      Locale: (nullable NSString *) locale
+                     ApiName: (nonnull NSString *) apiName
+                  HTTPMethod: (NKHTTPMethod) httpMethod
+                  Parameters: (nullable NSDictionary *) parameters
+            HeaderParameters: (nullable NSDictionary *) headerParameters
+               MultipartForm: (nullable NSArray <NKMultipartForm *> *) multipartForm
                      Success: (nullable void (^)(NKResponse * _Nonnull response)) success
                      Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 

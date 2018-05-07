@@ -21,6 +21,8 @@
     return sharedMyManager;
 }
 
+#pragma mark - Project
+
 - (void) getProjectWithSuccess: (void (^)(NKProject * project)) success
                        Failure: (void (^)(NSError *error)) failure {
     [NKApiManager callApiWithApiToken:self.apiToken
@@ -41,6 +43,8 @@
                                   }
                               }];
 }
+
+#pragma mark - Blocks
 
 - (void) getBlocksWithParameters: (NSArray <id<NKParameter>> *) parameters
                          Success: (void (^)(NSArray <NKBlock *> *blocks, NKPaginationInfo *pagintaionInfo)) success
@@ -152,6 +156,8 @@
                               }];
 }
 
+#pragma mark - Sections
+
 - (void) getSectionsWithBlockId: (NSInteger) blockId
                      Parameters: (NSArray <id<NKParameter>> *) parameters
                         Success: (void (^)(NSArray <NKSection *> *sections, NKPaginationInfo *pagintaionInfo)) success
@@ -215,7 +221,7 @@
     }
     [NKApiManager callApiWithApiToken:self.apiToken
                                Locale:[self localeForApi]
-                              ApiName:[NSString stringWithFormat:@"sections/%ld", (long) sectionId]
+                              ApiName:[NSString stringWithFormat:@"sections/%ld/", (long) sectionId]
                            HTTPMethod:NKHTTPMethodGet
                            Parameters:parametersMutable
                      HeaderParameters:nil
@@ -231,6 +237,8 @@
                                   }
                               }];
 }
+
+#pragma mark - Elements
 
 - (void) getElementsWithSectionId: (NSInteger) sectionId
                           Success: (void (^)(NSDictionary *elements)) success
@@ -253,6 +261,83 @@
                                   }
                                   if (success){
                                       success(elementsMutable ? elementsMutable : nil);
+                                  }
+                              }
+                              Failure:^(NSError *error) {
+                                  if (failure){
+                                      failure(error);
+                                  }
+                              }];
+}
+
+#pragma mark - Update sections
+
+- (void) addSectionToBlockWithBlockId: (NSInteger) blockId
+                             Elements: (nonnull NSArray <NKUploadableElement *> *) elements
+                              Success: (nullable void (^)(void)) success
+                              Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
+    NSMutableArray *form = [[NSMutableArray alloc] init];
+    for (NKUploadableElement *element in elements){
+        [form addObject:element.toForm];
+    }
+    [NKApiManager callApiWithApiToken:self.apiToken
+                               Locale:[self localeForApi]
+                              ApiName:[NSString stringWithFormat:@"blocks/%ld/sections", (long) blockId]
+                           HTTPMethod:NKHTTPMethodPost
+                           Parameters:nil
+                     HeaderParameters:nil
+                        MultipartForm:form
+                              Success:^(NKResponse *response) {
+                                  if (success){
+                                      success();
+                                  }
+                              }
+                              Failure:^(NSError *error) {
+                                  if (failure){
+                                      failure(error);
+                                  }
+                              }];
+}
+
+- (void) editSectionWithSectionId: (NSInteger) sectionId
+                         Elements: (nonnull NSArray <NKUploadableElement *> *) elements
+                          Success: (nullable void (^)(void)) success
+                          Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
+    NSMutableArray *form = [[NSMutableArray alloc] init];
+    for (NKUploadableElement *element in elements){
+        [form addObject:element.toForm];
+    }
+    [NKApiManager callApiWithApiToken:self.apiToken
+                               Locale:[self localeForApi]
+                              ApiName:[NSString stringWithFormat:@"sections/%ld/update", (long) sectionId]
+                           HTTPMethod:NKHTTPMethodPost
+                           Parameters:nil
+                     HeaderParameters:nil
+                        MultipartForm:form
+                              Success:^(NKResponse *response) {
+                                  if (success){
+                                      success();
+                                  }
+                              }
+                              Failure:^(NSError *error) {
+                                  if (failure){
+                                      failure(error);
+                                  }
+                              }];
+}
+
+- (void) deleteSectionWithSectionId: (NSInteger) sectionId
+                            Success: (nullable void (^)(void)) success
+                            Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
+    [NKApiManager callApiWithApiToken:self.apiToken
+                               Locale:[self localeForApi]
+                              ApiName:[NSString stringWithFormat:@"sections/%ld/", (long) sectionId]
+                           HTTPMethod:NKHTTPMethodDelete
+                           Parameters:nil
+                     HeaderParameters:nil
+                              Success:^(NKResponse *response) {
+                                  if (success){
+                                      success();
                                   }
                               }
                               Failure:^(NSError *error) {
