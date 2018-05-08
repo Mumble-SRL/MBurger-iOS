@@ -83,7 +83,7 @@ typedef NS_ENUM(NSUInteger, NKElementType) {
  @param order The order of the element.
  @param elementType The type of the element.
  
- @return a newly created NKElement initialized with the elementId and type.
+ @return A newly created NKElement initialized with the elementId and type.
  */
 - (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Type: (NKElementType) elementType;
 
@@ -92,7 +92,7 @@ typedef NS_ENUM(NSUInteger, NKElementType) {
  
  @param dictionary The response from the api.
 
- @return a newly created NKElement initialized with the data of the dictionary.
+ @return A newly created NKElement initialized with the data of the dictionary.
  */
 - (nonnull instancetype) initWithDictionary: (nonnull NSDictionary *) dictionary;
 

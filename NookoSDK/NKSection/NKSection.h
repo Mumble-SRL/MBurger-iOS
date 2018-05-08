@@ -60,7 +60,7 @@
  @param elements The elements of the section as returned by the REST api.
  @param availableAt The date the section is available.
 
- @return a newly created NKSection initialized with the sectionId and elements.
+ @return A newly created NKSection initialized with the sectionId and elements.
  */
 - (nonnull instancetype) initWithSectionId: (NSInteger) sectionId Order: (NSInteger) order Elements: (nullable NSDictionary *) elements AvailableAt: (nullable NSDate *) availableAt;
 
@@ -69,7 +69,7 @@
  
  @param dictionary The response from the api.
  
- @return a newly created NKSection initialized with the data of the dictionary.
+ @return A newly created NKSection initialized with the data of the dictionary.
  */
 - (nonnull instancetype) initWithDictionary: (nonnull NSDictionary *) dictionary;
 

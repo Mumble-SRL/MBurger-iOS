@@ -38,14 +38,14 @@
 
 /**
  Initializes a text element with an elementId and its value.
- @see This function calls the super initializer `-[NKElement initWithElementId:Name:Type:]`
+ @see This function calls the super initializer `-[NKElement initWithElementId:Name:Order:Type:]`
 
  @param elementId The id of the element.
  @param name The name of the element.
  @param order The order of the element.
  @param text The text of the element.
  
- @return a newly created NKTextElement initialized with the elementId, the name and the value passed.
+ @return A newly created NKTextElement initialized with the elementId, the name and the value passed.
 */
 - (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Text: (nullable NSString *) text;
 

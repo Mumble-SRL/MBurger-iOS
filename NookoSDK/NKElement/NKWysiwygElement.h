@@ -39,14 +39,14 @@
 /**
  Initializes a wysiwyg element with an elementId, a name and its value.
  This function calls the super initializer initWithElementId:Name:Type
- @see This function calls the super initializer `-[NKElement initWithElementId:Name:Type:]`
+ @see This function calls the super initializer `-[NKElement initWithElementId:Name:Order:Type:]`
 
  @param elementId The id of the element.
  @param name The name of the element.
  @param order The order of the element.
  @param wysiwyg The wysiwyg HTML string.
  
- @return a newly created NKWysiwygElement initialized with the elementId, the name and the value passed.
+ @return A newly created NKWysiwygElement initialized with the elementId, the name and the value passed.
  */
 - (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Wysiwyg: (nullable NSString *) wysiwyg;
 

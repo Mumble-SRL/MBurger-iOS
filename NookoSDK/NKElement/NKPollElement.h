@@ -59,7 +59,7 @@
 /**
  Initializes a poll element with an elementId, a name and the answers.
  This function calls the super initializer initWithElementId:Name:Type
- @see `-[NKElement initWithElementId:Name:Type:]`
+ @see `-[NKElement initWithElementId:Name:Order:Type:]`
  
  @param elementId The id of the element.
  @param name The name of the element.
@@ -69,7 +69,7 @@
  @param results The results of the poll.
  @param answer My answer to the poll.
 
- @return a newly created NKPollElement initialized with the parameters passed.
+ @return A newly created NKPollElement initialized with the parameters passed.
  */
 - (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Answers: (nullable NSArray <NSString *> *) answers ExpirationDate: (nullable NSDate *) expirationDate Results: (nullable NSArray <NSNumber *> *) results Answered: (BOOL) answered Answer: (NSInteger) answer;
 

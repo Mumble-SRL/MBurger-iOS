@@ -47,7 +47,7 @@
  @param field The field used to filter.
  @param value The value used to filter the elements.
  
- @return a newly created NKFilterParameter initialized with the data passed.
+ @return A newly created NKFilterParameter initialized with the data passed.
  */
 - (nonnull instancetype) initWithField: (nonnull NSString *) field Value: (nonnull NSString *) value;
 

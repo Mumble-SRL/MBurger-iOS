@@ -46,7 +46,7 @@
  @param projectId The id of the project.
  @param name The name of the project.
  
- @return a newly created NKProject initialized with the projectId and name.
+ @return A newly created NKProject initialized with the projectId and name.
  */
 - (nonnull instancetype) initWithProjectId: (NSInteger) projectId Name: (nonnull NSString *) name;
 
@@ -55,7 +55,7 @@
  
  @param dictionary The dictionary returned by the api.
  
- @return a newly created NKProject initialized with the data of the dictionary.
+ @return A newly created NKProject initialized with the data of the dictionary.
  */
 - (nonnull instancetype) initWithDictionary: (nonnull NSDictionary *) dictionary;
 

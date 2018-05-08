@@ -3,8 +3,8 @@ objc: true
 umbrella_header: NookoSDK/NookoSDK.h
 framework_root: NookoSDK
 readme: Readme.md
-
-module_version: 0.0.1
+module_version: 0.0.7
+sdk: iphonesimulator
 
 author: Mumble
 author_url: https://mumbleideas.it/
@@ -50,7 +50,15 @@ custom_categories:
     - NKPollElement
     - NKGeneralElement
     - NKElementFactory
+  - name: NKUploadableElement
+    children:
+    - NKUploadableElement
+    - NKUploadableTextElement
+    - NKUploadableImagesElement
+    - NKUploadableFilesElement
+    - NKUploadableElementsFactory
   - name: NKApiManager
     children:
     - NKApiManager
+    - NKMultipartForm
     - NKResponse

@@ -38,14 +38,14 @@
 
 /**
  Initializes a images element with an elementId and its value (an array of images).
- @see This function calls the super initializer `-[NKElement initWithElementId:Name:Type:]`
+ @see This function calls the super initializer `-[NKElement initWithElementId:Name:Order:Type:]`
 
  @param elementId The id of the element.
  @param name The name of the element.
  @param order The order of the element.
  @param images The images of the element.
  
- @return a newly created NKImageElement initialized with the elementId, the name and the value passed.
+ @return A newly created NKImageElement initialized with the elementId, the name and the value passed.
  */
 - (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Images: (nullable NSArray <NKImage *> *) images;
 

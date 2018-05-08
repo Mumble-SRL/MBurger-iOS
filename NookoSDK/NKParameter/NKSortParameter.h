@@ -46,7 +46,7 @@
  
  @param field The filed of the element used to sort.
 
- @return a newly created NKSortParameter initialized with the data passed.
+ @return A newly created NKSortParameter initialized with the data passed.
  */
 - (nonnull instancetype) initWithField: (nonnull NSString *) field;
 
@@ -56,7 +56,7 @@
  @param field The filed of the element used to sort.
  @param ascending If the elements should be sorted in ascending order.
  
- @return a newly created NKSortParameter initialized with the data passed.
+ @return A newly created NKSortParameter initialized with the data passed.
  */
 - (nonnull instancetype) initWithField: (nonnull NSString *) field Ascending: (BOOL) ascending;
 

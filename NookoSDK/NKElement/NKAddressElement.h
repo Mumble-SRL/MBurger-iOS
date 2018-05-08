@@ -44,7 +44,7 @@
 /**
  Initializes a address element with an elementId, a name, its address and coordinate specified in latitude and lonigtude.
  This function calls the super initializer initWithElementId:Name:Type
- @see `-[NKElement initWithElementId:Name:Type:]`
+ @see `-[NKElement initWithElementId:Name:Order:Type:]`
  
  @param elementId The id of the element.
  @param name The name of the element.
@@ -53,14 +53,14 @@
  @param latitude The latitude.
  @param longitude The longitude.
 
- @return a newly created NKAddressElement initialized with the parameters passed.
+ @return A newly created NKAddressElement initialized with the parameters passed.
  */
 - (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Address: (nullable NSString *) address Latitude: (CLLocationDegrees) latitude Longitude: (CLLocationDegrees) longitude;
 
 /**
  Initializes a address element with an elementId, a name, its address and coordinate as CLLocationCoordinate2D.
  This function calls the super initializer initWithElementId:Name:Type
- @see This function calls the super initializer `-[NKElement initWithElementId:Name:Type:]`
+ @see This function calls the super initializer `-[NKElement initWithElementId:Name:Order:Type:]`
 
  @param elementId The id of the element.
  @param name The name of the element.
@@ -68,7 +68,7 @@
  @param address The address of the element.
  @param coordinate The coordinate.
  
- @return a newly created NKAddressElement initialized with the parameters passed.
+ @return A newly created NKAddressElement initialized with the parameters passed.
  */
 - (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Address: (nullable NSString *) address Coordinate: (CLLocationCoordinate2D) coordinate;
 

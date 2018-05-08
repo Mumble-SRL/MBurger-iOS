@@ -52,7 +52,7 @@
  @param to The ending index.
  @param total The total number of elements of that type on Nooko.
 
- @return a newly created NKPaginationInfo initialized with the data passed.
+ @return A newly created NKPaginationInfo initialized with the data passed.
  */
 - (nonnull instancetype) initWithFrom: (NSInteger) from To: (NSInteger) to Total: (NSInteger) total;
 
@@ -61,7 +61,7 @@
  
  @param dictionary The dictionary returned by the api.
  
- @return a newly created NKPaginationInfo initialized with the data of the dictionary.
+ @return A newly created NKPaginationInfo initialized with the data of the dictionary.
  */
 - (nonnull instancetype) initWithDictionary: (nonnull NSDictionary *) dictionary;
 

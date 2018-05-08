@@ -2,7 +2,6 @@
 //  ViewController.m
 //  NookoSDK
 //
-//  Created by Lorenzo Oliveto on 30/03/18.
 //  Copyright © 2018 Mumble. All rights reserved.
 //
 
@@ -41,12 +40,19 @@
                                         @"image.firstImage.url" : @"imageUrl",
                                         @"link" : @"link"};
     NKUploadableElementsFactory *factory = [[NKUploadableElementsFactory alloc] initWithLocaleIdentifier:@"it"];
+    
     UIImage *image = [UIImage imageNamed:@"TestImage"];
     UIImage *image1 = [UIImage imageNamed:@"TestImage1"];
-    NSArray *elements = @[[factory textElementWithName:@"title" Text:@"Nuovo title3"],
-                          [factory textElementWithName:@"content" Text:@"Nuovo contenuto asd"],
-                          [factory imageElementWithName:@"image" Image:image Index:0],
-                          [factory imageElementWithName:@"image" Image:image1 Index:1]];
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsPath = [paths objectAtIndex:0];
+    NSString *filePath = [documentsPath stringByAppendingPathComponent:@"image.png"];
+    NSString *filePath1 = [documentsPath stringByAppendingPathComponent:@"image1.png"];
+
+    [UIImagePNGRepresentation(image) writeToFile:filePath atomically:YES];
+    [UIImagePNGRepresentation(image1) writeToFile:filePath1 atomically:YES];
+
+    NSArray *elements = @[[factory textElementWithName:@"title" Text:@"Nuovo title4"]];
     
     [[NKManager sharedManager] addSectionToBlockWithBlockId:newsBlockId Elements:elements Success:^{
         NSMutableArray *newsArray = [[NSMutableArray alloc] init];

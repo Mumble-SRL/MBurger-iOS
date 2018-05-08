@@ -41,7 +41,7 @@
 @property (nonatomic, retain, nonnull) NSURL *url;
 
 /**
- The Mime Type of the media.
+ The MIME type of the media.
  */
 @property (nonatomic, retain, nonnull) NSString *mimeType;
 
@@ -55,10 +55,10 @@
  
  @param fileId The id of the file.
  @param url The url of the element.
- @param mimeType The Mime Type of the element.
+ @param mimeType The MIME type of the element.
  @param size The size of the image.
  
- @return a newly created NKImageElement initialized with the elementId, the name and the value passed.
+ @return A newly created NKImageElement initialized with the elementId, the name and the value passed.
  */
 - (nonnull instancetype) initWithId: (NSInteger) fileId Url: (nonnull NSURL *) url MimeType: (nonnull NSString *) mimeType Size: (NSInteger) size;
 
@@ -67,7 +67,7 @@
  
  @param dictionary The response from the api.
  
- @return a newly created NKMedia initialized with the data of the dictionary.
+ @return A newly created NKMedia initialized with the data of the dictionary.
  */
 - (nonnull instancetype) initWithDictionary: (nonnull NSDictionary *) dictionary;
 

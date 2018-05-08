@@ -2,7 +2,6 @@
 //  AppDelegate.m
 //  NookoSDK
 //
-//  Created by Lorenzo Oliveto on 30/03/18.
 //  Copyright © 2018 Mumble. All rights reserved.
 //
 
@@ -19,7 +18,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [NKManager sharedManager].apiToken = @"9f18bce4187a2a101c30a6dd1dbd0707fa4dd772";
-    
     return YES;
 }
 

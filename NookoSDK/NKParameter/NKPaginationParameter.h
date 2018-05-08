@@ -47,7 +47,7 @@
  @param skip The number of elements to skip.
  @param take The number of elements to take.
  
- @return a newly created NKPaginationParameter initialized with the data passed.
+ @return A newly created NKPaginationParameter initialized with the data passed.
  */
 - (nonnull instancetype) initWithSkip: (NSInteger) skip Take: (NSInteger) take;
 

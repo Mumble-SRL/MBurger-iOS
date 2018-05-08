@@ -48,7 +48,7 @@
  @param northEastCoordinate The upper-right corner of the square specified in cooridinate.
  @param southWestCoordinate The lower-left corner of the square specified in cooridinate.
  
- @return a newly created NKFilterParameter initialized with the data passed.
+ @return A newly created NKFilterParameter initialized with the data passed.
  */
 - (nonnull instancetype) initWithNorthEastCoordinate: (CLLocationCoordinate2D) northEastCoordinate SouthWestCoordinate: (CLLocationCoordinate2D) southWestCoordinate;
 
@@ -60,7 +60,7 @@
  @param southWestLatitude The latitude of the lower-left corner of the square.
  @param southWestLongitude The longitude of the lower-left corner of the square.
 
- @return a newly created NKFilterParameter initialized with the data passed.
+ @return A newly created NKFilterParameter initialized with the data passed.
  */
 - (nonnull instancetype) initWithNorthEastLatitude: (double) northEastLatitude
                         NorthEastLongitude: (double) northEastLongitude

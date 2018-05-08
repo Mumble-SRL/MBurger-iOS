@@ -47,7 +47,7 @@
  @param key The key of the parameter.
  @param value The value of the parameter.
  
- @return a newly created NKGeneralParameter initialized with the data passed.
+ @return A newly created NKGeneralParameter initialized with the data passed.
  */
 - (nonnull instancetype) initWithKey: (nonnull NSString *) key Value: (nonnull NSString *) value;
 

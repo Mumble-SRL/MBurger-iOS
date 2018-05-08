@@ -3,11 +3,29 @@
 //  NKApiManager.m
 //  NookoSDK
 //
-//  Created by Lorenzo Oliveto on 03/04/18.
-//  Copyright © 2018 Mumble. All rights reserved.
+//  Copyright (c) 2018 Mumble s.r.l. (https://mumbleideas.it/)
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 //
 
 #import "NKApiManager.h"
+#import <AFNetworking/AFNetworking.h>
 
 static NSString *apiBaseUrl = @"https://nooko2.mumbleserver.it/api";
 
@@ -120,7 +138,14 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
             if (error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey]){
                 NSString *responseString = [[NSString alloc] initWithData:error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey] encoding:NSUTF8StringEncoding];
-                NSLog(@"There was an error: %@", responseString);
+                NSString *message = [self messageErrorForResponseString:responseString];
+                if (message != nil){
+                    if (failure){
+                        NSError *error = [[NSError alloc] initWithDomain:@"com.mumble.nooko" code:102 userInfo:@{NSLocalizedDescriptionKey : message}];
+                        failure(error);
+                    }
+                    return;
+                }
             }
             if (failure){
                 failure(error);
@@ -139,7 +164,6 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
             if (multipartForm != nil){
                 [manager POST:urlString parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
                     for (NKMultipartForm *form in multipartForm){
-                        NSLog(@"%@", form.name);
                         if (form.data){
                             [formData appendPartWithFormData:form.data name:form.name];
                         }
@@ -188,4 +212,26 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
     return [baseUrl stringByAppendingString:realApiName];
 }
 
+
++ (NSString *) messageErrorForResponseString: (NSString *) responseString {
+    id json = [NSJSONSerialization JSONObjectWithData:[responseString dataUsingEncoding:NSUTF8StringEncoding]
+                                              options:NSJSONReadingMutableContainers
+                                                error:nil];
+    if ([json isKindOfClass:[NSDictionary class]]){
+        NSString *message = nil;
+        NSDictionary *jsonDictionary = (NSDictionary *) json;
+        if (jsonDictionary[@"message"]){
+            message = jsonDictionary[@"message"];
+        }
+        if (jsonDictionary[@"errors"]){
+            NSDictionary *errors = jsonDictionary[@"errors"];
+            for (NSString *key in errors.allKeys){
+                NSArray *errorsArray = errors[key];
+                message = [message stringByAppendingFormat:@"\n%@", [errorsArray componentsJoinedByString:@"\n"]];
+            }
+        }
+        return message;
+    }
+    return nil;
+}
 @end

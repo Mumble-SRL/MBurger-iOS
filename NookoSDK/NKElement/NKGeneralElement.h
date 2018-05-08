@@ -43,7 +43,7 @@
 /**
  Initializes a date element with an elementId, a name, and its value.
  This function calls the super initializer initWithElementId:Name:Type
- @see This function calls the super initializer `-[NKElement initWithElementId:Name:Type:]`
+ @see This function calls the super initializer `-[NKElement initWithElementId:Name:Order:Type:]`
 
  @param elementId The id of the element.
  @param name The name of the element.
@@ -51,7 +51,7 @@
  @param value The value representing the element.
  @param type The type of the element retuned by the api.
 
- @return a newly created NKGeneralElement initialized with the elementId, the name and the value passed.
+ @return A newly created NKGeneralElement initialized with the elementId, the name and the value passed.
  */
 - (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Value: (nullable id) value Type: (NSString *) type;
 

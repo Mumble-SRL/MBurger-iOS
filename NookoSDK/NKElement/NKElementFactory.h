@@ -36,7 +36,7 @@
  
  @param elementDictionary The dictionary returned by the api.
  
- @return a newly created NKElement initialized with the data of the dictionary, if the type field of the dictionary cannot be represented by the implemented type of the SDK this functions returns nil.
+ @return A newly created NKElement initialized with the data of the dictionary, if the type field of the dictionary cannot be represented by the implemented type of the SDK this functions returns nil.
  */
 + (NKElement *) elementsForDictionary: (NSDictionary *) elementDictionary;
 

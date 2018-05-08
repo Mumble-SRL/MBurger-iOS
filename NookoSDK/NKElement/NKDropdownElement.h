@@ -43,7 +43,7 @@
 /**
  Initializes a dropdown element with an elementId, a name, the options and the selected options.
  This function calls the super initializer initWithElementId:Name:Type
- @see `-[NKElement initWithElementId:Name:Type:]`
+ @see `-[NKElement initWithElementId:Name:Order:Type:]`
  
  @param elementId The id of the element.
  @param name The name of the element.
@@ -51,7 +51,7 @@
  @param options The options for the element.
  @param selectedOption The selected option.
  
- @return a newly created NKDropdownElement initialized with the parameters passed.
+ @return A newly created NKDropdownElement initialized with the parameters passed.
  */
 - (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Options: (nullable NSArray <NSString *> *) options SelectedOptions: (NSString *) selectedOption;
 

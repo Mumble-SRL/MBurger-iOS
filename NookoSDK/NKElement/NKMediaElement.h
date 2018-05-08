@@ -55,7 +55,7 @@ typedef NS_ENUM(NSUInteger, NKMediaType) {
 
 /**
  Initializes a media element with an elementId, the name and its value, the mediaURL becomes the value passed by this function.
- @see This function calls the super initializer `-[NKElement initWithElementId:Name:Type:]`
+ @see This function calls the super initializer `-[NKElement initWithElementId:Name:Order:Type:]`
 
  @param elementId The id of the element.
  @param name The name of the element.
@@ -63,7 +63,7 @@ typedef NS_ENUM(NSUInteger, NKMediaType) {
  @param medias The medias.
  @param mediaType The type of the media.
 
- @return a newly created NKMediaElement initialized with the elementId, the name, the value passed and the media type.
+ @return A newly created NKMediaElement initialized with the elementId, the name, the value passed and the media type.
  */
 - (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Medias: (nullable NSArray <NKFile *> *) medias MediaType: (NKMediaType) mediaType;
 

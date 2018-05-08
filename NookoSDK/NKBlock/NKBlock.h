@@ -65,7 +65,7 @@
  @param order The order index of the block.
  @param sections The sections of the block.
  
- @return a newly created NKBlock initialized with the blockId and sections.
+ @return A newly created NKBlock initialized with the blockId and sections.
  */
 - (nonnull instancetype) initWithBlockId: (NSInteger) blockId Title: (nonnull NSString *) title Subtitle: (nonnull NSString *) subtitle Order: (NSInteger) order Sections: (nullable NSArray <NKSection *> *) sections;
 
@@ -74,7 +74,7 @@
  
  @param dictionary The dictionary returned by the api.
 
- @return a newly created NKBlock initialized with the data of the dictionary.
+ @return A newly created NKBlock initialized with the data of the dictionary.
  */
 - (nonnull instancetype) initWithDictionary: (nonnull NSDictionary *) dictionary;
 
