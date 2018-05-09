@@ -1,11 +1,9 @@
-
-
 //
 //  NKblockTests.m
 //  NookoSDKTests
 //
-//  Created by Lorenzo Oliveto on 09/04/18.
-//  Copyright © 2018 Mumble. All rights reserved.
+//  Copyright © 2018 Mumble s.r.l. (https://mumbleideas.it/).
+//  All rights reserved.
 //
 
 #import <XCTest/XCTest.h>

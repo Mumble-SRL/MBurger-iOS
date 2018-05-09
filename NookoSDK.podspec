@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "NookoSDK"
-  s.version      = "0.0.7"
+  s.version      = "0.0.8"
   s.summary      = "Nooko SDK."
 
   # This description is used to generate tags and improve search results.
@@ -108,8 +108,7 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  s.framework  = "MapKit"
-  # s.frameworks = "SomeFramework", "AnotherFramework"
+  s.frameworks  = "MapKit", "CoreLocation", "Security"
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"

@@ -2,6 +2,10 @@
 <img src="https://mumbleideas.it/wp-content/uploads/2017/12/Mumble-anim-300.gif" alt="Mumble Logo" title="Mumble Logo">
 </p>
 
+![Test Status](docs/badge.svg)
+![License: MIT](https://img.shields.io/badge/pod-v0.0.8-blue.svg)
+[![CocoaPods](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](LICENSE)
+
 # NoookoSDK
 
 NookoSDK is a client libary, written in Objective-C, that can be used to interact with the [Nooko](https://nooko2.mumbleserver.it/login) API. The minimum deplaoyment target for the library is iOS 10.0.
@@ -23,7 +27,7 @@ To integrate the NookoSDK into your Xcode project using CocoaPods, specify it in
 platform :ios, '10.0'
 
 target 'TargetName' do
-    pod 'NookoSDK', git: 'https://gitlab.mumbleserver.it/iOS/NookoSDK'
+    pod 'NookoSDK', git: 'https://github.com/Mumble-SRL/NookoSDK-Objc.git'
 end
 ```
 
@@ -48,11 +52,10 @@ Note that `NookoSDK` has `AFNetworking (3.0)` as a dependency, so you have to in
 
 To initialize the SDK you have to create a token through the [dashboard](https://nooko2.mumbleserver.it/). Click on the settings icon on the top-right and create a API Key specifiyng the permissions.
 
-
-![Dashboard image](https://gitlab.mumbleserver.it/iOS/NookoSDK/raw/master/Images/api_token.png)
+![Dashboard image](Images/api_token.png)
 
 In your `AppDelegate` `application:didFinishLaunchingWithOptions:` initialize the SDK like the following:
-
+q
 **Objective-c**:
 
 ```
@@ -279,7 +282,7 @@ NSMutableArray *newsArray = [[NSMutableArray alloc] init];
         [section mapElementsToObject:n withMapping:mappingDictionary];
         [newsArray addObject:n];
     }
- } Failure:^(NSError * _Nonnull error) {
+ } Failure:^(NSError *error) {
     [self showError:error];
  }];
 ```
@@ -308,6 +311,7 @@ All the model objects implement the `NSCoding` and `NSSecureCoding` protocol so 
 * `NKDropdownElement`
 * `NKPollElement`
 * `NKGeneralElement`
+* `NKUser`
 
 # Equality
 
@@ -316,13 +320,13 @@ All the model objects implement the `isEqual:` function based on the correspondi
 
 # Documentation
 
-For further information, you can check out the full SDK Reference in the [docs](https://gitlab.mumbleserver.it/iOS/NookoSDK/tree/master/docs) folder.
+For further information, you can check out the full SDK Reference in the [docs](https://github.com/Mumble-SRL/NookoSDK-Objc.git/tree/master/docs) folder.
 
 
 # Contacts
 
-You can contuct us at [info@mumbleideas.it](mailto:https://gitlab.mumbleserver.it/iOS/NookoSDK/raw/master/LICENSE).
+You can contuct us at [info@mumbleideas.it](mailto:info@mumbleideas.it).
 
 # License
 
-NookoSDK is released under the MIT license. See [LICENSE](https://gitlab.mumbleserver.it/iOS/NookoSDK/raw/master/LICENSE) for details.
+NookoSDK is released under the MIT license. See [LICENSE](https://raw.githubusercontent.com/Mumble-SRL/NookoSDK-Objc/master/LICENSE) for details.

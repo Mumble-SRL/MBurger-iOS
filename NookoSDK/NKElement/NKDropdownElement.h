@@ -2,25 +2,8 @@
 //  NKDropdownElement.h
 //  NookoSDK
 //
-//  Copyright (c) 2018 Mumble s.r.l. (https://mumbleideas.it/)
-//
-//  Permission is hereby granted, free of charge, to any person obtaining a copy
-//  of this software and associated documentation files (the "Software"), to deal
-//  in the Software without restriction, including without limitation the rights
-//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-//  copies of the Software, and to permit persons to whom the Software is
-//  furnished to do so, subject to the following conditions:
-//
-//  The above copyright notice and this permission notice shall be included in
-//  all copies or substantial portions of the Software.
-//
-//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-//  THE SOFTWARE.
+//  Copyright © 2018 Mumble s.r.l. (https://mumbleideas.it/).
+//  All rights reserved.
 //
 
 #import "NKElement.h"
@@ -43,7 +26,7 @@
 /**
  Initializes a dropdown element with an elementId, a name, the options and the selected options.
  This function calls the super initializer initWithElementId:Name:Type
- @see `-[NKElement initWithElementId:Name:Type:]`
+ @see `-[NKElement initWithElementId:Name:Order:Type:]`
  
  @param elementId The id of the element.
  @param name The name of the element.
@@ -51,8 +34,8 @@
  @param options The options for the element.
  @param selectedOption The selected option.
  
- @return a newly created NKDropdownElement initialized with the parameters passed.
+ @return A newly created NKDropdownElement initialized with the parameters passed.
  */
-- (instancetype _Nonnull) initWithElementId: (NSInteger) elementId Name: (NSString * _Nonnull) name Order: (NSInteger) order Options: (NSArray <NSString *> * _Nullable) options SelectedOptions: (NSString *) selectedOption;
+- (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Options: (nullable NSArray <NSString *> *) options SelectedOptions: (NSString *) selectedOption;
 
 @end

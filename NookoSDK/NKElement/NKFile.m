@@ -2,8 +2,8 @@
 //  NKMedia.m
 //  NookoSDK
 //
-//  Created by Lorenzo Oliveto on 04/04/18.
-//  Copyright © 2018 Mumble. All rights reserved.
+//  Copyright © 2018 Mumble s.r.l. (https://mumbleideas.it/).
+//  All rights reserved.
 //
 
 #import "NKFile.h"
@@ -25,7 +25,6 @@
     NSInteger fileId = [dictionary[@"id"] integerValue];
     NSString *mimeType = dictionary[@"mime_type"];
     NSInteger size = [dictionary[@"size"] integerValue];
-    //TODO: remove url
     NSString *mediaUrlString = dictionary[@"url"];
     NSURL *mediaUrl = [NSURL URLWithString:mediaUrlString];
     return [self initWithId:fileId Url:mediaUrl MimeType:mimeType Size:size];

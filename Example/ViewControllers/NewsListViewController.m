@@ -2,8 +2,8 @@
 //  ViewController.m
 //  NookoSDK
 //
-//  Created by Lorenzo Oliveto on 30/03/18.
-//  Copyright © 2018 Mumble. All rights reserved.
+//  Copyright © 2018 Mumble s.r.l. (https://mumbleideas.it/).
+//  All rights reserved.
 //
 
 #import "NewsListViewController.h"
@@ -25,8 +25,6 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.tableFooterView = [UIView new];
-        
-    [self loadNews];
 }
 
 
@@ -40,6 +38,7 @@
                                         @"content" : @"content",
                                         @"image.firstImage.url" : @"imageUrl",
                                         @"link" : @"link"};
+    
     NSMutableArray *newsArray = [[NSMutableArray alloc] init];
     [[NKManager sharedManager] getBlockWithBlockId:newsBlockId Parameters:nil IncludingSections:YES AndElements:YES Success:^(NKBlock *block) {
         self.navigationItem.title = block.title;
@@ -50,7 +49,7 @@
         }
         self->news = newsArray;
         [self.tableView reloadData];
-    } Failure:^(NSError * _Nonnull error) {
+    } Failure:^(NSError * error) {
         [self showError:error];
     }];
 }

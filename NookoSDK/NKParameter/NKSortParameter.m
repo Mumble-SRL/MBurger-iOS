@@ -2,15 +2,15 @@
 //  NKSortParameter.m
 //  NookoSDK
 //
-//  Created by Lorenzo Oliveto on 05/04/18.
-//  Copyright © 2018 Mumble. All rights reserved.
+//  Copyright © 2018 Mumble s.r.l. (https://mumbleideas.it/).
+//  All rights reserved.
 //
 
 #import "NKSortParameter.h"
 
 @implementation NKSortParameter
 
-- (instancetype _Nonnull) initWithField: (NSString * _Nonnull) field{
+- (instancetype) initWithField: (NSString *) field{
     return [self initWithField:field Ascending:true];
 }
 

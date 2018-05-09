@@ -2,8 +2,8 @@
 //  NKResponse.h
 //  NookoSDK
 //
-//  Created by Lorenzo Oliveto on 03/04/18.
-//  Copyright © 2018 Mumble. All rights reserved.
+//  Copyright © 2018 Mumble s.r.l. (https://mumbleideas.it/).
+//  All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

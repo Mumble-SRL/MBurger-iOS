@@ -2,8 +2,8 @@
 //  NKManager.m
 //  NookoSDK
 //
-//  Created by Lorenzo Oliveto on 30/03/18.
-//  Copyright © 2018 Mumble. All rights reserved.
+//  Copyright © 2018 Mumble s.r.l. (https://mumbleideas.it/).
+//  All rights reserved.
 //
 
 #import "NKManager.h"
@@ -20,6 +20,8 @@
     });
     return sharedMyManager;
 }
+
+#pragma mark - Project
 
 - (void) getProjectWithSuccess: (void (^)(NKProject * project)) success
                        Failure: (void (^)(NSError *error)) failure {
@@ -41,6 +43,8 @@
                                   }
                               }];
 }
+
+#pragma mark - Blocks
 
 - (void) getBlocksWithParameters: (NSArray <id<NKParameter>> *) parameters
                          Success: (void (^)(NSArray <NKBlock *> *blocks, NKPaginationInfo *pagintaionInfo)) success
@@ -102,16 +106,16 @@
 
 - (void) getBlockWithBlockId: (NSInteger) blockId
                   Parameters: (NSArray <id<NKParameter>> *) parameters
-                     Success: (void (^ _Nullable)(NKBlock *block)) success
-                     Failure: (void (^ _Nullable)(NSError *error)) failure{
+                     Success: (void (^)(NKBlock *block)) success
+                     Failure: (void (^)(NSError *error)) failure{
     [self getBlockWithBlockId:blockId Parameters:parameters IncludingSections:FALSE AndElements:FALSE Success:success Failure:failure];
 }
 
 - (void) getBlockWithBlockId: (NSInteger) blockId
                   Parameters: (NSArray <id<NKParameter>> *) parameters
            IncludingSections: (BOOL) includeSections
-                     Success: (void (^ _Nullable)(NKBlock *block)) success
-                     Failure: (void (^ _Nullable)(NSError *error)) failure{
+                     Success: (void (^)(NKBlock *block)) success
+                     Failure: (void (^)(NSError *error)) failure{
     [self getBlockWithBlockId:blockId Parameters:parameters IncludingSections:includeSections AndElements:FALSE Success:success Failure:failure];
 }
 
@@ -119,8 +123,8 @@
                   Parameters: (NSArray <id<NKParameter>> *) parameters
            IncludingSections: (BOOL) includeSections
                  AndElements: (BOOL) includeElements
-                     Success: (void (^ _Nullable)(NKBlock *block)) success
-                     Failure: (void (^ _Nullable)(NSError *error)) failure{
+                     Success: (void (^)(NKBlock *block)) success
+                     Failure: (void (^)(NSError *error)) failure{
     NSMutableDictionary *parametersMutable = [[NSMutableDictionary alloc] init];
     if (includeSections){
         if (includeElements){
@@ -151,6 +155,8 @@
                                   }
                               }];
 }
+
+#pragma mark - Sections
 
 - (void) getSectionsWithBlockId: (NSInteger) blockId
                      Parameters: (NSArray <id<NKParameter>> *) parameters
@@ -215,7 +221,7 @@
     }
     [NKApiManager callApiWithApiToken:self.apiToken
                                Locale:[self localeForApi]
-                              ApiName:[NSString stringWithFormat:@"sections/%ld", (long) sectionId]
+                              ApiName:[NSString stringWithFormat:@"sections/%ld/", (long) sectionId]
                            HTTPMethod:NKHTTPMethodGet
                            Parameters:parametersMutable
                      HeaderParameters:nil
@@ -231,6 +237,8 @@
                                   }
                               }];
 }
+
+#pragma mark - Elements
 
 - (void) getElementsWithSectionId: (NSInteger) sectionId
                           Success: (void (^)(NSDictionary *elements)) success
@@ -260,6 +268,116 @@
                                       failure(error);
                                   }
                               }];
+}
+
+#pragma mark - Update sections
+
+- (void) addSectionToBlockWithBlockId: (NSInteger) blockId
+                             Elements: (nonnull NSArray <NKUploadableElement *> *) elements
+                              Success: (nullable void (^)(void)) success
+                              Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
+    NSMutableArray *form = [[NSMutableArray alloc] init];
+    for (NKUploadableElement *element in elements){
+        for (NKMultipartForm *elementForm in element.toForm){
+            [form addObject:elementForm];
+        }
+    }
+    [NKApiManager callApiWithApiToken:self.apiToken
+                               Locale:[self localeForApi]
+                              ApiName:[NSString stringWithFormat:@"blocks/%ld/sections", (long) blockId]
+                           HTTPMethod:NKHTTPMethodPost
+                           Parameters:nil
+                     HeaderParameters:nil
+                        MultipartForm:form
+                              Success:^(NKResponse *response) {
+                                  if (success){
+                                      success();
+                                  }
+                              }
+                              Failure:^(NSError *error) {
+                                  if (failure){
+                                      failure(error);
+                                  }
+                              }];
+}
+
+- (void) editSectionWithSectionId: (NSInteger) sectionId
+                         Elements: (nonnull NSArray <NKUploadableElement *> *) elements
+                          Success: (nullable void (^)(void)) success
+                          Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
+    NSMutableArray *form = [[NSMutableArray alloc] init];
+    for (NKUploadableElement *element in elements){
+        for (NKMultipartForm *elementForm in element.toForm){
+            [form addObject:elementForm];
+        }
+    }
+    [NKApiManager callApiWithApiToken:self.apiToken
+                               Locale:[self localeForApi]
+                              ApiName:[NSString stringWithFormat:@"sections/%ld/update", (long) sectionId]
+                           HTTPMethod:NKHTTPMethodPost
+                           Parameters:nil
+                     HeaderParameters:nil
+                        MultipartForm:form
+                              Success:^(NKResponse *response) {
+                                  if (success){
+                                      success();
+                                  }
+                              }
+                              Failure:^(NSError *error) {
+                                  if (failure){
+                                      failure(error);
+                                  }
+                              }];
+}
+
+- (void) deleteSectionWithSectionId: (NSInteger) sectionId
+                            Success: (nullable void (^)(void)) success
+                            Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
+    [NKApiManager callApiWithApiToken:self.apiToken
+                               Locale:[self localeForApi]
+                              ApiName:[NSString stringWithFormat:@"sections/%ld/", (long) sectionId]
+                           HTTPMethod:NKHTTPMethodDelete
+                           Parameters:nil
+                     HeaderParameters:nil
+                              Success:^(NKResponse *response) {
+                                  if (success){
+                                      success();
+                                  }
+                              }
+                              Failure:^(NSError *error) {
+                                  if (failure){
+                                      failure(error);
+                                  }
+                              }];
+}
+
+#pragma mark - Media
+
+- (void) deleteMediaWithMediaId: (NSInteger) mediaId
+                        Success: (nullable void (^)(void)) success
+                        Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
+    [NKApiManager callApiWithApiToken:self.apiToken
+                               Locale:[self localeForApi]
+                              ApiName:[NSString stringWithFormat:@"media/%ld/", (long) mediaId]
+                           HTTPMethod:NKHTTPMethodDelete
+                           Parameters:nil
+                     HeaderParameters:nil
+                              Success:^(NKResponse *response) {
+                                  if (success){
+                                      success();
+                                  }
+                              }
+                              Failure:^(NSError *error) {
+                                  if (failure){
+                                      failure(error);
+                                  }
+                              }];
+}
+
+#pragma mark - Utilities
+
+- (NSString *) localeString{
+    return [self localeForApi];
 }
 
 - (NSString *) localeForApi {
