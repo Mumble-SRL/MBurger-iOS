@@ -3,7 +3,7 @@
 </p>
 
 ![Test Status](docs/badge.svg)
-![License: MIT](https://img.shields.io/badge/pod-v0.0.8-blue.svg)
+![License: MIT](https://img.shields.io/badge/pod-v0.0.9-blue.svg)
 [![CocoaPods](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](LICENSE)
 
 # NoookoSDK
@@ -115,10 +115,10 @@ You can retrieve the informations of the project like this:
 
 ```
 NKClient.getProjectWithSuccess({ (project) in
-            
-    }) {(error) in
-            
-}
+
+}, failure: { (error) in
+
+})
 ```
 
 
@@ -140,10 +140,10 @@ You can retrieve the blocks of the project with the function `getBlocksWithParam
 
 ```
 NKClient.getBlocksWith(nil, success: { (blocks, paginationInfos) in
-            
-}) { (error) in
-            
-}
+
+}, failure: { (error) in
+
+})
 ```
 
 The parameter `parameters` is an optional array of objects that conforms to the `NKParameter` protocol passed to the nooko api as parameter. The majorityof the parameters that can be passed to the apis are already defined in the SDK and can be used after the initialization:
@@ -173,10 +173,10 @@ NKPaginationParameter *paginationParam = [[NKPaginationParameter alloc] initWith
 ```
 let paginationParam = NKPaginationParameter(skip: 0, take: 10)
 NKClient.getBlocksWith([paginationParam], success: { (blocks, paginationInfos) in
-            
-}) { (error) in
-            
-}
+
+}, failure: { (error) in
+
+})
 ```
 
 There are two other versions of the `getBlocksWithParameters:Success:Failure`, one that take an adiitional parameter `includingSections` (a boolean that indicate whether or not include, for each block, the sections), and another that takes `includingSections` and `includeElements` (a boolean value that do the same thing but for the elements of the sections).
@@ -197,10 +197,10 @@ So you could retrieve the informations of all the blocks, all the sections of th
 
 ```
 NKClient.getBlocksWith(nil, includingSections: true, andElements: true, success: { (blocks, paginationInfos) in
-            
-}) { (error) in
-            
-}
+
+}, failure: { (error) in
+
+})
 ```
 
 # Sections
@@ -221,10 +221,10 @@ You can retrieve all the sections with a block with the given id with the functi
 
 ```
 NKClient.getSectionsWithBlockId(THE_BLOCK_ID, parameters: nil, success: { (sections, paginationInfos) in
-            
-}) { (error) in
-            
-} 
+
+}, failure: { (error) in
+
+})
 ```
 
 Like for the blocks there's a version of this function that takes a bool `includeElements` that indicate to include or not the elements of the section se if you want to retrieve all the sections of a block and their elements you can call:
@@ -243,10 +243,10 @@ Like for the blocks there's a version of this function that takes a bool `includ
 
 ```
 NKClient.getSectionsWithBlockId(THE_BLOCK_ID, parameters: nil, includeElements: true, success: { (sections, paginationInfos) in
-            
-}) { (error) in
-            
-}
+
+}, failure: { (error) in
+
+})
 ```
 
 # Object mapping
@@ -317,10 +317,17 @@ All the model objects implement the `NSCoding` and `NSSecureCoding` protocol so 
 
 All the model objects implement the `isEqual:` function based on the corresponding id. So for example an NKSection will result equal to another NKSection object if they have the same `sectionId`.
 
+# Admin
+
+Read the full admin documentation apis [here](NookoSDK/NKAdmin).
+
+# Authentication
+
+Read the full admin documentation apis [here](NookoSDK/NKAuth).
 
 # Documentation
 
-For further information, you can check out the full SDK Reference in the [docs](https://github.com/Mumble-SRL/NookoSDK-Objc.git/tree/master/docs) folder.
+For further information, you can check out the full SDK Reference in the [docs](docs) folder.
 
 
 # Contacts
