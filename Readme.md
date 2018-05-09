@@ -2,8 +2,10 @@
 <img src="https://mumbleideas.it/wp-content/uploads/2017/12/Mumble-anim-300.gif" alt="Mumble Logo" title="Mumble Logo">
 </p>
 
-# NoookoSDK
 ![Test Status](docs/badge.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+# NoookoSDKs
 
 NookoSDK is a client libary, written in Objective-C, that can be used to interact with the [Nooko](https://nooko2.mumbleserver.it/login) API. The minimum deplaoyment target for the library is iOS 10.0.
 > Even this is a library written in Objective-C it can be integrated and used also in Swift projects. The example code below will be in both languages.
