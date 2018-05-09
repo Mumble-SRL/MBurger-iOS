@@ -3,7 +3,7 @@
 </p>
 
 # NoookoSDK
-<p><a class="no-attachment-icon" href="/blob/develop/docs/badge.svg" target="_blank"><img src="/raw/develop/docs/badge.svg" alt=""></a></p>
+<p><a class="no-attachment-icon" href="/blob/docs/badge.svg" target="_blank"><img src="/raw/docs/badge.svg" alt=""></a></p>
 ![Test Status](https://gitlab.mumbleserver.it/iOS/NookoSDK/raw/develop/docs/badge.svg)
 
 NookoSDK is a client libary, written in Objective-C, that can be used to interact with the [Nooko](https://nooko2.mumbleserver.it/login) API. The minimum deplaoyment target for the library is iOS 10.0.
