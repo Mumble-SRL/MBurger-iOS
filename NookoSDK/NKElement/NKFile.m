@@ -42,7 +42,6 @@
     NSInteger fileId = [dictionary[@"id"] integerValue];
     NSString *mimeType = dictionary[@"mime_type"];
     NSInteger size = [dictionary[@"size"] integerValue];
-    //TODO: remove url
     NSString *mediaUrlString = dictionary[@"url"];
     NSURL *mediaUrl = [NSURL URLWithString:mediaUrlString];
     return [self initWithId:fileId Url:mediaUrl MimeType:mimeType Size:size];

@@ -25,6 +25,7 @@
 //
 
 #import "NKApiManager.h"
+#import "NKAuthManager.h"
 #import <AFNetworking/AFNetworking.h>
 
 static NSString *apiBaseUrl = @"https://nooko2.mumbleserver.it/api";
@@ -72,6 +73,7 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
         });
         return;
     }
+    
     NSString *urlString = [self constructUrlWithApiname:apiName];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -93,6 +95,10 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
     [manager.requestSerializer setValue:apiToken forHTTPHeaderField:@"X-Nooko-Token"];
     [manager.requestSerializer setValue:@"2" forHTTPHeaderField:@"X-Nooko-Version"];
     [manager.requestSerializer setValue:@"accept/json" forHTTPHeaderField:@"Accept"];
+    NSString *accessToken = [NKAuthManager sharedManager].authToken;
+    if (accessToken != nil && ![accessToken isEqualToString:@""]){
+        [manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", accessToken] forHTTPHeaderField:@"Authorization"];
+    }
     
     AFHTTPRequestOperationSuccessHandler successHandler = ^(NSURLSessionTask *operation, id responseObject){
         NSDictionary *response = (NSDictionary *) responseObject;

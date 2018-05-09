@@ -24,8 +24,6 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.tableFooterView = [UIView new];
-        
-    [self loadNews];
 }
 
 
@@ -39,36 +37,18 @@
                                         @"content" : @"content",
                                         @"image.firstImage.url" : @"imageUrl",
                                         @"link" : @"link"};
-    NKUploadableElementsFactory *factory = [[NKUploadableElementsFactory alloc] initWithLocaleIdentifier:@"it"];
     
-    UIImage *image = [UIImage imageNamed:@"TestImage"];
-    UIImage *image1 = [UIImage imageNamed:@"TestImage1"];
-    
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsPath = [paths objectAtIndex:0];
-    NSString *filePath = [documentsPath stringByAppendingPathComponent:@"image.png"];
-    NSString *filePath1 = [documentsPath stringByAppendingPathComponent:@"image1.png"];
-
-    [UIImagePNGRepresentation(image) writeToFile:filePath atomically:YES];
-    [UIImagePNGRepresentation(image1) writeToFile:filePath1 atomically:YES];
-
-    NSArray *elements = @[[factory textElementWithName:@"title" Text:@"Nuovo title4"]];
-    
-    [[NKManager sharedManager] addSectionToBlockWithBlockId:newsBlockId Elements:elements Success:^{
-        NSMutableArray *newsArray = [[NSMutableArray alloc] init];
-        [[NKManager sharedManager] getBlockWithBlockId:newsBlockId Parameters:nil IncludingSections:YES AndElements:YES Success:^(NKBlock *block) {
-            self.navigationItem.title = block.title;
-            for (NKSection *section in block.sections){
-                News *n = [[News alloc] init];
-                [section mapElementsToObject:n withMapping:mappingDictionary];
-                [newsArray addObject:n];
-            }
-            self->news = newsArray;
-            [self.tableView reloadData];
-        } Failure:^(NSError * error) {
-            [self showError:error];
-        }];
-    } Failure:^(NSError * _Nonnull error) {
+    NSMutableArray *newsArray = [[NSMutableArray alloc] init];
+    [[NKManager sharedManager] getBlockWithBlockId:newsBlockId Parameters:nil IncludingSections:YES AndElements:YES Success:^(NKBlock *block) {
+        self.navigationItem.title = block.title;
+        for (NKSection *section in block.sections){
+            News *n = [[News alloc] init];
+            [section mapElementsToObject:n withMapping:mappingDictionary];
+            [newsArray addObject:n];
+        }
+        self->news = newsArray;
+        [self.tableView reloadData];
+    } Failure:^(NSError * error) {
         [self showError:error];
     }];
 }

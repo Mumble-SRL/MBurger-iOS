@@ -368,6 +368,35 @@
                               }];
 }
 
+#pragma mark - Media
+
+- (void) deleteMediaWithMediaId: (NSInteger) mediaId
+                        Success: (nullable void (^)(void)) success
+                        Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
+    [NKApiManager callApiWithApiToken:self.apiToken
+                               Locale:[self localeForApi]
+                              ApiName:[NSString stringWithFormat:@"media/%ld/", (long) mediaId]
+                           HTTPMethod:NKHTTPMethodDelete
+                           Parameters:nil
+                     HeaderParameters:nil
+                              Success:^(NKResponse *response) {
+                                  if (success){
+                                      success();
+                                  }
+                              }
+                              Failure:^(NSError *error) {
+                                  if (failure){
+                                      failure(error);
+                                  }
+                              }];
+}
+
+#pragma mark - Utilities
+
+- (NSString *) localeString{
+    return [self localeForApi];
+}
+
 - (NSString *) localeForApi {
     if (self.locale){
         return [self stringForLocale:self.locale];

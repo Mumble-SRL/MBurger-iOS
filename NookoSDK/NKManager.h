@@ -54,6 +54,14 @@ The API token used to make all the requests to the api.
  */
 @property (readwrite, nonatomic, strong, nullable) NSLocale *locale;
 
+
+/**
+ The locale string sended to the api.
+
+ @return The locale string sended to the api.
+ */
+- (NSString *) localeString;
+
 #pragma mark - Project
 
 /**
@@ -264,5 +272,17 @@ The API token used to make all the requests to the api.
                             Success: (nullable void (^)(void)) success
                             Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
+
+#pragma mark - Media
+
+/**
+ Remove the media (image or file) with the specified id.
+ @param mediaId The id of the media.
+ @param success A block object to be executed when the task finishes successfully. This block has no return value and takes no arguments.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
+ */
+- (void) deleteMediaWithMediaId: (NSInteger) mediaId
+                        Success: (nullable void (^)(void)) success
+                        Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 @end

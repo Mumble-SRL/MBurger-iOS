@@ -60,5 +60,6 @@
 #import "NKUploadableImagesElement.h"
 #import "NKUploadableFilesElement.h"
 #import "NKUploadableElementsFactory.h"
+#import "NKAuth.h"
 
 #endif /* NookoSDK_h */

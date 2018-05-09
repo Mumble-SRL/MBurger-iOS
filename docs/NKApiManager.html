@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1.0" />
     <script src="js/jquery.min.js" defer></script>
     <script src="js/jazzy.js" defer></script>
     
@@ -14,300 +15,331 @@
     <a title="NKApiManager  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">NookoSDK Docs</a> (100% documented)</p>
-        <p class="header-right"><a href="https://github.com/Mumble-SRL/NookoSDK-Objc"><img src="img/gh.png"/>View on GitHub</a></p>
+        <p>
+          <a href="index.html">NookoSDK Docs</a>
+          <span class="no-mobile"> (100% documented)</span>
+        </p>
+    
+        <p class="header-right">
+          <a href="https://github.com/Mumble-SRL/NookoSDK-Objc">
+            <img src="img/gh.png"/>
+            <span class="no-mobile">View on GitHub</span>
+          </a>
+        </p>
+    
       </div>
     </header>
-    <div class="content-wrapper">
-      <p id="breadcrumbs">
-        <a href="index.html">NookoSDK Reference</a>
-        <img id="carat" src="img/carat.png" />
-        NKApiManager  Reference
-      </p>
+    <div id="breadcrumbs-container">
+      <div class="content-wrapper">
+        <p id="breadcrumbs">
+          <span class="no-mobile">
+            <a href="index.html">NookoSDK Reference</a>
+            <img id="carat" src="img/carat.png" />
+          </span>
+          NKApiManager  Reference
+        </p>
+      </div>
     </div>
-    <div class="content-wrapper">
-      <nav class="sidebar">
-        <ul class="nav-groups">
-          <li class="nav-group-name">
-            <a href="NKManager.html">NKManager</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Classes/NKManager.html">NKManager</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/NKPaginationInfo.html">NKPaginationInfo</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="NKParameter.html">NKParameter</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Protocols/NKParameter.html">NKParameter</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/NKSortParameter.html">NKSortParameter</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/NKPaginationParameter.html">NKPaginationParameter</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/NKFilterParameter.html">NKFilterParameter</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/NKGeofenceParameter.html">NKGeofenceParameter</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/NKGeneralParameter.html">NKGeneralParameter</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="NKProject.html">NKProject</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Classes/NKProject.html">NKProject</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="NKBlock.html">NKBlock</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Classes/NKBlock.html">NKBlock</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="NKSection.html">NKSection</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Classes/NKSection.html">NKSection</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="NKElement.html">NKElement</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Classes/NKElement.html">NKElement</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/NKTextElement.html">NKTextElement</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/NKImagesElement.html">NKImagesElement</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/NKImage.html">NKImage</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/NKMediaElement.html">NKMediaElement</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/NKFile.html">NKFile</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/NKCheckboxElement.html">NKCheckboxElement</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/NKWysiwygElement.html">NKWysiwygElement</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/NKDateElement.html">NKDateElement</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/NKAddressElement.html">NKAddressElement</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/NKDropdownElement.html">NKDropdownElement</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/NKPollElement.html">NKPollElement</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/NKGeneralElement.html">NKGeneralElement</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/NKElementFactory.html">NKElementFactory</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="NKUploadableElement.html">NKUploadableElement</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Classes/NKUploadableElement.html">NKUploadableElement</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/NKUploadableTextElement.html">NKUploadableTextElement</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/NKUploadableImagesElement.html">NKUploadableImagesElement</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/NKUploadableFilesElement.html">NKUploadableFilesElement</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/NKUploadableElementsFactory.html">NKUploadableElementsFactory</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="NKApiManager.html">NKApiManager</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Classes/NKApiManager.html">NKApiManager</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/NKMultipartForm.html">NKMultipartForm</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/NKResponse.html">NKResponse</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
-            <a href="Other Enums.html">Other Enumerations</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Enums/NKElementType.html">NKElementType</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Enums/NKHTTPMethod.html">NKHTTPMethod</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Enums/NKMediaType.html">NKMediaType</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      <article class="main-content">
-        <section>
-          <section class="section">
-            <h1>NKApiManager</h1>
-            
+    <div class="wrapper">
+      <div class="article-wrapper">
+        <article class="main-content">
+          <section>
+            <section class="section">
+              <h1>NKApiManager</h1>
+              
+            </section>
+            <section class="section task-group-section">
+              <div class="task-group">
+                <ul>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:objc(cs)NKApiManager"></a>
+                      <a name="//apple_ref/objc/Class/NKApiManager" class="dashAnchor"></a>
+                      <a class="token" href="#/c:objc(cs)NKApiManager">NKApiManager</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>This class is responsible to make all the networking requests to the Nooko Api, NKManager is built above this class.</p>
+
+                          <a href="Classes/NKApiManager.html" class="slightly-smaller">See more</a>
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Objective-C</p>
+                            <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">NKApiManager</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                          </div>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">NKApiManager</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="task-group">
+                <ul>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:objc(cs)NKMultipartForm"></a>
+                      <a name="//apple_ref/objc/Class/NKMultipartForm" class="dashAnchor"></a>
+                      <a class="token" href="#/c:objc(cs)NKMultipartForm">NKMultipartForm</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>A Form object used to pass data from the NKManager class to the NKApiManager</p>
+
+                          <a href="Classes/NKMultipartForm.html" class="slightly-smaller">See more</a>
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Objective-C</p>
+                            <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">NKMultipartForm</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                          </div>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">NKMultipartForm</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="task-group">
+                <ul>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:objc(cs)NKResponse"></a>
+                      <a name="//apple_ref/objc/Class/NKResponse" class="dashAnchor"></a>
+                      <a class="token" href="#/c:objc(cs)NKResponse">NKResponse</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>This class represent a response from the Nooko api.</p>
+
+                          <a href="Classes/NKResponse.html" class="slightly-smaller">See more</a>
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Objective-C</p>
+                            <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">NKResponse</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                          </div>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">NKResponse</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </section>
           </section>
-          <section class="section task-group-section">
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)NKApiManager"></a>
-                    <a name="//apple_ref/objc/Class/NKApiManager" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)NKApiManager">NKApiManager</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This class is responsible to make all the networking requests to the Nooko Api, NKManager is built above this class.</p>
-
-                        <a href="Classes/NKApiManager.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">NKApiManager</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">NKApiManager</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
+        </article>
+      </div>
+      <div class="nav-wrapper">
+        <nav class="nav-bottom">
+          <ul class="nav-groups">
+            <li class="nav-group-name">
+              <a href="NKManager.html">NKManager</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="Classes/NKManager.html">NKManager</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/NKPaginationInfo.html">NKPaginationInfo</a>
                 </li>
               </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)NKMultipartForm"></a>
-                    <a name="//apple_ref/objc/Class/NKMultipartForm" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)NKMultipartForm">NKMultipartForm</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A Form object used to pass data from the NKManager class to the NKApiManager</p>
-
-                        <a href="Classes/NKMultipartForm.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">NKMultipartForm</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">NKMultipartForm</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
+            </li>
+            <li class="nav-group-name">
+              <a href="NKParameter.html">NKParameter</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="Protocols/NKParameter.html">NKParameter</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/NKSortParameter.html">NKSortParameter</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/NKPaginationParameter.html">NKPaginationParameter</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/NKFilterParameter.html">NKFilterParameter</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/NKGeofenceParameter.html">NKGeofenceParameter</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/NKGeneralParameter.html">NKGeneralParameter</a>
                 </li>
               </ul>
-            </div>
-            <div class="task-group">
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)NKResponse"></a>
-                    <a name="//apple_ref/objc/Class/NKResponse" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)NKResponse">NKResponse</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This class represent a response from the Nooko api.</p>
-
-                        <a href="Classes/NKResponse.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">NKResponse</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">NKResponse</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
+            </li>
+            <li class="nav-group-name">
+              <a href="NKProject.html">NKProject</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="Classes/NKProject.html">NKProject</a>
                 </li>
               </ul>
-            </div>
-          </section>
-        </section>
+            </li>
+            <li class="nav-group-name">
+              <a href="NKBlock.html">NKBlock</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="Classes/NKBlock.html">NKBlock</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="NKSection.html">NKSection</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="Classes/NKSection.html">NKSection</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="NKElement.html">NKElement</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="Classes/NKElement.html">NKElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/NKTextElement.html">NKTextElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/NKImagesElement.html">NKImagesElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/NKImage.html">NKImage</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/NKMediaElement.html">NKMediaElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/NKFile.html">NKFile</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/NKCheckboxElement.html">NKCheckboxElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/NKWysiwygElement.html">NKWysiwygElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/NKDateElement.html">NKDateElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/NKAddressElement.html">NKAddressElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/NKDropdownElement.html">NKDropdownElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/NKPollElement.html">NKPollElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/NKGeneralElement.html">NKGeneralElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/NKElementFactory.html">NKElementFactory</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="NKUploadableElement.html">NKUploadableElement</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="Classes/NKUploadableElement.html">NKUploadableElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/NKUploadableTextElement.html">NKUploadableTextElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/NKUploadableImagesElement.html">NKUploadableImagesElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/NKUploadableFilesElement.html">NKUploadableFilesElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/NKUploadableElementsFactory.html">NKUploadableElementsFactory</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="NKAuth.html">NKAuth</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="Classes/NKAuthManager.html">NKAuthManager</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/NKUser.html">NKUser</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="NKApiManager.html">NKApiManager</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="Classes/NKApiManager.html">NKApiManager</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/NKMultipartForm.html">NKMultipartForm</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Classes/NKResponse.html">NKResponse</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="Other Enums.html">Other Enumerations</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="Enums/NKElementType.html">NKElementType</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Enums/NKHTTPMethod.html">NKHTTPMethod</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="Enums/NKMediaType.html">NKMediaType</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2018-05-08)</p>
+          <p>&copy; 2018 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2018-05-09)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
-      </article>
+      </div>
     </div>
   </body>
 </div>

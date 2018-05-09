@@ -108,8 +108,7 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  s.framework  = "MapKit"
-  # s.frameworks = "SomeFramework", "AnotherFramework"
+  s.frameworks  = "MapKit", "CoreLocation", "Security"
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
