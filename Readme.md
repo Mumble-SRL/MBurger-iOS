@@ -54,8 +54,8 @@ To initialize the SDK you have to create a token through the [dashboard](https:/
 
 ![Dashboard image](Images/api_token.png)
 
-In your `AppDelegate` `application:didFinishLaunchingWithOptions:` initialize the SDK like the following:
-q
+Then in your `AppDelegate` `application:didFinishLaunchingWithOptions:` initialize the `NKManager` of the SDK setting a token like this:
+
 **Objective-c**:
 
 ```
@@ -94,7 +94,7 @@ You will not be able to interact with the SDK if you don't initialize it with a 
 
 # Usage
 
-All the interactions with the SDK will be trought the `NKManager` singleton class. All the api calls have a plurarl/singular version so for example you can retrieve the list of blocks of the project or you can retrieve a single block giving its id.
+Use the `NKClient` class to make all the request to the api to retrieve data from Nooko. All the api calls have a plurarl version and its singular counterpart. For example you can retrieve the list of blocks of the project or you can retrieve a single block giving its id.
 
 # Project
 
