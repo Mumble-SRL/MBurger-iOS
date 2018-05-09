@@ -2,7 +2,8 @@
 //  NKblockTests.m
 //  NookoSDKTests
 //
-//  Copyright © 2018 Mumble. All rights reserved.
+//  Copyright © 2018 Mumble s.r.l. (https://mumbleideas.it/).
+//  All rights reserved.
 //
 
 #import <XCTest/XCTest.h>

@@ -2,8 +2,7 @@
 //  NKAuth.h
 //  NookoSDK
 //
-//  Created by Lorenzo Oliveto on 08/05/18.
-//  Copyright © 2018 Mumble. All rights reserved.
+//  Copyright © 2018 Mumble s.r.l. All rights reserved.
 //
 
 #ifndef NKAuth_h
