@@ -5,23 +5,14 @@
 //  Copyright © 2018 Mumble s.r.l. All rights reserved.
 //
 
-#import "NKAuthManager.h"
+#import "NKAuth.h"
 #import "NKApiManager.h"
 #import "NKManager.h"
 #import "NKKeychainItemWrapper.h"
 
-@implementation NKAuthManager
+@implementation NKAuth
 
-+ (NKAuthManager *) sharedManager {
-    static NKAuthManager *sharedMyManager = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedMyManager = [[self alloc] init];
-    });
-    return sharedMyManager;
-}
-
-- (void) registerUserWithName: (NSString *) name
++ (void) registerUserWithName: (NSString *) name
                       Surname: (NSString *) surname
                         Email: (NSString *) email
                      Password: (NSString *) password
@@ -58,7 +49,7 @@
                               }];
 }
 
-- (void) authenticateUserWithEmail: (NSString *) email
++ (void) authenticateUserWithEmail: (NSString *) email
                           Password: (NSString *) password
                            Success: (void (^)(NSString *accessToken)) success
                            Failure: (void (^)(NSError *error)) failure{
@@ -91,7 +82,7 @@
                               }];
 }
 
-- (void) changePasswordForCurrentUserWithOldPassword: (nonnull NSString *) oldPassword
++ (void) changePasswordForCurrentUserWithOldPassword: (nonnull NSString *) oldPassword
                                          NewPassword: (nonnull NSString *) newPassword
                                              Success: (nullable void (^)(void)) success
                                              Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
@@ -118,7 +109,7 @@
                               }];
 }
 
-- (void) forgotPasswordWithEmail: (nonnull NSString *) email
++ (void) forgotPasswordWithEmail: (nonnull NSString *) email
                          Success: (nullable void (^)(void)) success
                          Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
@@ -143,7 +134,7 @@
                               }];
 }
 
-- (void) getUserProfileWithSuccess: (nullable void (^)(NKUser * _Nonnull user)) success
++ (void) getUserProfileWithSuccess: (nullable void (^)(NKUser * _Nonnull user)) success
                            Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
     //TODO: remove
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
@@ -166,17 +157,17 @@
                               }];
 }
 
-- (void) logoutCurrentUser{
++ (void) logoutCurrentUser{
     NKKeychainItemWrapper *itemWrapper = [self keychainWrapper];
     [itemWrapper resetKeychainItem];
 }
 
-- (BOOL) userIsLoggedIn{
++ (BOOL) userIsLoggedIn{
     NSString *token = [self authToken];
     return token != nil && ![token isEqualToString:@""];
 }
 
-- (NSString *) authToken{
++ (NSString *) authToken{
     NKKeychainItemWrapper *itemWrapper = [self keychainWrapper];
     NSData *data = [itemWrapper objectForKey:[self accessTokenKey]];
     if (data){
@@ -185,18 +176,18 @@
     return nil;
 }
 
-- (void) saveAccessToken: (NSString *) accessToken {
++ (void) saveAccessToken: (NSString *) accessToken {
     if (accessToken && ![accessToken isEqualToString:@""]){
         [[self keychainWrapper] setObject:[accessToken dataUsingEncoding:NSUTF8StringEncoding] forKey:[self accessTokenKey]];
     }
 }
 
-- (NKKeychainItemWrapper *) keychainWrapper {
++ (NKKeychainItemWrapper *) keychainWrapper {
     NKKeychainItemWrapper *keychainWrapper = [[NKKeychainItemWrapper alloc] initWithIdentifier:@"com.mumble.nooko" accessGroup:nil];
     return keychainWrapper;
 }
 
-- (NSString *) accessTokenKey {
++ (NSString *) accessTokenKey {
     return (__bridge id) kSecValueData;
 }
 

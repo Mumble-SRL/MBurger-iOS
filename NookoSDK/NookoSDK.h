@@ -10,6 +10,8 @@
 #define NookoSDK_h
 
 #import "NKManager.h"
+
+#import "NKClient.h"
 #import "NKPaginationInfo.h"
 #import "NKParameter.h"
 #import "NKGeneralParameter.h"
@@ -38,11 +40,15 @@
 #import "NKApiManager.h"
 #import "NKResponse.h"
 #import "NKMultipartForm.h"
+
+#import "NKAdmin.h"
 #import "NKUploadableElement.h"
 #import "NKUploadableTextElement.h"
 #import "NKUploadableImagesElement.h"
 #import "NKUploadableFilesElement.h"
 #import "NKUploadableElementsFactory.h"
+
 #import "NKAuth.h"
+#import "NKUser.h"
 
 #endif /* NookoSDK_h */

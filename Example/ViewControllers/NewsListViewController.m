@@ -40,7 +40,7 @@
                                         @"link" : @"link"};
     
     NSMutableArray *newsArray = [[NSMutableArray alloc] init];
-    [[NKManager sharedManager] getBlockWithBlockId:newsBlockId Parameters:nil IncludingSections:YES AndElements:YES Success:^(NKBlock *block) {
+    [NKClient getBlockWithBlockId:newsBlockId Parameters:nil IncludingSections:YES AndElements:YES Success:^(NKBlock *block) {
         self.navigationItem.title = block.title;
         for (NKSection *section in block.sections){
             News *n = [[News alloc] init];
@@ -49,7 +49,7 @@
         }
         self->news = newsArray;
         [self.tableView reloadData];
-    } Failure:^(NSError * error) {
+    } Failure:^(NSError * _Nonnull error) {
         [self showError:error];
     }];
 }

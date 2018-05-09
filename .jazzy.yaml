@@ -16,6 +16,9 @@ custom_categories:
   - name: NKManager
     children:
     - NKManager 
+  - name: NKClient
+    children:
+    - NKClient
     - NKPaginationInfo
   - name: NKParameter
     children: 
@@ -50,8 +53,9 @@ custom_categories:
     - NKPollElement
     - NKGeneralElement
     - NKElementFactory
-  - name: NKUploadableElement
+  - name: NKAdmin
     children:
+    - NKAdmin
     - NKUploadableElement
     - NKUploadableTextElement
     - NKUploadableImagesElement
@@ -59,7 +63,7 @@ custom_categories:
     - NKUploadableElementsFactory
   - name: NKAuth
     children:
-    - NKAuthManager
+    - NKAuth
     - NKUser
   - name: NKApiManager
     children:
