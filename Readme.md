@@ -56,7 +56,7 @@ To initialize the SDK you have to create a token through the [dashboard](https:/
 
 Then in your `AppDelegate` `application:didFinishLaunchingWithOptions:` initialize the `NKManager` of the SDK setting a token like this:
 
-**Objective-c**:
+**Objective-C**:
 
 ```
 #import "AppDelegate.h"

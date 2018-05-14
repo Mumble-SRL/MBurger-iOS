@@ -7,7 +7,7 @@ You will have to use a token with write permission to edit the sections and with
 
 You can add a section to a block with the function `[NKAdmin addSectionToBlockWithBlockId:Elements:Success:Failure:]`. To call this function you need to create an array of `NKUploadableElement` objects. You should create it using the `NKUploadableElementsFactory` class that is created to this purpose. An NKUploadableElementsFactory is allocateed with a locale identifier and creates object with this locale identifier. All the integrity controls of the server are still present in the APIs, you will find the description of the error in the object passed to the failure block. Below an example code to create a section. 
 
-**Objective-c**:
+**Objective-C**:
 
 ```
 NKUploadableElementsFactory *factory = [[NKUploadableElementsFactory alloc] initWithLocaleIdentifier:@"it"];
@@ -39,7 +39,7 @@ The edit function is very similar to the add. It will modifiy only the fields pa
 
 To delete a section with an id:
 
-**Objective-c**:
+**Objective-C**:
 
 ```
 [NKAdmin deleteSectionWithSectionId:SECTION_ID Success:^{
@@ -64,14 +64,14 @@ NKAdmin.deleteSection(withSectionId: SECTION_ID, success: {
 
 You can delete a media (an image or a video), giving its id. with the function. The id of the media is the field id of the objects `NKImage` and `NKFile`.
 
-**Objective-c**:
+**Objective-C**:
 
 ```
 [NKAdmin deleteMediaWithMediaId:MEDIA_ID Success:^{
         
 } Failure:^(NSError *error) {
         
-}]
+}];
 ```
 
 **Swift**:
