@@ -336,4 +336,4 @@ You can contuct us at [info@mumbleideas.it](mailto:info@mumbleideas.it).
 
 # License
 
-NookoSDK is released under the MIT license. See [LICENSE](https://raw.githubusercontent.com/Mumble-SRL/NookoSDK-Objc/master/LICENSE) for details.
+NookoSDK is released under the Apache 2.0 license. See [LICENSE](LICENSE) for details.

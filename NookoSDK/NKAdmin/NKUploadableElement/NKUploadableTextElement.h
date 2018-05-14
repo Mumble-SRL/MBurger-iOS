@@ -33,6 +33,6 @@
  
  @return A newly created NKUploadableTextElement initialized with the name, locale and text.
  */
-- (instancetype) initWithElementName: (NSString *) elementName LocaleIdentifier: (NSString *) localeIdentifier Text: (NSString *) text;
+- (nonnull instancetype) initWithElementName: (NSString *) elementName LocaleIdentifier: (NSString *) localeIdentifier Text: (NSString *) text;
 
 @end

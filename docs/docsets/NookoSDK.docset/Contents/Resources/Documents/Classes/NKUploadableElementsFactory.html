@@ -113,12 +113,12 @@ The locale is initialized with the factory and passed to all the objects. You ca
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Objective-C</p>
-                            <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithLocaleIdentifier</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">localeIdentifier</span><span class="p">;</span></code></pre>
+                            <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithLocaleIdentifier</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">localeIdentifier</span><span class="p">;</span></code></pre>
 
                           </div>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="nf">init</span><span class="o">!</span><span class="p">(</span><span class="nv">localeIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span></code></pre>
+                            <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">localeIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span></code></pre>
 
                           </div>
                         </div>
@@ -168,13 +168,13 @@ The locale is initialized with the factory and passed to all the objects. You ca
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Objective-C</p>
-                            <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n"><a href="../Classes/NKUploadableTextElement.html">NKUploadableTextElement</a></span> <span class="o">*</span><span class="p">)</span><span class="nf">textElementWithName</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">name</span>
-                                            <span class="nf">Text</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">text</span><span class="p">;</span></code></pre>
+                            <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/NKUploadableTextElement.html">NKUploadableTextElement</a></span> <span class="o">*</span><span class="p">)</span><span class="nf">textElementWithName</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">name</span>
+                                                    <span class="nf">Text</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">text</span><span class="p">;</span></code></pre>
 
                           </div>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">textElement</span><span class="p">(</span><span class="n">withName</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/NKUploadableTextElement.html">NKUploadableTextElement</a></span><span class="o">!</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">textElement</span><span class="p">(</span><span class="n">withName</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/NKUploadableTextElement.html">NKUploadableTextElement</a></span></code></pre>
 
                           </div>
                         </div>
@@ -247,13 +247,13 @@ The locale is initialized with the factory and passed to all the objects. You ca
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Objective-C</p>
-                            <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n"><a href="../Classes/NKUploadableImagesElement.html">NKUploadableImagesElement</a></span> <span class="o">*</span><span class="p">)</span><span class="nf">imagesElementWithName</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">name</span>
-                                               <span class="nf">Image</span><span class="p">:(</span><span class="n">UIImage</span> <span class="o">*</span><span class="p">)</span><span class="nv">image</span><span class="p">;</span></code></pre>
+                            <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/NKUploadableImagesElement.html">NKUploadableImagesElement</a></span> <span class="o">*</span><span class="p">)</span><span class="nf">imagesElementWithName</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">name</span>
+                                                       <span class="nf">Image</span><span class="p">:(</span><span class="n">UIImage</span> <span class="o">*</span><span class="p">)</span><span class="nv">image</span><span class="p">;</span></code></pre>
 
                           </div>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">imagesElement</span><span class="p">(</span><span class="n">withName</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/NKUploadableImagesElement.html">NKUploadableImagesElement</a></span><span class="o">!</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">imagesElement</span><span class="p">(</span><span class="n">withName</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/NKUploadableImagesElement.html">NKUploadableImagesElement</a></span></code></pre>
 
                           </div>
                         </div>
@@ -315,14 +315,14 @@ The locale is initialized with the factory and passed to all the objects. You ca
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Objective-C</p>
-                            <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n"><a href="../Classes/NKUploadableImagesElement.html">NKUploadableImagesElement</a></span> <span class="o">*</span><span class="p">)</span><span class="nf">imagesElementWithName</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">name</span>
-                                              <span class="nf">Images</span><span class="p">:</span>
-                                                  <span class="p">(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n">UIImage</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">images</span><span class="p">;</span></code></pre>
+                            <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/NKUploadableImagesElement.html">NKUploadableImagesElement</a></span> <span class="o">*</span><span class="p">)</span>
+<span class="nf">imagesElementWithName</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">name</span>
+               <span class="nf">Images</span><span class="p">:(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n">UIImage</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">images</span><span class="p">;</span></code></pre>
 
                           </div>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">imagesElement</span><span class="p">(</span><span class="n">withName</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">images</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIImage</span><span class="p">]</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/NKUploadableImagesElement.html">NKUploadableImagesElement</a></span><span class="o">!</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">imagesElement</span><span class="p">(</span><span class="n">withName</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">images</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIImage</span><span class="p">]</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/NKUploadableImagesElement.html">NKUploadableImagesElement</a></span></code></pre>
 
                           </div>
                         </div>
@@ -395,13 +395,13 @@ The locale is initialized with the factory and passed to all the objects. You ca
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Objective-C</p>
-                            <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n"><a href="../Classes/NKUploadableFilesElement.html">NKUploadableFilesElement</a></span> <span class="o">*</span><span class="p">)</span><span class="nf">filesElementWithName</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">name</span>
-                                           <span class="nf">FileURL</span><span class="p">:(</span><span class="n">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="nv">fileUrl</span><span class="p">;</span></code></pre>
+                            <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/NKUploadableFilesElement.html">NKUploadableFilesElement</a></span> <span class="o">*</span><span class="p">)</span><span class="nf">filesElementWithName</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">name</span>
+                                                   <span class="nf">FileURL</span><span class="p">:(</span><span class="n">NSURL</span> <span class="o">*</span><span class="p">)</span><span class="nv">fileUrl</span><span class="p">;</span></code></pre>
 
                           </div>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">filesElement</span><span class="p">(</span><span class="n">withName</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="n">fileURL</span> <span class="nv">fileUrl</span><span class="p">:</span> <span class="kt">URL</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/NKUploadableFilesElement.html">NKUploadableFilesElement</a></span><span class="o">!</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">filesElement</span><span class="p">(</span><span class="n">withName</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="n">fileURL</span> <span class="nv">fileUrl</span><span class="p">:</span> <span class="kt">URL</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/NKUploadableFilesElement.html">NKUploadableFilesElement</a></span></code></pre>
 
                           </div>
                         </div>
@@ -463,13 +463,14 @@ The locale is initialized with the factory and passed to all the objects. You ca
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Objective-C</p>
-                            <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n"><a href="../Classes/NKUploadableFilesElement.html">NKUploadableFilesElement</a></span> <span class="o">*</span><span class="p">)</span><span class="nf">filesElementWithName</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">name</span>
-                                          <span class="nf">FileURLs</span><span class="p">:(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n">NSURL</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">fileUrls</span><span class="p">;</span></code></pre>
+                            <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/NKUploadableFilesElement.html">NKUploadableFilesElement</a></span> <span class="o">*</span><span class="p">)</span><span class="nf">filesElementWithName</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">name</span>
+                                                  <span class="nf">FileURLs</span><span class="p">:(</span><span class="n">NSArray</span><span class="o">&lt;</span><span class="n">NSURL</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span>
+                                                               <span class="n">fileUrls</span><span class="p">;</span></code></pre>
 
                           </div>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">filesElement</span><span class="p">(</span><span class="n">withName</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="n">fileURLs</span> <span class="nv">fileUrls</span><span class="p">:</span> <span class="p">[</span><span class="kt">URL</span><span class="p">]</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/NKUploadableFilesElement.html">NKUploadableFilesElement</a></span><span class="o">!</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">filesElement</span><span class="p">(</span><span class="n">withName</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="n">fileURLs</span> <span class="nv">fileUrls</span><span class="p">:</span> <span class="p">[</span><span class="kt">URL</span><span class="p">]</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/NKUploadableFilesElement.html">NKUploadableFilesElement</a></span></code></pre>
 
                           </div>
                         </div>
@@ -700,7 +701,7 @@ The locale is initialized with the factory and passed to all the objects. You ca
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2018-05-09)</p>
+          <p>&copy; 2018 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2018-05-14)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </div>

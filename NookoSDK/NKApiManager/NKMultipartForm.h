@@ -41,7 +41,7 @@
 
  @return A newly created NKMultipartForm initialized with the name and data.
  */
-- (instancetype) initWithName: (nonnull NSString *) name Data: (nonnull NSData *) data;
+- (nonnull instancetype) initWithName: (nonnull NSString *) name Data: (nonnull NSData *) data;
 
 /**
  Initializes an element with the name, a fileUrl and the MIME type of the file.
@@ -52,6 +52,6 @@
 
  @return A newly created NKMultipartForm initialized with the name and data.
  */
-- (instancetype) initWithName: (nonnull NSString *) name FileUrl: (nonnull NSURL *) fileURL MimeType: (nullable NSString *) mimeType;
+- (nonnull instancetype) initWithName: (nonnull NSString *) name FileUrl: (nonnull NSURL *) fileURL MimeType: (nullable NSString *) mimeType;
 
 @end

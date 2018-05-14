@@ -68,7 +68,7 @@
  @param data Additional data in JSON format.
  @return A newly created NKUser initialized sith the parameters passed.
  */
-- (instancetype) initWithUserId: (NSInteger) userId
+- (nonnull instancetype) initWithUserId: (NSInteger) userId
                            Name: (nonnull NSString *) name
                         Surname: (nonnull NSString *) surname
                           Email: (nonnull NSString *) email
@@ -82,6 +82,6 @@
  
  @return A newly created NKUser initialized with the data of the dictionary.
  */
-- (instancetype) initWithDictionary: (nonnull NSDictionary *) dictionary;
+- (nonnull instancetype) initWithDictionary: (nonnull NSDictionary *) dictionary;
 
 @end
