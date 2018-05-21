@@ -79,7 +79,7 @@ Then in your `AppDelegate` `application:didFinishLaunchingWithOptions:` initiali
 
 **Swift**:
 
-```
+```swift
 import NookoSDK
 
 ...
