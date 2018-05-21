@@ -9,7 +9,7 @@ You can add a section to a block with the function `[NKAdmin addSectionToBlockWi
 
 **Objective-C**:
 
-```
+```objective-c
 NKUploadableElementsFactory *factory = [[NKUploadableElementsFactory alloc] initWithLocaleIdentifier:@"it"];
 NSArray *elements = @[[factory textElementWithName:@"title" Text:@"The title", [factory imagesElementWithName:@"image" Image:[UIImage imageNamed:@"test_image"]]]];
 [NKAdmin addSectionToBlockWithBlockId:BLOCK_ID Elements:elements Success:^{
@@ -21,7 +21,7 @@ NSArray *elements = @[[factory textElementWithName:@"title" Text:@"The title", [
 
 **Swift**:
 
-```
+```swift
 let factory = NKUploadableElementsFactory(localeIdentifier: "it")
 let elements = [factory.textElement(withName: "title", text: "The title"), [factory.imagesElement(withName: "image", image: UIImage.init(named: "Test"))]]
 NKAdmin.addSectionToBlock(withBlockId: 1, elements: elements, success: {
@@ -41,7 +41,7 @@ To delete a section with an id:
 
 **Objective-C**:
 
-```
+```objective-c
 [NKAdmin deleteSectionWithSectionId:SECTION_ID Success:^{
         
 } Failure:^(NSError *error) {
@@ -50,7 +50,7 @@ To delete a section with an id:
 ```
 **Swift**:
 
-```
+```swift
 NKAdmin.deleteSection(withSectionId: SECTION_ID, success: {
 }, failure: { (error) in
 
@@ -66,7 +66,7 @@ You can delete a media (an image or a video), giving its id. with the function. 
 
 **Objective-C**:
 
-```
+```objective-c
 [NKAdmin deleteMediaWithMediaId:MEDIA_ID Success:^{
         
 } Failure:^(NSError *error) {
@@ -76,7 +76,7 @@ You can delete a media (an image or a video), giving its id. with the function. 
 
 **Swift**:
 
-```
+```swift
 NKAdmin.deleteMedia(withMediaId: MEDIA_ID, success: {
             
 }, failure: { (error) in

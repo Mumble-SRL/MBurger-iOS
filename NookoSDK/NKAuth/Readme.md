@@ -8,7 +8,7 @@ To register a user you call `[NKAuth registerUserWithName:surname:...]`. The fie
 
 **Objective-C**:
 
-```
+```objective-c
 [NKAuth registerUserWithName:@"name"
 						 Surname:@"surname"
 						   Email:@"email"
@@ -25,7 +25,7 @@ To register a user you call `[NKAuth registerUserWithName:surname:...]`. The fie
 
 **Swift**:
 
-```
+```swift
 NKAuth.registerUser(withName: "name", surname: "surname", email: "email", password: "password", phone: "1234567890", image: nil, data: nil, success: {
             
 }, failure: { (error) in
@@ -39,7 +39,7 @@ After registeering the user you can authenticate it with its email and password.
 
 **Objective-C**:
 
-```
+```objective-c
 [NKAuth authenticateUserWithEmail:@"email" Password:@"password" Success:^(NSString *accessToken) {
         
 } Failure:^(NSError *error) {
@@ -48,7 +48,7 @@ After registeering the user you can authenticate it with its email and password.
 ```
 **Swift**:
 
-```
+```swift
 NKAuth.authenticateUser(withEmail: "email", password: "password", success: { (accessToken) in
             
 }, failure: { (error) in
@@ -70,7 +70,7 @@ You can retrieve the informations of the current user with `[getUserProfileWithS
 
 **Objective-C**:
 
-```
+```objective-c
 [NKAuth getUserProfileWithSuccess:^(NKUser *user) {
         
 } Failure:^(NSError *error) {
@@ -79,7 +79,7 @@ You can retrieve the informations of the current user with `[getUserProfileWithS
 ```
 **Swift**:
 
-```
+```swift
 NKAuth.getUserProfile(success: { (user) in
             
 }, failure: { (error) in
