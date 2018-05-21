@@ -17,13 +17,13 @@ NookoSDK is a client libary, written in Objective-C, that can be used to interac
 
 CocoaPods is a dependency manager for iOS, which automates and simplifies the process of using 3rd-party libraries in your projects. You can install CocoaPods with the following command:
 
-```
+```ruby
 $ gem install cocoapods
 ```
 
 To integrate the NookoSDK into your Xcode project using CocoaPods, specify it in your Podfile:
 
-```
+```ruby
 platform :ios, '10.0'
 
 target 'TargetName' do
@@ -58,7 +58,7 @@ Then in your `AppDelegate` `application:didFinishLaunchingWithOptions:` initiali
 
 **Objective-C**:
 
-```
+```objective-c
 #import "AppDelegate.h"
 #import "NookoSDK.h"
 
@@ -103,7 +103,7 @@ You can retrieve the informations of the project like this:
 **Objective-C**:
 
 
-```
+```objective-c
 [NKClient getProjectWithSuccess:^(NKProject *project) {
         
 } Failure:^(NSError *error) {
@@ -113,7 +113,7 @@ You can retrieve the informations of the project like this:
 
 **Swift**:
 
-```
+```swift
 NKClient.getProjectWithSuccess({ (project) in
 
 }, failure: { (error) in
@@ -128,7 +128,7 @@ You can retrieve the blocks of the project with the function `getBlocksWithParam
 
 **Objective-C**:
 
-```
+```objective-c
 [NKClient getBlocksWithParameters:nil Success:^(NSArray<NKBlock *> *blocks, NKPaginationInfo *pagintaionInfo) {
      
 } Failure:^(NSError *error) {
@@ -138,7 +138,7 @@ You can retrieve the blocks of the project with the function `getBlocksWithParam
 
 **Swift**:
 
-```
+```swift
 NKClient.getBlocksWith(nil, success: { (blocks, paginationInfos) in
 
 }, failure: { (error) in
@@ -159,7 +159,7 @@ So if you want to include a pagination parameter you can do like this:
 
 **Objective-C**:
 
-```
+```objective-c
 NKPaginationParameter *paginationParam = [[NKPaginationParameter alloc] initWithSkip:0 Take:10];
 [NKClient getBlocksWithParameters:@[paginationParam] Success:^(NSArray<NKBlock *> *blocks, NKPaginationInfo *pagintaionInfo) {
         
@@ -170,7 +170,7 @@ NKPaginationParameter *paginationParam = [[NKPaginationParameter alloc] initWith
 
 **Swift**:
 
-```
+```swift
 let paginationParam = NKPaginationParameter(skip: 0, take: 10)
 NKClient.getBlocksWith([paginationParam], success: { (blocks, paginationInfos) in
 
@@ -185,7 +185,7 @@ So you could retrieve the informations of all the blocks, all the sections of th
 
 **Objective-C**:
 
-```
+```objective-c
 [NKClient getBlocksWithParameters:nil IncludingSections:TRUE AndElements: TRUE Success:^(NSArray<NKBlock *> *blocks, NKPaginationInfo *pagintaionInfo) {
         
 } Failure:^(NSError *error) {
@@ -195,7 +195,7 @@ So you could retrieve the informations of all the blocks, all the sections of th
 
 **Swift**:
 
-```
+```swift
 NKClient.getBlocksWith(nil, includingSections: true, andElements: true, success: { (blocks, paginationInfos) in
 
 }, failure: { (error) in
@@ -209,7 +209,7 @@ You can retrieve all the sections with a block with the given id with the functi
 
 **Objective-C**:
 
-```
+```objective-c
 [NKClient getSectionsWithBlockId:THE_BLOCK_ID Parameters:nil Success:^(NSArray<NKSection *> *sections, NKPaginationInfo *pagintaionInfo) {
         
 } Failure:^(NSError *error) {
@@ -219,7 +219,7 @@ You can retrieve all the sections with a block with the given id with the functi
 
 **Swift**:
 
-```
+```swift
 NKClient.getSectionsWithBlockId(THE_BLOCK_ID, parameters: nil, success: { (sections, paginationInfos) in
 
 }, failure: { (error) in
@@ -231,7 +231,7 @@ Like for the blocks there's a version of this function that takes a bool `includ
 
 **Objective-C**:
 
-```
+```objective-c
 [NKClient getSectionsWithBlockId:THE_BLOCK_ID IncludeElement:TRUE Parameters:nil Success:^(NSArray<NKSection *> *sections, NKPaginationInfo *pagintaionInfo) {
         
 } Failure:^(NSError *error) {
@@ -241,7 +241,7 @@ Like for the blocks there's a version of this function that takes a bool `includ
 
 **Swift**:
 
-```
+```swift
 NKClient.getSectionsWithBlockId(THE_BLOCK_ID, parameters: nil, includeElements: true, success: { (sections, paginationInfos) in
 
 }, failure: { (error) in
@@ -253,7 +253,7 @@ NKClient.getSectionsWithBlockId(THE_BLOCK_ID, parameters: nil, includeElements: 
 
 The `NKSection` class has a commodity function that can be used to map the elements of the section to a custom object created by you. For Exaple if you have a `News` object like this
 
-```
+```objective-c
 #import <Foundation/Foundation.h>
 
 @interface News : NSObject
@@ -268,7 +268,7 @@ The `NKSection` class has a commodity function that can be used to map the eleme
 
 And a block in Nooko that represent a newsfeed you could create and populate an array of news object like this:
 
-```
+```objective-c
 NSInteger newsBlockId = 12;
 NSDictionary *mappingDictionary = @{@"title" : @"title",
                                     @"content" : @"content",
