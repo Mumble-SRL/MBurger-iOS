@@ -30,6 +30,6 @@
  
  @return A newly created NKUploadableFilesElement initialized with the name, locale and file URLs.
  */
-- (instancetype) initWithElementName: (NSString *) elementName LocaleIdentifier: (NSString *) localeIdentifier FileURLs: (NSArray <NSURL *> *) fileURLs;
+- (nonnull instancetype) initWithElementName: (NSString *) elementName LocaleIdentifier: (NSString *) localeIdentifier FileURLs: (NSArray <NSURL *> *) fileURLs;
 
 @end

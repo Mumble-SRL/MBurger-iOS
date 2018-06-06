@@ -19,7 +19,6 @@
 		660E866720760734008DF597 /* NKGeofenceParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E866620760734008DF597 /* NKGeofenceParameter.m */; };
 		660E866A20760741008DF597 /* NKGeneralParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E866920760741008DF597 /* NKGeneralParameter.m */; };
 		663F93AE20A2DE2D009F4DB1 /* NKKeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 663F93AD20A2DE2D009F4DB1 /* NKKeychainItemWrapper.m */; };
-		666DB42A2073C8FA00185529 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 666DB4292073C8FA00185529 /* Readme.md */; };
 		667F21D8207B56A900C4CA92 /* NKblockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 667F21D7207B56A900C4CA92 /* NKblockTests.m */; };
 		667F21DA207B573200C4CA92 /* block_sections_elements.json in Resources */ = {isa = PBXBuildFile; fileRef = 667F21D9207B573200C4CA92 /* block_sections_elements.json */; };
 		667F21DC207B580100C4CA92 /* block.json in Resources */ = {isa = PBXBuildFile; fileRef = 667F21DB207B580100C4CA92 /* block.json */; };
@@ -102,7 +101,6 @@
 		663F93AD20A2DE2D009F4DB1 /* NKKeychainItemWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKKeychainItemWrapper.m; sourceTree = "<group>"; };
 		663F93AF20A2E071009F4DB1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		663F93B120A2E125009F4DB1 /* NookoSDK.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NookoSDK.entitlements; sourceTree = "<group>"; };
-		666DB4292073C8FA00185529 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		667F21D7207B56A900C4CA92 /* NKblockTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKblockTests.m; sourceTree = "<group>"; };
 		667F21D9207B573200C4CA92 /* block_sections_elements.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = block_sections_elements.json; sourceTree = "<group>"; };
 		667F21DB207B580100C4CA92 /* block.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = block.json; sourceTree = "<group>"; };
@@ -261,6 +259,15 @@
 			path = NKParameter;
 			sourceTree = "<group>";
 		};
+		6620D43320A339040059CE42 /* NKManager */ = {
+			isa = PBXGroup;
+			children = (
+				66AF6757206E325E003FD62F /* NKManager.h */,
+				66AF6758206E325E003FD62F /* NKManager.m */,
+			);
+			path = NKManager;
+			sourceTree = "<group>";
+		};
 		667F21D5207B53F500C4CA92 /* NKProject */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,7 +321,6 @@
 		66AF6726206E3236003FD62F = {
 			isa = PBXGroup;
 			children = (
-				666DB4292073C8FA00185529 /* Readme.md */,
 				66004BCD20765F4100C57A6C /* Example */,
 				66AF6756206E323E003FD62F /* NookoSDK */,
 				66AF674A206E3236003FD62F /* NookoSDKTests */,
@@ -349,8 +355,7 @@
 			children = (
 				663F93B120A2E125009F4DB1 /* NookoSDK.entitlements */,
 				66AF675A206E3784003FD62F /* NookoSDK.h */,
-				66AF6757206E325E003FD62F /* NKManager.h */,
-				66AF6758206E325E003FD62F /* NKManager.m */,
+				6620D43320A339040059CE42 /* NKManager */,
 				66B1F7B020A32179009602C6 /* NKClient */,
 				66B1F7AB20A319EB009602C6 /* NKAdmin */,
 				66C4060C20A1E0C70044885E /* NKAuth */,
@@ -555,6 +560,7 @@
 				TargetAttributes = {
 					66AF672E206E3236003FD62F = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
@@ -596,7 +602,6 @@
 				66AF673C206E3236003FD62F /* Assets.xcassets in Resources */,
 				66004BD12076605900C57A6C /* LaunchScreen.storyboard in Resources */,
 				66004BCF2076604A00C57A6C /* Main.storyboard in Resources */,
-				666DB42A2073C8FA00185529 /* Readme.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -850,6 +855,7 @@
 			baseConfigurationReference = 91C5A5C85F062608E05397EB /* Pods-NookoSDK.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AXR257ENWG;
 				INFOPLIST_FILE = Example/Info.plist;
@@ -857,6 +863,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mumble.NookoSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -866,6 +874,7 @@
 			baseConfigurationReference = 70254884B91E6CB2A2CD5706 /* Pods-NookoSDK.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AXR257ENWG;
 				INFOPLIST_FILE = Example/Info.plist;
@@ -873,6 +882,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mumble.NookoSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

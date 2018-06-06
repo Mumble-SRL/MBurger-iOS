@@ -36,7 +36,7 @@
 
  @return A newly created NKUploadableElement initialized with the name and locale.
  */
-- (instancetype) initWithElementName: (NSString *) elementName LocaleIdentifier: (NSString *) localeIdentifier;
+- (nonnull instancetype) initWithElementName: (NSString *) elementName LocaleIdentifier: (NSString *) localeIdentifier;
 
 
 /**

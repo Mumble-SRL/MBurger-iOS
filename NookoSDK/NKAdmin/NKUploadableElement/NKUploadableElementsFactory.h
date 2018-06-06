@@ -34,7 +34,7 @@
  
  @return A newly created NKUploadableElementsFactory with the given locale.
  */
-- (instancetype) initWithLocaleIdentifier: (NSString *) localeIdentifier;
+- (nonnull instancetype) initWithLocaleIdentifier: (NSString *) localeIdentifier;
 
 
 /**
@@ -45,7 +45,7 @@
  
  @return An `NKUploadableTextElement` with the name and text specified.
  */
-- (NKUploadableTextElement *) textElementWithName: (NSString *) name Text: (NSString *) text;
+- (nonnull NKUploadableTextElement *) textElementWithName: (NSString *) name Text: (NSString *) text;
 
 #pragma mark - Images
 
@@ -58,7 +58,7 @@
  
  @return An `NKUploadableImagesElement` with the name and image specified.
  */
-- (NKUploadableImagesElement *) imagesElementWithName: (NSString *) name Image: (UIImage *) image;
+- (nonnull NKUploadableImagesElement *) imagesElementWithName: (NSString *) name Image: (UIImage *) image;
 
 /**
  Creates an images element with an array of images.
@@ -68,7 +68,7 @@
  
  @return An `NKUploadableImagesElement` with the name and images specified.
  */
-- (NKUploadableImagesElement *) imagesElementWithName: (NSString *) name Images: (NSArray <UIImage *> *) images;
+- (nonnull NKUploadableImagesElement *) imagesElementWithName: (NSString *) name Images: (NSArray <UIImage *> *) images;
 
 #pragma mark - Files
 
@@ -80,7 +80,7 @@
  
  @return An `NKUploadableFilesElement` with the name and file specified.
  */
-- (NKUploadableFilesElement *) filesElementWithName: (NSString *) name FileURL: (NSURL *) fileUrl;
+- (nonnull NKUploadableFilesElement *) filesElementWithName: (NSString *) name FileURL: (NSURL *) fileUrl;
 
 /**
  Creates an files element with an array of files.
@@ -90,6 +90,6 @@
  
  @return An `NKUploadableFilesElement` with the name and files specified.
  */
-- (NKUploadableFilesElement *) filesElementWithName: (NSString *) name FileURLs: (NSArray <NSURL *> *) fileUrls;
+- (nonnull NKUploadableFilesElement *) filesElementWithName: (NSString *) name FileURLs: (NSArray <NSURL *> *) fileUrls;
 
 @end

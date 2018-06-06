@@ -50,7 +50,7 @@
 </p>
 
 <p><img src="docs/badge.svg" alt="Test Status">
-<img src="https://img.shields.io/badge/pod-v0.0.8-blue.svg" alt="License: MIT">
+<img src="https://img.shields.io/badge/pod-v0.0.9-blue.svg" alt="License: MIT">
 <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-yellow.svg" alt="CocoaPods"></a></p>
 <h1 id='noookosdk' class='heading'>NoookoSDK</h1>
 
@@ -92,9 +92,9 @@ end
 
 <p><img src="Images/api_token.png" alt="Dashboard image"></p>
 
-<p>In your <code>AppDelegate</code> <code>application:didFinishLaunchingWithOptions:</code> initialize the SDK like the following:
-q
-<strong>Objective-c</strong>:</p>
+<p>Then in your <code>AppDelegate</code> <code>application:didFinishLaunchingWithOptions:</code> initialize the <code><a href="Classes/NKManager.html">NKManager</a></code> of the SDK setting a token like this:</p>
+
+<p><strong>Objective-c</strong>:</p>
 <pre class="highlight plaintext"><code>#import "AppDelegate.h"
 #import "NookoSDK.h"
 
@@ -127,7 +127,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 <p>You will not be able to interact with the SDK if you don&rsquo;t initialize it with a correct token/key.</p>
 <h1 id='usage' class='heading'>Usage</h1>
 
-<p>All the interactions with the SDK will be trought the <code><a href="Classes/NKManager.html">NKManager</a></code> singleton class. All the api calls have a plurarl/singular version so for example you can retrieve the list of blocks of the project or you can retrieve a single block giving its id.</p>
+<p>Use the <code><a href="Classes/NKClient.html">NKClient</a></code> class to make all the request to the api to retrieve data from Nooko. All the api calls have a plurarl version and its singular counterpart. For example you can retrieve the list of blocks of the project or you can retrieve a single block giving its id.</p>
 <h1 id='project' class='heading'>Project</h1>
 
 <p>You can retrieve the informations of the project like this:</p>
@@ -143,9 +143,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 <p><strong>Swift</strong>:</p>
 <pre class="highlight plaintext"><code>NKClient.getProjectWithSuccess({ (project) in
 
-    }) {(error) in
+}, failure: { (error) in
 
-}
+})
 </code></pre>
 <h1 id='blocks' class='heading'>Blocks</h1>
 
@@ -162,9 +162,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 <p><strong>Swift</strong>:</p>
 <pre class="highlight plaintext"><code>NKClient.getBlocksWith(nil, success: { (blocks, paginationInfos) in
 
-}) { (error) in
+}, failure: { (error) in
 
-}
+})
 </code></pre>
 
 <p>The parameter <code>parameters</code> is an optional array of objects that conforms to the <code><a href="Protocols/NKParameter.html">NKParameter</a></code> protocol passed to the nooko api as parameter. The majorityof the parameters that can be passed to the apis are already defined in the SDK and can be used after the initialization:</p>
@@ -193,9 +193,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 <pre class="highlight plaintext"><code>let paginationParam = NKPaginationParameter(skip: 0, take: 10)
 NKClient.getBlocksWith([paginationParam], success: { (blocks, paginationInfos) in
 
-}) { (error) in
+}, failure: { (error) in
 
-}
+})
 </code></pre>
 
 <p>There are two other versions of the <code>getBlocksWithParameters:Success:Failure</code>, one that take an adiitional parameter <code>includingSections</code> (a boolean that indicate whether or not include, for each block, the sections), and another that takes <code>includingSections</code> and <code>includeElements</code> (a boolean value that do the same thing but for the elements of the sections).</p>
@@ -213,9 +213,9 @@ NKClient.getBlocksWith([paginationParam], success: { (blocks, paginationInfos) i
 <p><strong>Swift</strong>:</p>
 <pre class="highlight plaintext"><code>NKClient.getBlocksWith(nil, includingSections: true, andElements: true, success: { (blocks, paginationInfos) in
 
-}) { (error) in
+}, failure: { (error) in
 
-}
+})
 </code></pre>
 <h1 id='sections' class='heading'>Sections</h1>
 
@@ -232,9 +232,9 @@ NKClient.getBlocksWith([paginationParam], success: { (blocks, paginationInfos) i
 <p><strong>Swift</strong>:</p>
 <pre class="highlight plaintext"><code>NKClient.getSectionsWithBlockId(THE_BLOCK_ID, parameters: nil, success: { (sections, paginationInfos) in
 
-}) { (error) in
+}, failure: { (error) in
 
-} 
+})
 </code></pre>
 
 <p>Like for the blocks there&rsquo;s a version of this function that takes a bool <code>includeElements</code> that indicate to include or not the elements of the section se if you want to retrieve all the sections of a block and their elements you can call:</p>
@@ -250,9 +250,9 @@ NKClient.getBlocksWith([paginationParam], success: { (blocks, paginationInfos) i
 <p><strong>Swift</strong>:</p>
 <pre class="highlight plaintext"><code>NKClient.getSectionsWithBlockId(THE_BLOCK_ID, parameters: nil, includeElements: true, success: { (sections, paginationInfos) in
 
-}) { (error) in
+}, failure: { (error) in
 
-}
+})
 </code></pre>
 <h1 id='object-mapping' class='heading'>Object mapping</h1>
 
@@ -317,15 +317,21 @@ NSMutableArray *newsArray = [[NSMutableArray alloc] init];
 <h1 id='equality' class='heading'>Equality</h1>
 
 <p>All the model objects implement the <code>isEqual:</code> function based on the corresponding id. So for example an NKSection will result equal to another NKSection object if they have the same <code>sectionId</code>.</p>
+<h1 id='admin' class='heading'>Admin</h1>
+
+<p>Read the full admin documentation apis <a href="NookoSDK/NKAdmin">here</a>.</p>
+<h1 id='authentication' class='heading'>Authentication</h1>
+
+<p>Read the full admin documentation apis <a href="NookoSDK/NKAuth">here</a>.</p>
 <h1 id='documentation' class='heading'>Documentation</h1>
 
-<p>For further information, you can check out the full SDK Reference in the <a href="https://github.com/Mumble-SRL/NookoSDK-Objc.git/tree/master/docs">docs</a> folder.</p>
+<p>For further information, you can check out the full SDK Reference in the <a href="docs">docs</a> folder.</p>
 <h1 id='contacts' class='heading'>Contacts</h1>
 
 <p>You can contuct us at <a href="mailto:info@mumbleideas.it">info@mumbleideas.it</a>.</p>
 <h1 id='license' class='heading'>License</h1>
 
-<p>NookoSDK is released under the MIT license. See <a href="https://raw.githubusercontent.com/Mumble-SRL/NookoSDK-Objc/master/LICENSE">LICENSE</a> for details.</p>
+<p>NookoSDK is released under the Apache 2.0 license. See <a href="LICENSE">LICENSE</a> for details.</p>
 
             </section>
           </section>
@@ -514,7 +520,7 @@ NSMutableArray *newsArray = [[NSMutableArray alloc] init];
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2018-05-09)</p>
+          <p>&copy; 2018 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2018-05-14)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </div>

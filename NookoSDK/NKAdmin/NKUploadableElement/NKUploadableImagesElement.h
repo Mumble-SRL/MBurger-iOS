@@ -32,6 +32,6 @@
  
  @return A newly created NKUploadableImagesElement initialized with the name, locale and images.
  */
-- (instancetype) initWithElementName: (NSString *) elementName LocaleIdentifier: (NSString *) localeIdentifier Images: (NSArray <UIImage *> *) images;
+- (nonnull instancetype) initWithElementName: (NSString *) elementName LocaleIdentifier: (NSString *) localeIdentifier Images: (NSArray <UIImage *> *) images;
 
 @end

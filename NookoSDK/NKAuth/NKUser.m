@@ -49,6 +49,13 @@
     return [self initWithUserId:userId Name:name Surname:surname Email:email Phone:phone ImageURL:imageUrl Data:data];
 }
 
+- (BOOL) isEqual:(id)object {
+    if ([object isKindOfClass:[NKUser class]]){
+        return [(NKUser *) object userId] == self.userId;
+    }
+    return NO;
+}
+
 #pragma mark - NSCoding-NSSecureCoding
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{

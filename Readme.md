@@ -3,7 +3,7 @@
 </p>
 
 ![Test Status](docs/badge.svg)
-![License: MIT](https://img.shields.io/badge/pod-v0.0.8-blue.svg)
+![License: MIT](https://img.shields.io/badge/pod-v0.0.9-blue.svg)
 [![CocoaPods](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](LICENSE)
 
 # NoookoSDK
@@ -17,13 +17,13 @@ NookoSDK is a client libary, written in Objective-C, that can be used to interac
 
 CocoaPods is a dependency manager for iOS, which automates and simplifies the process of using 3rd-party libraries in your projects. You can install CocoaPods with the following command:
 
-```
+```ruby
 $ gem install cocoapods
 ```
 
 To integrate the NookoSDK into your Xcode project using CocoaPods, specify it in your Podfile:
 
-```
+```ruby
 platform :ios, '10.0'
 
 target 'TargetName' do
@@ -54,11 +54,11 @@ To initialize the SDK you have to create a token through the [dashboard](https:/
 
 ![Dashboard image](Images/api_token.png)
 
-In your `AppDelegate` `application:didFinishLaunchingWithOptions:` initialize the SDK like the following:
-q
-**Objective-c**:
+Then in your `AppDelegate` `application:didFinishLaunchingWithOptions:` initialize the `NKManager` of the SDK setting a token like this:
 
-```
+**Objective-C**:
+
+```objective-c
 #import "AppDelegate.h"
 #import "NookoSDK.h"
 
@@ -79,7 +79,7 @@ q
 
 **Swift**:
 
-```
+```swift
 import NookoSDK
 
 ...
@@ -94,7 +94,7 @@ You will not be able to interact with the SDK if you don't initialize it with a 
 
 # Usage
 
-All the interactions with the SDK will be trought the `NKManager` singleton class. All the api calls have a plurarl/singular version so for example you can retrieve the list of blocks of the project or you can retrieve a single block giving its id.
+Use the `NKClient` class to make all the request to the api to retrieve data from Nooko. All the api calls have a plurarl version and its singular counterpart. For example you can retrieve the list of blocks of the project or you can retrieve a single block giving its id.
 
 # Project
 
@@ -103,7 +103,7 @@ You can retrieve the informations of the project like this:
 **Objective-C**:
 
 
-```
+```objective-c
 [NKClient getProjectWithSuccess:^(NKProject *project) {
         
 } Failure:^(NSError *error) {
@@ -113,12 +113,12 @@ You can retrieve the informations of the project like this:
 
 **Swift**:
 
-```
+```swift
 NKClient.getProjectWithSuccess({ (project) in
-            
-    }) {(error) in
-            
-}
+
+}, failure: { (error) in
+
+})
 ```
 
 
@@ -128,7 +128,7 @@ You can retrieve the blocks of the project with the function `getBlocksWithParam
 
 **Objective-C**:
 
-```
+```objective-c
 [NKClient getBlocksWithParameters:nil Success:^(NSArray<NKBlock *> *blocks, NKPaginationInfo *pagintaionInfo) {
      
 } Failure:^(NSError *error) {
@@ -138,12 +138,12 @@ You can retrieve the blocks of the project with the function `getBlocksWithParam
 
 **Swift**:
 
-```
+```swift
 NKClient.getBlocksWith(nil, success: { (blocks, paginationInfos) in
-            
-}) { (error) in
-            
-}
+
+}, failure: { (error) in
+
+})
 ```
 
 The parameter `parameters` is an optional array of objects that conforms to the `NKParameter` protocol passed to the nooko api as parameter. The majorityof the parameters that can be passed to the apis are already defined in the SDK and can be used after the initialization:
@@ -159,7 +159,7 @@ So if you want to include a pagination parameter you can do like this:
 
 **Objective-C**:
 
-```
+```objective-c
 NKPaginationParameter *paginationParam = [[NKPaginationParameter alloc] initWithSkip:0 Take:10];
 [NKClient getBlocksWithParameters:@[paginationParam] Success:^(NSArray<NKBlock *> *blocks, NKPaginationInfo *pagintaionInfo) {
         
@@ -170,13 +170,13 @@ NKPaginationParameter *paginationParam = [[NKPaginationParameter alloc] initWith
 
 **Swift**:
 
-```
+```swift
 let paginationParam = NKPaginationParameter(skip: 0, take: 10)
 NKClient.getBlocksWith([paginationParam], success: { (blocks, paginationInfos) in
-            
-}) { (error) in
-            
-}
+
+}, failure: { (error) in
+
+})
 ```
 
 There are two other versions of the `getBlocksWithParameters:Success:Failure`, one that take an adiitional parameter `includingSections` (a boolean that indicate whether or not include, for each block, the sections), and another that takes `includingSections` and `includeElements` (a boolean value that do the same thing but for the elements of the sections).
@@ -185,7 +185,7 @@ So you could retrieve the informations of all the blocks, all the sections of th
 
 **Objective-C**:
 
-```
+```objective-c
 [NKClient getBlocksWithParameters:nil IncludingSections:TRUE AndElements: TRUE Success:^(NSArray<NKBlock *> *blocks, NKPaginationInfo *pagintaionInfo) {
         
 } Failure:^(NSError *error) {
@@ -195,12 +195,12 @@ So you could retrieve the informations of all the blocks, all the sections of th
 
 **Swift**:
 
-```
+```swift
 NKClient.getBlocksWith(nil, includingSections: true, andElements: true, success: { (blocks, paginationInfos) in
-            
-}) { (error) in
-            
-}
+
+}, failure: { (error) in
+
+})
 ```
 
 # Sections
@@ -209,7 +209,7 @@ You can retrieve all the sections with a block with the given id with the functi
 
 **Objective-C**:
 
-```
+```objective-c
 [NKClient getSectionsWithBlockId:THE_BLOCK_ID Parameters:nil Success:^(NSArray<NKSection *> *sections, NKPaginationInfo *pagintaionInfo) {
         
 } Failure:^(NSError *error) {
@@ -219,19 +219,19 @@ You can retrieve all the sections with a block with the given id with the functi
 
 **Swift**:
 
-```
+```swift
 NKClient.getSectionsWithBlockId(THE_BLOCK_ID, parameters: nil, success: { (sections, paginationInfos) in
-            
-}) { (error) in
-            
-} 
+
+}, failure: { (error) in
+
+})
 ```
 
 Like for the blocks there's a version of this function that takes a bool `includeElements` that indicate to include or not the elements of the section se if you want to retrieve all the sections of a block and their elements you can call:
 
 **Objective-C**:
 
-```
+```objective-c
 [NKClient getSectionsWithBlockId:THE_BLOCK_ID IncludeElement:TRUE Parameters:nil Success:^(NSArray<NKSection *> *sections, NKPaginationInfo *pagintaionInfo) {
         
 } Failure:^(NSError *error) {
@@ -241,19 +241,19 @@ Like for the blocks there's a version of this function that takes a bool `includ
 
 **Swift**:
 
-```
+```swift
 NKClient.getSectionsWithBlockId(THE_BLOCK_ID, parameters: nil, includeElements: true, success: { (sections, paginationInfos) in
-            
-}) { (error) in
-            
-}
+
+}, failure: { (error) in
+
+})
 ```
 
 # Object mapping
 
 The `NKSection` class has a commodity function that can be used to map the elements of the section to a custom object created by you. For Exaple if you have a `News` object like this
 
-```
+```objective-c
 #import <Foundation/Foundation.h>
 
 @interface News : NSObject
@@ -268,7 +268,7 @@ The `NKSection` class has a commodity function that can be used to map the eleme
 
 And a block in Nooko that represent a newsfeed you could create and populate an array of news object like this:
 
-```
+```objective-c
 NSInteger newsBlockId = 12;
 NSDictionary *mappingDictionary = @{@"title" : @"title",
                                     @"content" : @"content",
@@ -317,10 +317,17 @@ All the model objects implement the `NSCoding` and `NSSecureCoding` protocol so 
 
 All the model objects implement the `isEqual:` function based on the corresponding id. So for example an NKSection will result equal to another NKSection object if they have the same `sectionId`.
 
+# Admin
+
+Read the full admin documentation apis [here](NookoSDK/NKAdmin).
+
+# Authentication
+
+Read the full admin documentation apis [here](NookoSDK/NKAuth).
 
 # Documentation
 
-For further information, you can check out the full SDK Reference in the [docs](https://github.com/Mumble-SRL/NookoSDK-Objc.git/tree/master/docs) folder.
+For further information, you can check out the full SDK Reference in the [docs](docs) folder.
 
 
 # Contacts
@@ -329,4 +336,4 @@ You can contuct us at [info@mumbleideas.it](mailto:info@mumbleideas.it).
 
 # License
 
-NookoSDK is released under the MIT license. See [LICENSE](https://raw.githubusercontent.com/Mumble-SRL/NookoSDK-Objc/master/LICENSE) for details.
+NookoSDK is released under the Apache 2.0 license. See [LICENSE](LICENSE) for details.
