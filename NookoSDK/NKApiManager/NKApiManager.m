@@ -77,7 +77,7 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
 
     [manager.requestSerializer setValue:apiToken forHTTPHeaderField:@"X-Nooko-Token"];
     [manager.requestSerializer setValue:@"2" forHTTPHeaderField:@"X-Nooko-Version"];
-    [manager.requestSerializer setValue:@"accept/json" forHTTPHeaderField:@"Accept"];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     NSString *accessToken = [NKAuth authToken];
     if (accessToken != nil && ![accessToken isEqualToString:@""]){
         [manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", accessToken] forHTTPHeaderField:@"Authorization"];

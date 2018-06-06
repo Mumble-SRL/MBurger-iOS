@@ -25,6 +25,8 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.tableFooterView = [UIView new];
+    
+    [self loadNews];
 }
 
 
@@ -33,10 +35,10 @@
 }
 
 - (void) loadNews {
-    NSInteger newsBlockId = 12;
+    NSInteger newsBlockId = 375;
     NSDictionary *mappingDictionary = @{@"title" : @"title",
-                                        @"content" : @"content",
-                                        @"image.firstImage.url" : @"imageUrl",
+                                        @"contenuto" : @"content",
+                                        @"immagine.firstImage.url" : @"imageUrl",
                                         @"link" : @"link"};
     
     NSMutableArray *newsArray = [[NSMutableArray alloc] init];
