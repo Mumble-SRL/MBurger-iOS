@@ -27,7 +27,7 @@
     parameters[@"email"] = email;
     parameters[@"password"] = password;
     parameters[@"phone"] = phone;
-    parameters[@"image"] = [UIImagePNGRepresentation(image) base64EncodedDataWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    parameters[@"image"] = [UIImageJPEGRepresentation(image, 1.0) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     parameters[@"data"] = data;
     //TODO: remove
     parameters[@"user_id"] = @(1);
