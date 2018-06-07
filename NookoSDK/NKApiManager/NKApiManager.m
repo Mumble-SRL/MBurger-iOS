@@ -84,6 +84,10 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
     }
     
     AFHTTPRequestOperationSuccessHandler successHandler = ^(NSURLSessionTask *operation, id responseObject){
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+        [NKAuth performSelector:@selector(handleApiResponseAndSaveNewTokenIfPresentWithResponse:) withObject:operation.response];
+#pragma clang diagnostic pop
         NSDictionary *response = (NSDictionary *) responseObject;
         if (response[@"response"] && response[@"response"] != [NSNull null]){
             NSDictionary *responseDict = response[@"response"];
@@ -123,6 +127,10 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
     };
     
     AFHTTPRequestOperationFailureHandler failureHandler = ^(NSURLSessionTask *operation, NSError *error) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+        [NKAuth performSelector:@selector(handleApiResponseAndSaveNewTokenIfPresentWithResponse:) withObject:operation.response];
+#pragma clang diagnostic pop
         dispatch_async(dispatch_get_main_queue(), ^{
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
             if (error.userInfo[AFNetworkingOperationFailingURLResponseDataErrorKey]){

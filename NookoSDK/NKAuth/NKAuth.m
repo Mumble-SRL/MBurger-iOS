@@ -191,4 +191,17 @@
     return (__bridge id) kSecValueData;
 }
 
++ (void) handleApiResponseAndSaveNewTokenIfPresentWithResponse: (NSHTTPURLResponse *) response {
+    if ([self userIsLoggedIn]){
+        NSDictionary *headers = [response allHeaderFields];
+        if ([headers.allKeys containsObject:@"Authorization"]){
+            NSString *token = headers[@"Authorization"];
+            if (token){
+                token = [token stringByReplacingOccurrencesOfString:@"Bearer " withString:@""];
+                [self saveAccessToken:token];
+            }
+        }
+    }
+}
+
 @end
