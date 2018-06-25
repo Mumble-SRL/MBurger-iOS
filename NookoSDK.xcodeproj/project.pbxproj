@@ -59,6 +59,7 @@
 		66D9636B20A08A9000037200 /* NKMultipartForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9636A20A08A9000037200 /* NKMultipartForm.m */; };
 		66D9636F20A09AA500037200 /* NKUploadableElementsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9636D20A0994D00037200 /* NKUploadableElementsFactory.m */; };
 		66EBBF1E20E0DD6600CCD6B1 /* NKDropdownElementOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EBBF1D20E0DD6600CCD6B1 /* NKDropdownElementOption.m */; };
+		66EBBF2A20E120F800CCD6B1 /* NKUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EBBF2920E120F800CCD6B1 /* NKUtilities.m */; };
 		66F925A02074DFC300C850F3 /* NKDropdownElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F9259F2074DFC300C850F3 /* NKDropdownElement.m */; };
 		66F925AB20751BA600C850F3 /* NKImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F925AA20751BA600C850F3 /* NKImage.m */; };
 		66F925AE20751FA800C850F3 /* NKFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F925AD20751FA800C850F3 /* NKFile.m */; };
@@ -177,6 +178,8 @@
 		66D9636D20A0994D00037200 /* NKUploadableElementsFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKUploadableElementsFactory.m; sourceTree = "<group>"; };
 		66EBBF1C20E0DD6600CCD6B1 /* NKDropdownElementOption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKDropdownElementOption.h; sourceTree = "<group>"; };
 		66EBBF1D20E0DD6600CCD6B1 /* NKDropdownElementOption.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKDropdownElementOption.m; sourceTree = "<group>"; };
+		66EBBF2820E120F800CCD6B1 /* NKUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKUtilities.h; sourceTree = "<group>"; };
+		66EBBF2920E120F800CCD6B1 /* NKUtilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKUtilities.m; sourceTree = "<group>"; };
 		66F9259E2074DFC300C850F3 /* NKDropdownElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKDropdownElement.h; sourceTree = "<group>"; };
 		66F9259F2074DFC300C850F3 /* NKDropdownElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKDropdownElement.m; sourceTree = "<group>"; };
 		66F925A920751BA600C850F3 /* NKImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKImage.h; sourceTree = "<group>"; };
@@ -446,6 +449,8 @@
 			children = (
 				66B1F7B120A3235D009602C6 /* NKClient.h */,
 				66B1F7B220A3235D009602C6 /* NKClient.m */,
+				66EBBF2820E120F800CCD6B1 /* NKUtilities.h */,
+				66EBBF2920E120F800CCD6B1 /* NKUtilities.m */,
 				660E86572076021F008DF597 /* NKPaginationInfo */,
 				660E865B207606D4008DF597 /* NKParameter */,
 				66AF6779206E7106003FD62F /* NKProject */,
@@ -687,6 +692,7 @@
 				66AF675D206E38ED003FD62F /* NKSection.m in Sources */,
 				66B1F7AF20A31AA4009602C6 /* NKAdmin.m in Sources */,
 				66AF6768206E4AD1003FD62F /* NKImagesElement.m in Sources */,
+				66EBBF2A20E120F800CCD6B1 /* NKUtilities.m in Sources */,
 				66D9636220A0863400037200 /* NKUploadableTextElement.m in Sources */,
 				667F40802077B3D500B18D16 /* NKElementFactory.m in Sources */,
 				66F925AB20751BA600C850F3 /* NKImage.m in Sources */,

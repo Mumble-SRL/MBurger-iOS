@@ -7,6 +7,7 @@
 //
 
 #import "NKFilterParameter.h"
+#import "NKUtilities.h"
 
 @implementation NKFilterParameter
 
@@ -21,7 +22,7 @@
 
 - (NSDictionary *) parameterRepresentation {
     NSString *key = [NSString stringWithFormat:@"filter[%@]", self.field];
-    return [[NSDictionary alloc] initWithObjectsAndKeys:self.value, key, nil];
+    return [[NSDictionary alloc] initWithObjectsAndKeys:self.value, [NKUtilities urlEncodeStringForString: key], nil];
 }
 
 @end
