@@ -108,7 +108,20 @@
 + (nullable NSString *) authToken;
 
 //TODO: remove
+
+/**
+ Sets the user id used in the api calls.
+
+ @param userId The user id.
+ */
 + (void) setUserId: (NSInteger) userId;
+
+
+/**
+ Returns the user id used in the api calls.
+
+ @return The user id.
+ */
 + (NSInteger) userId;
 
 @end

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>NKGeneralElement Class Reference</title>
+    <title>NKUtilities Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -11,8 +11,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/objc/Class/NKGeneralElement" class="dashAnchor"></a>
-    <a title="NKGeneralElement Class Reference"></a>
+    <a name="//apple_ref/objc/Class/NKUtilities" class="dashAnchor"></a>
+    <a title="NKUtilities Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p>
@@ -36,7 +36,7 @@
             <a href="../index.html">NookoSDK Reference</a>
             <img id="carat" src="../img/carat.png" />
           </span>
-          NKGeneralElement Class Reference
+          NKUtilities Class Reference
         </p>
       </div>
     </div>
@@ -45,14 +45,14 @@
         <article class="main-content">
           <section>
             <section class="section">
-              <h1>NKGeneralElement</h1>
+              <h1>NKUtilities</h1>
                 <div class="declaration">
                   <div class="language">
-                    <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">NKGeneralElement</span> <span class="p">:</span> <span class="nc"><a href="../Classes/NKElement.html">NKElement</a></span> <span class="o">&lt;</span><span class="n">NSCoding</span><span class="p">,</span> <span class="n">NSSecureCoding</span><span class="o">&gt;</span></code></pre>
+                    <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">NKUtilities</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
 
                   </div>
                 </div>
-              <p>This class represents a general Nooko element.</p>
+              <p>An utility class.</p>
 
             </section>
             <section class="section task-group-section">
@@ -61,9 +61,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/c:objc(cs)NKGeneralElement(py)generalValue"></a>
-                      <a name="//apple_ref/objc/Property/generalValue" class="dashAnchor"></a>
-                      <a class="token" href="#/c:objc(cs)NKGeneralElement(py)generalValue">generalValue</a>
+                      <a name="/c:objc(cs)NKUtilities(cm)urlEncodeStringForString:"></a>
+                      <a name="//apple_ref/objc/Method/+urlEncodeStringForString:" class="dashAnchor"></a>
+                      <a class="token" href="#/c:objc(cs)NKUtilities(cm)urlEncodeStringForString:">+urlEncodeStringForString:</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -71,93 +71,19 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>The value of the element.</p>
+                          <p>Convert a string to a url encoded string</p>
 
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Objective-C</p>
-                            <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">id</span> <span class="n">generalValue</span><span class="p">;</span></code></pre>
+                            <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nf">urlEncodeStringForString</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">string</span><span class="p">;</span></code></pre>
 
                           </div>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">generalValue</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:objc(cs)NKGeneralElement(py)type"></a>
-                      <a name="//apple_ref/objc/Property/type" class="dashAnchor"></a>
-                      <a class="token" href="#/c:objc(cs)NKGeneralElement(py)type">type</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>The type of the element retuned by the api.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Objective-C</p>
-                            <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">type</span><span class="p">;</span></code></pre>
-
-                          </div>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:objc(cs)NKGeneralElement(im)initWithElementId:Name:Order:Value:Type:"></a>
-                      <a name="//apple_ref/objc/Method/-initWithElementId:Name:Order:Value:Type:" class="dashAnchor"></a>
-                      <a class="token" href="#/c:objc(cs)NKGeneralElement(im)initWithElementId:Name:Order:Value:Type:">-initWithElementId:Name:Order:Value:Type:</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Initializes a date element with an elementId, a name, and its value.
-This function calls the super initializer initWithElementId:Name:Type</p>
-<div class="aside aside-see">
-    <p class="aside-title">See</p>
-    <p>This function calls the super initializer <code><a href="../Classes/NKElement.html#/c:objc(cs)NKElement(im)initWithElementId:Name:Order:Type:">-[NKElement initWithElementId:Name:Order:Type:]</a></code></p>
-
-</div>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Objective-C</p>
-                            <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithElementId</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">elementId</span>
-                                     <span class="nf">Name</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">name</span>
-                                    <span class="nf">Order</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">order</span>
-                                    <span class="nf">Value</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">id</span><span class="p">)</span><span class="nv">value</span>
-                                     <span class="nf">Type</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">type</span><span class="p">;</span></code></pre>
-
-                          </div>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">elementId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">order</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?,</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">urlEncodeString</span><span class="p">(</span><span class="k">for</span> <span class="nv">string</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
 
                           </div>
                         </div>
@@ -168,60 +94,12 @@ This function calls the super initializer initWithElementId:Name:Type</p>
                               <tr>
                                 <td>
                                   <code>
-                                  <em>elementId</em>
+                                  <em>string</em>
                                   </code>
                                 </td>
                                 <td>
                                   <div>
-                                    <p>The id of the element.</p>
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <code>
-                                  <em>name</em>
-                                  </code>
-                                </td>
-                                <td>
-                                  <div>
-                                    <p>The name of the element.</p>
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <code>
-                                  <em>order</em>
-                                  </code>
-                                </td>
-                                <td>
-                                  <div>
-                                    <p>The order of the element.</p>
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <code>
-                                  <em>value</em>
-                                  </code>
-                                </td>
-                                <td>
-                                  <div>
-                                    <p>The value representing the element.</p>
-                                  </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <code>
-                                  <em>type</em>
-                                  </code>
-                                </td>
-                                <td>
-                                  <div>
-                                    <p>The type of the element retuned by the api.</p>
+                                    <p>The string that has to be conveted.</p>
                                   </div>
                                 </td>
                               </tr>
@@ -230,7 +108,7 @@ This function calls the super initializer initWithElementId:Name:Type</p>
                         </div>
                         <div>
                           <h4>Return Value</h4>
-                          <p>A newly created NKGeneralElement initialized with the elementId, the name and the value passed.</p>
+                          <p>The converted string.</p>
                         </div>
                       </section>
                     </div>

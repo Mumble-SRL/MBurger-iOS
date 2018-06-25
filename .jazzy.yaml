@@ -71,3 +71,6 @@ custom_categories:
     - NKApiManager
     - NKMultipartForm
     - NKResponse
+  - name: NKUtilities
+    children: 
+    - NKUtilities
