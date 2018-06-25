@@ -10,6 +10,9 @@
 #import "NKManager.h"
 #import "NKKeychainItemWrapper.h"
 
+//TODO: remove
+static NSInteger _userId = 0;
+
 @implementation NKAuth
 
 + (void) registerUserWithName: (NSString *) name
@@ -30,7 +33,7 @@
     parameters[@"image"] = [UIImageJPEGRepresentation(image, 1.0) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     parameters[@"data"] = data;
     //TODO: remove
-    parameters[@"user_id"] = @(1);
+    parameters[@"user_id"] = @(NKAuth.userId);
 
     [NKApiManager callApiWithApiToken:NKManager.sharedManager.apiToken
                                Locale:[NKManager.sharedManager localeString]
@@ -58,7 +61,7 @@
     parameters[@"password"] = password;
     parameters[@"mode"] = @"email";
     //TODO: remove
-    parameters[@"user_id"] = @(1);
+    parameters[@"user_id"] = @(NKAuth.userId);
 
     [NKApiManager callApiWithApiToken:NKManager.sharedManager.apiToken
                                Locale:[NKManager.sharedManager localeString]
@@ -90,7 +93,7 @@
     parameters[@"old_password"] = oldPassword;
     parameters[@"new_password"] = newPassword;
     //TODO: remove
-    parameters[@"user_id"] = @(1);
+    parameters[@"user_id"] = @(NKAuth.userId);
 
     [NKApiManager callApiWithApiToken:NKManager.sharedManager.apiToken
                                Locale:[NKManager.sharedManager localeString]
@@ -115,7 +118,7 @@
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     parameters[@"email"] = email;
     //TODO: remove
-    parameters[@"user_id"] = @(1);
+    parameters[@"user_id"] = @(NKAuth.userId);
 
     [NKApiManager callApiWithApiToken:NKManager.sharedManager.apiToken
                                Locale:[NKManager.sharedManager localeString]
@@ -138,7 +141,7 @@
                            Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
     //TODO: remove
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
-    parameters[@"user_id"] = @(1);
+    parameters[@"user_id"] = @(NKAuth.userId);
     [NKApiManager callApiWithApiToken:NKManager.sharedManager.apiToken
                                Locale:[NKManager.sharedManager localeString]
                               ApiName:@"profile"
@@ -202,6 +205,16 @@
             }
         }
     }
+}
+
+//TODO: remove
+
++ (void) setUserId: (NSInteger) userId {
+    _userId = userId;
+}
+
++ (NSInteger) userId {
+    return _userId;
 }
 
 @end

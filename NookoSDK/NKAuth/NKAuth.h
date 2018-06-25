@@ -107,4 +107,8 @@
  */
 + (nullable NSString *) authToken;
 
+//TODO: remove
++ (void) setUserId: (NSInteger) userId;
++ (NSInteger) userId;
+
 @end
