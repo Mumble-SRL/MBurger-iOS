@@ -361,6 +361,7 @@
 			children = (
 				663F93B120A2E125009F4DB1 /* NookoSDK.entitlements */,
 				66AF675A206E3784003FD62F /* NookoSDK.h */,
+				66EBBF2B20E122A600CCD6B1 /* Utilities */,
 				6620D43320A339040059CE42 /* NKManager */,
 				66B1F7B020A32179009602C6 /* NKClient */,
 				66B1F7AB20A319EB009602C6 /* NKAdmin */,
@@ -449,8 +450,6 @@
 			children = (
 				66B1F7B120A3235D009602C6 /* NKClient.h */,
 				66B1F7B220A3235D009602C6 /* NKClient.m */,
-				66EBBF2820E120F800CCD6B1 /* NKUtilities.h */,
-				66EBBF2920E120F800CCD6B1 /* NKUtilities.m */,
 				660E86572076021F008DF597 /* NKPaginationInfo */,
 				660E865B207606D4008DF597 /* NKParameter */,
 				66AF6779206E7106003FD62F /* NKProject */,
@@ -498,6 +497,15 @@
 				660839232073B8A800432DE7 /* News.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		66EBBF2B20E122A600CCD6B1 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				66EBBF2820E120F800CCD6B1 /* NKUtilities.h */,
+				66EBBF2920E120F800CCD6B1 /* NKUtilities.m */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		CFF734D8419A5B3101336F10 /* Pods */ = {
