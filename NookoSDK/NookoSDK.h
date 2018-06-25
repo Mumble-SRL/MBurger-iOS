@@ -11,6 +11,8 @@
 
 #import "NKManager.h"
 
+#import "NKUtilities.h"
+
 #import "NKClient.h"
 #import "NKPaginationInfo.h"
 #import "NKParameter.h"

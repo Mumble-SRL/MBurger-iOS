@@ -8,8 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ An utility class.
+ */
 @interface NKUtilities : NSObject
 
-+ (NSString *) urlEncodeStringForString: (NSString *) string;
+/**
+ Convert a string to a url encoded string
+
+ @param string The string that has to be conveted.
+ @return The converted string.
+ */
++ (nonnull NSString *) urlEncodeStringForString: (nonnull NSString *) string;
 
 @end
