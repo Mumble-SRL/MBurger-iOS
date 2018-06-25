@@ -63,15 +63,15 @@
 <h1 id='installation-with-cocoapods' class='heading'>Installation with CocoaPods</h1>
 
 <p>CocoaPods is a dependency manager for iOS, which automates and simplifies the process of using 3rd-party libraries in your projects. You can install CocoaPods with the following command:</p>
-<pre class="highlight plaintext"><code>$ gem install cocoapods
+<pre class="highlight ruby"><code><span class="err">$</span> <span class="n">gem</span> <span class="n">install</span> <span class="n">cocoapods</span>
 </code></pre>
 
 <p>To integrate the NookoSDK into your Xcode project using CocoaPods, specify it in your Podfile:</p>
-<pre class="highlight plaintext"><code>platform :ios, '10.0'
+<pre class="highlight ruby"><code><span class="n">platform</span> <span class="ss">:ios</span><span class="p">,</span> <span class="s1">'10.0'</span>
 
-target 'TargetName' do
-    pod 'NookoSDK', git: 'https://github.com/Mumble-SRL/NookoSDK-Objc.git'
-end
+<span class="n">target</span> <span class="s1">'TargetName'</span> <span class="k">do</span>
+    <span class="n">pod</span> <span class="s1">'NookoSDK'</span><span class="p">,</span> <span class="ss">git: </span><span class="s1">'https://github.com/Mumble-SRL/NookoSDK-Objc.git'</span>
+<span class="k">end</span>
 </code></pre>
 
 <p>If you use Swift rememember to add <code>use_frameworks!</code> before the pod declaration.</p>
@@ -94,7 +94,7 @@ end
 
 <p>Then in your <code>AppDelegate</code> <code>application:didFinishLaunchingWithOptions:</code> initialize the <code><a href="Classes/NKManager.html">NKManager</a></code> of the SDK setting a token like this:</p>
 
-<p><strong>Objective-c</strong>:</p>
+<p><strong>Objective-C</strong>:</p>
 <pre class="highlight plaintext"><code>#import "AppDelegate.h"
 #import "NookoSDK.h"
 
@@ -114,14 +114,14 @@ end
 </code></pre>
 
 <p><strong>Swift</strong>:</p>
-<pre class="highlight plaintext"><code>import NookoSDK
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">NookoSDK</span>
 
-...
+<span class="o">...</span>
 
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -&gt; Bool {
-        NKManager.shared().apiToken = "YOUR_API_TOKEN"
-    return true
-}
+<span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+        <span class="kt">NKManager</span><span class="o">.</span><span class="nf">shared</span><span class="p">()</span><span class="o">.</span><span class="n">apiToken</span> <span class="o">=</span> <span class="s">"YOUR_API_TOKEN"</span>
+    <span class="k">return</span> <span class="kc">true</span>
+<span class="p">}</span>
 </code></pre>
 
 <p>You will not be able to interact with the SDK if you don&rsquo;t initialize it with a correct token/key.</p>
@@ -141,11 +141,11 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 </code></pre>
 
 <p><strong>Swift</strong>:</p>
-<pre class="highlight plaintext"><code>NKClient.getProjectWithSuccess({ (project) in
+<pre class="highlight swift"><code><span class="kt">NKClient</span><span class="o">.</span><span class="nf">getProjectWithSuccess</span><span class="p">({</span> <span class="p">(</span><span class="n">project</span><span class="p">)</span> <span class="k">in</span>
 
-}, failure: { (error) in
+<span class="p">},</span> <span class="nv">failure</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="k">in</span>
 
-})
+<span class="p">})</span>
 </code></pre>
 <h1 id='blocks' class='heading'>Blocks</h1>
 
@@ -160,11 +160,11 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 </code></pre>
 
 <p><strong>Swift</strong>:</p>
-<pre class="highlight plaintext"><code>NKClient.getBlocksWith(nil, success: { (blocks, paginationInfos) in
+<pre class="highlight swift"><code><span class="kt">NKClient</span><span class="o">.</span><span class="nf">getBlocksWith</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">blocks</span><span class="p">,</span> <span class="n">paginationInfos</span><span class="p">)</span> <span class="k">in</span>
 
-}, failure: { (error) in
+<span class="p">},</span> <span class="nv">failure</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="k">in</span>
 
-})
+<span class="p">})</span>
 </code></pre>
 
 <p>The parameter <code>parameters</code> is an optional array of objects that conforms to the <code><a href="Protocols/NKParameter.html">NKParameter</a></code> protocol passed to the nooko api as parameter. The majorityof the parameters that can be passed to the apis are already defined in the SDK and can be used after the initialization:</p>
@@ -190,12 +190,12 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 </code></pre>
 
 <p><strong>Swift</strong>:</p>
-<pre class="highlight plaintext"><code>let paginationParam = NKPaginationParameter(skip: 0, take: 10)
-NKClient.getBlocksWith([paginationParam], success: { (blocks, paginationInfos) in
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">paginationParam</span> <span class="o">=</span> <span class="kt">NKPaginationParameter</span><span class="p">(</span><span class="nv">skip</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">take</span><span class="p">:</span> <span class="mi">10</span><span class="p">)</span>
+<span class="kt">NKClient</span><span class="o">.</span><span class="nf">getBlocksWith</span><span class="p">([</span><span class="n">paginationParam</span><span class="p">],</span> <span class="nv">success</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">blocks</span><span class="p">,</span> <span class="n">paginationInfos</span><span class="p">)</span> <span class="k">in</span>
 
-}, failure: { (error) in
+<span class="p">},</span> <span class="nv">failure</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="k">in</span>
 
-})
+<span class="p">})</span>
 </code></pre>
 
 <p>There are two other versions of the <code>getBlocksWithParameters:Success:Failure</code>, one that take an adiitional parameter <code>includingSections</code> (a boolean that indicate whether or not include, for each block, the sections), and another that takes <code>includingSections</code> and <code>includeElements</code> (a boolean value that do the same thing but for the elements of the sections).</p>
@@ -211,11 +211,11 @@ NKClient.getBlocksWith([paginationParam], success: { (blocks, paginationInfos) i
 </code></pre>
 
 <p><strong>Swift</strong>:</p>
-<pre class="highlight plaintext"><code>NKClient.getBlocksWith(nil, includingSections: true, andElements: true, success: { (blocks, paginationInfos) in
+<pre class="highlight swift"><code><span class="kt">NKClient</span><span class="o">.</span><span class="nf">getBlocksWith</span><span class="p">(</span><span class="kc">nil</span><span class="p">,</span> <span class="nv">includingSections</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">andElements</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">blocks</span><span class="p">,</span> <span class="n">paginationInfos</span><span class="p">)</span> <span class="k">in</span>
 
-}, failure: { (error) in
+<span class="p">},</span> <span class="nv">failure</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="k">in</span>
 
-})
+<span class="p">})</span>
 </code></pre>
 <h1 id='sections' class='heading'>Sections</h1>
 
@@ -230,11 +230,11 @@ NKClient.getBlocksWith([paginationParam], success: { (blocks, paginationInfos) i
 </code></pre>
 
 <p><strong>Swift</strong>:</p>
-<pre class="highlight plaintext"><code>NKClient.getSectionsWithBlockId(THE_BLOCK_ID, parameters: nil, success: { (sections, paginationInfos) in
+<pre class="highlight swift"><code><span class="kt">NKClient</span><span class="o">.</span><span class="nf">getSectionsWithBlockId</span><span class="p">(</span><span class="kt">THE_BLOCK_ID</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">sections</span><span class="p">,</span> <span class="n">paginationInfos</span><span class="p">)</span> <span class="k">in</span>
 
-}, failure: { (error) in
+<span class="p">},</span> <span class="nv">failure</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="k">in</span>
 
-})
+<span class="p">})</span>
 </code></pre>
 
 <p>Like for the blocks there&rsquo;s a version of this function that takes a bool <code>includeElements</code> that indicate to include or not the elements of the section se if you want to retrieve all the sections of a block and their elements you can call:</p>
@@ -248,11 +248,11 @@ NKClient.getBlocksWith([paginationParam], success: { (blocks, paginationInfos) i
 </code></pre>
 
 <p><strong>Swift</strong>:</p>
-<pre class="highlight plaintext"><code>NKClient.getSectionsWithBlockId(THE_BLOCK_ID, parameters: nil, includeElements: true, success: { (sections, paginationInfos) in
+<pre class="highlight swift"><code><span class="kt">NKClient</span><span class="o">.</span><span class="nf">getSectionsWithBlockId</span><span class="p">(</span><span class="kt">THE_BLOCK_ID</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">includeElements</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">sections</span><span class="p">,</span> <span class="n">paginationInfos</span><span class="p">)</span> <span class="k">in</span>
 
-}, failure: { (error) in
+<span class="p">},</span> <span class="nv">failure</span><span class="p">:</span> <span class="p">{</span> <span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="k">in</span>
 
-})
+<span class="p">})</span>
 </code></pre>
 <h1 id='object-mapping' class='heading'>Object mapping</h1>
 
@@ -443,6 +443,9 @@ NSMutableArray *newsArray = [[NSMutableArray alloc] init];
                   <a href="Classes/NKDropdownElement.html">NKDropdownElement</a>
                 </li>
                 <li class="nav-group-task">
+                  <a href="Classes/NKDropdownElementOption.html">NKDropdownElementOption</a>
+                </li>
+                <li class="nav-group-task">
                   <a href="Classes/NKPollElement.html">NKPollElement</a>
                 </li>
                 <li class="nav-group-task">
@@ -520,7 +523,7 @@ NSMutableArray *newsArray = [[NSMutableArray alloc] init];
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2018-05-14)</p>
+          <p>&copy; 2018 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2018-06-25)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </div>

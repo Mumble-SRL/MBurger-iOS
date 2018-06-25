@@ -50,6 +50,7 @@ custom_categories:
     - NKDateElement
     - NKAddressElement
     - NKDropdownElement
+    - NKDropdownElementOption
     - NKPollElement
     - NKGeneralElement
     - NKElementFactory

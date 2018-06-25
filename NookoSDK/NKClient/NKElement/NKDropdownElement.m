@@ -10,7 +10,7 @@
 
 @implementation NKDropdownElement
 
-- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Order: (NSInteger) order Options: (NSArray <NSString *> *) options SelectedOptions: (NSString *) selectedOption{
+- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Order: (NSInteger) order Options: (NSArray <NKDropdownElementOption *> *) options SelectedOptions: (NSString *) selectedOption{
     self = [super initWithElementId:elementId Name:name Order:order Type:NKElementTypeDropDown];
     if (self){
         self.options = options;
@@ -24,8 +24,12 @@
     NSString *name = dictionary[@"name"];
     NSInteger order = [dictionary[@"order"] integerValue];
     NSString *selectedOption = dictionary[@"value"];
-    //TODO: options when returned by api
-    return [self initWithElementId:elementId Name:name Order:order Options:nil SelectedOptions:selectedOption];
+    NSMutableArray *options = [[NSMutableArray alloc] init];
+    NSArray *optionsFromApi = dictionary[@"options"];
+    for (NSDictionary *optionDictionary in optionsFromApi){
+        [options addObject:[[NKDropdownElementOption alloc] initWithDictionary:optionDictionary]];
+    }
+    return [self initWithElementId:elementId Name:name Order:order Options:options SelectedOptions:selectedOption];
 }
 
 #pragma mark - Value

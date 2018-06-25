@@ -34,6 +34,7 @@
 #import "NKDateElement.h"
 #import "NKAddressElement.h"
 #import "NKDropdownElement.h"
+#import "NKDropdownElementOption.h"
 #import "NKPollElement.h"
 #import "NKGeneralElement.h"
 #import "NKElementFactory.h"
