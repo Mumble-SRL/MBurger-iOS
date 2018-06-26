@@ -81,12 +81,31 @@
 /**
  Retrieves the profile informations of the current authenticated user.
 
- @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: thee `NKUser` representing the logged user.
+ @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the `NKUser` representing the logged user.
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
  */
 + (void) getUserProfileWithSuccess: (nullable void (^)(NKUser * _Nonnull user)) success
                            Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
+
+/**
+ Updates the profile informations of the current authenticated user.
+
+ @param name The new name of the user.
+ @param surname The new surname of the user.
+ @param phone The new phone of the user.
+ @param image The new image of the user.
+ @param data The new data of the user.
+ @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the `NKUser` representing the new user.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
+ */
++ (void) updateProfileWithName: (nonnull NSString *) name
+                       Surname: (nonnull NSString *) surname
+                         Phone: (nullable NSString *) phone
+                         Image: (nullable UIImage *) image
+                          Data: (nullable NSString *) data
+                       Success: (nullable void (^)(NKUser * _Nonnull user)) success
+                       Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 /**
  Returns true if a user is authenticate. This funcion check if the access token saved in the keychain is non-null and different from an empty string.
@@ -106,22 +125,5 @@
  @return The access token of the user.
  */
 + (nullable NSString *) authToken;
-
-//TODO: remove
-
-/**
- Sets the user id used in the api calls.
-
- @param userId The user id.
- */
-+ (void) setUserId: (NSInteger) userId;
-
-
-/**
- Returns the user id used in the api calls.
-
- @return The user id.
- */
-+ (NSInteger) userId;
 
 @end
