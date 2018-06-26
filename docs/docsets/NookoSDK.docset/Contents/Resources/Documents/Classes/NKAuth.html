@@ -514,7 +514,136 @@
                                 </td>
                                 <td>
                                   <div>
-                                    <p>A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: thee <code><a href="../Classes/NKUser.html">NKUser</a></code> representing the logged user.</p>
+                                    <p>A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the <code><a href="../Classes/NKUser.html">NKUser</a></code> representing the logged user.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>failure</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:objc(cs)NKAuth(cm)updateProfileWithName:Surname:Phone:Image:Data:Success:Failure:"></a>
+                      <a name="//apple_ref/objc/Method/+updateProfileWithName:Surname:Phone:Image:Data:Success:Failure:" class="dashAnchor"></a>
+                      <a class="token" href="#/c:objc(cs)NKAuth(cm)updateProfileWithName:Surname:Phone:Image:Data:Success:Failure:">+updateProfileWithName:Surname:Phone:Image:Data:Success:Failure:</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Updates the profile informations of the current authenticated user.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Objective-C</p>
+                            <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">updateProfileWithName</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">name</span>
+                      <span class="nf">Surname</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">surname</span>
+                        <span class="nf">Phone</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">phone</span>
+                        <span class="nf">Image</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">UIImage</span> <span class="o">*</span><span class="p">)</span><span class="nv">image</span>
+                         <span class="nf">Data</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">data</span>
+                      <span class="nf">Success</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n"><a href="../Classes/NKUser.html">NKUser</a></span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">success</span>
+                      <span class="nf">Failure</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">failure</span><span class="p">;</span></code></pre>
+
+                          </div>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">updateProfile</span><span class="p">(</span><span class="n">withName</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">surname</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">phone</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">image</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">?,</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">success</span><span class="p">:</span> <span class="p">((</span><span class="kt"><a href="../Classes/NKUser.html">NKUser</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                          </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>name</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The new name of the user.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>surname</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The new surname of the user.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>phone</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The new phone of the user.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>image</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The new image of the user.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>data</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The new data of the user.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>success</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the <code><a href="../Classes/NKUser.html">NKUser</a></code> representing the new user.</p>
                                   </div>
                                 </td>
                               </tr>
@@ -636,93 +765,6 @@
                         <div>
                           <h4>Return Value</h4>
                           <p>The access token of the user.</p>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:objc(cs)NKAuth(cm)setUserId:"></a>
-                      <a name="//apple_ref/objc/Method/+setUserId:" class="dashAnchor"></a>
-                      <a class="token" href="#/c:objc(cs)NKAuth(cm)setUserId:">+setUserId:</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Sets the user id used in the api calls.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Objective-C</p>
-                            <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setUserId</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">userId</span><span class="p">;</span></code></pre>
-
-                          </div>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">setUserId</span><span class="p">(</span><span class="n">_</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
-
-                          </div>
-                        </div>
-                        <div>
-                          <h4>Parameters</h4>
-                          <table class="graybox">
-                            <tbody>
-                              <tr>
-                                <td>
-                                  <code>
-                                  <em>userId</em>
-                                  </code>
-                                </td>
-                                <td>
-                                  <div>
-                                    <p>The user id.</p>
-                                  </div>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:objc(cs)NKAuth(cm)userId"></a>
-                      <a name="//apple_ref/objc/Method/+userId" class="dashAnchor"></a>
-                      <a class="token" href="#/c:objc(cs)NKAuth(cm)userId">+userId</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>Returns the user id used in the api calls.</p>
-
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Objective-C</p>
-                            <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">NSInteger</span><span class="p">)</span><span class="n">userId</span><span class="p">;</span></code></pre>
-
-                          </div>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">userId</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
-
-                          </div>
-                        </div>
-                        <div>
-                          <h4>Return Value</h4>
-                          <p>The user id.</p>
                         </div>
                       </section>
                     </div>
@@ -927,7 +969,7 @@
       </div>
       <div class="footer-wrapper">
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2018-06-25)</p>
+          <p>&copy; 2018 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2018-06-26)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </div>
