@@ -38,7 +38,7 @@
         parameters[@"phone"] = phone;
     }
     if (image){
-        parameters[@"image"] = [UIImageJPEGRepresentation(image, 1.0) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+        parameters[@"image"] = [UIImageJPEGRepresentation(image, 1.0) base64EncodedStringWithOptions:0];
     }
     if(data){
         parameters[@"data"] = data;
@@ -178,7 +178,7 @@
         parameters[@"phone"] = phone;
     }
     if (image){
-        parameters[@"image"] = [UIImageJPEGRepresentation(image, 1.0) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+        parameters[@"image"] = [UIImageJPEGRepresentation(image, 1.0) base64EncodedStringWithOptions:0];
     }
     if (data){
         parameters[@"data"] = data;
