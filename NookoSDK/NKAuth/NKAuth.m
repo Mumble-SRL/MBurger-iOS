@@ -188,7 +188,7 @@
                                Locale:[NKManager.sharedManager localeString]
                               ApiName:@"profile/update"
                            HTTPMethod:NKHTTPMethodPost
-                           Parameters:nil
+                           Parameters:parameters
                      HeaderParameters:nil
                               Success:^(NKResponse *response) {
                                   NKUser *user = [[NKUser alloc] initWithDictionary:response.payload];
