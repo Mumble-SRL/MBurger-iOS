@@ -22,7 +22,7 @@
  @param user The user from wich retrieve the data.
  @return The object to be inserted in the user.
  */
-- (id <NSCoding, NSSecureCoding>) objectForUser: (NKUser *) user;
+- (nonnull id <NSCoding, NSSecureCoding>) objectForUser: (nonnull NKUser *) user;
 
 
 /**
@@ -30,6 +30,6 @@
 
  @return The key used in the user dictionary.
  */
-- (NSString *) pluginUserKey;
+- (nonnull NSString *) pluginUserKey;
 
 @end
