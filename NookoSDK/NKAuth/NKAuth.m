@@ -161,26 +161,6 @@
                               }];
 }
 
-+ (void) handlePluginsWithUser: (NKUser *) user {
-    NSArray *plugins = NKManager.sharedManager.plugins;
-    if (plugins.count != 0){
-        NSMutableDictionary *pluginsDictionary = [[NSMutableDictionary alloc] init];
-        for (id <NKPlugin> plugin in plugins){
-            if ([plugin respondsToSelector:@selector(objectForUser:)]){
-                id object = [plugin objectForUser:user];
-                if (object){
-                    NSString *userKey = NSStringFromClass(plugin.class);
-                    if ([plugin respondsToSelector:@selector(pluginUserKey)]){
-                        userKey = [plugin pluginUserKey];
-                    }
-                    pluginsDictionary[userKey] = object;
-                }
-            }
-        }
-        user.pluginsObjects = pluginsDictionary;
-    }
-}
-
 + (void) updateProfileWithName: (NSString *) name
                        Surname: (NSString *) surname
                          Phone: (NSString *) phone
@@ -213,6 +193,7 @@
                      HeaderParameters:nil
                               Success:^(NKResponse *response) {
                                   NKUser *user = [[NKUser alloc] initWithDictionary:response.payload];
+                                  [self handlePluginsWithUser:user];
                                   if (success){
                                       success(user);
                                   }
@@ -267,6 +248,28 @@
                 [self saveAccessToken:token];
             }
         }
+    }
+}
+
+#pragma mark - Plugins
+
++ (void) handlePluginsWithUser: (NKUser *) user {
+    NSArray *plugins = NKManager.sharedManager.plugins;
+    if (plugins.count != 0){
+        NSMutableDictionary *pluginsDictionary = [[NSMutableDictionary alloc] init];
+        for (id <NKPlugin> plugin in plugins){
+            if ([plugin respondsToSelector:@selector(objectForUser:)]){
+                id object = [plugin objectForUser:user];
+                if (object){
+                    NSString *userKey = NSStringFromClass(plugin.class);
+                    if ([plugin respondsToSelector:@selector(pluginUserKey)]){
+                        userKey = [plugin pluginUserKey];
+                    }
+                    pluginsDictionary[userKey] = object;
+                }
+            }
+        }
+        user.pluginsObjects = pluginsDictionary;
     }
 }
 
