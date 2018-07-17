@@ -15,7 +15,7 @@
                           Email: (NSString *) email
                           Phone: (NSString *) phone
                        ImageURL: (NSURL *) imageURL
-                           Data: (NSString *) data{
+                           Data: (id) data{
     self = [super init];
     if (self){
         self.userId = userId;
@@ -36,17 +36,9 @@
     NSString *email = dictionary[@"email"];
     NSString *phone = dictionary[@"phone"] != [NSNull null] ? dictionary[@"phone"] : nil;
     NSURL *imageUrl = dictionary[@"image"] != [NSNull null] ? [NSURL URLWithString: dictionary[@"image"]] : nil;
-    NSString *data = nil;
+    id data = nil;
     if (dictionary[@"data"] && dictionary[@"data"] != [NSNull null]){
-        if ([dictionary[@"data"] isKindOfClass:[NSArray class]] || [dictionary[@"data"] isKindOfClass:[NSDictionary class]]){
-            id dataObject = dictionary[@"data"];
-            data = dataObject;
-        }
-        else if ([dictionary[@"data"] isKindOfClass:[NSString class]]){
-            NSData* dataStringData = [(NSString *) dictionary[@"data"] dataUsingEncoding:NSUTF8StringEncoding];
-            id dataObject = [NSJSONSerialization JSONObjectWithData:dataStringData options:NSJSONReadingMutableContainers error:nil];
-            data = dataObject;
-        }
+        data = dictionary[@"data"];
     }
     return [self initWithUserId:userId Name:name Surname:surname Email:email Phone:phone ImageURL:imageUrl Data:data];
 }

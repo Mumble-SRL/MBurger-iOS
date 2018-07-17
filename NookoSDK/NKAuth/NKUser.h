@@ -69,7 +69,7 @@
  @param email The email of the user.
  @param phone The phone number of the user.
  @param imageURL The url of the profile image.
- @param data Additional data in JSON format.
+ @param data Additional data.
  @return A newly created NKUser initialized sith the parameters passed.
  */
 - (nonnull instancetype) initWithUserId: (NSInteger) userId
@@ -78,7 +78,7 @@
                           Email: (nonnull NSString *) email
                           Phone: (nullable NSString *) phone
                        ImageURL: (nullable NSURL *) imageURL
-                           Data: (nullable NSString *) data;
+                           Data: (nullable id) data;
 /**
  Initializes a user with the dictionary returned by the api.
  
