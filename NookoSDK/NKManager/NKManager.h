@@ -36,6 +36,11 @@ The API token used to make all the requests to the api.
 @property (readwrite, nonatomic, strong, nullable) NSArray <id <NKPlugin>> *plugins;
 
 /**
+ It's true if it's in development mode
+ */
+@property (nonatomic, assign) BOOL development;
+
+/**
  The locale string sended to the api.
 
  @return The locale string sended to the api.

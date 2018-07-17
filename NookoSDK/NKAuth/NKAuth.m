@@ -50,6 +50,7 @@
                            HTTPMethod:NKHTTPMethodPost
                            Parameters:parameters
                      HeaderParameters:nil
+                          Development:[NKManager sharedManager].development
                               Success:^(NKResponse *response) {
                                   if (success){
                                       success();
@@ -76,6 +77,7 @@
                            HTTPMethod:NKHTTPMethodPost
                            Parameters:parameters
                      HeaderParameters:nil
+                          Development:[NKManager sharedManager].development
                               Success:^(NKResponse *response) {
                                   NSString *accessToken = @"";
                                   if (response.payload[@"access_token"]) {
@@ -106,6 +108,7 @@
                            HTTPMethod:NKHTTPMethodPost
                            Parameters:parameters
                      HeaderParameters:nil
+                          Development:[NKManager sharedManager].development
                               Success:^(NKResponse *response) {
                                   if (success){
                                       success();
@@ -129,6 +132,7 @@
                            HTTPMethod:NKHTTPMethodPost
                            Parameters:parameters
                      HeaderParameters:nil
+                          Development:[NKManager sharedManager].development
                               Success:^(NKResponse *response) {
                                   if (success){
                                       success();
@@ -148,6 +152,7 @@
                            HTTPMethod:NKHTTPMethodGet
                            Parameters:nil
                      HeaderParameters:nil
+                          Development:[NKManager sharedManager].development
                               Success:^(NKResponse *response) {
                                   NKUser *user = [[NKUser alloc] initWithDictionary:response.payload];
                                   [self handlePluginsWithUserResponse:response.payload User:user];
@@ -191,6 +196,7 @@
                            HTTPMethod:NKHTTPMethodPost
                            Parameters:parameters
                      HeaderParameters:nil
+                          Development:[NKManager sharedManager].development
                               Success:^(NKResponse *response) {
                                   NKUser *user = [[NKUser alloc] initWithDictionary:response.payload];
                                   [self handlePluginsWithUserResponse:response.payload User:user];

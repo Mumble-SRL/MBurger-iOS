@@ -37,6 +37,7 @@ typedef NS_ENUM(NSUInteger, NKHTTPMethod) {
  @param httpMethod The http method used to call the api.
  @param parameters The parameters passed with the api call.
  @param headerParameters The parameters passed in the header of the request with the api call.
+ @param development If it's in development mode.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the response of the api (a NKResponse).
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
  */
@@ -46,6 +47,7 @@ typedef NS_ENUM(NSUInteger, NKHTTPMethod) {
                   HTTPMethod: (NKHTTPMethod) httpMethod
                   Parameters: (nullable NSDictionary *) parameters
             HeaderParameters: (nullable NSDictionary *) headerParameters
+                 Development: (BOOL) development
                      Success: (nullable void (^)(NKResponse * _Nonnull response)) success
                      Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
@@ -57,6 +59,7 @@ typedef NS_ENUM(NSUInteger, NKHTTPMethod) {
  @param httpMethod The http method used to call the api.
  @param parameters The parameters passed with the api call.
  @param headerParameters The parameters passed in the header of the request with the api call.
+ @param development If it's in development mode.
  @param multipartForm An array of `NKMultipartForm` passed as form data with the request.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the response of the api (a NKResponse).
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
@@ -67,6 +70,7 @@ typedef NS_ENUM(NSUInteger, NKHTTPMethod) {
                   HTTPMethod: (NKHTTPMethod) httpMethod
                   Parameters: (nullable NSDictionary *) parameters
             HeaderParameters: (nullable NSDictionary *) headerParameters
+                 Development: (BOOL) development
                MultipartForm: (nullable NSArray <NKMultipartForm *> *) multipartForm
                      Success: (nullable void (^)(NKResponse * _Nonnull response)) success
                      Failure: (nullable void (^)(NSError * _Nonnull error)) failure;

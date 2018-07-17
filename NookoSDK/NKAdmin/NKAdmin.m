@@ -30,6 +30,7 @@
                            HTTPMethod:NKHTTPMethodPost
                            Parameters:nil
                      HeaderParameters:nil
+                          Development:[NKManager sharedManager].development
                         MultipartForm:form
                               Success:^(NKResponse *response) {
                                   if (success){
@@ -59,6 +60,7 @@
                            HTTPMethod:NKHTTPMethodPost
                            Parameters:nil
                      HeaderParameters:nil
+                          Development:[NKManager sharedManager].development
                         MultipartForm:form
                               Success:^(NKResponse *response) {
                                   if (success){
@@ -81,6 +83,7 @@
                            HTTPMethod:NKHTTPMethodDelete
                            Parameters:nil
                      HeaderParameters:nil
+                          Development:[NKManager sharedManager].development
                               Success:^(NKResponse *response) {
                                   if (success){
                                       success();
@@ -104,6 +107,7 @@
                            HTTPMethod:NKHTTPMethodDelete
                            Parameters:nil
                      HeaderParameters:nil
+                          Development:[NKManager sharedManager].development
                               Success:^(NKResponse *response) {
                                   if (success){
                                       success();

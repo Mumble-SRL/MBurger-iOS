@@ -11,8 +11,6 @@
 #import "NKAuth.h"
 #import <AFNetworking/AFNetworking.h>
 
-static NSString *apiBaseUrl = @"https://nooko2.mumbleserver.it/api";
-
 @implementation NKApiManager
 
 typedef void (^AFHTTPRequestOperationSuccessHandler) (NSURLSessionTask *operation, id responseObject);
@@ -24,9 +22,10 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
                   HTTPMethod: (NKHTTPMethod) httpMethod
                   Parameters: (NSDictionary *) parameters
             HeaderParameters: (NSDictionary *) headerParameters
+                 Development: (BOOL) development
                      Success: (void (^)(NKResponse *response)) success
                      Failure: (void (^)(NSError *error)) failure{
-    [self callApiWithApiToken:apiToken Locale:locale ApiName:apiName HTTPMethod:httpMethod Parameters:parameters HeaderParameters:headerParameters MultipartForm:nil Success:success Failure:failure];
+    [self callApiWithApiToken:apiToken Locale:locale ApiName:apiName HTTPMethod:httpMethod Parameters:parameters HeaderParameters:headerParameters Development:development MultipartForm:nil Success:success Failure:failure];
 }
 
 + (void) callApiWithApiToken: (NSString  *) apiToken
@@ -35,6 +34,7 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
                   HTTPMethod: (NKHTTPMethod) httpMethod
                   Parameters: (NSDictionary *) parameters
             HeaderParameters: (NSDictionary *) headerParameters
+                 Development: (BOOL) development
                MultipartForm: (nullable NSArray <NKMultipartForm *> *) multipartForm
                      Success: (void (^)(NKResponse *response)) success
                      Failure: (void (^)(NSError *error)) failure{
@@ -57,7 +57,7 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
         return;
     }
     
-    NSString *urlString = [self constructUrlWithApiname:apiName];
+    NSString *urlString = [self constructUrlWithApiname:apiName IsInDevelopment:development];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -194,8 +194,8 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
     }
 }
 
-+ (NSString *) constructUrlWithApiname: (NSString *) apiName {
-    NSString *baseUrl = apiBaseUrl;
++ (NSString *) constructUrlWithApiname: (NSString *) apiName IsInDevelopment: (BOOL) isInDevelopment {
+    NSString *baseUrl = [self apiBaseUrl:isInDevelopment];
     if (![baseUrl hasSuffix:@"/"]){
         baseUrl = [baseUrl stringByAppendingString:@"/"];
     }
@@ -231,4 +231,14 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
     }
     return nil;
 }
+
++ (NSString *) apiBaseUrl: (BOOL) isInDevelopment {
+    if (isInDevelopment){
+        return @"https://nooko2-dev.mumbleserver.it/api";
+    }
+    else {
+        return @"https://nooko2.mumbleserver.it/api";
+    }
+}
+
 @end
