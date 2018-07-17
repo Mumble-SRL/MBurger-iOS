@@ -150,7 +150,7 @@
                      HeaderParameters:nil
                               Success:^(NKResponse *response) {
                                   NKUser *user = [[NKUser alloc] initWithDictionary:response.payload];
-                                  [self handlePluginsWithUser:user];
+                                  [self handlePluginsWithUserResponse:response.payload User:user];
                                   if (success){
                                       success(user);
                                   }
@@ -193,7 +193,7 @@
                      HeaderParameters:nil
                               Success:^(NKResponse *response) {
                                   NKUser *user = [[NKUser alloc] initWithDictionary:response.payload];
-                                  [self handlePluginsWithUser:user];
+                                  [self handlePluginsWithUserResponse:response.payload User:user];
                                   if (success){
                                       success(user);
                                   }
@@ -253,13 +253,13 @@
 
 #pragma mark - Plugins
 
-+ (void) handlePluginsWithUser: (NKUser *) user {
++ (void) handlePluginsWithUserResponse: (NSDictionary *) userResponse User: (NKUser *) user{
     NSArray *plugins = NKManager.sharedManager.plugins;
     if (plugins.count != 0){
         NSMutableDictionary *pluginsDictionary = [[NSMutableDictionary alloc] init];
         for (id <NKPlugin> plugin in plugins){
-            if ([plugin respondsToSelector:@selector(objectForUser:)]){
-                id object = [plugin objectForUser:user];
+            if ([plugin respondsToSelector:@selector(objectForUserResponse:)]){
+                id object = [plugin objectForUserResponse:userResponse];
                 if (object){
                     NSString *userKey = NSStringFromClass(plugin.class);
                     if ([plugin respondsToSelector:@selector(pluginUserKey)]){

@@ -22,7 +22,7 @@
  @param user The user from wich retrieve the data.
  @return The object to be inserted in the user.
  */
-- (nonnull id <NSCoding, NSSecureCoding>) objectForUser: (nonnull NKUser *) user;
+- (nonnull id <NSCoding, NSSecureCoding>) objectForUserResponse: (nonnull NSDictionary *) user;
 
 
 /**
