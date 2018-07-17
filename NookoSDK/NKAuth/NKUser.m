@@ -40,10 +40,12 @@
     if (dictionary[@"data"] && dictionary[@"data"] != [NSNull null]){
         if ([dictionary[@"data"] isKindOfClass:[NSArray class]] || [dictionary[@"data"] isKindOfClass:[NSDictionary class]]){
             id dataObject = dictionary[@"data"];
-            data = [[NSString alloc] initWithData: [NSJSONSerialization dataWithJSONObject:dataObject options:NSJSONWritingPrettyPrinted error:nil] encoding:NSUTF8StringEncoding];
+            data = dataObject;
         }
         else if ([dictionary[@"data"] isKindOfClass:[NSString class]]){
-            data = dictionary[@"data"];
+            NSData* dataStringData = [(NSString *) dictionary[@"data"] dataUsingEncoding:NSUTF8StringEncoding];
+            id dataObject = [NSJSONSerialization JSONObjectWithData:dataStringData options:NSJSONReadingMutableContainers error:nil];
+            data = dataObject;
         }
     }
     return [self initWithUserId:userId Name:name Surname:surname Email:email Phone:phone ImageURL:imageUrl Data:data];
@@ -68,6 +70,7 @@
         self.phone = [aDecoder decodeObjectOfClass:NSString.class forKey:@"phone"];
         self.imageURL = [aDecoder decodeObjectOfClass:NSURL.class forKey:@"imageURL"];
         self.data = [aDecoder decodeObjectOfClass:NSString.class forKey:@"data"];
+        self.pluginsObjects = [aDecoder decodeObjectOfClass:NSString.class forKey:@"pluginsObjects"];
     }
     return self;
 }
@@ -80,6 +83,7 @@
     [aCoder encodeObject:_phone forKey:@"phone"];
     [aCoder encodeObject:_imageURL forKey:@"imageURL"];
     [aCoder encodeObject:_data forKey:@"data"];
+    [aCoder encodeObject:_pluginsObjects forKey:@"pluginsObjects"];
 }
 
 + (BOOL) supportsSecureCoding {

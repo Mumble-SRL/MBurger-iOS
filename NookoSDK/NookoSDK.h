@@ -54,4 +54,6 @@
 #import "NKAuth.h"
 #import "NKUser.h"
 
+#import "NKPlugin.h"
+
 #endif /* NookoSDK_h */

@@ -118,6 +118,7 @@
 		667F407F2077B3D500B18D16 /* NKElementFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKElementFactory.m; sourceTree = "<group>"; };
 		667F40812077B76200B18D16 /* NewsDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsDetailViewController.h; sourceTree = "<group>"; };
 		667F40822077B76200B18D16 /* NewsDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
+		6684452520FDF18500118F62 /* NKPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKPlugin.h; sourceTree = "<group>"; };
 		66AF672F206E3236003FD62F /* NookoSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NookoSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66AF6732206E3236003FD62F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		66AF6733206E3236003FD62F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -212,6 +213,7 @@
 		66004BCD20765F4100C57A6C /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				663F93B120A2E125009F4DB1 /* NookoSDK.entitlements */,
 				66AF6732206E3236003FD62F /* AppDelegate.h */,
 				66AF6733206E3236003FD62F /* AppDelegate.m */,
 				66DDF8412077A7E40023091E /* Model */,
@@ -326,6 +328,14 @@
 			path = TableViewCell;
 			sourceTree = "<group>";
 		};
+		6684452420FDF14C00118F62 /* NKPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				6684452520FDF18500118F62 /* NKPlugin.h */,
+			);
+			path = NKPlugin;
+			sourceTree = "<group>";
+		};
 		66AF6726206E3236003FD62F = {
 			isa = PBXGroup;
 			children = (
@@ -361,13 +371,13 @@
 		66AF6756206E323E003FD62F /* NookoSDK */ = {
 			isa = PBXGroup;
 			children = (
-				663F93B120A2E125009F4DB1 /* NookoSDK.entitlements */,
 				66AF675A206E3784003FD62F /* NookoSDK.h */,
 				6620D43320A339040059CE42 /* NKManager */,
 				66B1F7B020A32179009602C6 /* NKClient */,
 				66B1F7AB20A319EB009602C6 /* NKAdmin */,
 				66C4060C20A1E0C70044885E /* NKAuth */,
 				6608391B2073950000432DE7 /* NKApiManager */,
+				6684452420FDF14C00118F62 /* NKPlugin */,
 			);
 			path = NookoSDK;
 			sourceTree = "<group>";
@@ -529,8 +539,6 @@
 				66AF672B206E3236003FD62F /* Sources */,
 				66AF672C206E3236003FD62F /* Frameworks */,
 				66AF672D206E3236003FD62F /* Resources */,
-				F315DED0F37259C211532802 /* [CP] Embed Pods Frameworks */,
-				B93140235626485330EB5F39 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -574,6 +582,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Keychain = {
+								enabled = 0;
+							};
+							com.apple.Push = {
 								enabled = 0;
 							};
 						};
@@ -646,36 +657,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B93140235626485330EB5F39 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NookoSDK/Pods-NookoSDK-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F315DED0F37259C211532802 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NookoSDK/Pods-NookoSDK-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
