@@ -94,7 +94,14 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
             NSInteger statusCode = [responseDict[@"status_code"] integerValue];
             if (statusCode == 0){
                 NKResponse *response = [[NKResponse alloc] init];
-                response.payload = responseDict[@"body"];
+                if (responseDict[@"body"]){
+                    if ([responseDict[@"body"] isKindOfClass:[NSDictionary class]]){
+                        response.payload = responseDict[@"body"];
+                    }
+                    else if ([responseDict[@"body"] isKindOfClass:[NSArray class]]){
+                        response.payload = @{@"data": responseDict[@"body"]};
+                    }
+                }
                 response.dataTask = operation;
                 dispatch_async(dispatch_get_main_queue(), ^{
                     if (success){
