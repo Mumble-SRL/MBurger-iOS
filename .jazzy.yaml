@@ -50,6 +50,7 @@ custom_categories:
     - NKDateElement
     - NKAddressElement
     - NKDropdownElement
+    - NKDropdownElementOption
     - NKPollElement
     - NKGeneralElement
     - NKElementFactory
@@ -70,3 +71,6 @@ custom_categories:
     - NKApiManager
     - NKMultipartForm
     - NKResponse
+  - name: NKUtilities
+    children: 
+    - NKUtilities

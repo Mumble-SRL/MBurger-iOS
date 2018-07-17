@@ -7,6 +7,7 @@
 //
 
 #import "NKFilterParameter.h"
+#import "NKUtilities.h"
 
 @implementation NKFilterParameter
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "0940"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D7684704308858F169D18C4AED4FDDA0"
+               BlueprintIdentifier = "633148EA12E5DB85127AEE9E5A2687F4"
                BuildableName = "libPods-NookoSDK.a"
                BlueprintName = "Pods-NookoSDK"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D7684704308858F169D18C4AED4FDDA0"
+            BlueprintIdentifier = "633148EA12E5DB85127AEE9E5A2687F4"
             BuildableName = "libPods-NookoSDK.a"
             BlueprintName = "Pods-NookoSDK"
             ReferencedContainer = "container:Pods.xcodeproj">

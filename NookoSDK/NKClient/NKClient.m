@@ -23,6 +23,7 @@
                            HTTPMethod:NKHTTPMethodGet
                            Parameters:nil
                      HeaderParameters:nil
+                          Development:[NKManager sharedManager].development
                               Success:^(NKResponse *response) {
                                   NKProject *project = [[NKProject alloc] initWithDictionary:response.payload];
                                   if (success){
@@ -74,6 +75,7 @@
                            HTTPMethod:NKHTTPMethodGet
                            Parameters:parametersMutable
                      HeaderParameters:nil
+                          Development:[NKManager sharedManager].development
                               Success:^(NKResponse *response) {
                                   NKPaginationInfo *pagintaionInfo = [[NKPaginationInfo alloc] initWithDictionary:response.payload[@"meta"]];
                                   NSMutableArray *blocks = [[NSMutableArray alloc] init];
@@ -135,6 +137,7 @@
                            HTTPMethod:NKHTTPMethodGet
                            Parameters:parametersMutable
                      HeaderParameters:nil
+                          Development:[NKManager sharedManager].development
                               Success:^(NKResponse *response) {
                                   NKBlock *block = [[NKBlock alloc] initWithDictionary:response.payload];
                                   if (success){
@@ -175,6 +178,7 @@
                            HTTPMethod:NKHTTPMethodGet
                            Parameters:parametersMutable
                      HeaderParameters:nil
+                          Development:[NKManager sharedManager].development
                               Success:^(NKResponse *response) {
                                   NKPaginationInfo *paginationInfo = [[NKPaginationInfo alloc] initWithDictionary:response.payload[@"meta"]];
                                   NSMutableArray *sections = [[NSMutableArray alloc] init];
@@ -217,6 +221,7 @@
                            HTTPMethod:NKHTTPMethodGet
                            Parameters:parametersMutable
                      HeaderParameters:nil
+                          Development:[NKManager sharedManager].development
                               Success:^(NKResponse *response) {
                                   NKSection *section = [[NKSection alloc] initWithDictionary:response.payload];
                                   if (success){
@@ -241,6 +246,7 @@
                            HTTPMethod:NKHTTPMethodGet
                            Parameters:nil
                      HeaderParameters:nil
+                          Development:[NKManager sharedManager].development
                               Success:^(NKResponse *response) {
                                   NSDictionary *elementsDictionaryFromApi = response.payload[@"items"];
                                   NSMutableDictionary *elementsMutable = [[NSMutableDictionary alloc] init];

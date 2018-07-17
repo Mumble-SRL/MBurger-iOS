@@ -7,6 +7,7 @@
 //
 
 #import "NKGeofenceParameter.h"
+#import "NKUtilities.h"
 
 @implementation NKGeofenceParameter
 
@@ -29,6 +30,6 @@
 - (NSDictionary *) parameterRepresentation {
     NSString *key = @"filter[elements.geofence]";
     NSString *value = [NSString stringWithFormat:@"%f,%f,%f,%f", self.northEastCoordinate.latitude, self.southWestCoordinate.latitude, self.northEastCoordinate.longitude, self.southWestCoordinate.longitude];
-    return [[NSDictionary alloc] initWithObjectsAndKeys:value, key, nil];
+    return [[NSDictionary alloc] initWithObjectsAndKeys:value, [NKUtilities urlEncodeStringForString:key], nil];
 }
 @end

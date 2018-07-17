@@ -51,10 +51,14 @@
 
 
 /**
- Additional data if passed when the user is registered. This data are a JSON string.
+ Additional data if passed when the user is registered.
  */
-@property (nonatomic, retain, nullable) NSString *data;
+@property (nonatomic, retain, nullable) id data;
 
+/**
+ Dictionary of objects tha can be used by the plugins to add data to the user.
+ */
+@property (nonatomic, retain, nullable) NSDictionary *pluginsObjects;
 
 /**
  Initializes a user with the parameters provided.

@@ -11,6 +11,8 @@
 
 #import "NKManager.h"
 
+#import "NKUtilities.h"
+
 #import "NKClient.h"
 #import "NKPaginationInfo.h"
 #import "NKParameter.h"
@@ -34,6 +36,7 @@
 #import "NKDateElement.h"
 #import "NKAddressElement.h"
 #import "NKDropdownElement.h"
+#import "NKDropdownElementOption.h"
 #import "NKPollElement.h"
 #import "NKGeneralElement.h"
 #import "NKElementFactory.h"
@@ -50,5 +53,7 @@
 
 #import "NKAuth.h"
 #import "NKUser.h"
+
+#import "NKPlugin.h"
 
 #endif /* NookoSDK_h */

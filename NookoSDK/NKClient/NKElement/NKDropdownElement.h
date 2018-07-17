@@ -7,6 +7,7 @@
 //
 
 #import "NKElement.h"
+#import "NKDropdownElementOption.h"
 
 /**
  This class represents a Nooko dropdown element.
@@ -16,7 +17,7 @@
 /**
  The possible options of the dropdown.
  */
-@property (nonatomic, retain, nullable) NSArray <NSString *> *options;
+@property (nonatomic, retain, nullable) NSArray <NKDropdownElementOption *> *options;
 
 /**
  The selected option of the dropdown.
@@ -36,6 +37,6 @@
  
  @return A newly created NKDropdownElement initialized with the parameters passed.
  */
-- (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Options: (nullable NSArray <NSString *> *) options SelectedOptions: (NSString *) selectedOption;
+- (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Options: (nullable NSArray <NKDropdownElementOption *> *) options SelectedOptions: (NSString *) selectedOption;
 
 @end

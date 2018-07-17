@@ -22,22 +22,35 @@
                       Success: (void (^)(void)) success
                       Failure: (void (^)(NSError *error)) failure{
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
-    parameters[@"name"] = name;
-    parameters[@"surname"] = surname;
-    parameters[@"email"] = email;
-    parameters[@"password"] = password;
-    parameters[@"phone"] = phone;
-    parameters[@"image"] = [UIImageJPEGRepresentation(image, 1.0) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    parameters[@"data"] = data;
-    //TODO: remove
-    parameters[@"user_id"] = @(1);
-
+    if (name){
+        parameters[@"name"] = name;
+    }
+    if (surname){
+        parameters[@"surname"] = surname;
+    }
+    if (email){
+        parameters[@"email"] = email;
+    }
+    if (password){
+        parameters[@"password"] = password;
+    }
+    if (phone){
+        parameters[@"phone"] = phone;
+    }
+    if (image){
+        parameters[@"image"] = [UIImageJPEGRepresentation(image, 1.0) base64EncodedStringWithOptions:0];
+    }
+    if(data){
+        parameters[@"data"] = data;
+    }
+    
     [NKApiManager callApiWithApiToken:NKManager.sharedManager.apiToken
                                Locale:[NKManager.sharedManager localeString]
                               ApiName:@"register"
                            HTTPMethod:NKHTTPMethodPost
                            Parameters:parameters
                      HeaderParameters:nil
+                          Development:[NKManager sharedManager].development
                               Success:^(NKResponse *response) {
                                   if (success){
                                       success();
@@ -57,8 +70,6 @@
     parameters[@"email"] = email;
     parameters[@"password"] = password;
     parameters[@"mode"] = @"email";
-    //TODO: remove
-    parameters[@"user_id"] = @(1);
 
     [NKApiManager callApiWithApiToken:NKManager.sharedManager.apiToken
                                Locale:[NKManager.sharedManager localeString]
@@ -66,6 +77,7 @@
                            HTTPMethod:NKHTTPMethodPost
                            Parameters:parameters
                      HeaderParameters:nil
+                          Development:[NKManager sharedManager].development
                               Success:^(NKResponse *response) {
                                   NSString *accessToken = @"";
                                   if (response.payload[@"access_token"]) {
@@ -89,8 +101,6 @@
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     parameters[@"old_password"] = oldPassword;
     parameters[@"new_password"] = newPassword;
-    //TODO: remove
-    parameters[@"user_id"] = @(1);
 
     [NKApiManager callApiWithApiToken:NKManager.sharedManager.apiToken
                                Locale:[NKManager.sharedManager localeString]
@@ -98,6 +108,7 @@
                            HTTPMethod:NKHTTPMethodPost
                            Parameters:parameters
                      HeaderParameters:nil
+                          Development:[NKManager sharedManager].development
                               Success:^(NKResponse *response) {
                                   if (success){
                                       success();
@@ -114,8 +125,6 @@
                          Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     parameters[@"email"] = email;
-    //TODO: remove
-    parameters[@"user_id"] = @(1);
 
     [NKApiManager callApiWithApiToken:NKManager.sharedManager.apiToken
                                Locale:[NKManager.sharedManager localeString]
@@ -123,6 +132,7 @@
                            HTTPMethod:NKHTTPMethodPost
                            Parameters:parameters
                      HeaderParameters:nil
+                          Development:[NKManager sharedManager].development
                               Success:^(NKResponse *response) {
                                   if (success){
                                       success();
@@ -136,17 +146,60 @@
 
 + (void) getUserProfileWithSuccess: (nullable void (^)(NKUser * _Nonnull user)) success
                            Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
-    //TODO: remove
-    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
-    parameters[@"user_id"] = @(1);
     [NKApiManager callApiWithApiToken:NKManager.sharedManager.apiToken
                                Locale:[NKManager.sharedManager localeString]
                               ApiName:@"profile"
+                           HTTPMethod:NKHTTPMethodGet
+                           Parameters:nil
+                     HeaderParameters:nil
+                          Development:[NKManager sharedManager].development
+                              Success:^(NKResponse *response) {
+                                  NKUser *user = [[NKUser alloc] initWithDictionary:response.payload];
+                                  [self handlePluginsWithUserResponse:response.payload User:user];
+                                  if (success){
+                                      success(user);
+                                  }
+                              } Failure:^(NSError *error) {
+                                  if (failure){
+                                      failure(error);
+                                  }
+                              }];
+}
+
++ (void) updateProfileWithName: (NSString *) name
+                       Surname: (NSString *) surname
+                         Phone: (NSString *) phone
+                         Image: (UIImage *) image
+                          Data: (NSString *) data
+                       Success: (void (^)(NKUser *user)) success
+                       Failure: (void (^)(NSError *error)) failure{
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    if (name){
+        parameters[@"name"] = name;
+    }
+    if (surname){
+        parameters[@"surname"] = surname;
+    }
+    if (phone){
+        parameters[@"phone"] = phone;
+    }
+    if (image){
+        parameters[@"image"] = [UIImageJPEGRepresentation(image, 1.0) base64EncodedStringWithOptions:0];
+    }
+    if (data){
+        parameters[@"data"] = data;
+    }
+    
+    [NKApiManager callApiWithApiToken:NKManager.sharedManager.apiToken
+                               Locale:[NKManager.sharedManager localeString]
+                              ApiName:@"profile/update"
                            HTTPMethod:NKHTTPMethodPost
                            Parameters:parameters
                      HeaderParameters:nil
+                          Development:[NKManager sharedManager].development
                               Success:^(NKResponse *response) {
                                   NKUser *user = [[NKUser alloc] initWithDictionary:response.payload];
+                                  [self handlePluginsWithUserResponse:response.payload User:user];
                                   if (success){
                                       success(user);
                                   }
@@ -189,6 +242,41 @@
 
 + (NSString *) accessTokenKey {
     return (__bridge id) kSecValueData;
+}
+
++ (void) handleApiResponseAndSaveNewTokenIfPresentWithResponse: (NSHTTPURLResponse *) response {
+    if ([self userIsLoggedIn]){
+        NSDictionary *headers = [response allHeaderFields];
+        if ([headers.allKeys containsObject:@"Authorization"]){
+            NSString *token = headers[@"Authorization"];
+            if (token){
+                token = [token stringByReplacingOccurrencesOfString:@"Bearer " withString:@""];
+                [self saveAccessToken:token];
+            }
+        }
+    }
+}
+
+#pragma mark - Plugins
+
++ (void) handlePluginsWithUserResponse: (NSDictionary *) userResponse User: (NKUser *) user{
+    NSArray *plugins = NKManager.sharedManager.plugins;
+    if (plugins.count != 0){
+        NSMutableDictionary *pluginsDictionary = [[NSMutableDictionary alloc] init];
+        for (id <NKPlugin> plugin in plugins){
+            if ([plugin respondsToSelector:@selector(objectForUserResponse:)]){
+                id object = [plugin objectForUserResponse:userResponse];
+                if (object){
+                    NSString *userKey = NSStringFromClass(plugin.class);
+                    if ([plugin respondsToSelector:@selector(pluginUserKey)]){
+                        userKey = [plugin pluginUserKey];
+                    }
+                    pluginsDictionary[userKey] = object;
+                }
+            }
+        }
+        user.pluginsObjects = pluginsDictionary;
+    }
 }
 
 @end

@@ -23,7 +23,7 @@ NSArray *elements = @[[factory textElementWithName:@"title" Text:@"The title", [
 
 ```swift
 let factory = NKUploadableElementsFactory(localeIdentifier: "it")
-let elements = [factory.textElement(withName: "title", text: "The title"), [factory.imagesElement(withName: "image", image: UIImage.init(named: "Test"))]]
+let elements = [factory.textElement(withName: "title", text: "The title"), factory.imagesElement(withName: "image", image: UIImage.init(named: "Test"))]
 NKAdmin.addSectionToBlock(withBlockId: 1, elements: elements, success: {
 
 }, failure: { (error) in
