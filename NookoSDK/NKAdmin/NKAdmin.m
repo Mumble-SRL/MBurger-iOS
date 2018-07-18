@@ -99,7 +99,7 @@
 #pragma mark - Media
 
 + (void) deleteMediaWithMediaId: (NSInteger) mediaId
-                        Success: (nullable void (^)(void)) success
+                        Success: (nullable void (^)(NSInteger sectionId)) success
                         Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
     [NKApiManager callApiWithApiToken:[NKManager sharedManager].apiToken
                                Locale:[[NKManager sharedManager] localeString]
@@ -109,8 +109,9 @@
                      HeaderParameters:nil
                           Development:[NKManager sharedManager].development
                               Success:^(NKResponse *response) {
+                                  NSInteger sectionId = [response.payload[@"id"] integerValue];
                                   if (success){
-                                      success();
+                                      success(sectionId);
                                   }
                               }
                               Failure:^(NSError *error) {

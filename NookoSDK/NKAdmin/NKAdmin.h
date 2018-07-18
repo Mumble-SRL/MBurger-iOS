@@ -20,12 +20,12 @@
  Add a section to the block with the specified id.
  @param blockId The id of the block the section will be added.
  @param elements An array of `NKUploadableElement` that will become the elements of the section.
- @param success A block object to be executed when the task finishes successfully. This block has no return value and takes no arguments.
+ @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the id of the section created.
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
  */
 + (void) addSectionToBlockWithBlockId: (NSInteger) blockId
                              Elements: (nonnull NSArray <NKUploadableElement *> *) elements
-                              Success: (nullable void (^)(void)) success
+                              Success: (nullable void (^)(NSInteger sectionId)) success
                               Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 /**
