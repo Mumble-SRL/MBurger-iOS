@@ -16,7 +16,7 @@
 
 + (void) addSectionToBlockWithBlockId: (NSInteger) blockId
                              Elements: (nonnull NSArray <NKUploadableElement *> *) elements
-                              Success: (nullable void (^)(void)) success
+                              Success: (nullable void (^)(NSInteger sectionId)) success
                               Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
     NSMutableArray *form = [[NSMutableArray alloc] init];
     for (NKUploadableElement *element in elements){
@@ -33,8 +33,9 @@
                           Development:[NKManager sharedManager].development
                         MultipartForm:form
                               Success:^(NKResponse *response) {
+                                  NSInteger sectionId = [response.payload[@"id"] integerValue];
                                   if (success){
-                                      success();
+                                      success(sectionId);
                                   }
                               }
                               Failure:^(NSError *error) {
@@ -99,7 +100,7 @@
 #pragma mark - Media
 
 + (void) deleteMediaWithMediaId: (NSInteger) mediaId
-                        Success: (nullable void (^)(NSInteger sectionId)) success
+                        Success: (nullable void (^)(void)) success
                         Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
     [NKApiManager callApiWithApiToken:[NKManager sharedManager].apiToken
                                Locale:[[NKManager sharedManager] localeString]
@@ -109,9 +110,8 @@
                      HeaderParameters:nil
                           Development:[NKManager sharedManager].development
                               Success:^(NKResponse *response) {
-                                  NSInteger sectionId = [response.payload[@"id"] integerValue];
                                   if (success){
-                                      success(sectionId);
+                                      success();
                                   }
                               }
                               Failure:^(NSError *error) {
