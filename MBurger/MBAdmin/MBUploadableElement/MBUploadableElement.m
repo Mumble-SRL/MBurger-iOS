@@ -19,7 +19,7 @@
     return self;
 }
 
-- (NSArray <NKMultipartForm *> *) toForm {
+- (NSArray <MBMultipartForm *> *) toForm {
     return nil;
 }
 

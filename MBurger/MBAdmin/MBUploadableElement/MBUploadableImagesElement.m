@@ -28,11 +28,11 @@
     return self;
 }
 
-- (NSArray <NKMultipartForm *> *) toForm {
+- (NSArray <MBMultipartForm *> *) toForm {
     NSMutableArray *form = [[NSMutableArray alloc] init];
     [self.images enumerateObjectsUsingBlock:^(UIImage *img, NSUInteger idx, BOOL *stop) {
         NSString *filePath = [self filePathForIndex:idx];
-        [form addObject:[[NKMultipartForm alloc] initWithName:[self parameterNameForIndex:idx] FileUrl:[NSURL fileURLWithPath:filePath] MimeType:@"image/jpeg"]];
+        [form addObject:[[MBMultipartForm alloc] initWithName:[self parameterNameForIndex:idx] FileUrl:[NSURL fileURLWithPath:filePath] MimeType:@"image/jpeg"]];
     }];
     return form;;
 }

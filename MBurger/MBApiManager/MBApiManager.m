@@ -1,17 +1,16 @@
-
 //
-//  NKApiManager.m
-//  NookoSDK
+//  MBApiManager.m
+//  MBurger
 //
 //  Copyright © 2018 Mumble s.r.l. (https://mumbleideas.it/).
 //  All rights reserved.
 //
 
-#import "NKApiManager.h"
-#import "NKAuth.h"
+#import "MBApiManager.h"
+#import "MBAuth.h"
 #import <AFNetworking/AFNetworking.h>
 
-@implementation NKApiManager
+@implementation MBApiManager
 
 typedef void (^AFHTTPRequestOperationSuccessHandler) (NSURLSessionTask *operation, id responseObject);
 typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operation, NSError *error);
@@ -19,11 +18,11 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
 + (void) callApiWithApiToken: (NSString  *) apiToken
                       Locale: (NSString *) locale
                      ApiName: (NSString *) apiName
-                  HTTPMethod: (NKHTTPMethod) httpMethod
+                  HTTPMethod: (MBHTTPMethod) httpMethod
                   Parameters: (NSDictionary *) parameters
             HeaderParameters: (NSDictionary *) headerParameters
                  Development: (BOOL) development
-                     Success: (void (^)(NKResponse *response)) success
+                     Success: (void (^)(MBResponse *response)) success
                      Failure: (void (^)(NSError *error)) failure{
     [self callApiWithApiToken:apiToken Locale:locale ApiName:apiName HTTPMethod:httpMethod Parameters:parameters HeaderParameters:headerParameters Development:development MultipartForm:nil Success:success Failure:failure];
 }
@@ -31,15 +30,15 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
 + (void) callApiWithApiToken: (NSString  *) apiToken
                       Locale: (NSString *) locale
                      ApiName: (NSString *) apiName
-                  HTTPMethod: (NKHTTPMethod) httpMethod
+                  HTTPMethod: (MBHTTPMethod) httpMethod
                   Parameters: (NSDictionary *) parameters
             HeaderParameters: (NSDictionary *) headerParameters
                  Development: (BOOL) development
-               MultipartForm: (nullable NSArray <NKMultipartForm *> *) multipartForm
-                     Success: (void (^)(NKResponse *response)) success
+               MultipartForm: (nullable NSArray <MBMultipartForm *> *) multipartForm
+                     Success: (void (^)(MBResponse *response)) success
                      Failure: (void (^)(NSError *error)) failure{
     if (apiToken == nil || [apiToken isEqualToString:@""]){
-        NSError *error = [[NSError alloc] initWithDomain:@"com.mumble.nooko" code:101 userInfo:@{NSLocalizedDescriptionKey : @"Invalid api token"}];
+        NSError *error = [[NSError alloc] initWithDomain:@"com.mumble.mburger" code:101 userInfo:@{NSLocalizedDescriptionKey : @"Invalid api token"}];
         dispatch_async(dispatch_get_main_queue(), ^{
             if (failure){
                 failure(error);
@@ -47,8 +46,8 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
         });
         return;
     }
-    if (multipartForm != nil && httpMethod != NKHTTPMethodPost){
-        NSError *error = [[NSError alloc] initWithDomain:@"com.mumble.nooko" code:102 userInfo:@{NSLocalizedDescriptionKey : @"Can't send multipart form data with a method different than POST"}];
+    if (multipartForm != nil && httpMethod != MBHTTPMethodPost){
+        NSError *error = [[NSError alloc] initWithDomain:@"com.mumble.mburger" code:102 userInfo:@{NSLocalizedDescriptionKey : @"Can't send multipart form data with a method different than POST"}];
         dispatch_async(dispatch_get_main_queue(), ^{
             if (failure){
                 failure(error);
@@ -62,7 +61,7 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    if (httpMethod == NKHTTPMethodPost || httpMethod == NKHTTPMethodPut){
+    if (httpMethod == MBHTTPMethodPost || httpMethod == MBHTTPMethodPut){
         manager.requestSerializer = [AFJSONRequestSerializer serializer];
     }
 
@@ -78,7 +77,7 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
     [manager.requestSerializer setValue:apiToken forHTTPHeaderField:@"X-Nooko-Token"];
     [manager.requestSerializer setValue:@"2" forHTTPHeaderField:@"X-Nooko-Version"];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    NSString *accessToken = [NKAuth authToken];
+    NSString *accessToken = [MBAuth authToken];
     if (accessToken != nil && ![accessToken isEqualToString:@""]){
         [manager.requestSerializer setValue:[NSString stringWithFormat:@"Bearer %@", accessToken] forHTTPHeaderField:@"Authorization"];
     }
@@ -86,14 +85,14 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
     AFHTTPRequestOperationSuccessHandler successHandler = ^(NSURLSessionTask *operation, id responseObject){
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
-        [NKAuth performSelector:@selector(handleApiResponseAndSaveNewTokenIfPresentWithResponse:) withObject:operation.response];
+        [MBAuth performSelector:@selector(handleApiResponseAndSaveNewTokenIfPresentWithResponse:) withObject:operation.response];
 #pragma clang diagnostic pop
         NSDictionary *response = (NSDictionary *) responseObject;
         if (response[@"response"] && response[@"response"] != [NSNull null]){
             NSDictionary *responseDict = response[@"response"];
             NSInteger statusCode = [responseDict[@"status_code"] integerValue];
             if (statusCode == 0){
-                NKResponse *response = [[NKResponse alloc] init];
+                MBResponse *response = [[MBResponse alloc] init];
                 if (responseDict[@"body"]){
                     if ([responseDict[@"body"] isKindOfClass:[NSDictionary class]]){
                         response.payload = responseDict[@"body"];
@@ -112,7 +111,7 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
             else {
                 NSString *message = responseDict[@"message"] ? responseDict[@"message"] : @"";
                 NSString *messageLocalized = responseDict[@"message_localized"] ? responseDict[@"message_localized"] : @"";
-                NSError *error = [[NSError alloc] initWithDomain:@"com.mumble.nooko" code:statusCode userInfo:@{NSLocalizedDescriptionKey : messageLocalized, NSDebugDescriptionErrorKey : message}];
+                NSError *error = [[NSError alloc] initWithDomain:@"com.mumble.mburger" code:statusCode userInfo:@{NSLocalizedDescriptionKey : messageLocalized, NSDebugDescriptionErrorKey : message}];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     if (failure){
                         failure(error);
@@ -121,7 +120,7 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
             }
         }
         else {
-            NSError *error = [[NSError alloc] initWithDomain:@"com.mumble.nooko" code:100 userInfo:@{NSLocalizedDescriptionKey : @"Can't find response"}];
+            NSError *error = [[NSError alloc] initWithDomain:@"com.mumble.mburger" code:100 userInfo:@{NSLocalizedDescriptionKey : @"Can't find response"}];
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (failure){
                     failure(error);
@@ -136,7 +135,7 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
     AFHTTPRequestOperationFailureHandler failureHandler = ^(NSURLSessionTask *operation, NSError *error) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
-        [NKAuth performSelector:@selector(handleApiResponseAndSaveNewTokenIfPresentWithResponse:) withObject:operation.response];
+        [MBAuth performSelector:@selector(handleApiResponseAndSaveNewTokenIfPresentWithResponse:) withObject:operation.response];
 #pragma clang diagnostic pop
         dispatch_async(dispatch_get_main_queue(), ^{
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
@@ -145,7 +144,7 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
                 NSString *message = [self messageErrorForResponseString:responseString];
                 if (message != nil){
                     if (failure){
-                        NSError *error = [[NSError alloc] initWithDomain:@"com.mumble.nooko" code:102 userInfo:@{NSLocalizedDescriptionKey : message}];
+                        NSError *error = [[NSError alloc] initWithDomain:@"com.mumble.mburger" code:102 userInfo:@{NSLocalizedDescriptionKey : message}];
                         failure(error);
                     }
                     return;
@@ -161,13 +160,13 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     });
     switch (httpMethod) {
-        case NKHTTPMethodGet:
+        case MBHTTPMethodGet:
             [manager GET:urlString parameters:totalParametersDictionary progress:nil success:successHandler failure:failureHandler];
             break;
-        case NKHTTPMethodPost:
+        case MBHTTPMethodPost:
             if (multipartForm != nil){
                 [manager POST:urlString parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-                    for (NKMultipartForm *form in multipartForm){
+                    for (MBMultipartForm *form in multipartForm){
                         if (form.data){
                             [formData appendPartWithFormData:form.data name:form.name];
                         }
@@ -187,13 +186,13 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
                 [manager POST:urlString parameters:totalParametersDictionary progress:nil success:successHandler failure:failureHandler];
             }
             break;
-        case NKHTTPMethodPut:
+        case MBHTTPMethodPut:
             [manager PUT:urlString parameters:totalParametersDictionary success:successHandler failure:failureHandler];
             break;
-        case NKHTTPMethodPatch:
+        case MBHTTPMethodPatch:
             [manager PATCH:urlString parameters:totalParametersDictionary success:successHandler failure:failureHandler];
             break;
-        case NKHTTPMethodDelete:
+        case MBHTTPMethodDelete:
             [manager DELETE:urlString parameters:totalParametersDictionary success:successHandler failure:failureHandler];
             break;
         default:

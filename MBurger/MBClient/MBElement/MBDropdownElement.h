@@ -10,7 +10,7 @@
 #import "MBDropdownElementOption.h"
 
 /**
- This class represents a Nooko dropdown element.
+ This class represents a MBurger dropdown element.
  */
 @interface MBDropdownElement : MBElement <NSCoding, NSSecureCoding>
 

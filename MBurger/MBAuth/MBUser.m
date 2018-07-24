@@ -1,13 +1,13 @@
 //
-//  NKUser.m
-//  NookoSDK
+//  MBUser.m
+//  MBurger
 //
 //  Copyright © 2018 Mumble s.r.l. All rights reserved.
 //
 
-#import "NKUser.h"
+#import "MBUser.h"
 
-@implementation NKUser
+@implementation MBUser
 
 - (instancetype) initWithUserId: (NSInteger) userId
                            Name: (NSString *) name
@@ -44,8 +44,8 @@
 }
 
 - (BOOL) isEqual:(id)object {
-    if ([object isKindOfClass:[NKUser class]]){
-        return [(NKUser *) object userId] == self.userId;
+    if ([object isKindOfClass:[MBUser class]]){
+        return [(MBUser *) object userId] == self.userId;
     }
     return NO;
 }

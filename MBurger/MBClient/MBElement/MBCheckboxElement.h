@@ -9,7 +9,7 @@
 #import "MBElement.h"
 
 /**
- This class represents a Nooko checkbox element.
+ This class represents a MBurger checkbox element.
  */
 @interface MBCheckboxElement : MBElement <NSCoding, NSSecureCoding>
 

@@ -9,7 +9,7 @@
 #import "MBElement.h"
 
 /**
- This class represents a Nooko wysiwyg element.
+ This class represents a MBurger wysiwyg element.
  */
 @interface MBWysiwygElement : MBElement <NSCoding, NSSecureCoding>
 

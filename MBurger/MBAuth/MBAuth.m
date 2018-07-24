@@ -1,16 +1,16 @@
 //
-//  NKAuthManager.m
-//  NookoSDK
+//  MBAuth.m
+//  MBurger
 //
 //  Copyright © 2018 Mumble s.r.l. All rights reserved.
 //
 
-#import "NKAuth.h"
-#import "NKApiManager.h"
+#import "MBAuth.h"
+#import "MBApiManager.h"
 #import "MBManager.h"
-#import "NKKeychainItemWrapper.h"
+#import "MBKeychainItemWrapper.h"
 
-@implementation NKAuth
+@implementation MBAuth
 
 + (void) registerUserWithName: (NSString *) name
                       Surname: (NSString *) surname
@@ -44,14 +44,14 @@
         parameters[@"data"] = data;
     }
     
-    [NKApiManager callApiWithApiToken:MBManager.sharedManager.apiToken
+    [MBApiManager callApiWithApiToken:MBManager.sharedManager.apiToken
                                Locale:[MBManager.sharedManager localeString]
                               ApiName:@"register"
-                           HTTPMethod:NKHTTPMethodPost
+                           HTTPMethod:MBHTTPMethodPost
                            Parameters:parameters
                      HeaderParameters:nil
                           Development:[MBManager sharedManager].development
-                              Success:^(NKResponse *response) {
+                              Success:^(MBResponse *response) {
                                   if (success){
                                       success();
                                   }
@@ -71,14 +71,14 @@
     parameters[@"password"] = password;
     parameters[@"mode"] = @"email";
 
-    [NKApiManager callApiWithApiToken:MBManager.sharedManager.apiToken
+    [MBApiManager callApiWithApiToken:MBManager.sharedManager.apiToken
                                Locale:[MBManager.sharedManager localeString]
                               ApiName:@"authenticate"
-                           HTTPMethod:NKHTTPMethodPost
+                           HTTPMethod:MBHTTPMethodPost
                            Parameters:parameters
                      HeaderParameters:nil
                           Development:[MBManager sharedManager].development
-                              Success:^(NKResponse *response) {
+                              Success:^(MBResponse *response) {
                                   NSString *accessToken = @"";
                                   if (response.payload[@"access_token"]) {
                                       accessToken = response.payload[@"access_token"];
@@ -102,14 +102,14 @@
     parameters[@"old_password"] = oldPassword;
     parameters[@"new_password"] = newPassword;
 
-    [NKApiManager callApiWithApiToken:MBManager.sharedManager.apiToken
+    [MBApiManager callApiWithApiToken:MBManager.sharedManager.apiToken
                                Locale:[MBManager.sharedManager localeString]
                               ApiName:@"change-password"
-                           HTTPMethod:NKHTTPMethodPost
+                           HTTPMethod:MBHTTPMethodPost
                            Parameters:parameters
                      HeaderParameters:nil
                           Development:[MBManager sharedManager].development
-                              Success:^(NKResponse *response) {
+                              Success:^(MBResponse *response) {
                                   if (success){
                                       success();
                                   }
@@ -126,14 +126,14 @@
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     parameters[@"email"] = email;
 
-    [NKApiManager callApiWithApiToken:MBManager.sharedManager.apiToken
+    [MBApiManager callApiWithApiToken:MBManager.sharedManager.apiToken
                                Locale:[MBManager.sharedManager localeString]
                               ApiName:@"forgot-password"
-                           HTTPMethod:NKHTTPMethodPost
+                           HTTPMethod:MBHTTPMethodPost
                            Parameters:parameters
                      HeaderParameters:nil
                           Development:[MBManager sharedManager].development
-                              Success:^(NKResponse *response) {
+                              Success:^(MBResponse *response) {
                                   if (success){
                                       success();
                                   }
@@ -144,17 +144,17 @@
                               }];
 }
 
-+ (void) getUserProfileWithSuccess: (nullable void (^)(NKUser * _Nonnull user)) success
++ (void) getUserProfileWithSuccess: (nullable void (^)(MBUser * _Nonnull user)) success
                            Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
-    [NKApiManager callApiWithApiToken:MBManager.sharedManager.apiToken
+    [MBApiManager callApiWithApiToken:MBManager.sharedManager.apiToken
                                Locale:[MBManager.sharedManager localeString]
                               ApiName:@"profile"
-                           HTTPMethod:NKHTTPMethodGet
+                           HTTPMethod:MBHTTPMethodGet
                            Parameters:nil
                      HeaderParameters:nil
                           Development:[MBManager sharedManager].development
-                              Success:^(NKResponse *response) {
-                                  NKUser *user = [[NKUser alloc] initWithDictionary:response.payload];
+                              Success:^(MBResponse *response) {
+                                  MBUser *user = [[MBUser alloc] initWithDictionary:response.payload];
                                   [self handlePluginsWithUserResponse:response.payload User:user];
                                   if (success){
                                       success(user);
@@ -171,7 +171,7 @@
                          Phone: (NSString *) phone
                          Image: (UIImage *) image
                           Data: (id) data
-                       Success: (void (^)(NKUser *user)) success
+                       Success: (void (^)(MBUser *user)) success
                        Failure: (void (^)(NSError *error)) failure{
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     if (name){
@@ -192,15 +192,15 @@
         parameters[@"data"] = jsonString;
     }
     
-    [NKApiManager callApiWithApiToken:MBManager.sharedManager.apiToken
+    [MBApiManager callApiWithApiToken:MBManager.sharedManager.apiToken
                                Locale:[MBManager.sharedManager localeString]
                               ApiName:@"profile/update"
-                           HTTPMethod:NKHTTPMethodPost
+                           HTTPMethod:MBHTTPMethodPost
                            Parameters:parameters
                      HeaderParameters:nil
                           Development:[MBManager sharedManager].development
-                              Success:^(NKResponse *response) {
-                                  NKUser *user = [[NKUser alloc] initWithDictionary:response.payload];
+                              Success:^(MBResponse *response) {
+                                  MBUser *user = [[MBUser alloc] initWithDictionary:response.payload];
                                   [self handlePluginsWithUserResponse:response.payload User:user];
                                   if (success){
                                       success(user);
@@ -213,7 +213,7 @@
 }
 
 + (void) logoutCurrentUser{
-    NKKeychainItemWrapper *itemWrapper = [self keychainWrapper];
+    MBKeychainItemWrapper *itemWrapper = [self keychainWrapper];
     [itemWrapper resetKeychainItem];
 }
 
@@ -223,7 +223,7 @@
 }
 
 + (NSString *) authToken{
-    NKKeychainItemWrapper *itemWrapper = [self keychainWrapper];
+    MBKeychainItemWrapper *itemWrapper = [self keychainWrapper];
     NSData *data = [itemWrapper objectForKey:[self accessTokenKey]];
     if (data){
         return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
@@ -237,8 +237,8 @@
     }
 }
 
-+ (NKKeychainItemWrapper *) keychainWrapper {
-    NKKeychainItemWrapper *keychainWrapper = [[NKKeychainItemWrapper alloc] initWithIdentifier:@"com.mumble.nooko" accessGroup:nil];
++ (MBKeychainItemWrapper *) keychainWrapper {
+    MBKeychainItemWrapper *keychainWrapper = [[MBKeychainItemWrapper alloc] initWithIdentifier:@"com.mumble.mburger" accessGroup:nil];
     return keychainWrapper;
 }
 
@@ -261,11 +261,11 @@
 
 #pragma mark - Plugins
 
-+ (void) handlePluginsWithUserResponse: (NSDictionary *) userResponse User: (NKUser *) user{
++ (void) handlePluginsWithUserResponse: (NSDictionary *) userResponse User: (MBUser *) user{
     NSArray *plugins = MBManager.sharedManager.plugins;
     if (plugins.count != 0){
         NSMutableDictionary *pluginsDictionary = [[NSMutableDictionary alloc] init];
-        for (id <NKPlugin> plugin in plugins){
+        for (id <MBPlugin> plugin in plugins){
             if ([plugin respondsToSelector:@selector(objectForUserResponse:)]){
                 id object = [plugin objectForUserResponse:userResponse];
                 if (object){

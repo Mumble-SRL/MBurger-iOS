@@ -22,7 +22,7 @@ typedef NS_ENUM(NSUInteger, MBMediaType) {
 };
 
 /**
- This class represents a Nooko media element.
+ This class represents a MBurger media element.
  */
 @interface MBMediaElement : MBElement <NSCoding, NSSecureCoding>
 

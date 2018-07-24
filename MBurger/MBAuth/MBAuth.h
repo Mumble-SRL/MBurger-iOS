@@ -1,19 +1,18 @@
 //
-//  NKAuth.h
-//  NookoSDK
+//  MBAuth.h
+//  MBurger
 //
 //  Copyright © 2018 Mumble s.r.l. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "NKUser.h"
-
+#import "MBUser.h"
 
 /**
  Manages the authentication of the user.
  */
-@interface NKAuth : NSObject
+@interface MBAuth : NSObject
 
 /**
  Register a user with the data provided
@@ -44,7 +43,7 @@
 
  @param email The email of the user.
  @param password The password of the user.
- @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the access token. The access token will be saved in the Keychain and will be used in all the subsequent calls to the Nooko apis.
+ @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the access token. The access token will be saved in the Keychain and will be used in all the subsequent calls to the MBurger apis.
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
  */
 + (void) authenticateUserWithEmail: (nonnull NSString *) email
@@ -67,7 +66,7 @@
                                              Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 /**
- Call this api if the user wants to reset its password. A mail will be sended to the user with a new password if a user with the given email is found in Nooko.
+ Call this api if the user wants to reset its password. A mail will be sended to the user with a new password if a user with the given email is found in MBurger.
 
  @param email The email of the user.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes no arguments.
@@ -81,10 +80,10 @@
 /**
  Retrieves the profile informations of the current authenticated user.
 
- @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the `NKUser` representing the logged user.
+ @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the `MBUser` representing the logged user.
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
  */
-+ (void) getUserProfileWithSuccess: (nullable void (^)(NKUser * _Nonnull user)) success
++ (void) getUserProfileWithSuccess: (nullable void (^)(MBUser * _Nonnull user)) success
                            Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 
@@ -96,7 +95,7 @@
  @param phone The new phone of the user.
  @param image The new image of the user.
  @param data The new data of the user.
- @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the `NKUser` representing the new user.
+ @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the `MBUser` representing the new user.
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
  */
 + (void) updateProfileWithName: (nonnull NSString *) name
@@ -104,7 +103,7 @@
                          Phone: (nullable NSString *) phone
                          Image: (nullable UIImage *) image
                           Data: (nullable NSString *) data
-                       Success: (nullable void (^)(NKUser * _Nonnull user)) success
+                       Success: (nullable void (^)(MBUser * _Nonnull user)) success
                        Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 /**

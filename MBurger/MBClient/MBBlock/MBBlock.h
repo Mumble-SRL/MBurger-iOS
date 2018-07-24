@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "MBSection.h"
-#import "NKResponse.h"
+#import "MBResponse.h"
 
 /**
- This class represents a Nooko block.
+ This class represents a MBurger block.
  */
 @interface MBBlock : NSObject <NSCoding, NSSecureCoding>
 

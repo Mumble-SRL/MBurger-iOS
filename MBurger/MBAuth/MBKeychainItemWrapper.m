@@ -49,7 +49,7 @@
 
 #define PASSWORD_USES_DATA
 
-#import "NKKeychainItemWrapper.h"
+#import "MBKeychainItemWrapper.h"
 #import <Security/Security.h>
 
 /*
@@ -75,7 +75,7 @@
  
  */
 
-@interface NKKeychainItemWrapper (PrivateMethods)
+@interface MBKeychainItemWrapper (PrivateMethods)
 /*
  The decision behind the following two methods (secItemFormatToDictionary and dictionaryToSecItemFormat) was
  to encapsulate the transition between what the detail view controller was expecting (NSString *) and what the
@@ -89,7 +89,7 @@
 
 @end
 
-@implementation NKKeychainItemWrapper
+@implementation MBKeychainItemWrapper
 {
     NSMutableDictionary *keychainItemData;        // The actual keychain item data backing store.
     NSMutableDictionary *genericPasswordQuery;    // A placeholder for the generic keychain item query used to locate the item.

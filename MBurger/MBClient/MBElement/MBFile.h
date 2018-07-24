@@ -50,7 +50,7 @@
  
  @param dictionary The response from the api.
  
- @return A newly created NKMedia initialized with the data of the dictionary.
+ @return A newly created MBMedia initialized with the data of the dictionary.
  */
 - (nonnull instancetype) initWithDictionary: (nonnull NSDictionary *) dictionary;
 

@@ -10,7 +10,7 @@
 #import "MBImage.h"
 
 /**
- This class represents a Nooko images element.
+ This class represents a MBurger images element.
  */
 @interface MBImagesElement : MBElement <NSCoding, NSSecureCoding>
 

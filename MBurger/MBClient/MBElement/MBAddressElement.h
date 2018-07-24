@@ -10,7 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 /**
- This class represents a Nooko address element.
+ This class represents a MBurger address element.
  */
 @interface MBAddressElement : MBElement <NSCoding, NSSecureCoding>
 

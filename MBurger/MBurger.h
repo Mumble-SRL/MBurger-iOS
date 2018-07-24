@@ -40,9 +40,9 @@
 #import "MBPollElement.h"
 #import "MBGeneralElement.h"
 #import "MBElementsFactory.h"
-#import "NKApiManager.h"
-#import "NKResponse.h"
-#import "NKMultipartForm.h"
+#import "MBApiManager.h"
+#import "MBResponse.h"
+#import "MBMultipartForm.h"
 
 #import "MBAdmin.h"
 #import "MBUploadableElement.h"
@@ -51,9 +51,9 @@
 #import "MBUploadableFilesElement.h"
 #import "MBUploadableElementsFactory.h"
 
-#import "NKAuth.h"
-#import "NKUser.h"
+#import "MBAuth.h"
+#import "MBUser.h"
 
-#import "NKPlugin.h"
+#import "MBPlugin.h"
 
 #endif /* MBurger_h */

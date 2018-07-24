@@ -1,6 +1,6 @@
 //
 //  MBTextElement.h
-//  NookoSDK
+//  MBurger
 //
 //  Copyright © 2018 Mumble s.r.l. (https://mumbleideas.it/).
 //  All rights reserved.
@@ -9,7 +9,7 @@
 #import "MBElement.h"
 
 /**
- This class represents a Nooko text element.
+ This class represents a MBurger text element.
  It is the counterpart of the 'text' and 'textelement' types on the dashboard
  */
 @interface MBTextElement : MBElement <NSCoding, NSSecureCoding>

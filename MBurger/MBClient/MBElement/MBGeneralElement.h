@@ -9,7 +9,7 @@
 #import "MBElement.h"
 
 /**
- This class represents a general Nooko element.
+ This class represents a general MBurger element.
  */
 @interface MBGeneralElement : MBElement <NSCoding, NSSecureCoding>
 

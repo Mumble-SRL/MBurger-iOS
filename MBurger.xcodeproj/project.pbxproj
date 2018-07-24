@@ -10,8 +10,8 @@
 		260E75CB1967B7ABC8BDE6B4 /* libPods-MBurger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 420ACE4FA4068584261244EC /* libPods-MBurger.a */; };
 		66004BCF2076604A00C57A6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66004BCE2076604A00C57A6C /* Main.storyboard */; };
 		66004BD12076605900C57A6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66004BD02076605900C57A6C /* LaunchScreen.storyboard */; };
-		6608391E2073A56600432DE7 /* NKApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6608391D2073A56600432DE7 /* NKApiManager.m */; };
-		660839212073A5FA00432DE7 /* NKResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 660839202073A5FA00432DE7 /* NKResponse.m */; };
+		6608391E2073A56600432DE7 /* MBApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6608391D2073A56600432DE7 /* MBApiManager.m */; };
+		660839212073A5FA00432DE7 /* MBResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 660839202073A5FA00432DE7 /* MBResponse.m */; };
 		660839242073B8A800432DE7 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 660839232073B8A800432DE7 /* News.m */; };
 		660E865A2076023A008DF597 /* MBPaginationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E86592076023A008DF597 /* MBPaginationInfo.m */; };
 		660E865E2076070C008DF597 /* MBSortParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E865D2076070C008DF597 /* MBSortParameter.m */; };
@@ -19,12 +19,12 @@
 		660E866420760726008DF597 /* MBFilterParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E866320760726008DF597 /* MBFilterParameter.m */; };
 		660E866720760734008DF597 /* MBGeofenceParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E866620760734008DF597 /* MBGeofenceParameter.m */; };
 		660E866A20760741008DF597 /* MBGeneralParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E866920760741008DF597 /* MBGeneralParameter.m */; };
-		663F93AE20A2DE2D009F4DB1 /* NKKeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 663F93AD20A2DE2D009F4DB1 /* NKKeychainItemWrapper.m */; };
-		667F21D8207B56A900C4CA92 /* NKblockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 667F21D7207B56A900C4CA92 /* NKblockTests.m */; };
+		663F93AE20A2DE2D009F4DB1 /* MBKeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 663F93AD20A2DE2D009F4DB1 /* MBKeychainItemWrapper.m */; };
+		667F21D8207B56A900C4CA92 /* MBBlockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 667F21D7207B56A900C4CA92 /* MBBlockTests.m */; };
 		667F21DA207B573200C4CA92 /* block_sections_elements.json in Resources */ = {isa = PBXBuildFile; fileRef = 667F21D9207B573200C4CA92 /* block_sections_elements.json */; };
 		667F21DC207B580100C4CA92 /* block.json in Resources */ = {isa = PBXBuildFile; fileRef = 667F21DB207B580100C4CA92 /* block.json */; };
 		667F21DE207B585300C4CA92 /* block_sections.json in Resources */ = {isa = PBXBuildFile; fileRef = 667F21DD207B585300C4CA92 /* block_sections.json */; };
-		667F21E4207B5BD800C4CA92 /* NKSectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 667F21E3207B5BD800C4CA92 /* NKSectionTests.m */; };
+		667F21E4207B5BD800C4CA92 /* MBSectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 667F21E3207B5BD800C4CA92 /* MBSectionTests.m */; };
 		667F21E7207B5C0700C4CA92 /* section_elements.json in Resources */ = {isa = PBXBuildFile; fileRef = 667F21E5207B5C0700C4CA92 /* section_elements.json */; };
 		667F21E8207B5C0700C4CA92 /* section.json in Resources */ = {isa = PBXBuildFile; fileRef = 667F21E6207B5C0700C4CA92 /* section.json */; };
 		667F21EB207B606400C4CA92 /* MBPollElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 667F21EA207B606400C4CA92 /* MBPollElement.m */; };
@@ -35,7 +35,7 @@
 		66AF6737206E3236003FD62F /* NewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF6736206E3236003FD62F /* NewsListViewController.m */; };
 		66AF673C206E3236003FD62F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66AF673B206E3236003FD62F /* Assets.xcassets */; };
 		66AF6742206E3236003FD62F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF6741206E3236003FD62F /* main.m */; };
-		66AF674C206E3236003FD62F /* NKProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF674B206E3236003FD62F /* NKProjectTests.m */; };
+		66AF674C206E3236003FD62F /* MBProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF674B206E3236003FD62F /* MBProjectTests.m */; };
 		66AF6759206E325E003FD62F /* MBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF6758206E325E003FD62F /* MBManager.m */; };
 		66AF675D206E38ED003FD62F /* MBSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF675C206E38ED003FD62F /* MBSection.m */; };
 		66AF6760206E3A1F003FD62F /* MBElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF675F206E3A1F003FD62F /* MBElement.m */; };
@@ -51,13 +51,13 @@
 		66AF6782206E7979003FD62F /* MBAddressElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF6781206E7979003FD62F /* MBAddressElement.m */; };
 		66B1F7AF20A31AA4009602C6 /* MBAdmin.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B1F7AE20A31AA4009602C6 /* MBAdmin.m */; };
 		66B1F7B320A3235D009602C6 /* MBClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B1F7B220A3235D009602C6 /* MBClient.m */; };
-		66C4061020A1E1DA0044885E /* NKAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4060F20A1E1DA0044885E /* NKAuth.m */; };
-		66C4061320A1E3760044885E /* NKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4061220A1E3760044885E /* NKUser.m */; };
+		66C4061020A1E1DA0044885E /* MBAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4060F20A1E1DA0044885E /* MBAuth.m */; };
+		66C4061320A1E3760044885E /* MBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C4061220A1E3760044885E /* MBUser.m */; };
 		66D9635F20A0834800037200 /* MBUploadableElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9635E20A0834800037200 /* MBUploadableElement.m */; };
 		66D9636220A0863400037200 /* MBUploadableTextElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9636120A0863400037200 /* MBUploadableTextElement.m */; };
 		66D9636520A0864300037200 /* MBUploadableImagesElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9636420A0864300037200 /* MBUploadableImagesElement.m */; };
 		66D9636820A0865200037200 /* MBUploadableFilesElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9636720A0865200037200 /* MBUploadableFilesElement.m */; };
-		66D9636B20A08A9000037200 /* NKMultipartForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9636A20A08A9000037200 /* NKMultipartForm.m */; };
+		66D9636B20A08A9000037200 /* MBMultipartForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9636A20A08A9000037200 /* MBMultipartForm.m */; };
 		66D9636F20A09AA500037200 /* MBUploadableElementsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D9636D20A0994D00037200 /* MBUploadableElementsFactory.m */; };
 		66EBBF1E20E0DD6600CCD6B1 /* MBDropdownElementOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EBBF1D20E0DD6600CCD6B1 /* MBDropdownElementOption.m */; };
 		66EBBF2E20E1251800CCD6B1 /* MBUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 66EBBF2D20E1251800CCD6B1 /* MBUtilities.m */; };
@@ -82,10 +82,10 @@
 		420ACE4FA4068584261244EC /* libPods-MBurger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MBurger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		66004BCE2076604A00C57A6C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		66004BD02076605900C57A6C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		6608391C2073A56600432DE7 /* NKApiManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKApiManager.h; sourceTree = "<group>"; };
-		6608391D2073A56600432DE7 /* NKApiManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKApiManager.m; sourceTree = "<group>"; };
-		6608391F2073A5FA00432DE7 /* NKResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKResponse.h; sourceTree = "<group>"; };
-		660839202073A5FA00432DE7 /* NKResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKResponse.m; sourceTree = "<group>"; };
+		6608391C2073A56600432DE7 /* MBApiManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBApiManager.h; sourceTree = "<group>"; };
+		6608391D2073A56600432DE7 /* MBApiManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBApiManager.m; sourceTree = "<group>"; };
+		6608391F2073A5FA00432DE7 /* MBResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBResponse.h; sourceTree = "<group>"; };
+		660839202073A5FA00432DE7 /* MBResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBResponse.m; sourceTree = "<group>"; };
 		660839222073B8A800432DE7 /* News.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		660839232073B8A800432DE7 /* News.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		660E86582076023A008DF597 /* MBPaginationInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBPaginationInfo.h; sourceTree = "<group>"; };
@@ -101,15 +101,15 @@
 		660E866820760741008DF597 /* MBGeneralParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBGeneralParameter.h; sourceTree = "<group>"; };
 		660E866920760741008DF597 /* MBGeneralParameter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBGeneralParameter.m; sourceTree = "<group>"; };
 		660E866C2076088B008DF597 /* MBParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBParameter.h; sourceTree = "<group>"; };
-		663F93AC20A2DE2D009F4DB1 /* NKKeychainItemWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKKeychainItemWrapper.h; sourceTree = "<group>"; };
-		663F93AD20A2DE2D009F4DB1 /* NKKeychainItemWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKKeychainItemWrapper.m; sourceTree = "<group>"; };
+		663F93AC20A2DE2D009F4DB1 /* MBKeychainItemWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBKeychainItemWrapper.h; sourceTree = "<group>"; };
+		663F93AD20A2DE2D009F4DB1 /* MBKeychainItemWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBKeychainItemWrapper.m; sourceTree = "<group>"; };
 		663F93AF20A2E071009F4DB1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		663F93B120A2E125009F4DB1 /* MBurger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MBurger.entitlements; sourceTree = "<group>"; };
-		667F21D7207B56A900C4CA92 /* NKblockTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKblockTests.m; sourceTree = "<group>"; };
+		667F21D7207B56A900C4CA92 /* MBBlockTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBBlockTests.m; sourceTree = "<group>"; };
 		667F21D9207B573200C4CA92 /* block_sections_elements.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = block_sections_elements.json; sourceTree = "<group>"; };
 		667F21DB207B580100C4CA92 /* block.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = block.json; sourceTree = "<group>"; };
 		667F21DD207B585300C4CA92 /* block_sections.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = block_sections.json; sourceTree = "<group>"; };
-		667F21E3207B5BD800C4CA92 /* NKSectionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKSectionTests.m; sourceTree = "<group>"; };
+		667F21E3207B5BD800C4CA92 /* MBSectionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBSectionTests.m; sourceTree = "<group>"; };
 		667F21E5207B5C0700C4CA92 /* section_elements.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = section_elements.json; sourceTree = "<group>"; };
 		667F21E6207B5C0700C4CA92 /* section.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = section.json; sourceTree = "<group>"; };
 		667F21E9207B606400C4CA92 /* MBPollElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBPollElement.h; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 		667F407F2077B3D500B18D16 /* MBElementsFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBElementsFactory.m; sourceTree = "<group>"; };
 		667F40812077B76200B18D16 /* NewsDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsDetailViewController.h; sourceTree = "<group>"; };
 		667F40822077B76200B18D16 /* NewsDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
-		6684452520FDF18500118F62 /* NKPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKPlugin.h; sourceTree = "<group>"; };
+		6684452520FDF18500118F62 /* MBPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBPlugin.h; sourceTree = "<group>"; };
 		66AF672F206E3236003FD62F /* MBurger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBurger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66AF6732206E3236003FD62F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		66AF6733206E3236003FD62F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 		66AF6740206E3236003FD62F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66AF6741206E3236003FD62F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		66AF6747206E3236003FD62F /* MBurgerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MBurgerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		66AF674B206E3236003FD62F /* NKProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKProjectTests.m; sourceTree = "<group>"; };
+		66AF674B206E3236003FD62F /* MBProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBProjectTests.m; sourceTree = "<group>"; };
 		66AF674D206E3236003FD62F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66AF6757206E325E003FD62F /* MBManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBManager.h; sourceTree = "<group>"; };
 		66AF6758206E325E003FD62F /* MBManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBManager.m; sourceTree = "<group>"; };
@@ -163,10 +163,10 @@
 		66B1F7AE20A31AA4009602C6 /* MBAdmin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBAdmin.m; sourceTree = "<group>"; };
 		66B1F7B120A3235D009602C6 /* MBClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBClient.h; sourceTree = "<group>"; };
 		66B1F7B220A3235D009602C6 /* MBClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBClient.m; sourceTree = "<group>"; };
-		66C4060E20A1E1DA0044885E /* NKAuth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKAuth.h; sourceTree = "<group>"; };
-		66C4060F20A1E1DA0044885E /* NKAuth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKAuth.m; sourceTree = "<group>"; };
-		66C4061120A1E3760044885E /* NKUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKUser.h; sourceTree = "<group>"; };
-		66C4061220A1E3760044885E /* NKUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKUser.m; sourceTree = "<group>"; };
+		66C4060E20A1E1DA0044885E /* MBAuth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBAuth.h; sourceTree = "<group>"; };
+		66C4060F20A1E1DA0044885E /* MBAuth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBAuth.m; sourceTree = "<group>"; };
+		66C4061120A1E3760044885E /* MBUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBUser.h; sourceTree = "<group>"; };
+		66C4061220A1E3760044885E /* MBUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBUser.m; sourceTree = "<group>"; };
 		66D9635D20A0834800037200 /* MBUploadableElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBUploadableElement.h; sourceTree = "<group>"; };
 		66D9635E20A0834800037200 /* MBUploadableElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBUploadableElement.m; sourceTree = "<group>"; };
 		66D9636020A0863400037200 /* MBUploadableTextElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBUploadableTextElement.h; sourceTree = "<group>"; };
@@ -175,8 +175,8 @@
 		66D9636420A0864300037200 /* MBUploadableImagesElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBUploadableImagesElement.m; sourceTree = "<group>"; };
 		66D9636620A0865200037200 /* MBUploadableFilesElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBUploadableFilesElement.h; sourceTree = "<group>"; };
 		66D9636720A0865200037200 /* MBUploadableFilesElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBUploadableFilesElement.m; sourceTree = "<group>"; };
-		66D9636920A08A9000037200 /* NKMultipartForm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NKMultipartForm.h; sourceTree = "<group>"; };
-		66D9636A20A08A9000037200 /* NKMultipartForm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NKMultipartForm.m; sourceTree = "<group>"; };
+		66D9636920A08A9000037200 /* MBMultipartForm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBMultipartForm.h; sourceTree = "<group>"; };
+		66D9636A20A08A9000037200 /* MBMultipartForm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBMultipartForm.m; sourceTree = "<group>"; };
 		66D9636C20A0994D00037200 /* MBUploadableElementsFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBUploadableElementsFactory.h; sourceTree = "<group>"; };
 		66D9636D20A0994D00037200 /* MBUploadableElementsFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBUploadableElementsFactory.m; sourceTree = "<group>"; };
 		66EBBF1C20E0DD6600CCD6B1 /* MBDropdownElementOption.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBDropdownElementOption.h; sourceTree = "<group>"; };
@@ -228,17 +228,17 @@
 			path = Example;
 			sourceTree = "<group>";
 		};
-		6608391B2073950000432DE7 /* NKApiManager */ = {
+		6608391B2073950000432DE7 /* MBApiManager */ = {
 			isa = PBXGroup;
 			children = (
-				6608391C2073A56600432DE7 /* NKApiManager.h */,
-				6608391D2073A56600432DE7 /* NKApiManager.m */,
-				66D9636920A08A9000037200 /* NKMultipartForm.h */,
-				66D9636A20A08A9000037200 /* NKMultipartForm.m */,
-				6608391F2073A5FA00432DE7 /* NKResponse.h */,
-				660839202073A5FA00432DE7 /* NKResponse.m */,
+				6608391C2073A56600432DE7 /* MBApiManager.h */,
+				6608391D2073A56600432DE7 /* MBApiManager.m */,
+				66D9636920A08A9000037200 /* MBMultipartForm.h */,
+				66D9636A20A08A9000037200 /* MBMultipartForm.m */,
+				6608391F2073A5FA00432DE7 /* MBResponse.h */,
+				660839202073A5FA00432DE7 /* MBResponse.m */,
 			);
-			path = NKApiManager;
+			path = MBApiManager;
 			sourceTree = "<group>";
 		};
 		660E86572076021F008DF597 /* MBPaginationInfo */ = {
@@ -279,23 +279,23 @@
 			path = MBManager;
 			sourceTree = "<group>";
 		};
-		667F21D5207B53F500C4CA92 /* NKProject */ = {
+		667F21D5207B53F500C4CA92 /* MBProject */ = {
 			isa = PBXGroup;
 			children = (
-				66AF674B206E3236003FD62F /* NKProjectTests.m */,
+				66AF674B206E3236003FD62F /* MBProjectTests.m */,
 			);
-			path = NKProject;
+			path = MBProject;
 			sourceTree = "<group>";
 		};
-		667F21D6207B569400C4CA92 /* NKBlock */ = {
+		667F21D6207B569400C4CA92 /* MBBlock */ = {
 			isa = PBXGroup;
 			children = (
 				667F21DB207B580100C4CA92 /* block.json */,
 				667F21DD207B585300C4CA92 /* block_sections.json */,
 				667F21D9207B573200C4CA92 /* block_sections_elements.json */,
-				667F21D7207B56A900C4CA92 /* NKblockTests.m */,
+				667F21D7207B56A900C4CA92 /* MBBlockTests.m */,
 			);
-			path = NKBlock;
+			path = MBBlock;
 			sourceTree = "<group>";
 		};
 		667F21E2207B5BC100C4CA92 /* NKSection */ = {
@@ -303,7 +303,7 @@
 			children = (
 				667F21E6207B5C0700C4CA92 /* section.json */,
 				667F21E5207B5C0700C4CA92 /* section_elements.json */,
-				667F21E3207B5BD800C4CA92 /* NKSectionTests.m */,
+				667F21E3207B5BD800C4CA92 /* MBSectionTests.m */,
 			);
 			path = NKSection;
 			sourceTree = "<group>";
@@ -329,12 +329,12 @@
 			path = TableViewCell;
 			sourceTree = "<group>";
 		};
-		6684452420FDF14C00118F62 /* NKPlugin */ = {
+		6684452420FDF14C00118F62 /* MBPlugin */ = {
 			isa = PBXGroup;
 			children = (
-				6684452520FDF18500118F62 /* NKPlugin.h */,
+				6684452520FDF18500118F62 /* MBPlugin.h */,
 			);
-			path = NKPlugin;
+			path = MBPlugin;
 			sourceTree = "<group>";
 		};
 		66AF6726206E3236003FD62F = {
@@ -361,8 +361,8 @@
 		66AF674A206E3236003FD62F /* MBurgerTests */ = {
 			isa = PBXGroup;
 			children = (
-				667F21D5207B53F500C4CA92 /* NKProject */,
-				667F21D6207B569400C4CA92 /* NKBlock */,
+				667F21D5207B53F500C4CA92 /* MBProject */,
+				667F21D6207B569400C4CA92 /* MBBlock */,
 				667F21E2207B5BC100C4CA92 /* NKSection */,
 				66AF674D206E3236003FD62F /* Info.plist */,
 			);
@@ -376,9 +376,9 @@
 				6620D43320A339040059CE42 /* MBManager */,
 				66B1F7B020A32179009602C6 /* MBClient */,
 				66B1F7AB20A319EB009602C6 /* MBAdmin */,
-				66C4060C20A1E0C70044885E /* NKAuth */,
-				6608391B2073950000432DE7 /* NKApiManager */,
-				6684452420FDF14C00118F62 /* NKPlugin */,
+				66C4060C20A1E0C70044885E /* MBAuth */,
+				6608391B2073950000432DE7 /* MBApiManager */,
+				6684452420FDF14C00118F62 /* MBPlugin */,
 			);
 			path = MBurger;
 			sourceTree = "<group>";
@@ -472,17 +472,17 @@
 			path = MBClient;
 			sourceTree = "<group>";
 		};
-		66C4060C20A1E0C70044885E /* NKAuth */ = {
+		66C4060C20A1E0C70044885E /* MBAuth */ = {
 			isa = PBXGroup;
 			children = (
-				66C4060E20A1E1DA0044885E /* NKAuth.h */,
-				66C4060F20A1E1DA0044885E /* NKAuth.m */,
-				66C4061120A1E3760044885E /* NKUser.h */,
-				66C4061220A1E3760044885E /* NKUser.m */,
-				663F93AC20A2DE2D009F4DB1 /* NKKeychainItemWrapper.h */,
-				663F93AD20A2DE2D009F4DB1 /* NKKeychainItemWrapper.m */,
+				66C4060E20A1E1DA0044885E /* MBAuth.h */,
+				66C4060F20A1E1DA0044885E /* MBAuth.m */,
+				66C4061120A1E3760044885E /* MBUser.h */,
+				66C4061220A1E3760044885E /* MBUser.m */,
+				663F93AC20A2DE2D009F4DB1 /* MBKeychainItemWrapper.h */,
+				663F93AD20A2DE2D009F4DB1 /* MBKeychainItemWrapper.m */,
 			);
-			path = NKAuth;
+			path = MBAuth;
 			sourceTree = "<group>";
 		};
 		66D9635B20A07FE200037200 /* MBUploadableElement */ = {
@@ -670,7 +670,7 @@
 			files = (
 				66D9636F20A09AA500037200 /* MBUploadableElementsFactory.m in Sources */,
 				66EBBF1E20E0DD6600CCD6B1 /* MBDropdownElementOption.m in Sources */,
-				663F93AE20A2DE2D009F4DB1 /* NKKeychainItemWrapper.m in Sources */,
+				663F93AE20A2DE2D009F4DB1 /* MBKeychainItemWrapper.m in Sources */,
 				66D9635F20A0834800037200 /* MBUploadableElement.m in Sources */,
 				66AF675D206E38ED003FD62F /* MBSection.m in Sources */,
 				66B1F7AF20A31AA4009602C6 /* MBAdmin.m in Sources */,
@@ -687,19 +687,19 @@
 				667F40832077B76200B18D16 /* NewsDetailViewController.m in Sources */,
 				660E865E2076070C008DF597 /* MBSortParameter.m in Sources */,
 				660E866A20760741008DF597 /* MBGeneralParameter.m in Sources */,
-				66C4061020A1E1DA0044885E /* NKAuth.m in Sources */,
+				66C4061020A1E1DA0044885E /* MBAuth.m in Sources */,
 				66AF6737206E3236003FD62F /* NewsListViewController.m in Sources */,
 				66AF6782206E7979003FD62F /* MBAddressElement.m in Sources */,
-				6608391E2073A56600432DE7 /* NKApiManager.m in Sources */,
-				66C4061320A1E3760044885E /* NKUser.m in Sources */,
+				6608391E2073A56600432DE7 /* MBApiManager.m in Sources */,
+				66C4061320A1E3760044885E /* MBUser.m in Sources */,
 				66D9636520A0864300037200 /* MBUploadableImagesElement.m in Sources */,
 				66AF676E206E62AA003FD62F /* MBCheckboxElement.m in Sources */,
 				660E86612076071B008DF597 /* MBPaginationParameter.m in Sources */,
-				66D9636B20A08A9000037200 /* NKMultipartForm.m in Sources */,
+				66D9636B20A08A9000037200 /* MBMultipartForm.m in Sources */,
 				660E865A2076023A008DF597 /* MBPaginationInfo.m in Sources */,
 				66AF677F206E7609003FD62F /* MBGeneralElement.m in Sources */,
 				66AF6765206E3B93003FD62F /* MBTextElement.m in Sources */,
-				660839212073A5FA00432DE7 /* NKResponse.m in Sources */,
+				660839212073A5FA00432DE7 /* MBResponse.m in Sources */,
 				66B1F7B320A3235D009602C6 /* MBClient.m in Sources */,
 				66F925AE20751FA800C850F3 /* MBFile.m in Sources */,
 				660839242073B8A800432DE7 /* News.m in Sources */,
@@ -720,9 +720,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				667F21E4207B5BD800C4CA92 /* NKSectionTests.m in Sources */,
-				667F21D8207B56A900C4CA92 /* NKblockTests.m in Sources */,
-				66AF674C206E3236003FD62F /* NKProjectTests.m in Sources */,
+				667F21E4207B5BD800C4CA92 /* MBSectionTests.m in Sources */,
+				667F21D8207B56A900C4CA92 /* MBBlockTests.m in Sources */,
+				66AF674C206E3236003FD62F /* MBProjectTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -888,9 +888,9 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AXR257ENWG;
-				INFOPLIST_FILE = NookoSDKTests/Info.plist;
+				INFOPLIST_FILE = MBurgerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mumble.NookoSDKTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mumble.mburgerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MBurger.app/MBurger";
@@ -903,9 +903,9 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AXR257ENWG;
-				INFOPLIST_FILE = NookoSDKTests/Info.plist;
+				INFOPLIST_FILE = MBurgerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mumble.NookoSDKTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mumble.mburgerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MBurger.app/MBurger";

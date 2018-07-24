@@ -1,6 +1,6 @@
 //
-//  NKResponse.h
-//  NookoSDK
+//  MBResponse.h
+//  MBurger
 //
 //  Copyright © 2018 Mumble s.r.l. (https://mumbleideas.it/).
 //  All rights reserved.
@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 
 /**
- This class represent a response from the Nooko api.
+ This class represent a response from the MBurger api.
 */
-@interface NKResponse : NSObject
+@interface MBResponse : NSObject
 
 /**
  The payload of the response.

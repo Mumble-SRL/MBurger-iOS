@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 /**
- This class represents a Nooko project.
+ This class represents a MBurger project.
  */
 @interface MBProject : NSObject <NSCoding, NSSecureCoding>
 

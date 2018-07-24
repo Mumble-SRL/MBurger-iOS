@@ -1,6 +1,6 @@
 //
 //  main.m
-//  NookoSDK
+//  MBurger
 //
 //  Copyright © 2018 Mumble. All rights reserved.
 //

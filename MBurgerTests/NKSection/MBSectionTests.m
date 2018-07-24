@@ -1,6 +1,6 @@
 //
-//  NKSectionTests.m
-//  NookoSDKTests
+//  MBSectionTests.m
+//  MBurgerTests
 //
 //  Copyright © 2018 Mumble s.r.l. (https://mumbleideas.it/).
 //  All rights reserved.
@@ -9,14 +9,14 @@
 #import <XCTest/XCTest.h>
 #import "MBSection.h"
 
-@interface NKSectionTests : XCTestCase{
+@interface MBSectionTests : XCTestCase{
     NSDictionary *sectionDictionary;
     NSDictionary *sectionWithElementsDictionary;
 }
 
 @end
 
-@implementation NKSectionTests
+@implementation MBSectionTests
 
 - (void)setUp {
     [super setUp];

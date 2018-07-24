@@ -7,7 +7,7 @@
 //
 
 #import "MBAdmin.h"
-#import "NKApiManager.h"
+#import "MBApiManager.h"
 #import "MBManager.h"
 
 @implementation MBAdmin
@@ -20,19 +20,19 @@
                               Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
     NSMutableArray *form = [[NSMutableArray alloc] init];
     for (MBUploadableElement *element in elements){
-        for (NKMultipartForm *elementForm in element.toForm){
+        for (MBMultipartForm *elementForm in element.toForm){
             [form addObject:elementForm];
         }
     }
-    [NKApiManager callApiWithApiToken:[MBManager sharedManager].apiToken
+    [MBApiManager callApiWithApiToken:[MBManager sharedManager].apiToken
                                Locale:[[MBManager sharedManager] localeString]
                               ApiName:[NSString stringWithFormat:@"blocks/%ld/sections", (long) blockId]
-                           HTTPMethod:NKHTTPMethodPost
+                           HTTPMethod:MBHTTPMethodPost
                            Parameters:nil
                      HeaderParameters:nil
                           Development:[MBManager sharedManager].development
                         MultipartForm:form
-                              Success:^(NKResponse *response) {
+                              Success:^(MBResponse *response) {
                                   NSInteger sectionId = [response.payload[@"id"] integerValue];
                                   if (success){
                                       success(sectionId);
@@ -51,19 +51,19 @@
                           Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
     NSMutableArray *form = [[NSMutableArray alloc] init];
     for (MBUploadableElement *element in elements){
-        for (NKMultipartForm *elementForm in element.toForm){
+        for (MBMultipartForm *elementForm in element.toForm){
             [form addObject:elementForm];
         }
     }
-    [NKApiManager callApiWithApiToken:[MBManager sharedManager].apiToken
+    [MBApiManager callApiWithApiToken:[MBManager sharedManager].apiToken
                                Locale:[[MBManager sharedManager] localeString]
                               ApiName:[NSString stringWithFormat:@"sections/%ld/update", (long) sectionId]
-                           HTTPMethod:NKHTTPMethodPost
+                           HTTPMethod:MBHTTPMethodPost
                            Parameters:nil
                      HeaderParameters:nil
                           Development:[MBManager sharedManager].development
                         MultipartForm:form
-                              Success:^(NKResponse *response) {
+                              Success:^(MBResponse *response) {
                                   if (success){
                                       success();
                                   }
@@ -78,14 +78,14 @@
 + (void) deleteSectionWithSectionId: (NSInteger) sectionId
                             Success: (nullable void (^)(void)) success
                             Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
-    [NKApiManager callApiWithApiToken:[MBManager sharedManager].apiToken
+    [MBApiManager callApiWithApiToken:[MBManager sharedManager].apiToken
                                Locale:[[MBManager sharedManager] localeString]
                               ApiName:[NSString stringWithFormat:@"sections/%ld/", (long) sectionId]
-                           HTTPMethod:NKHTTPMethodDelete
+                           HTTPMethod:MBHTTPMethodDelete
                            Parameters:nil
                      HeaderParameters:nil
                           Development:[MBManager sharedManager].development
-                              Success:^(NKResponse *response) {
+                              Success:^(MBResponse *response) {
                                   if (success){
                                       success();
                                   }
@@ -102,14 +102,14 @@
 + (void) deleteMediaWithMediaId: (NSInteger) mediaId
                         Success: (nullable void (^)(void)) success
                         Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
-    [NKApiManager callApiWithApiToken:[MBManager sharedManager].apiToken
+    [MBApiManager callApiWithApiToken:[MBManager sharedManager].apiToken
                                Locale:[[MBManager sharedManager] localeString]
                               ApiName:[NSString stringWithFormat:@"media/%ld/", (long) mediaId]
-                           HTTPMethod:NKHTTPMethodDelete
+                           HTTPMethod:MBHTTPMethodDelete
                            Parameters:nil
                      HeaderParameters:nil
                           Development:[MBManager sharedManager].development
-                              Success:^(NKResponse *response) {
+                              Success:^(MBResponse *response) {
                                   if (success){
                                       success();
                                   }

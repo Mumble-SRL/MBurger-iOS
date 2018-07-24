@@ -1,14 +1,14 @@
 //
-//  NKMultipartForm.m
-//  NookoSDK
+//  MBMultipartForm.m
+//  MBurger
 //
 //  Copyright © 2018 Mumble s.r.l. (https://mumbleideas.it/).
 //  All rights reserved.
 //
 
-#import "NKMultipartForm.h"
+#import "MBMultipartForm.h"
 
-@implementation NKMultipartForm
+@implementation MBMultipartForm
 
 - (instancetype) initWithName: (NSString *) name Data: (NSData *) data{
     self = [super init];

@@ -9,7 +9,7 @@
 #import "MBElement.h"
 
 /**
- This class represents a Nooko poll element, the property ansers contains the answers the user can give to a the poll.
+ This class represents a MBurger poll element, the property ansers contains the answers the user can give to a the poll.
  */
 @interface MBPollElement : MBElement <NSCoding, NSSecureCoding>
 

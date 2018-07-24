@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NKMultipartForm.h"
-
+#import "MBMultipartForm.h"
 
 /**
  An element can be uploaded when creating or editing a section.
@@ -48,10 +47,10 @@
 
 
 /**
- Converts the element to an array of `NKMultipartForm` representing it.
+ Converts the element to an array of `MBMultipartForm` representing it.
 
- @return An array of `NKMultipartForm` representing the element.
+ @return An array of `MBMultipartForm` representing the element.
  */
-- (NSArray <NKMultipartForm *> *) toForm;
+- (NSArray <MBMultipartForm *> *) toForm;
 
 @end

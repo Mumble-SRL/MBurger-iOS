@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NKResponse.h"
+#import "MBResponse.h"
 #import "MBElement.h"
 
 /**
- This class represents a Nooko section.
+ This class represents a MBurger section.
  */
 @interface MBSection : NSObject <NSCoding, NSSecureCoding>
 

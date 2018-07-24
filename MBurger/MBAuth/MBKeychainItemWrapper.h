@@ -54,7 +54,7 @@
  simple wrapper to provide a distinct barrier between all the idiosyncracies involved with the Keychain
  CF/NS container objects.
  */
-@interface NKKeychainItemWrapper : NSObject
+@interface MBKeychainItemWrapper : NSObject
 
 // Designated initializer.
 - (id)initWithIdentifier: (NSString *)identifier accessGroup:(NSString *)accessGroup;

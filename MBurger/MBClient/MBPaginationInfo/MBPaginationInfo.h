@@ -24,7 +24,7 @@
 @property (nonatomic, assign) NSInteger to;
 
 /**
- The total number of elements of that type on Nooko.
+ The total number of elements of that type on MBurger.
  */
 @property (nonatomic, assign) NSInteger total;
 
@@ -33,7 +33,7 @@
  
  @param from The starting index.
  @param to The ending index.
- @param total The total number of elements of that type on Nooko.
+ @param total The total number of elements of that type on MBurger.
 
  @return A newly created MBPaginationInfo initialized with the data passed.
  */

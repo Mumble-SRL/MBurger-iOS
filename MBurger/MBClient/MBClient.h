@@ -13,7 +13,7 @@
 #import "MBParameter.h"
 
 /**
- The main client of the SDK, this is your entry point for all the calls you do with Nooko.
+ The main client of the SDK, this is your entry point for all the calls you do with MBurger.
  All the api calls have two blocks as parameters called when the api completes, one (Success) for the succes case and one for the failure (Failure). These blocks are pushed in the main thread by the SDK.
  When the return of the api is na array it's returned also a `MBPaginationInfo` object with the information about the pagination (total number of elements and the range of the elements returned)
  */

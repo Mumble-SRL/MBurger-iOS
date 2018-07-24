@@ -1,6 +1,6 @@
 //
-//  NKMultipartForm.h
-//  NookoSDK
+//  MBMultipartForm.h
+//  MBurger
 //
 //  Copyright © 2018 Mumble s.r.l. (https://mumbleideas.it/).
 //  All rights reserved.
@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 
 /**
- A Form object used to pass data from the MBManager class to the NKApiManager
+ A Form object used to pass data from the MBManager class to the MBApiManager
  */
-@interface NKMultipartForm : NSObject
+@interface MBMultipartForm : NSObject
 
 /**
  The name of the parameter.
@@ -39,7 +39,7 @@
  @param name The name of the parameter.
  @param data The data of the form.
 
- @return A newly created NKMultipartForm initialized with the name and data.
+ @return A newly created MBMultipartForm initialized with the name and data.
  */
 - (nonnull instancetype) initWithName: (nonnull NSString *) name Data: (nonnull NSData *) data;
 
@@ -50,7 +50,7 @@
  @param fileURL The url of the file.
  @param mimeType The MIME type of the file.
 
- @return A newly created NKMultipartForm initialized with the name and data.
+ @return A newly created MBMultipartForm initialized with the name and data.
  */
 - (nonnull instancetype) initWithName: (nonnull NSString *) name FileUrl: (nonnull NSURL *) fileURL MimeType: (nullable NSString *) mimeType;
 

@@ -10,7 +10,7 @@
 #import "MBParameter.h"
 
 /**
- A general parameter passed to the Nooko Api.
+ A general parameter passed to the MBurger Api.
  */
 @interface MBGeneralParameter : NSObject <MBParameter>
 

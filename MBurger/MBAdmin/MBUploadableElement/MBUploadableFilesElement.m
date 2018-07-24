@@ -1,13 +1,13 @@
 //
 //  MBUploadableFilesElement.m
-//  NookoSDK
+//  MBurger
 //
 //  Copyright © 2018 Mumble s.r.l. (https://mumbleideas.it/).
 //  All rights reserved.
 //
 
 #import "MBUploadableFilesElement.h"
-#import "NKMultipartForm.h"
+#import "MBMultipartForm.h"
 
 @implementation MBUploadableFilesElement
 
@@ -19,10 +19,10 @@
     return self;
 }
 
-- (NSArray <NKMultipartForm *> *) toForm {
+- (NSArray <MBMultipartForm *> *) toForm {
     NSMutableArray *form = [[NSMutableArray alloc] init];
     [self.fileURLs enumerateObjectsUsingBlock:^(NSURL *url, NSUInteger idx, BOOL *stop) {
-        [form addObject:[[NKMultipartForm alloc] initWithName:[self parameterNameForIndex:idx] FileUrl:url MimeType:nil]];
+        [form addObject:[[MBMultipartForm alloc] initWithName:[self parameterNameForIndex:idx] FileUrl:url MimeType:nil]];
     }];
     return form;
 }

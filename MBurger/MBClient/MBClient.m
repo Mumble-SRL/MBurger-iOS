@@ -7,7 +7,7 @@
 //
 
 #import "MBClient.h"
-#import "NKApiManager.h"
+#import "MBApiManager.h"
 #import "MBManager.h"
 #import "MBElementsFactory.h"
 
@@ -17,14 +17,14 @@
 
 + (void) getProjectWithSuccess: (void (^)(MBProject * project)) success
                        Failure: (void (^)(NSError *error)) failure {
-    [NKApiManager callApiWithApiToken:[MBManager sharedManager].apiToken
+    [MBApiManager callApiWithApiToken:[MBManager sharedManager].apiToken
                                Locale:[[MBManager sharedManager] localeString]
                               ApiName:@"project"
-                           HTTPMethod:NKHTTPMethodGet
+                           HTTPMethod:MBHTTPMethodGet
                            Parameters:nil
                      HeaderParameters:nil
                           Development:[MBManager sharedManager].development
-                              Success:^(NKResponse *response) {
+                              Success:^(MBResponse *response) {
                                   MBProject *project = [[MBProject alloc] initWithDictionary:response.payload];
                                   if (success){
                                       success(project);
@@ -69,14 +69,14 @@
     for (id <MBParameter> parameter in parameters){
         [parametersMutable addEntriesFromDictionary:parameter.parameterRepresentation];
     }
-    [NKApiManager callApiWithApiToken:[MBManager sharedManager].apiToken
+    [MBApiManager callApiWithApiToken:[MBManager sharedManager].apiToken
                                Locale:[[MBManager sharedManager] localeString]
                               ApiName:@"blocks"
-                           HTTPMethod:NKHTTPMethodGet
+                           HTTPMethod:MBHTTPMethodGet
                            Parameters:parametersMutable
                      HeaderParameters:nil
                           Development:[MBManager sharedManager].development
-                              Success:^(NKResponse *response) {
+                              Success:^(MBResponse *response) {
                                   MBPaginationInfo *pagintaionInfo = [[MBPaginationInfo alloc] initWithDictionary:response.payload[@"meta"]];
                                   NSMutableArray *blocks = [[NSMutableArray alloc] init];
                                   dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
@@ -131,14 +131,14 @@
     for (id <MBParameter> parameter in parameters){
         [parametersMutable addEntriesFromDictionary:parameter.parameterRepresentation];
     }
-    [NKApiManager callApiWithApiToken:[MBManager sharedManager].apiToken
+    [MBApiManager callApiWithApiToken:[MBManager sharedManager].apiToken
                                Locale:[[MBManager sharedManager] localeString]
                               ApiName:[NSString stringWithFormat:@"blocks/%ld", (long) blockId]
-                           HTTPMethod:NKHTTPMethodGet
+                           HTTPMethod:MBHTTPMethodGet
                            Parameters:parametersMutable
                      HeaderParameters:nil
                           Development:[MBManager sharedManager].development
-                              Success:^(NKResponse *response) {
+                              Success:^(MBResponse *response) {
                                   MBBlock *block = [[MBBlock alloc] initWithDictionary:response.payload];
                                   if (success){
                                       success(block);
@@ -172,14 +172,14 @@
     for (id <MBParameter> parameter in parameters){
         [parametersMutable addEntriesFromDictionary:parameter.parameterRepresentation];
     }
-    [NKApiManager callApiWithApiToken:[MBManager sharedManager].apiToken
+    [MBApiManager callApiWithApiToken:[MBManager sharedManager].apiToken
                                Locale:[[MBManager sharedManager] localeString]
                               ApiName:[NSString stringWithFormat:@"blocks/%ld/sections", (long) blockId]
-                           HTTPMethod:NKHTTPMethodGet
+                           HTTPMethod:MBHTTPMethodGet
                            Parameters:parametersMutable
                      HeaderParameters:nil
                           Development:[MBManager sharedManager].development
-                              Success:^(NKResponse *response) {
+                              Success:^(MBResponse *response) {
                                   MBPaginationInfo *paginationInfo = [[MBPaginationInfo alloc] initWithDictionary:response.payload[@"meta"]];
                                   NSMutableArray *sections = [[NSMutableArray alloc] init];
                                   dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
@@ -215,14 +215,14 @@
     if (includeElements){
         parametersMutable[@"include"] = @"elements";
     }
-    [NKApiManager callApiWithApiToken:[MBManager sharedManager].apiToken
+    [MBApiManager callApiWithApiToken:[MBManager sharedManager].apiToken
                                Locale:[[MBManager sharedManager] localeString]
                               ApiName:[NSString stringWithFormat:@"sections/%ld/", (long) sectionId]
-                           HTTPMethod:NKHTTPMethodGet
+                           HTTPMethod:MBHTTPMethodGet
                            Parameters:parametersMutable
                      HeaderParameters:nil
                           Development:[MBManager sharedManager].development
-                              Success:^(NKResponse *response) {
+                              Success:^(MBResponse *response) {
                                   MBSection *section = [[MBSection alloc] initWithDictionary:response.payload];
                                   if (success){
                                       success(section);
@@ -240,14 +240,14 @@
 + (void) getElementsWithSectionId: (NSInteger) sectionId
                           Success: (void (^)(NSDictionary *elements)) success
                           Failure: (void (^)(NSError *error)) failure {
-    [NKApiManager callApiWithApiToken:[MBManager sharedManager].apiToken
+    [MBApiManager callApiWithApiToken:[MBManager sharedManager].apiToken
                                Locale:[[MBManager sharedManager] localeString]
                               ApiName:[NSString stringWithFormat:@"sections/%ld/elements", (long) sectionId]
-                           HTTPMethod:NKHTTPMethodGet
+                           HTTPMethod:MBHTTPMethodGet
                            Parameters:nil
                      HeaderParameters:nil
                           Development:[MBManager sharedManager].development
-                              Success:^(NKResponse *response) {
+                              Success:^(MBResponse *response) {
                                   NSDictionary *elementsDictionaryFromApi = response.payload[@"items"];
                                   NSMutableDictionary *elementsMutable = [[NSMutableDictionary alloc] init];
                                   for (NSString *key in elementsDictionaryFromApi.allKeys){

@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 
 /**
- This protocol represent a parameter passed to the nooko api.
+ This protocol represent a parameter passed to the MBurger api.
  */
 @protocol MBParameter <NSObject>
 
 /**
  A dictionary of elements that represents the parameter.
- The keys and values of the dictionary are the one passed as parameters to the Nooko api.
+ The keys and values of the dictionary are the one passed as parameters to the MBurger api.
  */
 - (nonnull NSDictionary *) parameterRepresentation;
 

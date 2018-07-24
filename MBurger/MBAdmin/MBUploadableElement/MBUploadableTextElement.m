@@ -18,8 +18,8 @@
     return self;
 }
 
-- (NSArray <NKMultipartForm *> *) toForm {
-    return [[NSArray alloc] initWithObjects:[[NKMultipartForm alloc] initWithName:[self parameterName] Data:[self.text dataUsingEncoding:NSUTF8StringEncoding]], nil];
+- (NSArray <MBMultipartForm *> *) toForm {
+    return [[NSArray alloc] initWithObjects:[[MBMultipartForm alloc] initWithName:[self parameterName] Data:[self.text dataUsingEncoding:NSUTF8StringEncoding]], nil];
 }
 
 @end

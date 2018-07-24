@@ -1,18 +1,18 @@
 //
-//  NKPlugin.h
-//  NookoSDK
+//  MBPlugin.h
+//  MBurger
 //
 //  Created by Lorenzo Oliveto on 17/07/18.
 //  Copyright © 2018 Mumble. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "NKUser.h"
+#import "MBUser.h"
 
 /**
  A plugin that can be attached to add more functionalities
  */
-@protocol NKPlugin <NSObject>
+@protocol MBPlugin <NSObject>
 
 @optional
 

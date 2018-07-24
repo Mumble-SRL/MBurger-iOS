@@ -1,6 +1,6 @@
 //
-//  NKblockTests.m
-//  NookoSDKTests
+//  MBBlockTests.m
+//  MBurgerTests
 //
 //  Copyright © 2018 Mumble s.r.l. (https://mumbleideas.it/).
 //  All rights reserved.
@@ -9,7 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "MBBlock.h"
 
-@interface NKBlockTests : XCTestCase{
+@interface MBBlockTests : XCTestCase{
     NSDictionary *blockDictionary;
     NSDictionary *blockWithSectionsDictionary;
     NSDictionary *blockWithSectionsAndElementsDictionary;
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation NKBlockTests
+@implementation MBBlockTests
 
 - (void)setUp {
     [super setUp];

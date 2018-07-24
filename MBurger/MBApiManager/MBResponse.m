@@ -1,13 +1,13 @@
 //
-//  NKResponse.m
-//  NookoSDK
+//  MBResponse.m
+//  MBurger
 //
 //  Copyright © 2018 Mumble s.r.l. (https://mumbleideas.it/).
 //  All rights reserved.
 //
 
-#import "NKResponse.h"
+#import "MBResponse.h"
 
-@implementation NKResponse
+@implementation MBResponse
 
 @end

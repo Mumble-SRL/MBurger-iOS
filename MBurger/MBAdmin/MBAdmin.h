@@ -10,7 +10,7 @@
 #import "MBUploadableElement.h"
 
 /**
- Manages the calls to the admin Nooko apis.
+ Manages the calls to the admin MBurger apis.
  */
 @interface MBAdmin : NSObject
 

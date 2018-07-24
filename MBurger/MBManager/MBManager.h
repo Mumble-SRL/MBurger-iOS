@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NKPlugin.h"
+#import "MBPlugin.h"
 
 /**
  The manager of the SDK.
@@ -31,9 +31,9 @@ The API token used to make all the requests to the api.
 @property (readwrite, nonatomic, strong, nullable) NSLocale *locale;
 
 /**
- An array of plugin objects that can add functionality to the core Nooko.
+ An array of plugin objects that can add functionality to the core MBurger.
  */
-@property (readwrite, nonatomic, strong, nullable) NSArray <id <NKPlugin>> *plugins;
+@property (readwrite, nonatomic, strong, nullable) NSArray <id <MBPlugin>> *plugins;
 
 /**
  It's true if it's in development mode

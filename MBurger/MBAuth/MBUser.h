@@ -1,6 +1,6 @@
 //
-//  NKUser.h
-//  NookoSDK
+//  MBUser.h
+//  MBurger
 //
 //  Copyright © 2018 Mumble s.r.l. All rights reserved.
 //
@@ -11,7 +11,7 @@
 /**
  An object representing the user informations.
  */
-@interface NKUser : NSObject<NSCoding, NSSecureCoding>
+@interface MBUser : NSObject<NSCoding, NSSecureCoding>
 
 
 /**
@@ -70,7 +70,7 @@
  @param phone The phone number of the user.
  @param imageURL The url of the profile image.
  @param data Additional data.
- @return A newly created NKUser initialized sith the parameters passed.
+ @return A newly created MBUser initialized sith the parameters passed.
  */
 - (nonnull instancetype) initWithUserId: (NSInteger) userId
                            Name: (nonnull NSString *) name
@@ -84,7 +84,7 @@
  
  @param dictionary The response from the api.
  
- @return A newly created NKUser initialized with the data of the dictionary.
+ @return A newly created MBUser initialized with the data of the dictionary.
  */
 - (nonnull instancetype) initWithDictionary: (nonnull NSDictionary *) dictionary;
 

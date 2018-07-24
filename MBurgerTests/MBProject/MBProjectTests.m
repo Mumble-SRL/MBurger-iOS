@@ -1,6 +1,6 @@
 //
-//  NookoSDKTests.m
-//  NookoSDKTests
+//  MBProjectTests.m
+//  MBurgerTests
 //
 //  Copyright © 2018 Mumble s.r.l. (https://mumbleideas.it/).
 //  All rights reserved.
@@ -9,13 +9,13 @@
 #import <XCTest/XCTest.h>
 #import "MBProject.h"
 
-@interface NKProjectTests : XCTestCase{
+@interface MBProjectTests : XCTestCase{
     NSDictionary *projectDictionary;
 }
 
 @end
 
-@implementation NKProjectTests
+@implementation MBProjectTests
 
 - (void)setUp {
     [super setUp];

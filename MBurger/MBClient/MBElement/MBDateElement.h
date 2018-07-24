@@ -9,7 +9,7 @@
 #import "MBElement.h"
 
 /**
- This class represents a Nooko date element.
+ This class represents a MBurger date element.
  */
 @interface MBDateElement : MBElement <NSCoding, NSSecureCoding>
 
