@@ -7,7 +7,7 @@
 //
 
 #import "NewsListViewController.h"
-#import "NookoSDK.h"
+#import "MBurger.h"
 #import "News.h"
 #import "NewsTableViewCell.h"
 #import "NewsDetailViewController.h"
@@ -42,9 +42,9 @@
                                         @"link" : @"link"};
     
     NSMutableArray *newsArray = [[NSMutableArray alloc] init];
-    [NKClient getBlockWithBlockId:newsBlockId Parameters:nil IncludingSections:YES AndElements:YES Success:^(NKBlock *block) {
+    [MBClient getBlockWithBlockId:newsBlockId Parameters:nil IncludingSections:YES AndElements:YES Success:^(MBBlock *block) {
         self.navigationItem.title = block.title;
-        for (NKSection *section in block.sections){
+        for (MBSection *section in block.sections){
             News *n = [[News alloc] init];
             [section mapElementsToObject:n withMapping:mappingDictionary];
             [newsArray addObject:n];
