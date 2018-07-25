@@ -27,7 +27,7 @@ To integrate the MBurger into your Xcode project using CocoaPods, specify it in 
 platform :ios, '10.0'
 
 target 'TargetName' do
-    pod 'MBurger', git: 'https://github.com/Mumble-SRL/MBurger-Objc.git'
+    pod 'MBurger', git: 'https://gitlab.mumbleserver.it/iOS/MBurger'
 end
 ```
 
@@ -46,7 +46,7 @@ CocoaPods is the preferred methot to install the library.
 
 To install the library manually drag and drop the folder `MBurger` to your project structure in XCode. 
 
-Note that `MBurger` has `AFNetworking (3.0)` as a dependency, so you have to install also this library.
+Note that `MBurger` has `AFNetworking (3.0)` and `SAMKeychain (1.5)` as dependencies, so you have to install also this libraries.
 
 # Initialization
 
