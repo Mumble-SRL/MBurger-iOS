@@ -9,6 +9,7 @@
 #import "MBApiManager.h"
 #import "MBManager.h"
 #import "Lockbox.h"
+#import <Security/Security.h>
 
 @implementation MBAuth
 
@@ -213,7 +214,7 @@
 }
 
 + (void) logoutCurrentUser{
-    [Lockbox archiveObject:nil forKey:@"com.mumble.mburger"];
+    [Lockbox archiveObject:@"" forKey:@"com.mumble.mburger"];
 }
 
 + (BOOL) userIsLoggedIn{
