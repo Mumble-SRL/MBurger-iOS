@@ -8,7 +8,7 @@
 #import "MBAuth.h"
 #import "MBApiManager.h"
 #import "MBManager.h"
-#import "MBKeychainItemWrapper.h"
+#import "Lockbox.h"
 
 @implementation MBAuth
 
@@ -213,8 +213,7 @@
 }
 
 + (void) logoutCurrentUser{
-    MBKeychainItemWrapper *itemWrapper = [self keychainWrapper];
-    [itemWrapper resetKeychainItem];
+    [Lockbox archiveObject:nil forKey:@"com.mumble.mburger"];
 }
 
 + (BOOL) userIsLoggedIn{
@@ -223,27 +222,14 @@
 }
 
 + (NSString *) authToken{
-    MBKeychainItemWrapper *itemWrapper = [self keychainWrapper];
-    NSData *data = [itemWrapper objectForKey:[self accessTokenKey]];
-    if (data){
-        return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    }
-    return nil;
+    NSString *token = [Lockbox unarchiveObjectForKey:@"com.mumble.mburger"];
+    return token;
 }
 
 + (void) saveAccessToken: (NSString *) accessToken {
     if (accessToken && ![accessToken isEqualToString:@""]){
-        [[self keychainWrapper] setObject:[accessToken dataUsingEncoding:NSUTF8StringEncoding] forKey:[self accessTokenKey]];
+        [Lockbox archiveObject:accessToken forKey:@"com.mumble.mburger"];
     }
-}
-
-+ (MBKeychainItemWrapper *) keychainWrapper {
-    MBKeychainItemWrapper *keychainWrapper = [[MBKeychainItemWrapper alloc] initWithIdentifier:@"com.mumble.mburger" accessGroup:nil];
-    return keychainWrapper;
-}
-
-+ (NSString *) accessTokenKey {
-    return (__bridge id) kSecValueData;
 }
 
 + (void) handleApiResponseAndSaveNewTokenIfPresentWithResponse: (NSHTTPURLResponse *) response {

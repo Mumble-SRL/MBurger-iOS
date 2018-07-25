@@ -63,6 +63,10 @@ If a user is authenticated you can retrieve its access token with `[MBAuth authT
 
 To logout the current user use `[MBAuth logoutCurrentUser]`.
 
+MBAuth saves the user information in a Keychain with the identifier `com.mumble.mburger`.
+If the app crashes when authenticating the user with the message `Couldn't add the Keychain Item.` turn on Keychain sharing in your app capabilities section for your app and add `com.mumble.mburger`
+
+![Keychain](Images/Keychain.png)
 
 # Retrieve user informations
 

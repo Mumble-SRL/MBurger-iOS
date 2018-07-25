@@ -19,7 +19,7 @@
 		660E866420760726008DF597 /* MBFilterParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E866320760726008DF597 /* MBFilterParameter.m */; };
 		660E866720760734008DF597 /* MBGeofenceParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E866620760734008DF597 /* MBGeofenceParameter.m */; };
 		660E866A20760741008DF597 /* MBGeneralParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E866920760741008DF597 /* MBGeneralParameter.m */; };
-		663F93AE20A2DE2D009F4DB1 /* MBKeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 663F93AD20A2DE2D009F4DB1 /* MBKeychainItemWrapper.m */; };
+		6619320F2108ACCB00B2307A /* Lockbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 6619320E2108ACCB00B2307A /* Lockbox.m */; };
 		667F21D8207B56A900C4CA92 /* MBBlockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 667F21D7207B56A900C4CA92 /* MBBlockTests.m */; };
 		667F21DA207B573200C4CA92 /* block_sections_elements.json in Resources */ = {isa = PBXBuildFile; fileRef = 667F21D9207B573200C4CA92 /* block_sections_elements.json */; };
 		667F21DC207B580100C4CA92 /* block.json in Resources */ = {isa = PBXBuildFile; fileRef = 667F21DB207B580100C4CA92 /* block.json */; };
@@ -101,8 +101,8 @@
 		660E866820760741008DF597 /* MBGeneralParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBGeneralParameter.h; sourceTree = "<group>"; };
 		660E866920760741008DF597 /* MBGeneralParameter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBGeneralParameter.m; sourceTree = "<group>"; };
 		660E866C2076088B008DF597 /* MBParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBParameter.h; sourceTree = "<group>"; };
-		663F93AC20A2DE2D009F4DB1 /* MBKeychainItemWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBKeychainItemWrapper.h; sourceTree = "<group>"; };
-		663F93AD20A2DE2D009F4DB1 /* MBKeychainItemWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBKeychainItemWrapper.m; sourceTree = "<group>"; };
+		6619320D2108ACCB00B2307A /* Lockbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lockbox.h; sourceTree = "<group>"; };
+		6619320E2108ACCB00B2307A /* Lockbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lockbox.m; sourceTree = "<group>"; };
 		663F93AF20A2E071009F4DB1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		663F93B120A2E125009F4DB1 /* MBurger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MBurger.entitlements; sourceTree = "<group>"; };
 		667F21D7207B56A900C4CA92 /* MBBlockTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBBlockTests.m; sourceTree = "<group>"; };
@@ -266,6 +266,15 @@
 				660E866920760741008DF597 /* MBGeneralParameter.m */,
 			);
 			path = MBParameter;
+			sourceTree = "<group>";
+		};
+		6619320C2108ACBE00B2307A /* LockBox */ = {
+			isa = PBXGroup;
+			children = (
+				6619320D2108ACCB00B2307A /* Lockbox.h */,
+				6619320E2108ACCB00B2307A /* Lockbox.m */,
+			);
+			path = LockBox;
 			sourceTree = "<group>";
 		};
 		6620D43320A339040059CE42 /* MBManager */ = {
@@ -479,8 +488,7 @@
 				66C4060F20A1E1DA0044885E /* MBAuth.m */,
 				66C4061120A1E3760044885E /* MBUser.h */,
 				66C4061220A1E3760044885E /* MBUser.m */,
-				663F93AC20A2DE2D009F4DB1 /* MBKeychainItemWrapper.h */,
-				663F93AD20A2DE2D009F4DB1 /* MBKeychainItemWrapper.m */,
+				6619320C2108ACBE00B2307A /* LockBox */,
 			);
 			path = MBAuth;
 			sourceTree = "<group>";
@@ -670,7 +678,7 @@
 			files = (
 				66D9636F20A09AA500037200 /* MBUploadableElementsFactory.m in Sources */,
 				66EBBF1E20E0DD6600CCD6B1 /* MBDropdownElementOption.m in Sources */,
-				663F93AE20A2DE2D009F4DB1 /* MBKeychainItemWrapper.m in Sources */,
+				6619320F2108ACCB00B2307A /* Lockbox.m in Sources */,
 				66D9635F20A0834800037200 /* MBUploadableElement.m in Sources */,
 				66AF675D206E38ED003FD62F /* MBSection.m in Sources */,
 				66B1F7AF20A31AA4009602C6 /* MBAdmin.m in Sources */,
