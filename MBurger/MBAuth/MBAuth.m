@@ -8,8 +8,7 @@
 #import "MBAuth.h"
 #import "MBApiManager.h"
 #import "MBManager.h"
-#import "MBKeychainItemWrapper.h"
-#import <Security/Security.h>
+#import <SAMKeychain/SAMKeychain.h>
 
 @implementation MBAuth
 
@@ -214,8 +213,7 @@
 }
 
 + (void) logoutCurrentUser{
-    MBKeychainItemWrapper *itemWrapper = [self keychainWrapper];
-    [itemWrapper resetKeychainItem];
+    [SAMKeychain deletePasswordForService:@"com.mumble.mburger.service" account:@"com.mumble.mburger.account"];
 }
 
 + (BOOL) userIsLoggedIn{
@@ -224,23 +222,13 @@
 }
 
 + (NSString *) authToken{
-    MBKeychainItemWrapper *itemWrapper = [self keychainWrapper];
-    NSData *data = [itemWrapper objectForKey:[self accessTokenKey]];
-    if (data){
-        return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    }
-    return nil;
+    return [SAMKeychain passwordForService:@"com.mumble.mburger.service" account:@"com.mumble.mburger.account"];
 }
 
 + (void) saveAccessToken: (NSString *) accessToken {
     if (accessToken && ![accessToken isEqualToString:@""]){
-        [[self keychainWrapper] setObject:[accessToken dataUsingEncoding:NSUTF8StringEncoding] forKey:[self accessTokenKey]];
+        [SAMKeychain setPassword:accessToken forService:@"com.mumble.mburger.service" account:@"com.mumble.mburger.account"];
     }
-}
-
-+ (MBKeychainItemWrapper *) keychainWrapper {
-    MBKeychainItemWrapper *keychainWrapper = [[MBKeychainItemWrapper alloc] initWithIdentifier:@"com.mumble.mburger" accessGroup:nil];
-    return keychainWrapper;
 }
 
 + (NSString *) accessTokenKey {

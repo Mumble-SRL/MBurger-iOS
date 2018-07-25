@@ -19,7 +19,6 @@
 		660E866420760726008DF597 /* MBFilterParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E866320760726008DF597 /* MBFilterParameter.m */; };
 		660E866720760734008DF597 /* MBGeofenceParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E866620760734008DF597 /* MBGeofenceParameter.m */; };
 		660E866A20760741008DF597 /* MBGeneralParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E866920760741008DF597 /* MBGeneralParameter.m */; };
-		661932122108B09000B2307A /* MBKeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 661932112108B09000B2307A /* MBKeychainItemWrapper.m */; };
 		667F21D8207B56A900C4CA92 /* MBBlockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 667F21D7207B56A900C4CA92 /* MBBlockTests.m */; };
 		667F21DA207B573200C4CA92 /* block_sections_elements.json in Resources */ = {isa = PBXBuildFile; fileRef = 667F21D9207B573200C4CA92 /* block_sections_elements.json */; };
 		667F21DC207B580100C4CA92 /* block.json in Resources */ = {isa = PBXBuildFile; fileRef = 667F21DB207B580100C4CA92 /* block.json */; };
@@ -101,8 +100,6 @@
 		660E866820760741008DF597 /* MBGeneralParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBGeneralParameter.h; sourceTree = "<group>"; };
 		660E866920760741008DF597 /* MBGeneralParameter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBGeneralParameter.m; sourceTree = "<group>"; };
 		660E866C2076088B008DF597 /* MBParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBParameter.h; sourceTree = "<group>"; };
-		661932102108B09000B2307A /* MBKeychainItemWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBKeychainItemWrapper.h; sourceTree = "<group>"; };
-		661932112108B09000B2307A /* MBKeychainItemWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBKeychainItemWrapper.m; sourceTree = "<group>"; };
 		663F93AF20A2E071009F4DB1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		663F93B120A2E125009F4DB1 /* MBurger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MBurger.entitlements; sourceTree = "<group>"; };
 		667F21D7207B56A900C4CA92 /* MBBlockTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBBlockTests.m; sourceTree = "<group>"; };
@@ -479,8 +476,6 @@
 				66C4060F20A1E1DA0044885E /* MBAuth.m */,
 				66C4061120A1E3760044885E /* MBUser.h */,
 				66C4061220A1E3760044885E /* MBUser.m */,
-				661932102108B09000B2307A /* MBKeychainItemWrapper.h */,
-				661932112108B09000B2307A /* MBKeychainItemWrapper.m */,
 			);
 			path = MBAuth;
 			sourceTree = "<group>";
@@ -541,6 +536,7 @@
 				66AF672B206E3236003FD62F /* Sources */,
 				66AF672C206E3236003FD62F /* Frameworks */,
 				66AF672D206E3236003FD62F /* Resources */,
+				04476D080C9DFD6AA9F0163A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -643,6 +639,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		04476D080C9DFD6AA9F0163A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MBurger/Pods-MBurger-resources.sh",
+				"${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SAMKeychain.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MBurger/Pods-MBurger-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		57CDA275FCE80AF98FBC83B1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -672,7 +686,6 @@
 				66EBBF1E20E0DD6600CCD6B1 /* MBDropdownElementOption.m in Sources */,
 				66D9635F20A0834800037200 /* MBUploadableElement.m in Sources */,
 				66AF675D206E38ED003FD62F /* MBSection.m in Sources */,
-				661932122108B09000B2307A /* MBKeychainItemWrapper.m in Sources */,
 				66B1F7AF20A31AA4009602C6 /* MBAdmin.m in Sources */,
 				66AF6768206E4AD1003FD62F /* MBImagesElement.m in Sources */,
 				66EBBF2E20E1251800CCD6B1 /* MBUtilities.m in Sources */,
