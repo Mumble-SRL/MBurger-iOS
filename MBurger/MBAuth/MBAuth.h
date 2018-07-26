@@ -106,6 +106,16 @@
                        Success: (nullable void (^)(MBUser * _Nonnull user)) success
                        Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
+
+/**
+ Deletes the current authenticated user. It will call the `logoutCurrentUser` if the deletion is succesful.
+
+ @param success A block object to be executed when the task finishes successfully. This block has no return value and takes no arguments.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
+ */
++ (void) deleteCurrentUserWithSuccess: (nullable void (^)(void)) success
+                              Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
+
 /**
  Returns true if a user is authenticate. This funcion check if the access token saved in the keychain is non-null and different from an empty string.
 

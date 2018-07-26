@@ -215,6 +215,27 @@ static NSString *_mbAuthToken = nil;
                               }];
 }
 
++ (void) deleteCurrentUserWithSuccess: (void (^)(void)) success
+                              Failure: (void (^)(NSError *error)) failure{
+    [MBApiManager callApiWithApiToken:MBManager.sharedManager.apiToken
+                               Locale:[MBManager.sharedManager localeString]
+                              ApiName:@"profile/delete"
+                           HTTPMethod:MBHTTPMethodDelete
+                           Parameters:nil
+                     HeaderParameters:nil
+                          Development:[MBManager sharedManager].development
+                              Success:^(MBResponse *response) {
+                                  [self logoutCurrentUser];
+                                  if (success){
+                                      success();
+                                  }
+                              } Failure:^(NSError *error) {
+                                  if (failure){
+                                      failure(error);
+                                  }
+                              }];
+}
+
 + (void) logoutCurrentUser{
     [self setUserLoggedInInUserDefaults:FALSE];
     [SAMKeychain deletePasswordForService:@"com.mumble.mburger.service" account:@"com.mumble.mburger.account"];
