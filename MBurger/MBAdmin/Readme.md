@@ -5,7 +5,7 @@ You will have to use a token with write permission to edit the sections and with
 
 # Add/Edit a section
 
-You can add a section to a block with the function `[MBAdmin addSectionToBlockWithBlockId:Elements:Success:Failure:]`. To call this function you need to create an array of `MBUploadableElement` objects. You should create it using the `MBUploadableElementsFactory` class that is created to this purpose. An MBUploadableElementsFactory is allocateed with a locale identifier and creates object with this locale identifier. All the integrity controls of the server are still present in the APIs, you will find the description of the error in the object passed to the failure block. Below an example code to create a section. 
+You can add a section to a block with the function `[MBAdmin addSectionToBlockWithBlockId:Elements:Success:Failure:]`. To call this function you need to create an array of `MBUploadableElement` objects. You should create it using the `MBUploadableElementsFactory` class that is created to this purpose. A MBUploadableElementsFactory is allocateed with a locale identifier and creates object with this locale identifier. All the integrity controls of the server are still present in the APIs, you will find the description of the error in the object passed to the failure block. Below an example code to create a section. 
 
 **Objective-C**:
 
@@ -53,8 +53,7 @@ To delete a section with an id:
 ```swift
 MBAdmin.deleteSection(withSectionId: SECTION_ID, success: {
 }, failure: { (error) in
-
-            
+      
 })
 
 ```

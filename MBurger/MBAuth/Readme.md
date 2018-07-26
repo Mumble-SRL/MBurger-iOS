@@ -4,7 +4,7 @@ All the authentication apis are contained in the `MBAuth` class. You can registe
 
 # Register a user
 
-To register a user you call `[MBAuth registerUserWithName:surname:...]`. The fields, `name`, `surname`, `email` and `password` are required, the otheer are optional. The field `data` is a json string representing additional data that you want to pass when registering the user. It will be returned when retrieving the profile
+To register a user you call `[MBAuth registerUserWithName:surname:...]`. The fields, `name`, `surname`, `email` and `password` are required, the otheer are optional. The field `data` is an arbitrary object (array or dictionary) representing additional data that you want to pass when registering the user. It will be returned when retrieving the profile.
 
 **Objective-C**:
 

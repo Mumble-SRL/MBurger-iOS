@@ -84,6 +84,7 @@
                                       accessToken = response.payload[@"access_token"];
                                   }
                                   [self saveAccessToken:accessToken];
+                                  [self setUserLoggedInInUserDefaults: TRUE];
                                   if (success){
                                       success(accessToken);
                                   }
@@ -213,26 +214,39 @@
 }
 
 + (void) logoutCurrentUser{
+    [self setUserLoggedInInUserDefaults:FALSE];
     [SAMKeychain deletePasswordForService:@"com.mumble.mburger.service" account:@"com.mumble.mburger.account"];
 }
 
 + (BOOL) userIsLoggedIn{
     NSString *token = [self authToken];
-    return token != nil && ![token isEqualToString:@""];
+    return token != nil && ![token isEqualToString:@""] && [self userIsLoggedInFromUserDefaults];
 }
 
 + (NSString *) authToken{
-    return [SAMKeychain passwordForService:@"com.mumble.mburger.service" account:@"com.mumble.mburger.account"];
+    if ([self userIsLoggedInFromUserDefaults]){
+        return [SAMKeychain passwordForService:@"com.mumble.mburger.service" account:@"com.mumble.mburger.account"];
+    }
+    return nil;
 }
 
 + (void) saveAccessToken: (NSString *) accessToken {
-    if (accessToken && ![accessToken isEqualToString:@""]){
+    if (accessToken && ![accessToken isEqualToString:@""] && [self userIsLoggedInFromUserDefaults]){
         [SAMKeychain setPassword:accessToken forService:@"com.mumble.mburger.service" account:@"com.mumble.mburger.account"];
     }
 }
 
 + (NSString *) accessTokenKey {
     return (__bridge id) kSecValueData;
+}
+
++ (void) setUserLoggedInInUserDefaults: (BOOL) userLoggedIn {
+    [[NSUserDefaults standardUserDefaults] setBool:userLoggedIn forKey:@"com.mumble.mburger.auth.userLoggedIn"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++ (BOOL) userIsLoggedInFromUserDefaults {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"com.mumble.mburger.auth.userLoggedIn"];
 }
 
 + (void) handleApiResponseAndSaveNewTokenIfPresentWithResponse: (NSHTTPURLResponse *) response {
