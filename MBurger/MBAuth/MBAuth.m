@@ -12,6 +12,8 @@
 
 @implementation MBAuth
 
+static NSString *_mbAuthToken = nil;
+
 + (void) registerUserWithName: (NSString *) name
                       Surname: (NSString *) surname
                         Email: (NSString *) email
@@ -225,13 +227,20 @@
 
 + (NSString *) authToken{
     if ([self userIsLoggedInFromUserDefaults]){
-        return [SAMKeychain passwordForService:@"com.mumble.mburger.service" account:@"com.mumble.mburger.account"];
+        if (_mbAuthToken){
+            return _mbAuthToken;
+        } else {
+            NSString *tokenFromKeychain = [SAMKeychain passwordForService:@"com.mumble.mburger.service" account:@"com.mumble.mburger.account"];
+            _mbAuthToken = tokenFromKeychain;
+            return tokenFromKeychain;
+        }
     }
     return nil;
 }
 
 + (void) saveAccessToken: (NSString *) accessToken {
     if (accessToken && ![accessToken isEqualToString:@""] && [self userIsLoggedInFromUserDefaults]){
+        _mbAuthToken = accessToken;
         [SAMKeychain setPassword:accessToken forService:@"com.mumble.mburger.service" account:@"com.mumble.mburger.account"];
     }
 }
