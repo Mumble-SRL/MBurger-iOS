@@ -326,7 +326,7 @@ Read the full admin documentation apis [here](MBurger/MBAdmin).
 Read the full admin documentation apis [here](MBurger/MBAuth).
 
 # Plugins
-TODO
+You can add more to MBurger with plugins, classes that conforms to the `MPPlugin` protocol that can extend the functionalities of MBurger. An example of a plugin is [MPPayments](https://gitlab.mumbleserver.it/iOS/MBPayments) a plugin that you to charge the users with single payments or sbscription.
 
 # Documentation
 
