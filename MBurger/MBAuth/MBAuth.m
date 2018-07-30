@@ -85,8 +85,8 @@ static NSString *_mbAuthToken = nil;
                                   if (response.payload[@"access_token"]) {
                                       accessToken = response.payload[@"access_token"];
                                   }
-                                  [self saveAccessToken:accessToken];
                                   [self setUserLoggedInInUserDefaults: TRUE];
+                                  [self saveAccessToken:accessToken];
                                   if (success){
                                       success(accessToken);
                                   }
