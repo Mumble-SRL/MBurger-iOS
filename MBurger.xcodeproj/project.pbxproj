@@ -19,6 +19,7 @@
 		660E866420760726008DF597 /* MBFilterParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E866320760726008DF597 /* MBFilterParameter.m */; };
 		660E866720760734008DF597 /* MBGeofenceParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E866620760734008DF597 /* MBGeofenceParameter.m */; };
 		660E866A20760741008DF597 /* MBGeneralParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E866920760741008DF597 /* MBGeneralParameter.m */; };
+		6623CFAC211057C9007AB579 /* MBMarkdownElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6623CFAB211057C9007AB579 /* MBMarkdownElement.m */; };
 		667F21D8207B56A900C4CA92 /* MBBlockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 667F21D7207B56A900C4CA92 /* MBBlockTests.m */; };
 		667F21DA207B573200C4CA92 /* block_sections_elements.json in Resources */ = {isa = PBXBuildFile; fileRef = 667F21D9207B573200C4CA92 /* block_sections_elements.json */; };
 		667F21DC207B580100C4CA92 /* block.json in Resources */ = {isa = PBXBuildFile; fileRef = 667F21DB207B580100C4CA92 /* block.json */; };
@@ -100,6 +101,8 @@
 		660E866820760741008DF597 /* MBGeneralParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBGeneralParameter.h; sourceTree = "<group>"; };
 		660E866920760741008DF597 /* MBGeneralParameter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBGeneralParameter.m; sourceTree = "<group>"; };
 		660E866C2076088B008DF597 /* MBParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBParameter.h; sourceTree = "<group>"; };
+		6623CFAA211057C9007AB579 /* MBMarkdownElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBMarkdownElement.h; sourceTree = "<group>"; };
+		6623CFAB211057C9007AB579 /* MBMarkdownElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBMarkdownElement.m; sourceTree = "<group>"; };
 		663F93AF20A2E071009F4DB1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		663F93B120A2E125009F4DB1 /* MBurger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MBurger.entitlements; sourceTree = "<group>"; };
 		667F21D7207B56A900C4CA92 /* MBBlockTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBBlockTests.m; sourceTree = "<group>"; };
@@ -418,6 +421,8 @@
 				66EBBF1D20E0DD6600CCD6B1 /* MBDropdownElementOption.m */,
 				667F21E9207B606400C4CA92 /* MBPollElement.h */,
 				667F21EA207B606400C4CA92 /* MBPollElement.m */,
+				6623CFAA211057C9007AB579 /* MBMarkdownElement.h */,
+				6623CFAB211057C9007AB579 /* MBMarkdownElement.m */,
 				66AF677D206E7609003FD62F /* MBGeneralElement.h */,
 				66AF677E206E7609003FD62F /* MBGeneralElement.m */,
 				667F407E2077B3D500B18D16 /* MBElementsFactory.h */,
@@ -719,6 +724,7 @@
 				660E866420760726008DF597 /* MBFilterParameter.m in Sources */,
 				66AF6742206E3236003FD62F /* main.m in Sources */,
 				66D9636820A0865200037200 /* MBUploadableFilesElement.m in Sources */,
+				6623CFAC211057C9007AB579 /* MBMarkdownElement.m in Sources */,
 				66AF676B206E4BBD003FD62F /* MBMediaElement.m in Sources */,
 				66AF6759206E325E003FD62F /* MBManager.m in Sources */,
 				66AF6734206E3236003FD62F /* AppDelegate.m in Sources */,

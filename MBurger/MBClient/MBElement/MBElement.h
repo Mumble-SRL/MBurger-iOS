@@ -29,7 +29,9 @@ typedef NS_ENUM(NSUInteger, MBElementType) {
     /// A dropdown element
     MBElementTypeDropDown,
     /// A poll element
-    MBElementTypePoll
+    MBElementTypePoll,
+    /// A markdown element
+    MBElementTypeMarkdown
 };
 
 /**

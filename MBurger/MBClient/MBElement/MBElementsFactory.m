@@ -16,6 +16,7 @@
 #import "MBAddressElement.h"
 #import "MBDropdownElement.h"
 #import "MBPollElement.h"
+#import "MBMarkdownElement.h"
 #import "MBGeneralElement.h"
 
 @implementation MBElementsFactory
@@ -50,6 +51,9 @@
         return [[MBDropdownElement alloc] initWithDictionary:elementDictionary];
     }
     else if ([typeString isEqualToString:@"poll"]){
+        return [[MBPollElement alloc] initWithDictionary:elementDictionary];
+    }
+    else if ([typeString isEqualToString:@"markdown"]){
         return [[MBPollElement alloc] initWithDictionary:elementDictionary];
     }
     return [[MBGeneralElement alloc] initWithDictionary:elementDictionary];
