@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>MBClient  Reference</title>
+    <title>Other Classes  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -11,8 +11,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/objc/Section/MBClient" class="dashAnchor"></a>
-    <a title="MBClient  Reference"></a>
+    <a name="//apple_ref/objc/Section/Other Classes" class="dashAnchor"></a>
+    <a title="Other Classes  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p>
@@ -36,7 +36,7 @@
             <a href="index.html">MBurger Reference</a>
             <img id="carat" src="img/carat.png" />
           </span>
-          MBClient  Reference
+          Other Classes  Reference
         </p>
       </div>
     </div>
@@ -45,8 +45,9 @@
         <article class="main-content">
           <section>
             <section class="section">
-              <h1>MBClient</h1>
-              
+              <h1>Other Classes</h1>
+              <p>The following classes are available globally.</p>
+
             </section>
             <section class="section task-group-section">
               <div class="task-group">
@@ -54,9 +55,9 @@
                   <li class="item">
                     <div>
                       <code>
-                      <a name="/c:objc(cs)MBClient"></a>
-                      <a name="//apple_ref/objc/Class/MBClient" class="dashAnchor"></a>
-                      <a class="token" href="#/c:objc(cs)MBClient">MBClient</a>
+                      <a name="/c:objc(cs)MBMarkdownElement"></a>
+                      <a name="//apple_ref/objc/Class/MBMarkdownElement" class="dashAnchor"></a>
+                      <a class="token" href="#/c:objc(cs)MBMarkdownElement">MBMarkdownElement</a>
                       </code>
                     </div>
                     <div class="height-container">
@@ -64,59 +65,20 @@
                       <section class="section">
                         <div class="pointer"></div>
                         <div class="abstract">
-                          <p>The main client of the SDK, this is your entry point for all the calls you do with MBurger.
-All the api calls have two blocks as parameters called when the api completes, one (Success) for the succes case and one for the failure (Failure). These blocks are pushed in the main thread by the SDK.
-When the return of the api is na array it&rsquo;s returned also a <code><a href="Classes/MBPaginationInfo.html">MBPaginationInfo</a></code> object with the information about the pagination (total number of elements and the range of the elements returned)</p>
+                          <p>This class represents a MBurger markdown element.</p>
 
-                          <a href="Classes/MBClient.html" class="slightly-smaller">See more</a>
+                          <a href="Classes/MBMarkdownElement.html" class="slightly-smaller">See more</a>
                         </div>
                         <div class="declaration">
                           <h4>Declaration</h4>
                           <div class="language">
                             <p class="aside-title">Objective-C</p>
-                            <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">MBClient</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+                            <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">MBMarkdownElement</span> <span class="p">:</span> <span class="nc"><a href="Classes/MBElement.html">MBElement</a></span></code></pre>
 
                           </div>
                           <div class="language">
                             <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MBClient</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
-
-                          </div>
-                        </div>
-                      </section>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div class="task-group">
-                <ul>
-                  <li class="item">
-                    <div>
-                      <code>
-                      <a name="/c:objc(cs)MBPaginationInfo"></a>
-                      <a name="//apple_ref/objc/Class/MBPaginationInfo" class="dashAnchor"></a>
-                      <a class="token" href="#/c:objc(cs)MBPaginationInfo">MBPaginationInfo</a>
-                      </code>
-                    </div>
-                    <div class="height-container">
-                      <div class="pointer-container"></div>
-                      <section class="section">
-                        <div class="pointer"></div>
-                        <div class="abstract">
-                          <p>This class contains meta information abaut the pagination, it&rsquo;s usually returned when an array is requested by the api.</p>
-
-                          <a href="Classes/MBPaginationInfo.html" class="slightly-smaller">See more</a>
-                        </div>
-                        <div class="declaration">
-                          <h4>Declaration</h4>
-                          <div class="language">
-                            <p class="aside-title">Objective-C</p>
-                            <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">MBPaginationInfo</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
-
-                          </div>
-                          <div class="language">
-                            <p class="aside-title">Swift</p>
-                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MBPaginationInfo</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MBMarkdownElement</span> <span class="p">:</span> <span class="kt"><a href="Classes/MBElement.html">MBElement</a></span></code></pre>
 
                           </div>
                         </div>
