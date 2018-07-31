@@ -54,7 +54,7 @@
         return [[MBPollElement alloc] initWithDictionary:elementDictionary];
     }
     else if ([typeString isEqualToString:@"markdown"]){
-        return [[MBPollElement alloc] initWithDictionary:elementDictionary];
+        return [[MBMarkdownElement alloc] initWithDictionary:elementDictionary];
     }
     return [[MBGeneralElement alloc] initWithDictionary:elementDictionary];
 }
