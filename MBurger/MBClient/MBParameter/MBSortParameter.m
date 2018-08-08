@@ -18,7 +18,7 @@
     self = [super init];
     if (self){
         self.field = field;
-        self.ascending = self.ascending;
+        self.ascending = ascending;
     }
     return self;
 }
