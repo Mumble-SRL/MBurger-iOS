@@ -97,10 +97,30 @@ static NSString *_mbAuthToken = nil;
                               }];
 }
 
-+ (void) changePasswordForCurrentUserWithOldPassword: (nonnull NSString *) oldPassword
-                                         NewPassword: (nonnull NSString *) newPassword
-                                             Success: (nullable void (^)(void)) success
-                                             Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
++ (void) logoutCurrentWithSuccess: (void (^)(void)) success
+                          Failure: (void (^)(NSError *error)) failure{
+    [MBApiManager callApiWithApiToken:MBManager.sharedManager.apiToken
+                               Locale:[MBManager.sharedManager localeString]
+                              ApiName:@"logout"
+                           HTTPMethod:MBHTTPMethodPost
+                           Parameters:nil
+                     HeaderParameters:nil
+                          Development:[MBManager sharedManager].development
+                              Success:^(MBResponse *response) {
+                                  if (success){
+                                      success();
+                                  }
+                              } Failure:^(NSError *error) {
+                                  if (failure){
+                                      failure(error);
+                                  }
+                              }];
+}
+
++ (void) changePasswordForCurrentUserWithOldPassword: (NSString *) oldPassword
+                                         NewPassword: (NSString *) newPassword
+                                             Success: (void (^)(void)) success
+                                             Failure: (void (^)(NSError * _Nonnull error)) failure{
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     parameters[@"old_password"] = oldPassword;
     parameters[@"new_password"] = newPassword;
@@ -123,9 +143,9 @@ static NSString *_mbAuthToken = nil;
                               }];
 }
 
-+ (void) forgotPasswordWithEmail: (nonnull NSString *) email
-                         Success: (nullable void (^)(void)) success
-                         Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
++ (void) forgotPasswordWithEmail: (NSString *) email
+                         Success: (void (^)(void)) success
+                         Failure: (void (^)(NSError *error)) failure{
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     parameters[@"email"] = email;
 
@@ -147,8 +167,8 @@ static NSString *_mbAuthToken = nil;
                               }];
 }
 
-+ (void) getUserProfileWithSuccess: (nullable void (^)(MBUser * _Nonnull user)) success
-                           Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
++ (void) getUserProfileWithSuccess: (void (^)(MBUser *user)) success
+                           Failure: (void (^)(NSError *error)) failure{
     [MBApiManager callApiWithApiToken:MBManager.sharedManager.apiToken
                                Locale:[MBManager.sharedManager localeString]
                               ApiName:@"profile"

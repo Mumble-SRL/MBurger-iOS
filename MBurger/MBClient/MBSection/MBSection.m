@@ -70,14 +70,18 @@
             if (selfProperties != nil){
                 value = e;
                 for (NSString *property in selfProperties){
-                    value = [value valueForKey:property];
+                    if ([value valueForKey:property] != [NSNull null]){
+                        value = [value valueForKey:property];
+                    }
                 }
             }
             else {
                 value = [e value];
             }
             //TODO: should i check something?
-            [object setValue:value forKeyPath:objectKeyPath];
+            if (value != [NSNull null]){
+                [object setValue:value forKeyPath:objectKeyPath];
+            }
         }
     }];
     
