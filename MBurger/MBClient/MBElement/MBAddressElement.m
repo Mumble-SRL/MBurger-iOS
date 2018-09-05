@@ -28,9 +28,9 @@
     NSString *name = dictionary[@"name"];
     NSInteger order = [dictionary[@"order"] integerValue];
     NSDictionary *addressDictionary = dictionary[@"value"];
-    NSString *address = addressDictionary[@"address"];
-    double latitude = [addressDictionary[@"latitude"] doubleValue];
-    double longitude = [addressDictionary[@"longitude"] doubleValue];
+    NSString *address = addressDictionary[@"address"] != [NSNull null] ? addressDictionary[@"address"] : nil;
+    double latitude = addressDictionary[@"latitude"] != [NSNull null] ? [addressDictionary[@"latitude"] doubleValue] : 0;
+    double longitude = addressDictionary[@"longitude"] != [NSNull null] ? [addressDictionary[@"longitude"] doubleValue] : 0;
     return [self initWithElementId:elementId Name:name Order:order Address:address Latitude:latitude Longitude:longitude];
 }
 
