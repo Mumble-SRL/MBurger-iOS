@@ -27,7 +27,7 @@ To integrate the MBurger into your Xcode project using CocoaPods, specify it in 
 platform :ios, '10.0'
 
 target 'TargetName' do
-    pod 'MBurger', git: 'https://gitlab.mumbleserver.it/iOS/MBurger'
+    pod 'MBurger'
 end
 ```
 
@@ -326,7 +326,7 @@ Read the full admin documentation apis [here](MBurger/MBAdmin).
 Read the full admin documentation apis [here](MBurger/MBAuth).
 
 # Plugins
-You can add more to MBurger with plugins, classes that conforms to the `MPPlugin` protocol that can extend the functionalities of MBurger. An example of a plugin is [MPPayments](https://gitlab.mumbleserver.it/iOS/MBPayments) a plugin that you to charge the users with single payments or sbscription.
+You can add more to MBurger with plugins, classes that conforms to the `MPPlugin` protocol that can extend the functionalities of MBurger. An example of a plugin is [MPPayments](https://github.com/Mumble-SRL/MBPayments-iOS.git) a plugin that you to charge the users with single payments or sbscription.
 
 # Documentation
 
