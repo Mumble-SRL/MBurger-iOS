@@ -1,6 +1,6 @@
 //
 //  ViewController.h
-//  NookoSDK
+//  MBurger
 //
 //  Copyright © 2018 Mumble s.r.l. (https://mumbleideas.it/).
 //  All rights reserved.

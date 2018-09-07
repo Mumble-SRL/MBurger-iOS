@@ -6,9 +6,9 @@
 ![License: MIT](https://img.shields.io/badge/pod-v0.0.9-blue.svg)
 [![CocoaPods](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](LICENSE)
 
-# NoookoSDK
+# MBurger
 
-NookoSDK is a client libary, written in Objective-C, that can be used to interact with the [Nooko](https://nooko2.mumbleserver.it/login) API. The minimum deplaoyment target for the library is iOS 10.0.
+MBurger is a client libary, written in Objective-C, that can be used to interact with the [MBurger](https://nooko2.mumbleserver.it/login) API. The minimum deplaoyment target for the library is iOS 10.0.
 > Even this is a library written in Objective-C it can be integrated and used also in Swift projects. The example code below will be in both languages.
 
 # Installation
@@ -21,13 +21,13 @@ CocoaPods is a dependency manager for iOS, which automates and simplifies the pr
 $ gem install cocoapods
 ```
 
-To integrate the NookoSDK into your Xcode project using CocoaPods, specify it in your Podfile:
+To integrate the MBurger into your Xcode project using CocoaPods, specify it in your Podfile:
 
 ```ruby
 platform :ios, '10.0'
 
 target 'TargetName' do
-    pod 'NookoSDK', git: 'https://github.com/Mumble-SRL/NookoSDK-Objc.git'
+    pod 'MBurger'
 end
 ```
 
@@ -44,9 +44,9 @@ CocoaPods is the preferred methot to install the library.
 
 # Manual installation
 
-To install the library manually drag and drop the folder `NookoSDK` to your project structure in XCode. 
+To install the library manually drag and drop the folder `MBurger` to your project structure in XCode. 
 
-Note that `NookoSDK` has `AFNetworking (3.0)` as a dependency, so you have to install also this library.
+Note that `MBurger` has `AFNetworking (3.0)` and `SAMKeychain (1.5)` as dependencies, so you have to install also this libraries.
 
 # Initialization
 
@@ -54,13 +54,13 @@ To initialize the SDK you have to create a token through the [dashboard](https:/
 
 ![Dashboard image](Images/api_token.png)
 
-Then in your `AppDelegate` `application:didFinishLaunchingWithOptions:` initialize the `NKManager` of the SDK setting a token like this:
+Then in your `AppDelegate` `application:didFinishLaunchingWithOptions:` initialize the `MBManager` of the SDK setting a token like this:
 
 **Objective-C**:
 
 ```objective-c
 #import "AppDelegate.h"
-#import "NookoSDK.h"
+#import "MBurger.h"
 
 @interface AppDelegate ()
 
@@ -71,7 +71,7 @@ Then in your `AppDelegate` `application:didFinishLaunchingWithOptions:` initiali
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [NKManager sharedManager].apiToken = @"YOUR_API_TOKEN";
+    [MBManager sharedManager].apiToken = @"YOUR_API_TOKEN";
     
     return YES;
 }
@@ -80,12 +80,12 @@ Then in your `AppDelegate` `application:didFinishLaunchingWithOptions:` initiali
 **Swift**:
 
 ```swift
-import NookoSDK
+import MBurger
 
 ...
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        NKManager.shared().apiToken = "YOUR_API_TOKEN"
+        MBManager.shared().apiToken = "YOUR_API_TOKEN"
     return true
 }
 ```
@@ -94,7 +94,7 @@ You will not be able to interact with the SDK if you don't initialize it with a 
 
 # Usage
 
-Use the `NKClient` class to make all the request to the api to retrieve data from Nooko. All the api calls have a plurarl version and its singular counterpart. For example you can retrieve the list of blocks of the project or you can retrieve a single block giving its id.
+Use the `MBClient` class to make all the request to the api to retrieve data from MBurger. All the api calls have a plurarl version and its singular counterpart. For example you can retrieve the list of blocks of the project or you can retrieve a single block giving its id.
 
 # Project
 
@@ -104,7 +104,7 @@ You can retrieve the informations of the project like this:
 
 
 ```objective-c
-[NKClient getProjectWithSuccess:^(NKProject *project) {
+[MBClient getProjectWithSuccess:^(MBProject *project) {
         
 } Failure:^(NSError *error) {
 	NSLog(@"There was an error: %@", error.localizedDescription);
@@ -114,7 +114,7 @@ You can retrieve the informations of the project like this:
 **Swift**:
 
 ```swift
-NKClient.getProjectWithSuccess({ (project) in
+MBClient.getProjectWithSuccess({ (project) in
 
 }, failure: { (error) in
 
@@ -129,7 +129,7 @@ You can retrieve the blocks of the project with the function `getBlocksWithParam
 **Objective-C**:
 
 ```objective-c
-[NKClient getBlocksWithParameters:nil Success:^(NSArray<NKBlock *> *blocks, NKPaginationInfo *pagintaionInfo) {
+[MBClient getBlocksWithParameters:nil Success:^(NSArray<MBBlock *> *blocks, MBPaginationInfo *pagintaionInfo) {
      
 } Failure:^(NSError *error) {
         
@@ -139,29 +139,29 @@ You can retrieve the blocks of the project with the function `getBlocksWithParam
 **Swift**:
 
 ```swift
-NKClient.getBlocksWith(nil, success: { (blocks, paginationInfos) in
+MBClient.getBlocksWith(nil, success: { (blocks, paginationInfos) in
 
 }, failure: { (error) in
 
 })
 ```
 
-The parameter `parameters` is an optional array of objects that conforms to the `NKParameter` protocol passed to the nooko api as parameter. The majorityof the parameters that can be passed to the apis are already defined in the SDK and can be used after the initialization:
+The parameter `parameters` is an optional array of objects that conforms to the `MBParameter` protocol passed to the MBurger api as parameter. The majorityof the parameters that can be passed to the apis are already defined in the SDK and can be used after the initialization:
 
-* `NKSortParameter`
-* `NKPaginationParameter`
-* `NKFilterParameter`
-* `NKGeofenceParameter`
+* `MBSortParameter`
+* `MBPaginationParameter`
+* `MBFilterParameter`
+* `MBGeofenceParameter`
 
-If you want to pass another type of parameter you can use the `NKGeneralParameter` class that can be initialized with a key and a value that will be passed to the apis.
+If you want to pass another type of parameter you can use the `MBGeneralParameter` class that can be initialized with a key and a value that will be passed to the apis.
 
 So if you want to include a pagination parameter you can do like this:
 
 **Objective-C**:
 
 ```objective-c
-NKPaginationParameter *paginationParam = [[NKPaginationParameter alloc] initWithSkip:0 Take:10];
-[NKClient getBlocksWithParameters:@[paginationParam] Success:^(NSArray<NKBlock *> *blocks, NKPaginationInfo *pagintaionInfo) {
+MBPaginationParameter *paginationParam = [[MBPaginationParameter alloc] initWithSkip:0 Take:10];
+[MBClient getBlocksWithParameters:@[paginationParam] Success:^(NSArray<MBBlock *> *blocks, MBPaginationInfo *pagintaionInfo) {
         
 } Failure:^(NSError *error) {
         
@@ -171,8 +171,8 @@ NKPaginationParameter *paginationParam = [[NKPaginationParameter alloc] initWith
 **Swift**:
 
 ```swift
-let paginationParam = NKPaginationParameter(skip: 0, take: 10)
-NKClient.getBlocksWith([paginationParam], success: { (blocks, paginationInfos) in
+let paginationParam = MBPaginationParameter(skip: 0, take: 10)
+MBClient.getBlocksWith([paginationParam], success: { (blocks, paginationInfos) in
 
 }, failure: { (error) in
 
@@ -186,7 +186,7 @@ So you could retrieve the informations of all the blocks, all the sections of th
 **Objective-C**:
 
 ```objective-c
-[NKClient getBlocksWithParameters:nil IncludingSections:TRUE AndElements: TRUE Success:^(NSArray<NKBlock *> *blocks, NKPaginationInfo *pagintaionInfo) {
+[MBClient getBlocksWithParameters:nil IncludingSections:TRUE AndElements:TRUE Success:^(NSArray<MBBlock *> *blocks, MBPaginationInfo *pagintaionInfo) {
         
 } Failure:^(NSError *error) {
 
@@ -196,7 +196,7 @@ So you could retrieve the informations of all the blocks, all the sections of th
 **Swift**:
 
 ```swift
-NKClient.getBlocksWith(nil, includingSections: true, andElements: true, success: { (blocks, paginationInfos) in
+MBClient.getBlocksWith(nil, includingSections: true, andElements: true, success: { (blocks, paginationInfos) in
 
 }, failure: { (error) in
 
@@ -210,7 +210,7 @@ You can retrieve all the sections with a block with the given id with the functi
 **Objective-C**:
 
 ```objective-c
-[NKClient getSectionsWithBlockId:THE_BLOCK_ID Parameters:nil Success:^(NSArray<NKSection *> *sections, NKPaginationInfo *pagintaionInfo) {
+[MBClient getSectionsWithBlockId:THE_BLOCK_ID Parameters:nil Success:^(NSArray<MBSection *> *sections, MBPaginationInfo *pagintaionInfo) {
         
 } Failure:^(NSError *error) {
         
@@ -220,7 +220,7 @@ You can retrieve all the sections with a block with the given id with the functi
 **Swift**:
 
 ```swift
-NKClient.getSectionsWithBlockId(THE_BLOCK_ID, parameters: nil, success: { (sections, paginationInfos) in
+MBClient.getSectionsWithBlockId(THE_BLOCK_ID, parameters: nil, success: { (sections, paginationInfos) in
 
 }, failure: { (error) in
 
@@ -232,7 +232,7 @@ Like for the blocks there's a version of this function that takes a bool `includ
 **Objective-C**:
 
 ```objective-c
-[NKClient getSectionsWithBlockId:THE_BLOCK_ID IncludeElement:TRUE Parameters:nil Success:^(NSArray<NKSection *> *sections, NKPaginationInfo *pagintaionInfo) {
+[MBClient getSectionsWithBlockId:THE_BLOCK_ID IncludeElement:TRUE Parameters:nil Success:^(NSArray<MBSection *> *sections, MBPaginationInfo *pagintaionInfo) {
         
 } Failure:^(NSError *error) {
         
@@ -242,7 +242,7 @@ Like for the blocks there's a version of this function that takes a bool `includ
 **Swift**:
 
 ```swift
-NKClient.getSectionsWithBlockId(THE_BLOCK_ID, parameters: nil, includeElements: true, success: { (sections, paginationInfos) in
+MBClient.getSectionsWithBlockId(THE_BLOCK_ID, parameters: nil, includeElements: true, success: { (sections, paginationInfos) in
 
 }, failure: { (error) in
 
@@ -251,7 +251,7 @@ NKClient.getSectionsWithBlockId(THE_BLOCK_ID, parameters: nil, includeElements: 
 
 # Object mapping
 
-The `NKSection` class has a commodity function that can be used to map the elements of the section to a custom object created by you. For Exaple if you have a `News` object like this
+The `MBSection` class has a commodity function that can be used to map the elements of the section to a custom object created by you. For Exaple if you have a `News` object like this
 
 ```objective-c
 #import <Foundation/Foundation.h>
@@ -266,7 +266,7 @@ The `NKSection` class has a commodity function that can be used to map the eleme
 @end
 ```
 
-And a block in Nooko that represent a newsfeed you could create and populate an array of news object like this:
+And a block in MBurger that represent a newsfeed you could create and populate an array of news object like this:
 
 ```objective-c
 NSInteger newsBlockId = 12;
@@ -275,9 +275,9 @@ NSDictionary *mappingDictionary = @{@"title" : @"title",
                                     @"image.firstImage.url" : @"imageUrl",
                                     @"link" : @"link"};
 NSMutableArray *newsArray = [[NSMutableArray alloc] init];
-[NKClient getBlockWithBlockId:newsBlockId Parameters:nil IncludingSections:YES AndElements:YES Success:^(NKBlock *block) {
+[MBClient getBlockWithBlockId:newsBlockId Parameters:nil IncludingSections:YES AndElements:YES Success:^(MBBlock *block) {
    NSMutableArray *newsArray = [[NSMutableArray alloc] init];
-   for (NKSection *section in block.sections){
+   for (MBSection *section in block.sections){
         News *n = [[News alloc] init];
         [section mapElementsToObject:n withMapping:mappingDictionary];
         [newsArray addObject:n];
@@ -295,35 +295,38 @@ You can find a complete example in the Example project.
 
 All the model objects implement the `NSCoding` and `NSSecureCoding` protocol so you can serialize and deserialize them without having to implement it. Below the list of objects that implement those protocols
 
-* `NKProject`
-* `NKBlock`
-* `NKSection`
-* `NKElement`
-* `NKTextElement`
-* `NKImagesElement`
-* `NKImage`
-* `NKMediaElement`
-* `NKFile`
-* `NKCheckboxElement`
-* `NKWysiwygElement`
-* `NKDateElement`
-* `NKAddressElement`
-* `NKDropdownElement`
-* `NKPollElement`
-* `NKGeneralElement`
-* `NKUser`
+* `MBProject`
+* `MBBlock`
+* `MBSection`
+* `MBElement`
+* `MBTextElement`
+* `MBImagesElement`
+* `MBImage`
+* `MBMediaElement`
+* `MBFile`
+* `MBCheckboxElement`
+* `MBWysiwygElement`
+* `MBDateElement`
+* `MBAddressElement`
+* `MBDropdownElement`
+* `MBPollElement`
+* `MBGeneralElement`
+* `MBUser`
 
 # Equality
 
-All the model objects implement the `isEqual:` function based on the corresponding id. So for example an NKSection will result equal to another NKSection object if they have the same `sectionId`.
+All the model objects implement the `isEqual:` function based on the corresponding id. So for example an MBSection will result equal to another MBSection object if they have the same `sectionId`.
 
 # Admin
 
-Read the full admin documentation apis [here](NookoSDK/NKAdmin).
+Read the full admin documentation apis [here](MBurger/MBAdmin).
 
 # Authentication
 
-Read the full admin documentation apis [here](NookoSDK/NKAuth).
+Read the full admin documentation apis [here](MBurger/MBAuth).
+
+# Plugins
+You can add more to MBurger with plugins, classes that conforms to the `MPPlugin` protocol that can extend the functionalities of MBurger. An example of a plugin is [MPPayments](https://github.com/Mumble-SRL/MBPayments-iOS.git) a plugin that you to charge the users with single payments or sbscription.
 
 # Documentation
 
@@ -336,4 +339,4 @@ You can contuct us at [info@mumbleideas.it](mailto:info@mumbleideas.it).
 
 # License
 
-NookoSDK is released under the Apache 2.0 license. See [LICENSE](LICENSE) for details.
+MBurger is released under the Apache 2.0 license. See [LICENSE](LICENSE) for details.

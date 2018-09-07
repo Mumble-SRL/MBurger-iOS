@@ -1,13 +1,13 @@
 //
 //  AppDelegate.m
-//  NookoSDK
+//  MBurger
 //
 //  Copyright © 2018 Mumble s.r.l. (https://mumbleideas.it/).
 //  All rights reserved.
 //
 
 #import "AppDelegate.h"
-#import "NookoSDK.h"
+#import "MBurger.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [NKManager sharedManager].apiToken = @"6323250ee3b1f29fbb704065118eb9660a5742ca";
+    [MBManager sharedManager].apiToken = @"6323250ee3b1f29fbb704065118eb9660a5742ca";
     
     return YES;
 }

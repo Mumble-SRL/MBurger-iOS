@@ -1,76 +1,79 @@
 clean: true
 objc: true
-umbrella_header: NookoSDK/NookoSDK.h
-framework_root: NookoSDK
+umbrella_header: MBurger/MBurger.h
+framework_root: MBurger
 readme: Readme.md
 module_version: 0.0.7
 sdk: iphonesimulator
 
 author: Mumble
 author_url: https://mumbleideas.it/
-github_url: https://github.com/Mumble-SRL/NookoSDK-Objc
+github_url: https://gitlab.mumbleserver.it/iOS/MBurger
 
 theme: jony
 
 custom_categories:
-  - name: NKManager
+  - name: MBManager
     children:
-    - NKManager 
-  - name: NKClient
+    - MBManager 
+  - name: MBClient
     children:
-    - NKClient
-    - NKPaginationInfo
-  - name: NKParameter
+    - MBClient
+    - MBPaginationInfo
+  - name: MBParameter
     children: 
-    - NKParameter
-    - NKSortParameter
-    - NKPaginationParameter
-    - NKFilterParameter
-    - NKGeofenceParameter
-    - NKGeneralParameter
-  - name: NKProject
+    - MBParameter
+    - MBSortParameter
+    - MBPaginationParameter
+    - MBFilterParameter
+    - MBGeofenceParameter
+    - MBGeneralParameter
+  - name: MBProject
     children:
-    - NKProject
-  - name: NKBlock
+    - MBProject
+  - name: MBBlock
     children:
-    - NKBlock
-  - name: NKSection
+    - MBBlock
+  - name: MBSection
     children:
-    - NKSection
-  - name: NKElement
+    - MBSection
+  - name: MBElement
     children:
-    - NKElement
-    - NKTextElement
-    - NKImagesElement
-    - NKImage
-    - NKMediaElement
-    - NKFile
-    - NKCheckboxElement
-    - NKWysiwygElement
-    - NKDateElement
-    - NKAddressElement
-    - NKDropdownElement
-    - NKDropdownElementOption
-    - NKPollElement
-    - NKGeneralElement
-    - NKElementFactory
-  - name: NKAdmin
+    - MBElement
+    - MBTextElement
+    - MBImagesElement
+    - MBImage
+    - MBMediaElement
+    - MBFile
+    - MBCheckboxElement
+    - MBWysiwygElement
+    - MBDateElement
+    - MBAddressElement
+    - MBDropdownElement
+    - MBDropdownElementOption
+    - MBPollElement
+    - MBGeneralElement
+    - MBElementsFactory
+  - name: MBAdmin
     children:
-    - NKAdmin
-    - NKUploadableElement
-    - NKUploadableTextElement
-    - NKUploadableImagesElement
-    - NKUploadableFilesElement
-    - NKUploadableElementsFactory
-  - name: NKAuth
+    - MBAdmin
+    - MBUploadableElement
+    - MBUploadableTextElement
+    - MBUploadableImagesElement
+    - MBUploadableFilesElement
+    - MBUploadableElementsFactory
+  - name: MBAuth
     children:
-    - NKAuth
-    - NKUser
-  - name: NKApiManager
+    - MBAuth
+    - MBUser
+  - name: MBApiManager
     children:
-    - NKApiManager
-    - NKMultipartForm
-    - NKResponse
-  - name: NKUtilities
+    - MBApiManager
+    - MBMultipartForm
+    - MBResponse
+  - name: MBPlugin
+    children:
+    - MBPlugin
+  - name: MBUtilities
     children: 
-    - NKUtilities
+    - MBUtilities

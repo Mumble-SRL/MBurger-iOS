@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MBElementsFactory Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1.0" />
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/objc/Class/MBElementsFactory" class="dashAnchor"></a>
+    <a title="MBElementsFactory Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p>
+          <a href="../index.html">MBurger Docs</a>
+          <span class="no-mobile"> (100% documented)</span>
+        </p>
+    
+        <p class="header-right">
+          <a href="https://gitlab.mumbleserver.it/iOS/MBurger">
+            <img src="../img/gh.png"/>
+            <span class="no-mobile">View on GitHub</span>
+          </a>
+        </p>
+    
+      </div>
+    </header>
+    <div id="breadcrumbs-container">
+      <div class="content-wrapper">
+        <p id="breadcrumbs">
+          <span class="no-mobile">
+            <a href="../index.html">MBurger Reference</a>
+            <img id="carat" src="../img/carat.png" />
+          </span>
+          MBElementsFactory Class Reference
+        </p>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="article-wrapper">
+        <article class="main-content">
+          <section>
+            <section class="section">
+              <h1>MBElementsFactory</h1>
+                <div class="declaration">
+                  <div class="language">
+                    <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">MBElementsFactory</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                  </div>
+                </div>
+              <p>This class is used to create <code><a href="../Classes/MBElement.html">MBElement</a></code> objects based on the api return</p>
+
+            </section>
+            <section class="section task-group-section">
+              <div class="task-group">
+                <ul>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:objc(cs)MBElementsFactory(cm)elementForDictionary:"></a>
+                      <a name="//apple_ref/objc/Method/+elementForDictionary:" class="dashAnchor"></a>
+                      <a class="token" href="#/c:objc(cs)MBElementsFactory(cm)elementForDictionary:">+elementForDictionary:</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Returns a MBElement object based on the type specified in the dictionary.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Objective-C</p>
+                            <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n"><a href="../Classes/MBElement.html">MBElement</a></span> <span class="o">*</span><span class="p">)</span><span class="nf">elementForDictionary</span><span class="p">:(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">elementDictionary</span><span class="p">;</span></code></pre>
+
+                          </div>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">element</span><span class="p">(</span><span class="k">for</span> <span class="nv">elementDictionary</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/MBElement.html">MBElement</a></span><span class="o">!</span></code></pre>
+
+                          </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>elementDictionary</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The dictionary returned by the api.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div>
+                          <h4>Return Value</h4>
+                          <p>A newly created MBElement initialized with the data of the dictionary, if the type field of the dictionary cannot be represented by the implemented type of the SDK this functions returns nil.</p>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </section>
+        </article>
+      </div>
+      <div class="nav-wrapper">
+        <nav class="nav-bottom">
+          <ul class="nav-groups">
+            <li class="nav-group-name">
+              <a href="../MBManager.html">MBManager</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Classes/MBManager.html">MBManager</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../MBClient.html">MBClient</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Classes/MBClient.html">MBClient</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBPaginationInfo.html">MBPaginationInfo</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../MBParameter.html">MBParameter</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Protocols/MBParameter.html">MBParameter</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBSortParameter.html">MBSortParameter</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBPaginationParameter.html">MBPaginationParameter</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBFilterParameter.html">MBFilterParameter</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBGeofenceParameter.html">MBGeofenceParameter</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBGeneralParameter.html">MBGeneralParameter</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../MBProject.html">MBProject</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Classes/MBProject.html">MBProject</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../MBBlock.html">MBBlock</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Classes/MBBlock.html">MBBlock</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../MBSection.html">MBSection</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Classes/MBSection.html">MBSection</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../MBElement.html">MBElement</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Classes/MBElement.html">MBElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBTextElement.html">MBTextElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBImagesElement.html">MBImagesElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBImage.html">MBImage</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBMediaElement.html">MBMediaElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBFile.html">MBFile</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBCheckboxElement.html">MBCheckboxElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBWysiwygElement.html">MBWysiwygElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBDateElement.html">MBDateElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBAddressElement.html">MBAddressElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBDropdownElement.html">MBDropdownElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBDropdownElementOption.html">MBDropdownElementOption</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBPollElement.html">MBPollElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBGeneralElement.html">MBGeneralElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBElementsFactory.html">MBElementsFactory</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../MBAdmin.html">MBAdmin</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Classes/MBAdmin.html">MBAdmin</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBUploadableElement.html">MBUploadableElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBUploadableTextElement.html">MBUploadableTextElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBUploadableImagesElement.html">MBUploadableImagesElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBUploadableFilesElement.html">MBUploadableFilesElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBUploadableElementsFactory.html">MBUploadableElementsFactory</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../MBAuth.html">MBAuth</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Classes/MBAuth.html">MBAuth</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBUser.html">MBUser</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../MBApiManager.html">MBApiManager</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Classes/MBApiManager.html">MBApiManager</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBMultipartForm.html">MBMultipartForm</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBResponse.html">MBResponse</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../MBPlugin.html">MBPlugin</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Protocols/MBPlugin.html">MBPlugin</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../MBUtilities.html">MBUtilities</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Classes/MBUtilities.html">MBUtilities</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../Other Classes.html">Other Classes</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Classes/MBMarkdownElement.html">MBMarkdownElement</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../Other Enums.html">Other Enumerations</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Enums/MBElementType.html">MBElementType</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Enums/MBHTTPMethod.html">MBHTTPMethod</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Enums/MBMediaType.html">MBMediaType</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-wrapper">
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2018-07-31)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </div>
+    </div>
+  </body>
+</div>
+</html>
