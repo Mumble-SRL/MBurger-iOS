@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = "MBurger is a client libary, written in Objective-C, that can be used to interact with the MBurger API."
 
-  s.homepage     = "https://github.com/Mumble-SRL/MBurger-iOS.git"
+  s.homepage     = "https://github.com/Mumble-SRL/MBurger-iOS"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -77,7 +77,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { git: 'https://github.com/Mumble-SRL/MBurger-iOS.git' }
+  s.source       = { git: 'https://github.com/Mumble-SRL/MBurger-iOS.git', :tag => 'v1.0'}
   s.source_files = "MBurger/*.{h,m,swift}", "MBurger/**/*.{h,m,swift}"
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
