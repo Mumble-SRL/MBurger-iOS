@@ -27,7 +27,7 @@ To integrate the MBurger into your Xcode project using CocoaPods, specify it in 
 platform :ios, '10.0'
 
 target 'TargetName' do
-    pod 'MBurger'
+    pod 'MBurger', git: 'https://github.com/Mumble-SRL/MBurger-iOS'
 end
 ```
 
