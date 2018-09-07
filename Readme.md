@@ -3,7 +3,7 @@
 </p>
 
 ![Test Status](docs/badge.svg)
-![License: MIT](https://img.shields.io/badge/pod-v0.0.9-blue.svg)
+![License: MIT](https://img.shields.io/badge/pod-v1.0-blue.svg)
 [![CocoaPods](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](LICENSE)
 
 # MBurger
