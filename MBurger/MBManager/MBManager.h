@@ -26,6 +26,11 @@ The API token used to make all the requests to the api.
 @property (readwrite, nonatomic, strong, nullable) NSString *apiToken;
 
 /**
+ The token used to make calls to the push service.
+ */
+@property (readwrite, nonatomic, strong, nullable) NSString *pushToken;
+
+/**
  The locale used to make the requests.
  */
 @property (readwrite, nonatomic, strong, nullable) NSLocale *locale;

@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MBPush Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1.0" />
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/objc/Class/MBPush" class="dashAnchor"></a>
+    <a title="MBPush Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p>
+          <a href="../index.html">MBurger Docs</a>
+          <span class="no-mobile"> (100% documented)</span>
+        </p>
+    
+        <p class="header-right">
+          <a href="https://gitlab.mumbleserver.it/iOS/MBurger">
+            <img src="../img/gh.png"/>
+            <span class="no-mobile">View on GitHub</span>
+          </a>
+        </p>
+    
+      </div>
+    </header>
+    <div id="breadcrumbs-container">
+      <div class="content-wrapper">
+        <p id="breadcrumbs">
+          <span class="no-mobile">
+            <a href="../index.html">MBurger Reference</a>
+            <img id="carat" src="../img/carat.png" />
+          </span>
+          MBPush Class Reference
+        </p>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="article-wrapper">
+        <article class="main-content">
+          <section>
+            <section class="section">
+              <h1>MBPush</h1>
+                <div class="declaration">
+                  <div class="language">
+                    <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">MBPush</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                  </div>
+                </div>
+              <p>Object used to manage all the push notifications handling</p>
+
+            </section>
+            <section class="section task-group-section">
+              <div class="task-group">
+                <ul>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:objc(cs)MBPush(cm)registerDeviceWithDeviceData:Success:Failure:"></a>
+                      <a name="//apple_ref/objc/Method/+registerDeviceWithDeviceData:Success:Failure:" class="dashAnchor"></a>
+                      <a class="token" href="#/c:objc(cs)MBPush(cm)registerDeviceWithDeviceData:Success:Failure:">+registerDeviceWithDeviceData:Success:Failure:</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Registers the device with the push service. This is the first call that needs to be done.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Objective-C</p>
+                            <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">registerDeviceWithDeviceData</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSData</span> <span class="o">*</span><span class="p">)</span><span class="nv">deviceData</span>
+                             <span class="nf">Success</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="kt">void</span><span class="p">))</span><span class="nv">success</span>
+                             <span class="nf">Failure</span><span class="p">:</span>
+                                 <span class="p">(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">failure</span><span class="p">;</span></code></pre>
+
+                          </div>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">registerDevice</span><span class="p">(</span><span class="n">withDeviceData</span> <span class="nv">deviceData</span><span class="p">:</span> <span class="kt">Data</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                          </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>deviceData</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>The token information retuned when the device is registered form the push notifications in <code>application:didRegisterForRemoteNotificationsWithDeviceToken:</code></p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>success</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>A block object to be executed when the task finishes successfully. This block has no return value and takes no arguments.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>failure</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:objc(cs)MBPush(cm)registerToTopic:Success:Failure:"></a>
+                      <a name="//apple_ref/objc/Method/+registerToTopic:Success:Failure:" class="dashAnchor"></a>
+                      <a class="token" href="#/c:objc(cs)MBPush(cm)registerToTopic:Success:Failure:">+registerToTopic:Success:Failure:</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Register the current device to a topic. This functions calls <code>[MBPush registerToTopics:Success:Failure]</code> with an array of a single object.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Objective-C</p>
+                            <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">registerToTopic</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">topic</span>
+                <span class="nf">Success</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="kt">void</span><span class="p">))</span><span class="nv">success</span>
+                <span class="nf">Failure</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">failure</span><span class="p">;</span></code></pre>
+
+                          </div>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">register</span><span class="p">(</span><span class="n">toTopic</span> <span class="nv">topic</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                          </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>topic</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>the topic that will be registered</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>success</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>A block object to be executed when the task finishes successfully. This block has no return value and takes no arguments.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>failure</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:objc(cs)MBPush(cm)registerToTopics:Success:Failure:"></a>
+                      <a name="//apple_ref/objc/Method/+registerToTopics:Success:Failure:" class="dashAnchor"></a>
+                      <a class="token" href="#/c:objc(cs)MBPush(cm)registerToTopics:Success:Failure:">+registerToTopics:Success:Failure:</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Register the current device to an array of topics.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Objective-C</p>
+                            <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">registerToTopics</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">topics</span>
+                 <span class="nf">Success</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="kt">void</span><span class="p">))</span><span class="nv">success</span>
+                 <span class="nf">Failure</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">failure</span><span class="p">;</span></code></pre>
+
+                          </div>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">register</span><span class="p">(</span><span class="n">toTopics</span> <span class="nv">topics</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">],</span> <span class="nv">success</span><span class="p">:</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                          </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>topics</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>the topics that will be registered</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>success</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>A block object to be executed when the task finishes successfully. This block has no return value and takes no arguments.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>failure</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:objc(cs)MBPush(cm)unregisterFromTopic:Success:Failure:"></a>
+                      <a name="//apple_ref/objc/Method/+unregisterFromTopic:Success:Failure:" class="dashAnchor"></a>
+                      <a class="token" href="#/c:objc(cs)MBPush(cm)unregisterFromTopic:Success:Failure:">+unregisterFromTopic:Success:Failure:</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Unregister the current device to a topic. This functions calls <code>[MBPush unregisterFromTopics:Success:Failure]</code> with an array of a single object.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Objective-C</p>
+                            <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">unregisterFromTopic</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">topic</span>
+                    <span class="nf">Success</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="kt">void</span><span class="p">))</span><span class="nv">success</span>
+                    <span class="nf">Failure</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">failure</span><span class="p">;</span></code></pre>
+
+                          </div>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">unregister</span><span class="p">(</span><span class="n">fromTopic</span> <span class="nv">topic</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">success</span><span class="p">:</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                          </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>topic</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>the topic that will be unregistered</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>success</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>A block object to be executed when the task finishes successfully. This block has no return value and takes no arguments.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>failure</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:objc(cs)MBPush(cm)unregisterFromTopics:Success:Failure:"></a>
+                      <a name="//apple_ref/objc/Method/+unregisterFromTopics:Success:Failure:" class="dashAnchor"></a>
+                      <a class="token" href="#/c:objc(cs)MBPush(cm)unregisterFromTopics:Success:Failure:">+unregisterFromTopics:Success:Failure:</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Unregister the current device from an array of topics.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Objective-C</p>
+                            <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">unregisterFromTopics</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">topics</span>
+                     <span class="nf">Success</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="kt">void</span><span class="p">))</span><span class="nv">success</span>
+                     <span class="nf">Failure</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="nv">failure</span><span class="p">;</span></code></pre>
+
+                          </div>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">unregister</span><span class="p">(</span><span class="n">fromTopics</span> <span class="nv">topics</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">],</span> <span class="nv">success</span><span class="p">:</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                          </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>topics</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>the topics that will be unregistered</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>success</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>A block object to be executed when the task finishes successfully. This block has no return value and takes no arguments.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>failure</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                  <li class="item">
+                    <div>
+                      <code>
+                      <a name="/c:objc(cs)MBPush(cm)unregisterFromAllTopicsWithSuccess:Failure:"></a>
+                      <a name="//apple_ref/objc/Method/+unregisterFromAllTopicsWithSuccess:Failure:" class="dashAnchor"></a>
+                      <a class="token" href="#/c:objc(cs)MBPush(cm)unregisterFromAllTopicsWithSuccess:Failure:">+unregisterFromAllTopicsWithSuccess:Failure:</a>
+                      </code>
+                    </div>
+                    <div class="height-container">
+                      <div class="pointer-container"></div>
+                      <section class="section">
+                        <div class="pointer"></div>
+                        <div class="abstract">
+                          <p>Unregister the current device from allt he topics registered previously.</p>
+
+                        </div>
+                        <div class="declaration">
+                          <h4>Declaration</h4>
+                          <div class="language">
+                            <p class="aside-title">Objective-C</p>
+                            <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">unregisterFromAllTopicsWithSuccess</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="kt">void</span><span class="p">))</span><span class="nv">success</span>
+                                   <span class="nf">Failure</span><span class="p">:(</span><span class="n">nullable</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span>
+                                               <span class="n">NSError</span> <span class="o">*</span><span class="n">_Nonnull</span><span class="p">))</span><span class="n">failure</span><span class="p">;</span></code></pre>
+
+                          </div>
+                          <div class="language">
+                            <p class="aside-title">Swift</p>
+                            <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">unregisterFromAllTopics</span><span class="p">(</span><span class="nv">success</span><span class="p">:</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?,</span> <span class="nv">failure</span><span class="p">:</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                          </div>
+                        </div>
+                        <div>
+                          <h4>Parameters</h4>
+                          <table class="graybox">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>success</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>A block object to be executed when the task finishes successfully. This block has no return value and takes no arguments.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <code>
+                                  <em>failure</em>
+                                  </code>
+                                </td>
+                                <td>
+                                  <div>
+                                    <p>A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.</p>
+                                  </div>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </section>
+        </article>
+      </div>
+      <div class="nav-wrapper">
+        <nav class="nav-bottom">
+          <ul class="nav-groups">
+            <li class="nav-group-name">
+              <a href="../MBManager.html">MBManager</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Classes/MBManager.html">MBManager</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../MBClient.html">MBClient</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Classes/MBClient.html">MBClient</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBPaginationInfo.html">MBPaginationInfo</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../MBParameter.html">MBParameter</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Protocols/MBParameter.html">MBParameter</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBSortParameter.html">MBSortParameter</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBPaginationParameter.html">MBPaginationParameter</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBFilterParameter.html">MBFilterParameter</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBGeofenceParameter.html">MBGeofenceParameter</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBGeneralParameter.html">MBGeneralParameter</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../MBProject.html">MBProject</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Classes/MBProject.html">MBProject</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../MBBlock.html">MBBlock</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Classes/MBBlock.html">MBBlock</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../MBSection.html">MBSection</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Classes/MBSection.html">MBSection</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../MBElement.html">MBElement</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Classes/MBElement.html">MBElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBTextElement.html">MBTextElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBImagesElement.html">MBImagesElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBImage.html">MBImage</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBMediaElement.html">MBMediaElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBFile.html">MBFile</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBCheckboxElement.html">MBCheckboxElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBWysiwygElement.html">MBWysiwygElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBDateElement.html">MBDateElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBAddressElement.html">MBAddressElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBDropdownElement.html">MBDropdownElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBDropdownElementOption.html">MBDropdownElementOption</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBPollElement.html">MBPollElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBGeneralElement.html">MBGeneralElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBElementsFactory.html">MBElementsFactory</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../MBAdmin.html">MBAdmin</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Classes/MBAdmin.html">MBAdmin</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBUploadableElement.html">MBUploadableElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBUploadableTextElement.html">MBUploadableTextElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBUploadableImagesElement.html">MBUploadableImagesElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBUploadableFilesElement.html">MBUploadableFilesElement</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBUploadableElementsFactory.html">MBUploadableElementsFactory</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../MBAuth.html">MBAuth</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Classes/MBAuth.html">MBAuth</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBUser.html">MBUser</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../MBPush.html">MBPush</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Classes/MBPush.html">MBPush</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBPushApiManager.html">MBPushApiManager</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../MBApiManager.html">MBApiManager</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Classes/MBApiManager.html">MBApiManager</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBMultipartForm.html">MBMultipartForm</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Classes/MBResponse.html">MBResponse</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../MBPlugin.html">MBPlugin</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Protocols/MBPlugin.html">MBPlugin</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../MBUtilities.html">MBUtilities</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Classes/MBUtilities.html">MBUtilities</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../Other Classes.html">Other Classes</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Classes/MBMarkdownElement.html">MBMarkdownElement</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-group-name">
+              <a href="../Other Enums.html">Other Enumerations</a>
+              <ul class="nav-group-tasks">
+                <li class="nav-group-task">
+                  <a href="../Enums/MBElementType.html">MBElementType</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Enums/MBHTTPMethod.html">MBHTTPMethod</a>
+                </li>
+                <li class="nav-group-task">
+                  <a href="../Enums/MBMediaType.html">MBMediaType</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-wrapper">
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2018-09-21)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </div>
+    </div>
+  </body>
+</div>
+</html>

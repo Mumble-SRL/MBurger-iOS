@@ -66,6 +66,10 @@ custom_categories:
     children:
     - MBAuth
     - MBUser
+  - name: MBPush
+    children:
+    - MBPush
+    - MBPushApiManager
   - name: MBApiManager
     children:
     - MBApiManager
@@ -77,3 +81,4 @@ custom_categories:
   - name: MBUtilities
     children: 
     - MBUtilities
+

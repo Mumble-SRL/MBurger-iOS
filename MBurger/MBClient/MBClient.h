@@ -24,7 +24,7 @@
 /**
  Retrieve the informations about the project.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the project returned by the api.
- @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
 + (void) getProjectWithSuccess: (nullable void (^)(MBProject * _Nonnull project)) success
                        Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
@@ -37,7 +37,7 @@
  @see `MBParameter`
  @param parameters An optional array of parameters used to sort, filter orpaginate the blocks returned.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes two arguments: the ararray of blocks returned by the api and the informations about the pagination.
- @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
 + (void) getBlocksWithParameters: (nullable NSArray <id<MBParameter>> *) parameters
                          Success: (nullable void (^)(NSArray <MBBlock *> * _Nonnull blocks, MBPaginationInfo * _Nonnull pagintaionInfo)) success
@@ -51,7 +51,7 @@
  @param parameters An optional array of parameters used to sort, filter orpaginate the blocks returned.
  @param includeSections If true the information of the sections in the blocks are included in the response.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes two arguments: the array of blocks returned by the api and the informations about the pagination.
- @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
 + (void) getBlocksWithParameters: (nullable NSArray <id<MBParameter>> *) parameters
                IncludingSections: (BOOL) includeSections
@@ -67,7 +67,7 @@
  @param includeSections If true the information of the sections in the blocks are included in the response.
  @param includeElements If true the information of the elements in the sections of the blocks are included in the response, if the value of 'includeSections' is false the value of this parameter is ignored.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes two arguments: the array of blocks returned by the api and the informations about the pagination.
- @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
 + (void) getBlocksWithParameters: (nullable NSArray <id<MBParameter>> *) parameters
                IncludingSections: (BOOL) includeSections
@@ -82,7 +82,7 @@
  @param blockId The id of the block.
  @param parameters An optional array of parameters used to sort, filter orpaginate the blocks returned.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one arguments: the block returned by the api.
- @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
 + (void) getBlockWithBlockId: (NSInteger) blockId
                   Parameters: (nullable NSArray <id<MBParameter>> *) parameters
@@ -98,7 +98,7 @@
  @param parameters An optional array of parameters used to sort, filter orpaginate the blocks returned.
  @param includeSections If true the information of the sections in the blocks are included in the response.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the block returned by the api.
- @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
 + (void) getBlockWithBlockId: (NSInteger) blockId
                   Parameters: (nullable NSArray <id<MBParameter>> *) parameters
@@ -116,7 +116,7 @@
  @param includeSections If true the information of the sections in the blocks are included in the response.
  @param includeElements If true the information of the elements in the sections of the blocks are included in the response, if the value of 'includeSections' is false the value of this parameter is ignored.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one arguments: the block returned by the api.
- @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
 + (void) getBlockWithBlockId: (NSInteger) blockId
                   Parameters: (nullable NSArray <id<MBParameter>> *) parameters
@@ -134,7 +134,7 @@
  @param blockId The id of the block that has the sections.
  @param parameters An optional array of parameters used to sort, filter orpaginate the blocks returned.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the array of sections returned by the api and the informations about the pagination.
- @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
 + (void) getSectionsWithBlockId: (NSInteger) blockId
                      Parameters: (nullable NSArray <id<MBParameter>> *) parameters
@@ -148,7 +148,7 @@
  @param parameters An optional array of parameters used to sort, filter orpaginate the blocks returned.
  @param includeElements If true the information of the elements in the sections are included in the response.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes two arguments: the array of sections returned by the api and the informations about the pagination.
- @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
 + (void) getSectionsWithBlockId: (NSInteger) blockId
                      Parameters: (nullable NSArray <id<MBParameter>> *) parameters
@@ -162,7 +162,7 @@
  @note This function calls `-[MBManager getSectionWithId:IncludeElements:Success:Failure:]` with the default value of 'false' for the parameter 'includeElements'
  @param sectionId The id of the section.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the section returned by the api.
- @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
 + (void) getSectionWithId: (NSInteger) sectionId
                   Success: (nullable void (^)(MBSection * _Nonnull section)) success
@@ -174,7 +174,7 @@
  @param sectionId The id of the section.
  @param includeElements If true the information of the element in the section are included in the response.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the section returned by the api.
- @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
 + (void) getSectionWithId: (NSInteger) sectionId
           IncludeElements: (BOOL) includeElements
@@ -187,7 +187,7 @@
  Retrieve the elements of the section with the specified id.
  @param sectionId The id of the section.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the elements of the sections returned by the api (the dictionary returned is like the one of the MBSection object).
- @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
 + (void) getElementsWithSectionId: (NSInteger) sectionId
                           Success: (nullable void (^)(NSDictionary * _Nonnull elements)) success

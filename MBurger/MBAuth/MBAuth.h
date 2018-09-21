@@ -25,7 +25,7 @@
  @param image The image of the user.
  @param data Additional data passed with the registration. You can include an `NSArray` or `NSDictionary` in this parameter and it will be returned in the user profile. This will be converted in a json string with `NSJSONSerialization`.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes no arguments.
- @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
 + (void) registerUserWithName: (nonnull NSString *) name
                       Surname: (nonnull NSString *) surname
@@ -44,7 +44,7 @@
  @param email The email of the user.
  @param password The password of the user.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the access token. The access token will be saved in the Keychain and will be used in all the subsequent calls to the MBurger apis.
- @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
 + (void) authenticateUserWithEmail: (nonnull NSString *) email
                           Password: (nonnull NSString *) password
@@ -56,7 +56,7 @@
  Log out the current user.
  
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes no arguments.
- @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
 + (void) logoutCurrentWithSuccess: (nullable void (^)(void)) success
                           Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
@@ -67,7 +67,7 @@
  @param oldPassword The old password of the user.
  @param newPassword The new password of the user.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes no arguments.
- @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
 + (void) changePasswordForCurrentUserWithOldPassword: (nonnull NSString *) oldPassword
                                          NewPassword: (nonnull NSString *) newPassword
@@ -79,7 +79,7 @@
 
  @param email The email of the user.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes no arguments.
- @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
 + (void) forgotPasswordWithEmail: (nonnull NSString *) email
                          Success: (nullable void (^)(void)) success
@@ -90,7 +90,7 @@
  Retrieves the profile informations of the current authenticated user.
 
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the `MBUser` representing the logged user.
- @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
 + (void) getUserProfileWithSuccess: (nullable void (^)(MBUser * _Nonnull user)) success
                            Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
@@ -105,7 +105,7 @@
  @param image The new image of the user.
  @param data The new data of the user.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the `MBUser` representing the new user.
- @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
 + (void) updateProfileWithName: (nonnull NSString *) name
                        Surname: (nonnull NSString *) surname
@@ -120,7 +120,7 @@
  Deletes the current authenticated user. It will call the `logoutCurrentUser` if the deletion is succesful.
 
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes no arguments.
- @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes a one argument: the error describing the error that occurred.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
 + (void) deleteCurrentUserWithSuccess: (nullable void (^)(void)) success
                               Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
