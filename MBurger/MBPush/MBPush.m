@@ -64,7 +64,7 @@
         return;
     }
     
-    NSDictionary *parameters = @{@"topins": [self jsonSrtingFromTopics:topics]};
+    NSDictionary *parameters = @{@"topics": [self jsonSrtingFromTopics:topics]};
 
     [MBPushApiManager callApiWithPushToken:pushToken
                                    ApiName:@"register"
@@ -100,7 +100,7 @@
         return;
     }
     
-    NSDictionary *parameters = @{@"topins": [self jsonSrtingFromTopics:topics]};
+    NSDictionary *parameters = @{@"topics": [self jsonSrtingFromTopics:topics]};
 
     [MBPushApiManager callApiWithPushToken:pushToken
                                    ApiName:@"unregister"
