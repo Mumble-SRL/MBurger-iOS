@@ -73,6 +73,38 @@ static NSString *_mbAuthToken = nil;
     parameters[@"password"] = password;
     parameters[@"mode"] = @"email";
 
+    [self authenticateUserWithParameters:parameters Success:success Failure:failure];
+}
+
+
++ (void) authenticateUserWithSocialToken: (NSString *) token
+                               TokenType: (MBAuthSocialTokenType) tokenType
+                                 Success: (void (^)(NSString *accessToken)) success
+                                 Failure: (void (^)(NSError *error)) failure {
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    
+    switch (tokenType) {
+        case MBAuthSocialTokenTypeFacebook:
+            parameters[@"facebook_token"] = token;
+            parameters[@"mode"] = @"facebook";
+            break;
+        case MBAuthSocialTokenTypeGoogle:
+            parameters[@"google_token"] = token;
+            parameters[@"mode"] = @"google";
+            break;
+
+        default:
+            break;
+    }
+    
+    [self authenticateUserWithParameters:parameters Success:success Failure:failure];
+}
+
+// Authenticate a user with the paramters given, this func is called from the other auth functions and performs the api calls and authentication
+
++ (void) authenticateUserWithParameters: (NSDictionary *) parameters
+                                Success: (void (^)(NSString *accessToken)) success
+                                Failure: (void (^)(NSError *error)) failure {
     [MBApiManager callApiWithApiToken:MBManager.sharedManager.apiToken
                                Locale:[MBManager.sharedManager localeString]
                               ApiName:@"authenticate"

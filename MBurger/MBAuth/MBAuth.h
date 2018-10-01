@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "MBUser.h"
 
+/// The type of social tokens supported by MBurger
+typedef NS_ENUM(NSUInteger, MBAuthSocialTokenType) {
+    /// A Facebook token
+    MBAuthSocialTokenTypeFacebook,
+    /// A Google token
+    MBAuthSocialTokenTypeGoogle
+};
+
 /**
  Manages the authentication of the user.
  */
@@ -51,6 +59,19 @@
                            Success: (nullable void (^)(NSString * _Nonnull accessToken)) success
                            Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
+
+/**
+ Authenticates a user with a social token.
+ 
+ @param token The token of the user obtained with the SDK of the social network.
+ @param tokenType this parameter identifies the social network used to authenticate the user
+ @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the access token. The access token will be saved in the Keychain and will be used in all the subsequent calls to the MBurger apis.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
+ */
++ (void) authenticateUserWithSocialToken: (nonnull NSString *) token
+                               TokenType: (MBAuthSocialTokenType) tokenType
+                                 Success: (nullable void (^)(NSString * _Nonnull accessToken)) success
+                                 Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 /**
  Log out the current user.
