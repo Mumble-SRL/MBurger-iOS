@@ -32,6 +32,6 @@
  
  @return A newly created MBUploadableImagesElement initialized with the name, locale and images.
  */
-- (nonnull instancetype) initWithElementName: (NSString *) elementName LocaleIdentifier: (NSString *) localeIdentifier Images: (NSArray <UIImage *> *) images;
+- (nonnull instancetype) initWithElementName: (nonnull NSString *) elementName LocaleIdentifier: (nonnull NSString *) localeIdentifier Images: (nullable NSArray <UIImage *> *) images;
 
 @end

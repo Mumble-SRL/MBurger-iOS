@@ -35,7 +35,7 @@
 
  @return A newly created MBUploadableElement initialized with the name and locale.
  */
-- (nonnull instancetype) initWithElementName: (NSString *) elementName LocaleIdentifier: (NSString *) localeIdentifier;
+- (nonnull instancetype) initWithElementName: (nonnull NSString *) elementName LocaleIdentifier: (nonnull NSString *) localeIdentifier;
 
 
 /**
@@ -43,7 +43,7 @@
 
  @return The name of the element.
  */
-- (NSString *) parameterName;
+- (nonnull NSString *) parameterName;
 
 
 /**
@@ -51,6 +51,6 @@
 
  @return An array of `MBMultipartForm` representing the element.
  */
-- (NSArray <MBMultipartForm *> *) toForm;
+- (nullable NSArray <MBMultipartForm *> *) toForm;
 
 @end

@@ -37,6 +37,6 @@
  
  @return A newly created MBDropdownElement initialized with the parameters passed.
  */
-- (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Options: (nullable NSArray <MBDropdownElementOption *> *) options SelectedOptions: (NSString *) selectedOption;
+- (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Options: (nullable NSArray <MBDropdownElementOption *> *) options SelectedOptions: (nullable NSString *) selectedOption;
 
 @end
