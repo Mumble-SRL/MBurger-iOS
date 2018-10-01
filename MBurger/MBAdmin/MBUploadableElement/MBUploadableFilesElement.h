@@ -30,6 +30,6 @@
  
  @return A newly created MBUploadableFilesElement initialized with the name, locale and file URLs.
  */
-- (nonnull instancetype) initWithElementName: (NSString *) elementName LocaleIdentifier: (NSString *) localeIdentifier FileURLs: (NSArray <NSURL *> *) fileURLs;
+- (nonnull instancetype) initWithElementName: (nonnull NSString *) elementName LocaleIdentifier: (nonnull NSString *) localeIdentifier FileURLs: (nullable NSArray <NSURL *> *) fileURLs;
 
 @end

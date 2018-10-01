@@ -34,7 +34,7 @@
  
  @return A newly created MBUploadableElementsFactory with the given locale.
  */
-- (nonnull instancetype) initWithLocaleIdentifier: (NSString *) localeIdentifier;
+- (nonnull instancetype) initWithLocaleIdentifier: (nonnull NSString *) localeIdentifier;
 
 
 /**
@@ -45,7 +45,7 @@
  
  @return An `MBUploadableTextElement` with the name and text specified.
  */
-- (nonnull MBUploadableTextElement *) textElementWithName: (NSString *) name Text: (NSString *) text;
+- (nonnull MBUploadableTextElement *) textElementWithName: (nonnull NSString *) name Text: (nonnull NSString *) text;
 
 #pragma mark - Images
 
@@ -58,7 +58,7 @@
  
  @return An `MBUploadableImagesElement` with the name and image specified.
  */
-- (nonnull MBUploadableImagesElement *) imagesElementWithName: (NSString *) name Image: (UIImage *) image;
+- (nonnull MBUploadableImagesElement *) imagesElementWithName: (nonnull NSString *) name Image: (nonnull UIImage *) image;
 
 /**
  Creates an images element with an array of images.
@@ -68,7 +68,7 @@
  
  @return An `MBUploadableImagesElement` with the name and images specified.
  */
-- (nonnull MBUploadableImagesElement *) imagesElementWithName: (NSString *) name Images: (NSArray <UIImage *> *) images;
+- (nonnull MBUploadableImagesElement *) imagesElementWithName: (nonnull NSString *) name Images: (nonnull NSArray <UIImage *> *) images;
 
 #pragma mark - Files
 
@@ -80,7 +80,7 @@
  
  @return An `MBUploadableFilesElement` with the name and file specified.
  */
-- (nonnull MBUploadableFilesElement *) filesElementWithName: (NSString *) name FileURL: (NSURL *) fileUrl;
+- (nonnull MBUploadableFilesElement *) filesElementWithName: (nonnull NSString *) name FileURL: (nonnull NSURL *) fileUrl;
 
 /**
  Creates an files element with an array of files.
@@ -90,6 +90,6 @@
  
  @return An `MBUploadableFilesElement` with the name and files specified.
  */
-- (nonnull MBUploadableFilesElement *) filesElementWithName: (NSString *) name FileURLs: (NSArray <NSURL *> *) fileUrls;
+- (nonnull MBUploadableFilesElement *) filesElementWithName: (nonnull NSString *) name FileURLs: (nonnull NSArray <NSURL *> *) fileUrls;
 
 @end
