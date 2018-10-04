@@ -1,5 +1,5 @@
 <p align="center" >
-<img src="https://raw.githubusercontent.com/Mumble-SRL/MBurger-iOS/develop/Images/logo.png" alt="Mumble Logo" title="Mumble Logo">
+<img src="https://raw.githubusercontent.com/Mumble-SRL/MBurger-iOS/develop/Images/logo.png" alt="MBurger Logo" title="Mumble Logo">
 </p>
 
 ![Test Status](docs/badge.svg)
