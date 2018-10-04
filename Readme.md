@@ -1,5 +1,5 @@
 <p align="center" >
-<img src="https://mumbleideas.it/wp-content/uploads/2017/12/Mumble-anim-300.gif" alt="Mumble Logo" title="Mumble Logo">
+<img src="logo.png" alt="Mumble Logo" title="Mumble Logo">
 </p>
 
 ![Test Status](docs/badge.svg)
@@ -8,7 +8,7 @@
 
 # MBurger
 
-MBurger is a client libary, written in Objective-C, that can be used to interact with the [MBurger](https://nooko2.mumbleserver.it/login) API. The minimum deplaoyment target for the library is iOS 10.0.
+MBurger is a client libary, written in Objective-C, that can be used to interact with the [MBurger](https://mburger.cloud/login) API. The minimum deplaoyment target for the library is iOS 10.0.
 > Even this is a library written in Objective-C it can be integrated and used also in Swift projects. The example code below will be in both languages.
 
 # Installation
@@ -50,7 +50,7 @@ Note that `MBurger` has `AFNetworking (3.0)` and `SAMKeychain (1.5)` as dependen
 
 # Initialization
 
-To initialize the SDK you have to create a token through the [dashboard](https://nooko2.mumbleserver.it/). Click on the settings icon on the top-right and create a API Key specifiyng the permissions.
+To initialize the SDK you have to create a token through the [dashboard](https://mburger.cloud/). Click on the settings icon on the top-right and create a API Key specifiyng the permissions.
 
 ![Dashboard image](Images/api_token.png)
 
