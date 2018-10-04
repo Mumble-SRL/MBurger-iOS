@@ -240,10 +240,10 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
 
 + (NSString *) apiBaseUrl: (BOOL) isInDevelopment {
     if (isInDevelopment){
-        return @"https://nooko2-dev.mumbleserver.it/api";
+        return @"https://dev.mburger.cloud/api";
     }
     else {
-        return @"https://nooko2.mumbleserver.it/api";
+        return @"https://mburger.cloud/api";
     }
 }
 
