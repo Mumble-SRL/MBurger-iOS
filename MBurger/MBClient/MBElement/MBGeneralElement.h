@@ -36,6 +36,6 @@
 
  @return A newly created MBGeneralElement initialized with the elementId, the name and the value passed.
  */
-- (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Value: (nullable id) value Type: (NSString *) type;
+- (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Value: (nullable id) value Type: (nullable NSString *) type;
 
 @end

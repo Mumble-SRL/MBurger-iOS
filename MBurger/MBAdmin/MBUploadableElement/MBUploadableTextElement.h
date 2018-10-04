@@ -33,6 +33,6 @@
  
  @return A newly created MBUploadableTextElement initialized with the name, locale and text.
  */
-- (nonnull instancetype) initWithElementName: (NSString *) elementName LocaleIdentifier: (NSString *) localeIdentifier Text: (NSString *) text;
+- (nonnull instancetype) initWithElementName: (nonnull NSString *) elementName LocaleIdentifier: (nonnull NSString *) localeIdentifier Text: (nullable NSString *) text;
 
 @end

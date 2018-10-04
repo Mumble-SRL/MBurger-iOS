@@ -50,6 +50,6 @@ The API token used to make all the requests to the api.
 
  @return The locale string sended to the api.
  */
-- (NSString *) localeString;
+- (nullable NSString *) localeString;
 
 @end

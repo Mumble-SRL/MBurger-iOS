@@ -66,6 +66,6 @@
  *
  *  @return The mapped object mapped.
  */
-- (id) mapElementsToObject: (NSObject *) object withMapping: (NSDictionary *) mapping;
+- (nonnull id) mapElementsToObject: (nonnull NSObject *) object withMapping: (nonnull NSDictionary *) mapping;
 
 @end
