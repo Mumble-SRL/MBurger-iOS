@@ -19,7 +19,7 @@
     return self;
 }
 
-- (NSDictionary *) dictionaryRepresentation{
+- (NSDictionary *) parameterRepresentation {
     return @{@"id": @(self.contractId),
              @"accepted": self.accepted ? @(1) : @(0)};
 }

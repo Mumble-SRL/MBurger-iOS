@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MBParameter.h"
 
 /**
  A parameter that can be passed to the apis that indicates if a legal contract has been accepted or not
  */
-@interface MBAuthContractAcceptanceParameter : NSObject
+@interface MBAuthContractAcceptanceParameter : NSObject <MBParameter>
 
 /**
  The id of the contract
@@ -31,12 +32,5 @@
  @return A newly created MBAuthContractAcceptanceParameter initialized with the data passed.
  */
 - (nonnull instancetype) initWithContractId: (NSInteger) contractId Accepted: (BOOL) accepted;
-
-/**
- The dictionary representation of the object
-
- @return The dictionary representation of the object
- */
-- (nonnull NSDictionary *) dictionaryRepresentation;
 
 @end

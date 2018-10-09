@@ -38,7 +38,7 @@
 
 - (void)encodeWithCoder:(NSCoder *)aCoder{
     [aCoder encodeInteger:_contractId forKey:@"contractId"];
-    
+    [aCoder encodeBool:_accepted forKey:@"accepted"];
 }
 
 + (BOOL) supportsSecureCoding {
