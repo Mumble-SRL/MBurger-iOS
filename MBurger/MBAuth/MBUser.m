@@ -15,6 +15,7 @@
                           Email: (NSString *) email
                           Phone: (NSString *) phone
                        ImageURL: (NSURL *) imageURL
+                      Contracts: (NSArray <MBUserContractStatus *> *) contracts
                            Data: (id) data{
     self = [super init];
     if (self){
@@ -24,6 +25,7 @@
         self.email = email;
         self.phone = phone;
         self.imageURL = imageURL;
+        self.contracts = contracts;
         self.data = data;
     }
     return self;
@@ -36,11 +38,20 @@
     NSString *email = dictionary[@"email"];
     NSString *phone = dictionary[@"phone"] != [NSNull null] ? dictionary[@"phone"] : nil;
     NSURL *imageUrl = dictionary[@"image"] != [NSNull null] ? [NSURL URLWithString: dictionary[@"image"]] : nil;
+    NSArray *contracts = nil;
+    if (dictionary[@"contracts"] && dictionary[@"contracts"] != [NSNull null]){
+        NSArray *contractsFromDictionary = dictionary[@"contracts"];
+        NSMutableArray *mutableContracts = [[NSMutableArray alloc] init];
+        for (NSDictionary *contractDictionary in contractsFromDictionary) {
+            [mutableContracts addObject:[[MBUserContractStatus alloc] initWithDictionary:contractDictionary]];
+        }
+        contracts = mutableContracts;
+    }
     id data = nil;
     if (dictionary[@"data"] && dictionary[@"data"] != [NSNull null]){
         data = dictionary[@"data"];
     }
-    return [self initWithUserId:userId Name:name Surname:surname Email:email Phone:phone ImageURL:imageUrl Data:data];
+    return [self initWithUserId:userId Name:name Surname:surname Email:email Phone:phone ImageURL:imageUrl Contracts:contracts Data:data];
 }
 
 - (BOOL) isEqual:(id)object {

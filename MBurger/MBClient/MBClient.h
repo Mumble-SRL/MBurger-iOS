@@ -22,12 +22,22 @@
 #pragma mark - Project
 
 /**
- Retrieve the informations about the project.
+ Retrieve the informations about the project, it calls `-[MBClient getProjectIncludingContracts:Success:Failure]` with the paramter `includeContracts` setted to true.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the project returned by the api.
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
 + (void) getProjectWithSuccess: (nullable void (^)(MBProject * _Nonnull project)) success
                        Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
+
+/**
+ Retrieve the informations about the project.
+ @param includeContracts if true contracts are included in the project
+ @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the project returned by the api.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
+ */
++ (void) getProjectIncludingContracts: (BOOL) includeContracts
+                              Success: (nullable void (^)(MBProject * _Nonnull project)) success
+                              Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 #pragma mark - Blocks
 

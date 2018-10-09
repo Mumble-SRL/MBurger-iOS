@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [MBManager sharedManager].apiToken = @"6323250ee3b1f29fbb704065118eb9660a5742ca";
+    [MBManager sharedManager].apiToken = @"API_TOKEN";
     
     return YES;
 }

@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "MBUserContractStatus.h"
 
 /**
  An object representing the user informations.
@@ -61,6 +61,11 @@
 @property (nonatomic, retain, nullable) NSDictionary *pluginsObjects;
 
 /**
+ An array of object representing the status of acceptance of the legal contracts of the project.
+ */
+@property (nonatomic, retain, nullable) NSArray <MBUserContractStatus *> *contracts;
+
+/**
  Initializes a user with the parameters provided.
 
  @param userId The id of the user.
@@ -69,6 +74,7 @@
  @param email The email of the user.
  @param phone The phone number of the user.
  @param imageURL The url of the profile image.
+ @param contracts An array of object representing the status of acceptance of the legal contracts of the project.
  @param data Additional data.
  @return A newly created MBUser initialized sith the parameters passed.
  */
@@ -78,6 +84,7 @@
                           Email: (nonnull NSString *) email
                           Phone: (nullable NSString *) phone
                        ImageURL: (nullable NSURL *) imageURL
+                      Contracts: (nullable NSArray <MBUserContractStatus *> *) contracts
                            Data: (nullable id) data;
 /**
  Initializes a user with the dictionary returned by the api.
