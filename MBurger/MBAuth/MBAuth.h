@@ -148,7 +148,7 @@ typedef NS_ENUM(NSUInteger, MBAuthSocialTokenType) {
 
 
 /**
- Retrieves the profile informations of the current authenticated user.
+ Retrieves the profile informations of the current authenticated user, it calls `-[MBAuth getUserProfileIncludingContracts:Success:Failure]` with the paramter `includeContracts` setted to true.
 
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the `MBUser` representing the logged user.
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.

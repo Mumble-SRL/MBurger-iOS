@@ -74,6 +74,7 @@
         self.imageURL = [aDecoder decodeObjectOfClass:NSURL.class forKey:@"imageURL"];
         self.data = [aDecoder decodeObjectOfClass:NSString.class forKey:@"data"];
         self.pluginsObjects = [aDecoder decodeObjectOfClass:NSString.class forKey:@"pluginsObjects"];
+        self.contracts = [aDecoder decodeObjectOfClass:NSArray.class forKey:@"contracts"];
     }
     return self;
 }
@@ -87,6 +88,7 @@
     [aCoder encodeObject:_imageURL forKey:@"imageURL"];
     [aCoder encodeObject:_data forKey:@"data"];
     [aCoder encodeObject:_pluginsObjects forKey:@"pluginsObjects"];
+    [aCoder encodeObject:_contracts forKey:@"contracts"];
 }
 
 + (BOOL) supportsSecureCoding {

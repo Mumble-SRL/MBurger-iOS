@@ -11,7 +11,7 @@
 /**
  An object indicating if a legal contract has been accepted by the user
  */
-@interface MBUserContractStatus : NSObject
+@interface MBUserContractStatus : NSObject<NSCoding, NSSecureCoding>
 
 /**
  The id of the contract

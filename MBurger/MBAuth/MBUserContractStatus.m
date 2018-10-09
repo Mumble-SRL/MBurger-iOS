@@ -25,4 +25,24 @@
     return [self initWithContractId:contractId Accepted:accepted];
 }
 
+#pragma mark - NSCoding-NSSecureCoding
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder{
+    self = [super init];
+    if (self){
+        self.contractId = [aDecoder decodeIntegerForKey:@"contractId"];
+        self.accepted = [aDecoder decodeBoolForKey:@"accepted"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder{
+    [aCoder encodeInteger:_contractId forKey:@"contractId"];
+    
+}
+
++ (BOOL) supportsSecureCoding {
+    return TRUE;
+}
+
 @end
