@@ -20,6 +20,9 @@
 		660E866720760734008DF597 /* MBGeofenceParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E866620760734008DF597 /* MBGeofenceParameter.m */; };
 		660E866A20760741008DF597 /* MBGeneralParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 660E866920760741008DF597 /* MBGeneralParameter.m */; };
 		6623CFAC211057C9007AB579 /* MBMarkdownElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 6623CFAB211057C9007AB579 /* MBMarkdownElement.m */; };
+		667AD317216CADC9003F8344 /* MBLegalContract.m in Sources */ = {isa = PBXBuildFile; fileRef = 667AD316216CADC9003F8344 /* MBLegalContract.m */; };
+		667AD31A216CB1E3003F8344 /* MBAuthContractAcceptanceParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 667AD319216CB1E3003F8344 /* MBAuthContractAcceptanceParameter.m */; };
+		667AD31D216CB905003F8344 /* MBUserContractStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 667AD31C216CB905003F8344 /* MBUserContractStatus.m */; };
 		667F21D8207B56A900C4CA92 /* MBBlockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 667F21D7207B56A900C4CA92 /* MBBlockTests.m */; };
 		667F21DA207B573200C4CA92 /* block_sections_elements.json in Resources */ = {isa = PBXBuildFile; fileRef = 667F21D9207B573200C4CA92 /* block_sections_elements.json */; };
 		667F21DC207B580100C4CA92 /* block.json in Resources */ = {isa = PBXBuildFile; fileRef = 667F21DB207B580100C4CA92 /* block.json */; };
@@ -120,6 +123,12 @@
 		6623CFAB211057C9007AB579 /* MBMarkdownElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBMarkdownElement.m; sourceTree = "<group>"; };
 		663F93AF20A2E071009F4DB1 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		663F93B120A2E125009F4DB1 /* MBurger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MBurger.entitlements; sourceTree = "<group>"; };
+		667AD315216CADC9003F8344 /* MBLegalContract.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBLegalContract.h; sourceTree = "<group>"; };
+		667AD316216CADC9003F8344 /* MBLegalContract.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBLegalContract.m; sourceTree = "<group>"; };
+		667AD318216CB1E3003F8344 /* MBAuthContractAcceptanceParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBAuthContractAcceptanceParameter.h; sourceTree = "<group>"; };
+		667AD319216CB1E3003F8344 /* MBAuthContractAcceptanceParameter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBAuthContractAcceptanceParameter.m; sourceTree = "<group>"; };
+		667AD31B216CB905003F8344 /* MBUserContractStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBUserContractStatus.h; sourceTree = "<group>"; };
+		667AD31C216CB905003F8344 /* MBUserContractStatus.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBUserContractStatus.m; sourceTree = "<group>"; };
 		667F21D7207B56A900C4CA92 /* MBBlockTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBBlockTests.m; sourceTree = "<group>"; };
 		667F21D9207B573200C4CA92 /* block_sections_elements.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = block_sections_elements.json; sourceTree = "<group>"; };
 		667F21DB207B580100C4CA92 /* block.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = block.json; sourceTree = "<group>"; };
@@ -480,6 +489,8 @@
 			children = (
 				66AF677A206E7111003FD62F /* MBProject.h */,
 				66AF677B206E7111003FD62F /* MBProject.m */,
+				667AD315216CADC9003F8344 /* MBLegalContract.h */,
+				667AD316216CADC9003F8344 /* MBLegalContract.m */,
 			);
 			path = MBProject;
 			sourceTree = "<group>";
@@ -514,8 +525,12 @@
 			children = (
 				66C4060E20A1E1DA0044885E /* MBAuth.h */,
 				66C4060F20A1E1DA0044885E /* MBAuth.m */,
+				667AD318216CB1E3003F8344 /* MBAuthContractAcceptanceParameter.h */,
+				667AD319216CB1E3003F8344 /* MBAuthContractAcceptanceParameter.m */,
 				66C4061120A1E3760044885E /* MBUser.h */,
 				66C4061220A1E3760044885E /* MBUser.m */,
+				667AD31B216CB905003F8344 /* MBUserContractStatus.h */,
+				667AD31C216CB905003F8344 /* MBUserContractStatus.m */,
 			);
 			path = MBAuth;
 			sourceTree = "<group>";
@@ -739,6 +754,7 @@
 				6697A5482155292E00575A7F /* MBPushApiManager.m in Sources */,
 				66AF6771206E63E2003FD62F /* MBWysiwygElement.m in Sources */,
 				6697A5452155291C00575A7F /* MBPush.m in Sources */,
+				667AD317216CADC9003F8344 /* MBLegalContract.m in Sources */,
 				66AF6760206E3A1F003FD62F /* MBElement.m in Sources */,
 				667F407D2077ADEB00B18D16 /* NewsTableViewCell.m in Sources */,
 				66AF677C206E7111003FD62F /* MBProject.m in Sources */,
@@ -755,9 +771,11 @@
 				660E86612076071B008DF597 /* MBPaginationParameter.m in Sources */,
 				66D9636B20A08A9000037200 /* MBMultipartForm.m in Sources */,
 				660E865A2076023A008DF597 /* MBPaginationInfo.m in Sources */,
+				667AD31A216CB1E3003F8344 /* MBAuthContractAcceptanceParameter.m in Sources */,
 				66AF677F206E7609003FD62F /* MBGeneralElement.m in Sources */,
 				66AF6765206E3B93003FD62F /* MBTextElement.m in Sources */,
 				660839212073A5FA00432DE7 /* MBResponse.m in Sources */,
+				667AD31D216CB905003F8344 /* MBUserContractStatus.m in Sources */,
 				66B1F7B320A3235D009602C6 /* MBClient.m in Sources */,
 				66F925AE20751FA800C850F3 /* MBFile.m in Sources */,
 				660839242073B8A800432DE7 /* News.m in Sources */,

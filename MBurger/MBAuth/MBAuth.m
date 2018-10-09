@@ -22,7 +22,20 @@ static NSString *_mbAuthToken = nil;
                         Image: (UIImage *) image
                          Data: (NSString *) data
                       Success: (void (^)(void)) success
-                      Failure: (void (^)(NSError *error)) failure{
+                      Failure: (void (^)(NSError *error)) failure {
+    [self registerUserWithName:name Surname:surname Email:email Password:password Phone:phone Image:image Contracts:nil Data:data Success:success Failure:failure];
+}
+
++ (void) registerUserWithName: (NSString *) name
+                      Surname: (NSString *) surname
+                        Email: (NSString *) email
+                     Password: (NSString *) password
+                        Phone: (NSString *) phone
+                        Image: (UIImage *) image
+                    Contracts: (NSArray <MBAuthContractAcceptanceParameter *> *) contracts
+                         Data: (NSString *) data
+                      Success: (void (^)(void)) success
+                      Failure: (void (^)(NSError *error)) failure {
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     if (name){
         parameters[@"name"] = name;
@@ -41,6 +54,9 @@ static NSString *_mbAuthToken = nil;
     }
     if (image){
         parameters[@"image"] = [UIImageJPEGRepresentation(image, 1.0) base64EncodedStringWithOptions:0];
+    }
+    if(contracts && contracts.count != 0){
+        parameters[@"contracts"] = [self jsonStringForContractsArray:contracts];
     }
     if(data){
         parameters[@"data"] = data;
@@ -81,18 +97,30 @@ static NSString *_mbAuthToken = nil;
                                TokenType: (MBAuthSocialTokenType) tokenType
                                  Success: (void (^)(NSString *accessToken)) success
                                  Failure: (void (^)(NSError *error)) failure {
+    [self authenticateUserWithSocialToken:token TokenType:tokenType Contracts:nil Success:success Failure:failure];
+}
+
++ (void) authenticateUserWithSocialToken: (NSString *) token
+                               TokenType: (MBAuthSocialTokenType) tokenType
+                               Contracts: (NSArray <MBAuthContractAcceptanceParameter *> *) contracts
+                                 Success: (void (^)(NSString *accessToken)) success
+                                 Failure: (void (^)(NSError *error)) failure {
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     
+    if(contracts && contracts.count != 0){
+        parameters[@"contracts"] = [self jsonStringForContractsArray:contracts];
+    }
+    
     switch (tokenType) {
-        case MBAuthSocialTokenTypeFacebook:
+            case MBAuthSocialTokenTypeFacebook:
             parameters[@"facebook_token"] = token;
             parameters[@"mode"] = @"facebook";
             break;
-        case MBAuthSocialTokenTypeGoogle:
+            case MBAuthSocialTokenTypeGoogle:
             parameters[@"google_token"] = token;
             parameters[@"mode"] = @"google";
             break;
-
+            
         default:
             break;
     }
@@ -228,6 +256,17 @@ static NSString *_mbAuthToken = nil;
                           Data: (id) data
                        Success: (void (^)(MBUser *user)) success
                        Failure: (void (^)(NSError *error)) failure{
+    [self updateProfileWithName:name Surname:surname Phone:phone Image:image Contracts:nil Data:data Success:success Failure:failure];
+}
+
++ (void) updateProfileWithName: (NSString *) name
+                       Surname: (NSString *) surname
+                         Phone: (NSString *) phone
+                         Image: (UIImage *) image
+                     Contracts: (NSArray <MBAuthContractAcceptanceParameter *> *) contracts
+                          Data: (id) data
+                       Success: (void (^)(MBUser *user)) success
+                       Failure: (void (^)(NSError *error)) failure{
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     if (name){
         parameters[@"name"] = name;
@@ -240,6 +279,9 @@ static NSString *_mbAuthToken = nil;
     }
     if (image){
         parameters[@"image"] = [UIImageJPEGRepresentation(image, 1.0) base64EncodedStringWithOptions:0];
+    }
+    if(contracts && contracts.count != 0){
+        parameters[@"contracts"] = [self jsonStringForContractsArray:contracts];
     }
     if (data){
         NSData *jsonData = [NSJSONSerialization dataWithJSONObject:data options:0 error:nil];
@@ -365,5 +407,21 @@ static NSString *_mbAuthToken = nil;
         user.pluginsObjects = pluginsDictionary;
     }
 }
+
+#pragma mark - Contracts array to json string
+
++ (NSString *) jsonStringForContractsArray: (NSArray <MBAuthContractAcceptanceParameter *> *) contractsArray {
+    if (contractsArray && contractsArray.count != 0){
+        NSMutableArray *contractsArray = [[NSMutableArray alloc] init];
+        for (MBAuthContractAcceptanceParameter *contractAcceptance in contractsArray) {
+            [contractsArray addObject:[contractAcceptance dictionaryRepresentation]];
+        }
+        NSData *contractsJsonData = [NSJSONSerialization dataWithJSONObject:contractsArray options:NSJSONWritingPrettyPrinted error:nil];
+        NSString *contractsJsonString = [[NSString alloc] initWithData:contractsJsonData encoding:NSUTF8StringEncoding];
+        return contractsJsonString;
+    }
+    return @"";
+}
+
 
 @end

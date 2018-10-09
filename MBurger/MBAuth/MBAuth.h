@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "MBUser.h"
+#import "MBAuthContractAcceptanceParameter.h"
 
 /// The type of social tokens supported by MBurger
 typedef NS_ENUM(NSUInteger, MBAuthSocialTokenType) {
@@ -45,6 +46,30 @@ typedef NS_ENUM(NSUInteger, MBAuthSocialTokenType) {
                       Success: (nullable void (^)(void)) success
                       Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
+/**
+ Register a user with the data provided
+ 
+ @param name The name of the user.
+ @param surname The surname of the user.
+ @param email The email of the user.
+ @param password The password that will be used to autheenticate the user.
+ @param phone The phone of the user.
+ @param image The image of the user.
+ @param contracts an array indicating if the contracts are accepted or not
+ @param data Additional data passed with the registration. You can include an `NSArray` or `NSDictionary` in this parameter and it will be returned in the user profile. This will be converted in a json string with `NSJSONSerialization`.
+ @param success A block object to be executed when the task finishes successfully. This block has no return value and takes no arguments.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
+ */
++ (void) registerUserWithName: (nonnull NSString *) name
+                      Surname: (nonnull NSString *) surname
+                        Email: (nonnull NSString *) email
+                     Password: (nonnull NSString *) password
+                        Phone: (nullable NSString *) phone
+                        Image: (nullable UIImage *) image
+                    Contracts: (nullable NSArray <MBAuthContractAcceptanceParameter *> *) contracts
+                         Data: (nullable id) data
+                      Success: (nullable void (^)(void)) success
+                      Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 /**
  Authenticates a user giving the email and password.
@@ -70,6 +95,21 @@ typedef NS_ENUM(NSUInteger, MBAuthSocialTokenType) {
  */
 + (void) authenticateUserWithSocialToken: (nonnull NSString *) token
                                TokenType: (MBAuthSocialTokenType) tokenType
+                                 Success: (nullable void (^)(NSString * _Nonnull accessToken)) success
+                                 Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
+
+/**
+ Authenticates a user with a social token.
+ 
+ @param token The token of the user obtained with the SDK of the social network.
+ @param tokenType this parameter identifies the social network used to authenticate the user
+ @param contracts an array indicating if the contracts are accepted or not
+ @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the access token. The access token will be saved in the Keychain and will be used in all the subsequent calls to the MBurger apis.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
+ */
++ (void) authenticateUserWithSocialToken: (nonnull NSString *) token
+                               TokenType: (MBAuthSocialTokenType) tokenType
+                               Contracts: (nullable NSArray <MBAuthContractAcceptanceParameter *> *) contracts
                                  Success: (nullable void (^)(NSString * _Nonnull accessToken)) success
                                  Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
@@ -116,10 +156,9 @@ typedef NS_ENUM(NSUInteger, MBAuthSocialTokenType) {
 + (void) getUserProfileWithSuccess: (nullable void (^)(MBUser * _Nonnull user)) success
                            Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
-
 /**
  Updates the profile informations of the current authenticated user.
-
+ 
  @param name The new name of the user.
  @param surname The new surname of the user.
  @param phone The new phone of the user.
@@ -136,6 +175,26 @@ typedef NS_ENUM(NSUInteger, MBAuthSocialTokenType) {
                        Success: (nullable void (^)(MBUser * _Nonnull user)) success
                        Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
+/**
+ Updates the profile informations of the current authenticated user.
+ 
+ @param name The new name of the user.
+ @param surname The new surname of the user.
+ @param phone The new phone of the user.
+ @param image The new image of the user.
+ @param contracts an array indicating if the contracts are accepted or not
+ @param data The new data of the user.
+ @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the `MBUser` representing the new user.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
+ */
++ (void) updateProfileWithName: (nonnull NSString *) name
+                       Surname: (nonnull NSString *) surname
+                         Phone: (nullable NSString *) phone
+                         Image: (nullable UIImage *) image
+                     Contracts: (nullable NSArray <MBAuthContractAcceptanceParameter *> *) contracts
+                          Data: (nullable NSString *) data
+                       Success: (nullable void (^)(MBUser * _Nonnull user)) success
+                       Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 /**
  Deletes the current authenticated user. It will call the `logoutCurrentUser` if the deletion is succesful.

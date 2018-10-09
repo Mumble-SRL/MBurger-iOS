@@ -26,7 +26,7 @@
     self.tableView.dataSource = self;
     self.tableView.tableFooterView = [UIView new];
     
-    [self loadNews];
+    //[self loadNews];
 }
 
 

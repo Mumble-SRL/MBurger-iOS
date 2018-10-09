@@ -10,11 +10,12 @@
 
 @implementation MBProject
 
-- (instancetype) initWithProjectId: (NSInteger) projectId Name: (NSString *) name {
+- (instancetype) initWithProjectId: (NSInteger) projectId Name: (NSString *) name Contracts: (NSArray <MBLegalContract *> *) contracts {
     self = [super init];
     if (self){
         self.projectId = projectId;
         self.projectName = name;
+        self.contracts = contracts;
     }
     return self;
 }
@@ -22,7 +23,16 @@
 - (instancetype) initWithDictionary: (NSDictionary *) dictionary {
     NSInteger projectId = [dictionary[@"id"] integerValue];
     NSString *projectName = dictionary[@"name"];
-    return [self initWithProjectId:projectId Name:projectName];
+    NSArray *contracts = nil;
+    if (dictionary[@"contracts"] != nil && dictionary[@"contracts"] != [NSNull null]){
+        NSArray *contractsFromDictionary = dictionary[@"contracts"];
+        NSMutableArray *mutableContracts = [[NSMutableArray alloc] init];
+        for (NSDictionary *contractDictionary in contractsFromDictionary) {
+            [mutableContracts addObject:[[MBLegalContract alloc] initWithDictionary:contractDictionary]];
+        }
+        contracts = mutableContracts;
+    }
+    return [self initWithProjectId:projectId Name:projectName Contracts:contracts];
 }
 
 - (BOOL) isEqual:(id)object {

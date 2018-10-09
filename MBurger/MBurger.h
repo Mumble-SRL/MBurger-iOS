@@ -23,6 +23,7 @@
 #import "MBGeofenceParameter.h"
 #import "MBGeneralParameter.h"
 #import "MBProject.h"
+#import "MBLegalContract.h"
 #import "MBBlock.h"
 #import "MBSection.h"
 #import "MBElement.h"
@@ -53,7 +54,9 @@
 #import "MBUploadableElementsFactory.h"
 
 #import "MBAuth.h"
+#import "MBAuthContractAcceptanceParameter.h"
 #import "MBUser.h"
+#import "MBUserContractStatus.h"
 
 #import "MBPlugin.h"
 

@@ -17,11 +17,21 @@
 
 + (void) getProjectWithSuccess: (void (^)(MBProject * project)) success
                        Failure: (void (^)(NSError *error)) failure {
+    [self getProjectIncludingContracts:TRUE Success:success Failure:failure];
+}
+
++ (void) getProjectIncludingContracts: (BOOL) includeContracts
+                              Success: (void (^)(MBProject *project)) success
+                              Failure: (void (^)(NSError *error)) failure {
+    NSMutableDictionary *paramters = [[NSMutableDictionary alloc] init];
+    if (includeContracts) {
+        paramters[@"include"] = @"contracts";
+    }
     [MBApiManager callApiWithApiToken:[MBManager sharedManager].apiToken
                                Locale:[[MBManager sharedManager] localeString]
                               ApiName:@"project"
                            HTTPMethod:MBHTTPMethodGet
-                           Parameters:nil
+                           Parameters:paramters
                      HeaderParameters:nil
                           Development:[MBManager sharedManager].development
                               Success:^(MBResponse *response) {
