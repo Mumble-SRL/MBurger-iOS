@@ -229,21 +229,11 @@ static NSString *_mbAuthToken = nil;
 
 + (void) getUserProfileWithSuccess: (void (^)(MBUser *user)) success
                            Failure: (void (^)(NSError *error)) failure {
-    [self getUserProfileIncludingContracts:TRUE Success:success Failure:failure];
-}
-
-+ (void) getUserProfileIncludingContracts: (BOOL) includeContracts
-                                  Success: (void (^)(MBUser *user)) success
-                                  Failure: (void (^)(NSError *error)) failure {
-    NSMutableDictionary *paramters = [[NSMutableDictionary alloc] init];
-    if (includeContracts) {
-        paramters[@"include"] = @"contracts";
-    }
     [MBApiManager callApiWithApiToken:MBManager.sharedManager.apiToken
                                Locale:[MBManager.sharedManager localeString]
                               ApiName:@"profile"
                            HTTPMethod:MBHTTPMethodGet
-                           Parameters:paramters
+                           Parameters:nil
                      HeaderParameters:nil
                           Development:[MBManager sharedManager].development
                               Success:^(MBResponse *response) {
@@ -422,11 +412,11 @@ static NSString *_mbAuthToken = nil;
 
 + (NSString *) jsonStringForContractsArray: (NSArray <MBAuthContractAcceptanceParameter *> *) contractsArray {
     if (contractsArray && contractsArray.count != 0){
-        NSMutableArray *contractsArray = [[NSMutableArray alloc] init];
+        NSMutableArray *contractsArrayMutable = [[NSMutableArray alloc] init];
         for (MBAuthContractAcceptanceParameter *contractAcceptance in contractsArray) {
-            [contractsArray addObject:[contractAcceptance dictionaryRepresentation]];
+            [contractsArrayMutable addObject:[contractAcceptance dictionaryRepresentation]];
         }
-        NSData *contractsJsonData = [NSJSONSerialization dataWithJSONObject:contractsArray options:NSJSONWritingPrettyPrinted error:nil];
+        NSData *contractsJsonData = [NSJSONSerialization dataWithJSONObject:contractsArrayMutable options:NSJSONWritingPrettyPrinted error:nil];
         NSString *contractsJsonString = [[NSString alloc] initWithData:contractsJsonData encoding:NSUTF8StringEncoding];
         return contractsJsonString;
     }
