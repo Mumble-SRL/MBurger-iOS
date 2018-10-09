@@ -37,6 +37,6 @@
 
  @return The dictionary representation of the object
  */
-- (NSDictionary *) dictionaryRepresentation;
+- (nonnull NSDictionary *) dictionaryRepresentation;
 
 @end
