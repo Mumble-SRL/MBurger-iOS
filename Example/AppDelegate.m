@@ -18,13 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [MBManager sharedManager].apiToken = @"2db868f31419407944771fe3fa3b2149efaa62bd";
-    
-    [MBClient getProjectWithSuccess:^(MBProject *project) {
-        NSLog(@"%@",project.contracts);
-    } Failure:^(NSError *error) {
-        
-    }];
+    [MBManager sharedManager].apiToken = @"API_TOKEN";
     
     return YES;
 }

@@ -26,7 +26,7 @@
     self.tableView.dataSource = self;
     self.tableView.tableFooterView = [UIView new];
     
-    //[self loadNews];
+    [self loadNews];
 }
 
 
@@ -35,7 +35,7 @@
 }
 
 - (void) loadNews {
-    NSInteger newsBlockId = 375;
+    NSInteger newsBlockId = -1; // Change with your blockId
     NSDictionary *mappingDictionary = @{@"title" : @"title",
                                         @"contenuto" : @"content",
                                         @"immagine.firstImage.url" : @"imageUrl",
