@@ -20,7 +20,7 @@ static NSString *_mbAuthToken = nil;
                      Password: (NSString *) password
                         Phone: (NSString *) phone
                         Image: (UIImage *) image
-                         Data: (NSString *) data
+                         Data: (id) data
                       Success: (void (^)(void)) success
                       Failure: (void (^)(NSError *error)) failure {
     [self registerUserWithName:name Surname:surname Email:email Password:password Phone:phone Image:image Contracts:nil Data:data Success:success Failure:failure];
@@ -33,7 +33,7 @@ static NSString *_mbAuthToken = nil;
                         Phone: (NSString *) phone
                         Image: (UIImage *) image
                     Contracts: (NSArray <MBAuthContractAcceptanceParameter *> *) contracts
-                         Data: (NSString *) data
+                         Data: (id) data
                       Success: (void (^)(void)) success
                       Failure: (void (^)(NSError *error)) failure {
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
@@ -59,7 +59,9 @@ static NSString *_mbAuthToken = nil;
         parameters[@"contracts"] = [self jsonStringForContractsArray:contracts];
     }
     if(data){
-        parameters[@"data"] = data;
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:data options:0 error:nil];
+        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        parameters[@"data"] = jsonString;
     }
     
     [MBApiManager callApiWithApiToken:MBManager.sharedManager.apiToken
