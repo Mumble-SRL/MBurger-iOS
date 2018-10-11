@@ -163,7 +163,7 @@ typedef NS_ENUM(NSUInteger, MBAuthSocialTokenType) {
  @param surname The new surname of the user.
  @param phone The new phone of the user.
  @param image The new image of the user.
- @param data The new data of the user.
+ @param data Additional data passed with the update. You can include an `NSArray` or `NSDictionary` in this parameter and it will be returned in the user profile. This will be converted in a json string with `NSJSONSerialization`.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the `MBUser` representing the new user.
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
@@ -171,7 +171,7 @@ typedef NS_ENUM(NSUInteger, MBAuthSocialTokenType) {
                        Surname: (nonnull NSString *) surname
                          Phone: (nullable NSString *) phone
                          Image: (nullable UIImage *) image
-                          Data: (nullable NSString *) data
+                          Data: (nullable id) data
                        Success: (nullable void (^)(MBUser * _Nonnull user)) success
                        Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
@@ -183,7 +183,7 @@ typedef NS_ENUM(NSUInteger, MBAuthSocialTokenType) {
  @param phone The new phone of the user.
  @param image The new image of the user.
  @param contracts an array indicating if the contracts are accepted or not
- @param data The new data of the user.
+ @param data Additional data passed with the update. You can include an `NSArray` or `NSDictionary` in this parameter and it will be returned in the user profile. This will be converted in a json string with `NSJSONSerialization`.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the `MBUser` representing the new user.
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
@@ -192,7 +192,7 @@ typedef NS_ENUM(NSUInteger, MBAuthSocialTokenType) {
                          Phone: (nullable NSString *) phone
                          Image: (nullable UIImage *) image
                      Contracts: (nullable NSArray <MBAuthContractAcceptanceParameter *> *) contracts
-                          Data: (nullable NSString *) data
+                          Data: (nullable id) data
                        Success: (nullable void (^)(MBUser * _Nonnull user)) success
                        Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
