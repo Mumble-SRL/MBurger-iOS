@@ -59,9 +59,17 @@ static NSString *_mbAuthToken = nil;
         parameters[@"contracts"] = [self jsonStringForContractsArray:contracts];
     }
     if(data){
-        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:data options:0 error:nil];
-        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-        parameters[@"data"] = jsonString;
+        if ([data isKindOfClass:[NSArray class]] || [data isKindOfClass:[NSDictionary class]]){
+            NSData *jsonData = [NSJSONSerialization dataWithJSONObject:data options:0 error:nil];
+            NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+            parameters[@"data"] = jsonString;
+        } else {
+            NSError *error = [[NSError alloc] initWithDomain:@"com.mumble.mburger" code:201 userInfo:@{NSLocalizedDescriptionKey : @"Data must be an array or dictionary."}];
+            if (failure){
+                failure(error);
+            }
+            return;
+        }
     }
     
     [MBApiManager callApiWithApiToken:MBManager.sharedManager.apiToken
@@ -286,9 +294,17 @@ static NSString *_mbAuthToken = nil;
         parameters[@"contracts"] = [self jsonStringForContractsArray:contracts];
     }
     if (data){
-        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:data options:0 error:nil];
-        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-        parameters[@"data"] = jsonString;
+        if ([data isKindOfClass:[NSArray class]] || [data isKindOfClass:[NSDictionary class]]){
+            NSData *jsonData = [NSJSONSerialization dataWithJSONObject:data options:0 error:nil];
+            NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+            parameters[@"data"] = jsonString;
+        } else {
+            NSError *error = [[NSError alloc] initWithDomain:@"com.mumble.mburger" code:201 userInfo:@{NSLocalizedDescriptionKey : @"Data must be an array or dictionary."}];
+            if (failure){
+                failure(error);
+            }
+            return;
+        }
     }
     
     [MBApiManager callApiWithApiToken:MBManager.sharedManager.apiToken
