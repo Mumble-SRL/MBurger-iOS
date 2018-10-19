@@ -350,6 +350,7 @@ static NSString *_mbAuthToken = nil;
 }
 
 + (void) logoutCurrentUser{
+    _mbAuthToken = nil;
     [self setUserLoggedInInUserDefaults:FALSE];
     [SAMKeychain deletePasswordForService:@"com.mumble.mburger.service" account:@"com.mumble.mburger.account"];
 }
