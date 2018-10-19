@@ -167,8 +167,8 @@ static NSString *_mbAuthToken = nil;
                               }];
 }
 
-+ (void) logoutCurrentWithSuccess: (void (^)(void)) success
-                          Failure: (void (^)(NSError *error)) failure{
++ (void) logoutCurrentUserWithSuccess: (void (^)(void)) success
+                              Failure: (void (^)(NSError *error)) failure{
     [MBApiManager callApiWithApiToken:MBManager.sharedManager.apiToken
                                Locale:[MBManager.sharedManager localeString]
                               ApiName:@"logout"
@@ -177,6 +177,7 @@ static NSString *_mbAuthToken = nil;
                      HeaderParameters:nil
                           Development:[MBManager sharedManager].development
                               Success:^(MBResponse *response) {
+                                  [self logoutCurrentUser];
                                   if (success){
                                       success();
                                   }

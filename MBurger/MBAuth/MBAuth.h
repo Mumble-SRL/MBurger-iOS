@@ -119,8 +119,8 @@ typedef NS_ENUM(NSUInteger, MBAuthSocialTokenType) {
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes no arguments.
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
-+ (void) logoutCurrentWithSuccess: (nullable void (^)(void)) success
-                          Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
++ (void) logoutCurrentUserWithSuccess: (nullable void (^)(void)) success
+                              Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 /**
  Change the password for the current authenticated user.
@@ -211,11 +211,6 @@ typedef NS_ENUM(NSUInteger, MBAuthSocialTokenType) {
  @return If a user is authenticate or not.
  */
 + (BOOL) userIsLoggedIn;
-
-/**
- Logs out the current user removing his access token from the Keychain.
- */
-+ (void) logoutCurrentUser;
 
 /**
  The access token that represents the user, if an user has been authenticated correctly.
