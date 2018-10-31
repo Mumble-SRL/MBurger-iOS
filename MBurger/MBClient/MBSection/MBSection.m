@@ -78,7 +78,6 @@
             else {
                 value = [e value];
             }
-            //TODO: should i check something?
             if (value != [NSNull null]){
                 [object setValue:value forKeyPath:objectKeyPath];
             }
