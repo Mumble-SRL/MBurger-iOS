@@ -37,8 +37,8 @@
 - (void) loadNews {
     NSInteger newsBlockId = -1; // Change with your blockId
     NSDictionary *mappingDictionary = @{@"title" : @"title",
-                                        @"contenuto" : @"content",
-                                        @"immagine.firstImage.url" : @"imageUrl",
+                                        @"content" : @"content",
+                                        @"image.firstImage.url" : @"imageUrl",
                                         @"link" : @"link"};
     
     NSMutableArray *newsArray = [[NSMutableArray alloc] init];

@@ -76,7 +76,7 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
     }
 
     [manager.requestSerializer setValue:apiToken forHTTPHeaderField:@"X-MBurger-Token"];
-    [manager.requestSerializer setValue:@"2" forHTTPHeaderField:@"X-MBurger-Version"];
+    [manager.requestSerializer setValue:@"3" forHTTPHeaderField:@"X-MBurger-Version"];
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     NSString *accessToken = [MBAuth authToken];
     if (accessToken != nil && ![accessToken isEqualToString:@""]){
@@ -88,18 +88,17 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
 #pragma clang diagnostic ignored "-Wundeclared-selector"
         [MBAuth performSelector:@selector(handleApiResponseAndSaveNewTokenIfPresentWithResponse:) withObject:operation.response];
 #pragma clang diagnostic pop
-        NSDictionary *response = (NSDictionary *) responseObject;
-        if (response[@"response"] && response[@"response"] != [NSNull null]){
-            NSDictionary *responseDict = response[@"response"];
-            NSInteger statusCode = [responseDict[@"status_code"] integerValue];
+        if (responseObject && responseObject != [NSNull null] && [responseObject isKindOfClass:[NSDictionary class]]){
+            NSDictionary *responseDictionary = (NSDictionary *) responseObject;
+            NSInteger statusCode = [responseDictionary[@"status_code"] integerValue];
             if (statusCode == 0){
                 MBResponse *response = [[MBResponse alloc] init];
-                if (responseDict[@"body"]){
-                    if ([responseDict[@"body"] isKindOfClass:[NSDictionary class]]){
-                        response.payload = responseDict[@"body"];
+                if (responseDictionary[@"body"]){
+                    if ([responseDictionary[@"body"] isKindOfClass:[NSDictionary class]]){
+                        response.payload = responseDictionary[@"body"];
                     }
-                    else if ([responseDict[@"body"] isKindOfClass:[NSArray class]]){
-                        response.payload = @{@"data": responseDict[@"body"]};
+                    else if ([responseDictionary[@"body"] isKindOfClass:[NSArray class]]){
+                        response.payload = @{@"data": responseDictionary[@"body"]};
                     }
                 }
                 response.dataTask = operation;
@@ -108,19 +107,16 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
                         success(response);
                     }
                 });
-            }
-            else {
-                NSString *message = responseDict[@"message"] ? responseDict[@"message"] : @"";
-                NSString *messageLocalized = responseDict[@"message_localized"] ? responseDict[@"message_localized"] : @"";
-                NSError *error = [[NSError alloc] initWithDomain:@"com.mumble.mburger" code:statusCode userInfo:@{NSLocalizedDescriptionKey : messageLocalized, NSDebugDescriptionErrorKey : message}];
+            } else {
+                NSString *message = responseDictionary[@"message"] ? responseDictionary[@"message"] : @"";
+                NSError *error = [[NSError alloc] initWithDomain:@"com.mumble.mburger" code:statusCode userInfo:@{NSLocalizedDescriptionKey: message, NSDebugDescriptionErrorKey : message}];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     if (failure){
                         failure(error);
                     }
                 });
             }
-        }
-        else {
+        } else {
             NSError *error = [[NSError alloc] initWithDomain:@"com.mumble.mburger" code:100 userInfo:@{NSLocalizedDescriptionKey : @"Can't find response"}];
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (failure){
@@ -229,9 +225,6 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
         }
         if (jsonDictionary[@"message"]){
             message = jsonDictionary[@"message"];
-        }
-        if (jsonDictionary[@"message_localized"]){
-            message = jsonDictionary[@"message_localized"];
         }
         if (jsonDictionary[@"errors"]){
             NSDictionary *errors = jsonDictionary[@"errors"];
