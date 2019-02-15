@@ -436,7 +436,7 @@ static NSString *_mbAuthToken = nil;
         for (MBAuthContractAcceptanceParameter *contractAcceptance in contractsArray) {
             [contractsArrayMutable addObject:[contractAcceptance parameterRepresentation]];
         }
-        NSData *contractsJsonData = [NSJSONSerialization dataWithJSONObject:contractsArrayMutable options:NSJSONWritingPrettyPrinted error:nil];
+        NSData *contractsJsonData = [NSJSONSerialization dataWithJSONObject:contractsArrayMutable options:0 error:nil];
         NSString *contractsJsonString = [[NSString alloc] initWithData:contractsJsonData encoding:NSUTF8StringEncoding];
         return contractsJsonString;
     }

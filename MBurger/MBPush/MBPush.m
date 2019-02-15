@@ -148,7 +148,7 @@
 
 + (NSString *) jsonSrtingFromTopics: (NSArray <NSString *> * ) topics {
     NSError *error = nil;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:topics options:NSJSONWritingPrettyPrinted error:&error];
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:topics options:0 error:&error];
     if (error != nil){
         NSLog(@"%@", error.localizedDescription);
         return nil;

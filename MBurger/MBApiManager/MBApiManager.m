@@ -69,6 +69,7 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
     totalParametersDictionary[@"locale"] = locale;
     NSString *deviceIdString = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     totalParametersDictionary[@"device_id"] = deviceIdString;
+    totalParametersDictionary[@"os"] = @"ios";
 
     for (NSString *key in headerParameters.allKeys){
         [manager.requestSerializer setValue:headerParameters[key] forHTTPHeaderField:key];
@@ -223,8 +224,14 @@ typedef void (^AFHTTPRequestOperationFailureHandler) (NSURLSessionTask *operatio
     if ([json isKindOfClass:[NSDictionary class]]){
         NSString *message = nil;
         NSDictionary *jsonDictionary = (NSDictionary *) json;
+        if (jsonDictionary[@"response"]){
+            jsonDictionary = jsonDictionary[@"response"];
+        }
         if (jsonDictionary[@"message"]){
             message = jsonDictionary[@"message"];
+        }
+        if (jsonDictionary[@"message_localized"]){
+            message = jsonDictionary[@"message_localized"];
         }
         if (jsonDictionary[@"errors"]){
             NSDictionary *errors = jsonDictionary[@"errors"];
