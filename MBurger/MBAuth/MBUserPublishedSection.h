@@ -30,7 +30,7 @@
  @param blockId The id of the block of the section.
  @return A newly created MBUserPublishedSection initialized with the data passed.
 */
-- (nonnull instancetype) initWithSectionId: (NSInteger) sectionId BlockId: (BOOL) blockId;
+- (nonnull instancetype) initWithSectionId: (NSInteger) sectionId BlockId: (NSInteger) blockId;
 
 /**
  Initializes an object with the dictionary returned by the api.

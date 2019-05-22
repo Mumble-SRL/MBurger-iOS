@@ -10,7 +10,7 @@
 
 @implementation MBUserPublishedSection
 
-- (instancetype) initWithSectionId: (NSInteger) sectionId BlockId: (BOOL) blockId {
+- (instancetype) initWithSectionId: (NSInteger) sectionId BlockId: (NSInteger) blockId {
     self = [super init];
     if (self){
         self.sectionId = sectionId;
