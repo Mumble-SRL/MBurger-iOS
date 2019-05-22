@@ -69,6 +69,7 @@
 		66F925A02074DFC300C850F3 /* MBDropdownElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F9259F2074DFC300C850F3 /* MBDropdownElement.m */; };
 		66F925AB20751BA600C850F3 /* MBImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F925AA20751BA600C850F3 /* MBImage.m */; };
 		66F925AE20751FA800C850F3 /* MBFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F925AD20751FA800C850F3 /* MBFile.m */; };
+		EC9112D62295414E006AE42E /* MBUserPublishedSection.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9112D52295414E006AE42E /* MBUserPublishedSection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -221,6 +222,8 @@
 		66F925AC20751FA800C850F3 /* MBFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBFile.h; sourceTree = "<group>"; };
 		66F925AD20751FA800C850F3 /* MBFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBFile.m; sourceTree = "<group>"; };
 		D7D28725DB33F29961351BA5 /* Pods-MBurger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBurger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MBurger/Pods-MBurger.debug.xcconfig"; sourceTree = "<group>"; };
+		EC9112D42295414E006AE42E /* MBUserPublishedSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBUserPublishedSection.h; sourceTree = "<group>"; };
+		EC9112D52295414E006AE42E /* MBUserPublishedSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBUserPublishedSection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -529,6 +532,8 @@
 				667AD319216CB1E3003F8344 /* MBAuthContractAcceptanceParameter.m */,
 				66C4061120A1E3760044885E /* MBUser.h */,
 				66C4061220A1E3760044885E /* MBUser.m */,
+				EC9112D42295414E006AE42E /* MBUserPublishedSection.h */,
+				EC9112D52295414E006AE42E /* MBUserPublishedSection.m */,
 				667AD31B216CB905003F8344 /* MBUserContractStatus.h */,
 				667AD31C216CB905003F8344 /* MBUserContractStatus.m */,
 			);
@@ -740,6 +745,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC9112D62295414E006AE42E /* MBUserPublishedSection.m in Sources */,
 				66D9636F20A09AA500037200 /* MBUploadableElementsFactory.m in Sources */,
 				66EBBF1E20E0DD6600CCD6B1 /* MBDropdownElementOption.m in Sources */,
 				66D9635F20A0834800037200 /* MBUploadableElement.m in Sources */,

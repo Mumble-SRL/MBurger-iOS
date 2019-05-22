@@ -4,52 +4,291 @@
     <title>MBurger  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
-    <meta charset='utf-8'>
-	<meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1.0" />
+    <meta charset="utf-8">
     <script src="js/jquery.min.js" defer></script>
     <script src="js/jazzy.js" defer></script>
     
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
   </head>
   <body>
+
+
     <a title="MBurger  Reference"></a>
-    <header>
-      <div class="content-wrapper">
-        <p>
-          <a href="index.html">MBurger Docs</a>
-          <span class="no-mobile"> (100% documented)</span>
-        </p>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+          MBurger Docs
+        </a>
+         (100% documented)
+      </p>
     
-        <p class="header-right">
-          <a href="https://gitlab.mumbleserver.it/iOS/MBurger">
-            <img src="img/gh.png"/>
-            <span class="no-mobile">View on GitHub</span>
+      <p class="header-col--secondary">
+        <form role="search" action="search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/Mumble-SRL/MBurger-iOS">
+            <img class="header-icon" src="img/gh.png"/>
+            View on GitHub
           </a>
         </p>
     
-      </div>
     </header>
-    <div id="breadcrumbs-container">
-      <div class="content-wrapper">
-        <p id="breadcrumbs">
-          <span class="no-mobile">
-            <a href="index.html">MBurger Reference</a>
-            <img id="carat" src="img/carat.png" />
-          </span>
-          MBurger  Reference
-        </p>
-      </div>
-    </div>
-    <div class="wrapper">
-      <div class="article-wrapper">
-        <article class="main-content">
-          <section>
-            <section class="section">
-              
-              <p align="center" >
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html">MBurger Reference</a>
+      <img class="carat" src="img/carat.png" />
+      MBurger  Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="MBManager.html">MBManager</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBManager.html">MBManager</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="MBClient.html">MBClient</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBClient.html">MBClient</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBPaginationInfo.html">MBPaginationInfo</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="MBParameter.html">MBParameter</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/MBParameter.html">MBParameter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBSortParameter.html">MBSortParameter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBPaginationParameter.html">MBPaginationParameter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBFilterParameter.html">MBFilterParameter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBGeofenceParameter.html">MBGeofenceParameter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBGeneralParameter.html">MBGeneralParameter</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="MBProject.html">MBProject</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBProject.html">MBProject</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBLegalContract.html">MBLegalContract</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="MBBlock.html">MBBlock</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBBlock.html">MBBlock</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="MBSection.html">MBSection</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBSection.html">MBSection</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="MBElement.html">MBElement</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBElement.html">MBElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBTextElement.html">MBTextElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBImagesElement.html">MBImagesElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBImage.html">MBImage</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBMediaElement.html">MBMediaElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBFile.html">MBFile</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBCheckboxElement.html">MBCheckboxElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBWysiwygElement.html">MBWysiwygElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBDateElement.html">MBDateElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBAddressElement.html">MBAddressElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBDropdownElement.html">MBDropdownElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBDropdownElementOption.html">MBDropdownElementOption</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBPollElement.html">MBPollElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBGeneralElement.html">MBGeneralElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBElementsFactory.html">MBElementsFactory</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="MBAdmin.html">MBAdmin</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBAdmin.html">MBAdmin</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBUploadableElement.html">MBUploadableElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBUploadableTextElement.html">MBUploadableTextElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBUploadableImagesElement.html">MBUploadableImagesElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBUploadableFilesElement.html">MBUploadableFilesElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBUploadableElementsFactory.html">MBUploadableElementsFactory</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="MBAuth.html">MBAuth</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBAuth.html">MBAuth</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBUser.html">MBUser</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBAuthContractAcceptanceParameter.html">MBAuthContractAcceptanceParameter</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="MBPush.html">MBPush</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBPush.html">MBPush</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBPushApiManager.html">MBPushApiManager</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="MBApiManager.html">MBApiManager</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBApiManager.html">MBApiManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBMultipartForm.html">MBMultipartForm</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBResponse.html">MBResponse</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="MBPlugin.html">MBPlugin</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/MBPlugin.html">MBPlugin</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="MBUtilities.html">MBUtilities</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBUtilities.html">MBUtilities</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Other Classes.html">Other Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBMarkdownElement.html">MBMarkdownElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBUserContractStatus.html">MBUserContractStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/MBUserPublishedSection.html">MBUserPublishedSection</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Other Enums.html">Other Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/MBAuthSocialTokenType.html">MBAuthSocialTokenType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/MBElementType.html">MBElementType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/MBHTTPMethod.html">MBHTTPMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/MBMediaType.html">MBMediaType</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            
+            <p align="center" >
 <img src="https://raw.githubusercontent.com/Mumble-SRL/MBurger-iOS/master/Images/logo.png" alt="MBurger Logo" title="MBurger Logo">
 </p>
 
-<p><img src="docs/badge.svg" alt="Test Status">
+<p><img src="https://img.shields.io/badge/documentation-100%25-brightgreen.svg" alt="Test Status">
 <img src="https://img.shields.io/badge/pod-v1.0-blue.svg" alt="License: MIT">
 <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-yellow.svg" alt="CocoaPods"></a></p>
 <h1 id='mburger' class='heading'>MBurger</h1>
@@ -95,33 +334,37 @@
 <p>Then in your <code>AppDelegate</code> <code>application:didFinishLaunchingWithOptions:</code> initialize the <code><a href="Classes/MBManager.html">MBManager</a></code> of the SDK setting a token like this:</p>
 
 <p><strong>Objective-C</strong>:</p>
-<pre class="highlight plaintext"><code>#import "AppDelegate.h"
-#import "MBurger.h"
 
-@interface AppDelegate ()
+<p>&ldquo;`objective-c tab=<q>Objective-C</q></p>
+<h1 id='import-q-appdelegate-h-q' class='heading'>import <q>AppDelegate.h</q></h1>
+<h1 id='import-q-mburger-h-q' class='heading'>import <q>MBurger.h</q></h1>
 
-@end
+<p>@interface AppDelegate ()</p>
 
-@implementation AppDelegate
+<p>@end</p>
 
+<p>@implementation AppDelegate</p>
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+<ul>
+<li><p>(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {</p>
 
-    [MBManager sharedManager].apiToken = @"YOUR_API_TOKEN";
+<p>[MBManager sharedManager].apiToken = @<q>YOUR_API_TOKEN</q>;</p>
 
-    return YES;
+<p>return YES;
+}</p></li>
+</ul>
+<pre class="highlight plaintext"><code>
+**Swift**:
+
+```swift
+import MBurger
+
+...
+
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -&gt; Bool {
+        MBManager.shared().apiToken = "YOUR_API_TOKEN"
+    return true
 }
-</code></pre>
-
-<p><strong>Swift</strong>:</p>
-<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">MBurger</span>
-
-<span class="o">...</span>
-
-<span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="n">_</span> <span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIApplicationLaunchOptionsKey</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
-        <span class="kt">MBManager</span><span class="o">.</span><span class="nf">shared</span><span class="p">()</span><span class="o">.</span><span class="n">apiToken</span> <span class="o">=</span> <span class="s">"YOUR_API_TOKEN"</span>
-    <span class="k">return</span> <span class="kc">true</span>
-<span class="p">}</span>
 </code></pre>
 
 <p>You will not be able to interact with the SDK if you don&rsquo;t initialize it with a correct token/key.</p>
@@ -319,13 +562,13 @@ NSMutableArray *newsArray = [[NSMutableArray alloc] init];
 <p>All the model objects implement the <code>isEqual:</code> function based on the corresponding id. So for example an MBSection will result equal to another MBSection object if they have the same <code>sectionId</code>.</p>
 <h1 id='admin' class='heading'>Admin</h1>
 
-<p>Read the full admin documentation apis <a href="MBurger/MBAdmin">here</a>.</p>
+<p>Read the full admin documentation apis <a href="https://github.com/Mumble-SRL/MBurger-iOS/tree/master/MBurger/MBAdmin">here</a>.</p>
 <h1 id='authentication' class='heading'>Authentication</h1>
 
-<p>Read the full admin documentation apis <a href="MBurger/MBAuth">here</a>.</p>
+<p>Read the full admin documentation apis <a href="https://github.com/Mumble-SRL/MBurger-iOS/tree/master/MBurger/MBAuth">here</a>.</p>
 <h1 id='push-notifications' class='heading'>Push notifications</h1>
 
-<p>Read the full push notifications documentation apis <a href="MBurger/MBPush">here</a>.</p>
+<p>Read the full push notifications documentation apis <a href="https://github.com/Mumble-SRL/MBurger-iOS/tree/master/MBurger/MBPush">here</a>.</p>
 <h1 id='plugins' class='heading'>Plugins</h1>
 
 <p>You can add more to MBurger with plugins, classes that conforms to the <code>MPPlugin</code> protocol that can extend the functionalities of MBurger. An example of a plugin is <a href="https://github.com/Mumble-SRL/MBPayments-iOS.git">MPPayments</a> a plugin that you to charge the users with single payments or sbscription.</p>
@@ -339,248 +582,16 @@ NSMutableArray *newsArray = [[NSMutableArray alloc] init];
 
 <p>MBurger is released under the Apache 2.0 license. See <a href="LICENSE">LICENSE</a> for details.</p>
 
-            </section>
-          </section>
-        </article>
-      </div>
-      <div class="nav-wrapper">
-        <nav class="nav-bottom">
-          <ul class="nav-groups">
-            <li class="nav-group-name">
-              <a href="MBManager.html">MBManager</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="Classes/MBManager.html">MBManager</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="MBClient.html">MBClient</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="Classes/MBClient.html">MBClient</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBPaginationInfo.html">MBPaginationInfo</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="MBParameter.html">MBParameter</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="Protocols/MBParameter.html">MBParameter</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBSortParameter.html">MBSortParameter</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBPaginationParameter.html">MBPaginationParameter</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBFilterParameter.html">MBFilterParameter</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBGeofenceParameter.html">MBGeofenceParameter</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBGeneralParameter.html">MBGeneralParameter</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="MBProject.html">MBProject</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="Classes/MBProject.html">MBProject</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBLegalContract.html">MBLegalContract</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="MBBlock.html">MBBlock</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="Classes/MBBlock.html">MBBlock</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="MBSection.html">MBSection</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="Classes/MBSection.html">MBSection</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="MBElement.html">MBElement</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="Classes/MBElement.html">MBElement</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBTextElement.html">MBTextElement</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBImagesElement.html">MBImagesElement</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBImage.html">MBImage</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBMediaElement.html">MBMediaElement</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBFile.html">MBFile</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBCheckboxElement.html">MBCheckboxElement</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBWysiwygElement.html">MBWysiwygElement</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBDateElement.html">MBDateElement</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBAddressElement.html">MBAddressElement</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBDropdownElement.html">MBDropdownElement</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBDropdownElementOption.html">MBDropdownElementOption</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBPollElement.html">MBPollElement</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBGeneralElement.html">MBGeneralElement</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBElementsFactory.html">MBElementsFactory</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="MBAdmin.html">MBAdmin</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="Classes/MBAdmin.html">MBAdmin</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBUploadableElement.html">MBUploadableElement</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBUploadableTextElement.html">MBUploadableTextElement</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBUploadableImagesElement.html">MBUploadableImagesElement</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBUploadableFilesElement.html">MBUploadableFilesElement</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBUploadableElementsFactory.html">MBUploadableElementsFactory</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="MBAuth.html">MBAuth</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="Classes/MBAuth.html">MBAuth</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBUser.html">MBUser</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBAuthContractAcceptanceParameter.html">MBAuthContractAcceptanceParameter</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="MBPush.html">MBPush</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="Classes/MBPush.html">MBPush</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBPushApiManager.html">MBPushApiManager</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="MBApiManager.html">MBApiManager</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="Classes/MBApiManager.html">MBApiManager</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBMultipartForm.html">MBMultipartForm</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBResponse.html">MBResponse</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="MBPlugin.html">MBPlugin</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="Protocols/MBPlugin.html">MBPlugin</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="MBUtilities.html">MBUtilities</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="Classes/MBUtilities.html">MBUtilities</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="Other Classes.html">Other Classes</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="Classes/MBMarkdownElement.html">MBMarkdownElement</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Classes/MBUserContractStatus.html">MBUserContractStatus</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-group-name">
-              <a href="Other Enums.html">Other Enumerations</a>
-              <ul class="nav-group-tasks">
-                <li class="nav-group-task">
-                  <a href="Enums/MBAuthSocialTokenType.html">MBAuthSocialTokenType</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Enums/MBElementType.html">MBElementType</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Enums/MBHTTPMethod.html">MBHTTPMethod</a>
-                </li>
-                <li class="nav-group-task">
-                  <a href="Enums/MBMediaType.html">MBMediaType</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="footer-wrapper">
-        <section id="footer">
-          <p>&copy; 2019 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2019-03-07)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          </div>
         </section>
-      </div>
+
+
+      </article>
     </div>
+    <section class="footer">
+      <p>&copy; 2019 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2019-05-22)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
   </body>
 </div>
 </html>
