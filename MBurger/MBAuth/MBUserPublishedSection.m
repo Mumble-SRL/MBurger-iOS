@@ -21,7 +21,7 @@
 
 - (instancetype) initWithDictionary: (NSDictionary *) dictionary {
     NSInteger sectionId = [dictionary[@"id"] integerValue];
-    NSInteger blockId = [dictionary[@"block_"] integerValue];
+    NSInteger blockId = [dictionary[@"block_id"] integerValue];
     return [self initWithSectionId:sectionId BlockId:blockId];
 }
 
