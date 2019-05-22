@@ -68,6 +68,7 @@ custom_categories:
     - MBAuth
     - MBUser
     - MBAuthContractAcceptanceParameter
+    - MBUserPublishedSection
   - name: MBPush
     children:
     - MBPush

@@ -57,6 +57,7 @@
 #import "MBAuthContractAcceptanceParameter.h"
 #import "MBUser.h"
 #import "MBUserContractStatus.h"
+#import "MBUserPublishedSection.h"
 
 #import "MBPlugin.h"
 
