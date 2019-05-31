@@ -21,10 +21,14 @@
  */
 @property (nonatomic, retain, nonnull) NSArray <UIImage *> *images;
 
+/**
+ The compression quality used to encode the image in jpg.
+ */
+@property (nonatomic, assign) CGFloat compressionQuality;
 
 /**
  Initializes an images element with the name, the locale and an array of images.
- @see This function calls the super initializer `-[MBUploadableElement initWithElementName:LocaleIdentifier:]`
+ @see This function calls the initializer `-[MBUploadableImagesElement initWithElementName:LocaleIdentifier:Images:CompressionQuality]`
 
  @param elementName The name/key of the element.
  @param localeIdentifier The locale of the element.
@@ -33,5 +37,18 @@
  @return A newly created MBUploadableImagesElement initialized with the name, locale and images.
  */
 - (nonnull instancetype) initWithElementName: (nonnull NSString *) elementName LocaleIdentifier: (nonnull NSString *) localeIdentifier Images: (nullable NSArray <UIImage *> *) images;
+
+/**
+ Initializes an images element with the name, the locale and an array of images.
+ @see This function calls the super initializer `-[MBUploadableElement initWithElementName:LocaleIdentifier:]`
+ 
+ @param elementName The name/key of the element.
+ @param localeIdentifier The locale of the element.
+ @param images The images of the element.
+ @param compressionQuality The compression quality used to encode the image in jpg.
+
+ @return A newly created MBUploadableImagesElement initialized with the name, locale and images.
+ */
+- (nonnull instancetype) initWithElementName: (nonnull NSString *) elementName LocaleIdentifier: (nonnull NSString *) localeIdentifier Images: (nullable NSArray <UIImage *> *) images CompressionQuality: (CGFloat) compressionQuality;
 
 @end
