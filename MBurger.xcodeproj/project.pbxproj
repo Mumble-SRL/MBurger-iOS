@@ -70,6 +70,7 @@
 		66F925AB20751BA600C850F3 /* MBImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F925AA20751BA600C850F3 /* MBImage.m */; };
 		66F925AE20751FA800C850F3 /* MBFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F925AD20751FA800C850F3 /* MBFile.m */; };
 		EC9112D62295414E006AE42E /* MBUserPublishedSection.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9112D52295414E006AE42E /* MBUserPublishedSection.m */; };
+		ECCD893722A6AA80007A952D /* MBUploadableCheckboxElement.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCD893622A6AA80007A952D /* MBUploadableCheckboxElement.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -224,6 +225,8 @@
 		D7D28725DB33F29961351BA5 /* Pods-MBurger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBurger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MBurger/Pods-MBurger.debug.xcconfig"; sourceTree = "<group>"; };
 		EC9112D42295414E006AE42E /* MBUserPublishedSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBUserPublishedSection.h; sourceTree = "<group>"; };
 		EC9112D52295414E006AE42E /* MBUserPublishedSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBUserPublishedSection.m; sourceTree = "<group>"; };
+		ECCD893522A6AA80007A952D /* MBUploadableCheckboxElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBUploadableCheckboxElement.h; sourceTree = "<group>"; };
+		ECCD893622A6AA80007A952D /* MBUploadableCheckboxElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBUploadableCheckboxElement.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -551,6 +554,8 @@
 				66D9636420A0864300037200 /* MBUploadableImagesElement.m */,
 				66D9636620A0865200037200 /* MBUploadableFilesElement.h */,
 				66D9636720A0865200037200 /* MBUploadableFilesElement.m */,
+				ECCD893522A6AA80007A952D /* MBUploadableCheckboxElement.h */,
+				ECCD893622A6AA80007A952D /* MBUploadableCheckboxElement.m */,
 				66D9636C20A0994D00037200 /* MBUploadableElementsFactory.h */,
 				66D9636D20A0994D00037200 /* MBUploadableElementsFactory.m */,
 			);
@@ -786,6 +791,7 @@
 				66F925AE20751FA800C850F3 /* MBFile.m in Sources */,
 				660839242073B8A800432DE7 /* News.m in Sources */,
 				660E866420760726008DF597 /* MBFilterParameter.m in Sources */,
+				ECCD893722A6AA80007A952D /* MBUploadableCheckboxElement.m in Sources */,
 				66AF6742206E3236003FD62F /* main.m in Sources */,
 				66D9636820A0865200037200 /* MBUploadableFilesElement.m in Sources */,
 				6623CFAC211057C9007AB579 /* MBMarkdownElement.m in Sources */,

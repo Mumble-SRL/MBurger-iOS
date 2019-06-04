@@ -51,6 +51,7 @@
 #import "MBUploadableTextElement.h"
 #import "MBUploadableImagesElement.h"
 #import "MBUploadableFilesElement.h"
+#import "MBUploadableCheckboxElement.h"
 #import "MBUploadableElementsFactory.h"
 
 #import "MBAuth.h"

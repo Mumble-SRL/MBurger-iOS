@@ -50,4 +50,10 @@
     return [[MBUploadableFilesElement alloc] initWithElementName:name LocaleIdentifier:self.localeIdentifier FileURLs: fileURLs];
 }
 
+#pragma mark - Checkbox
+
+- (MBUploadableCheckboxElement*) filesElementWithName: (NSString *) name Value: (BOOL) value {
+    return [[MBUploadableCheckboxElement alloc] initWithElementName:name LocaleIdentifier:self.localeIdentifier Value:value];
+}
+
 @end

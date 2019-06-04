@@ -11,6 +11,7 @@
 #import "MBUploadableTextElement.h"
 #import "MBUploadableImagesElement.h"
 #import "MBUploadableFilesElement.h"
+#import "MBUploadableCheckboxElement.h"
 
 /**
  Utility class used to create MBUploadableElement objects without specifiyng the locale for every object.
@@ -113,5 +114,17 @@
  @return An `MBUploadableFilesElement` with the name and files specified.
  */
 - (nonnull MBUploadableFilesElement *) filesElementWithName: (nonnull NSString *) name FileURLs: (nonnull NSArray <NSURL *> *) fileUrls;
+
+#pragma mark - Checkbox
+
+/**
+ Creates a checkbox element with a value.
+ 
+ @param name The name of the element.
+ @param value The value of the element.
+ 
+ @return An `MBUploadableCheckboxElement` with the name and value specified.
+ */
+- (nonnull MBUploadableCheckboxElement*) filesElementWithName: (nonnull NSString *) name Value: (BOOL) value;
 
 @end

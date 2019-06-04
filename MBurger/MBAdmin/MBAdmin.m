@@ -20,8 +20,11 @@
                               Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
     NSMutableArray *form = [[NSMutableArray alloc] init];
     for (MBUploadableElement *element in elements){
-        for (MBMultipartForm *elementForm in element.toForm){
-            [form addObject:elementForm];
+        NSArray *formElements = element.toForm;
+        if (formElements){
+            for (MBMultipartForm *elementForm in formElements){
+                [form addObject:elementForm];
+            }
         }
     }
     [MBApiManager callApiWithApiToken:[MBManager sharedManager].apiToken
@@ -51,8 +54,11 @@
                           Failure: (nullable void (^)(NSError * _Nonnull error)) failure{
     NSMutableArray *form = [[NSMutableArray alloc] init];
     for (MBUploadableElement *element in elements){
-        for (MBMultipartForm *elementForm in element.toForm){
-            [form addObject:elementForm];
+        NSArray *formElements = element.toForm;
+        if (formElements){
+            for (MBMultipartForm *elementForm in formElements){
+                [form addObject:elementForm];
+            }
         }
     }
     [MBApiManager callApiWithApiToken:[MBManager sharedManager].apiToken
