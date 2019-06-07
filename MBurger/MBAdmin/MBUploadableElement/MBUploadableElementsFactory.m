@@ -52,7 +52,7 @@
 
 #pragma mark - Checkbox
 
-- (MBUploadableCheckboxElement*) filesElementWithName: (NSString *) name Value: (BOOL) value {
+- (MBUploadableCheckboxElement*) checkboxElementWithName: (NSString *) name Value: (BOOL) value {
     return [[MBUploadableCheckboxElement alloc] initWithElementName:name LocaleIdentifier:self.localeIdentifier Value:value];
 }
 

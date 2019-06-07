@@ -125,6 +125,6 @@
  
  @return An `MBUploadableCheckboxElement` with the name and value specified.
  */
-- (nonnull MBUploadableCheckboxElement*) filesElementWithName: (nonnull NSString *) name Value: (BOOL) value;
+- (nonnull MBUploadableCheckboxElement*) checkboxElementWithName: (nonnull NSString *) name Value: (BOOL) value;
 
 @end
