@@ -2,7 +2,7 @@
 <img src="https://raw.githubusercontent.com/Mumble-SRL/MBurger-iOS/master/Images/logo.png" alt="MBurger Logo" title="MBurger Logo">
 </p>
 
-![Test Status](docs/badge.svg)
+![Test Status](https://img.shields.io/badge/documentation-100%25-brightgreen.svg)
 ![License: MIT](https://img.shields.io/badge/pod-v1.0-blue.svg)
 [![CocoaPods](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](LICENSE)
 
@@ -58,7 +58,7 @@ Then in your `AppDelegate` `application:didFinishLaunchingWithOptions:` initiali
 
 **Objective-C**:
 
-```objective-c
+```objective-c tab="Objective-C"
 #import "AppDelegate.h"
 #import "MBurger.h"
 
@@ -75,6 +75,8 @@ Then in your `AppDelegate` `application:didFinishLaunchingWithOptions:` initiali
     
     return YES;
 }
+
+
 ```
 
 **Swift**:
@@ -319,15 +321,15 @@ All the model objects implement the `isEqual:` function based on the correspondi
 
 # Admin
 
-Read the full admin documentation apis [here](MBurger/MBAdmin).
+Read the full admin documentation apis [here](https://github.com/Mumble-SRL/MBurger-iOS/tree/master/MBurger/MBAdmin).
 
 # Authentication
 
-Read the full admin documentation apis [here](MBurger/MBAuth).
+Read the full admin documentation apis [here](https://github.com/Mumble-SRL/MBurger-iOS/tree/master/MBurger/MBAuth).
 
 # Push notifications
 
-Read the full push notifications documentation apis [here](MBurger/MBPush).
+Read the full push notifications documentation apis [here](https://github.com/Mumble-SRL/MBurger-iOS/tree/master/MBurger/MBPush).
 
 # Plugins
 You can add more to MBurger with plugins, classes that conforms to the `MPPlugin` protocol that can extend the functionalities of MBurger. An example of a plugin is [MPPayments](https://github.com/Mumble-SRL/MBPayments-iOS.git) a plugin that you to charge the users with single payments or sbscription.

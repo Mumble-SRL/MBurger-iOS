@@ -2,7 +2,7 @@
     "id": 96,
     "order": 3,
     "all_locales": false,
-    "show_in_app": true,
+    "visible": true,
     "available_at": 1516006500,
     "updated_at": 1520603520
 }

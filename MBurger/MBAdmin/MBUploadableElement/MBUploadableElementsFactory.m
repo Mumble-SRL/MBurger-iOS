@@ -28,8 +28,16 @@
     return [[MBUploadableImagesElement alloc] initWithElementName:name LocaleIdentifier:self.localeIdentifier Images:@[image]];
 }
 
+- (MBUploadableImagesElement *) imagesElementWithName: (NSString *) name Image: (UIImage *) image CompressionQuality: (CGFloat) compressionQuality {
+    return [[MBUploadableImagesElement alloc] initWithElementName:name LocaleIdentifier:self.localeIdentifier Images:@[image] CompressionQuality:compressionQuality];
+}
+
 - (MBUploadableImagesElement *) imagesElementWithName: (NSString *) name Images: (NSArray <UIImage *> *) images{
     return [[MBUploadableImagesElement alloc] initWithElementName:name LocaleIdentifier:self.localeIdentifier Images:images];
+}
+
+- (MBUploadableImagesElement *) imagesElementWithName: (NSString *) name Images: (NSArray <UIImage *> *) images CompressionQuality: (CGFloat) compressionQuality {
+    return [[MBUploadableImagesElement alloc] initWithElementName:name LocaleIdentifier:self.localeIdentifier Images:images CompressionQuality:compressionQuality];
 }
 
 #pragma mark - Files
@@ -40,6 +48,12 @@
 
 - (MBUploadableFilesElement *) filesElementWithName: (NSString *) name FileURLs: (NSArray <NSURL *> *) fileURLs{
     return [[MBUploadableFilesElement alloc] initWithElementName:name LocaleIdentifier:self.localeIdentifier FileURLs: fileURLs];
+}
+
+#pragma mark - Checkbox
+
+- (MBUploadableCheckboxElement*) checkboxElementWithName: (NSString *) name Value: (BOOL) value {
+    return [[MBUploadableCheckboxElement alloc] initWithElementName:name LocaleIdentifier:self.localeIdentifier Value:value];
 }
 
 @end

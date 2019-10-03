@@ -20,6 +20,10 @@
     return self;
 }
 
+- (instancetype) initWithField: (NSString *) field Name: (NSString *) name Value: (NSString *) value {
+    return [self initWithField:field Value:[NSString stringWithFormat:@"%@|%@", name, value]];
+}
+
 - (NSDictionary *) parameterRepresentation {
     NSString *key = [NSString stringWithFormat:@"filter[%@]", self.field];
     return [[NSDictionary alloc] initWithObjectsAndKeys:self.value, key, nil];

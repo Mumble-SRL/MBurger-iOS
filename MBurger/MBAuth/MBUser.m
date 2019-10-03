@@ -16,6 +16,7 @@
                           Phone: (NSString *) phone
                        ImageURL: (NSURL *) imageURL
                       Contracts: (NSArray <MBUserContractStatus *> *) contracts
+              PublishedSections: (NSArray <MBUserPublishedSection *> *) publishedSections
                            Data: (id) data{
     self = [super init];
     if (self){
@@ -26,6 +27,7 @@
         self.phone = phone;
         self.imageURL = imageURL;
         self.contracts = contracts;
+        self.publishedSections = publishedSections;
         self.data = data;
     }
     return self;
@@ -47,11 +49,21 @@
         }
         contracts = mutableContracts;
     }
+    NSArray *publishedSections = nil;
+    if (dictionary[@"published_sections"] && dictionary[@"published_sections"] != [NSNull null]){
+        NSArray *publishedSectionsFromDictionary = dictionary[@"published_sections"];
+        NSMutableArray *mutablePublishedSections = [[NSMutableArray alloc] init];
+        for (NSDictionary *publishedSectionDictionary in publishedSectionsFromDictionary) {
+            [mutablePublishedSections addObject:[[MBUserPublishedSection alloc] initWithDictionary:publishedSectionDictionary]];
+        }
+        publishedSections = mutablePublishedSections;
+    }
+    
     id data = nil;
     if (dictionary[@"data"] && dictionary[@"data"] != [NSNull null]){
         data = dictionary[@"data"];
     }
-    return [self initWithUserId:userId Name:name Surname:surname Email:email Phone:phone ImageURL:imageUrl Contracts:contracts Data:data];
+    return [self initWithUserId:userId Name:name Surname:surname Email:email Phone:phone ImageURL:imageUrl Contracts:contracts PublishedSections:publishedSections Data:data];
 }
 
 - (BOOL) isEqual:(id)object {
@@ -75,6 +87,7 @@
         self.data = [aDecoder decodeObjectOfClass:NSString.class forKey:@"data"];
         self.pluginsObjects = [aDecoder decodeObjectOfClass:NSString.class forKey:@"pluginsObjects"];
         self.contracts = [aDecoder decodeObjectOfClass:NSArray.class forKey:@"contracts"];
+        self.publishedSections = [aDecoder decodeObjectOfClass:NSArray.class forKey:@"publishedSections"];
     }
     return self;
 }
@@ -89,6 +102,7 @@
     [aCoder encodeObject:_data forKey:@"data"];
     [aCoder encodeObject:_pluginsObjects forKey:@"pluginsObjects"];
     [aCoder encodeObject:_contracts forKey:@"contracts"];
+    [aCoder encodeObject:_publishedSections forKey:@"publishedSections"];
 }
 
 + (BOOL) supportsSecureCoding {

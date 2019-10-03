@@ -13,6 +13,10 @@
 }
 
 - (instancetype) initWithElementName: (NSString *) elementName LocaleIdentifier: (NSString *) localeIdentifier Images: (NSArray <UIImage *> *) images{
+    return [self initWithElementName:elementName LocaleIdentifier:localeIdentifier Images:images CompressionQuality:1.0];
+}
+
+- (instancetype) initWithElementName: (NSString *) elementName LocaleIdentifier: (NSString *) localeIdentifier Images: (NSArray <UIImage *> *) images CompressionQuality: (CGFloat) compressionQuality {
     self = [super initWithElementName:elementName LocaleIdentifier:localeIdentifier];
     if (self){
         self.images = images;
@@ -22,7 +26,7 @@
         [[NSFileManager defaultManager] createDirectoryAtPath:folderPath withIntermediateDirectories:YES attributes:nil error:nil];
         [self.images enumerateObjectsUsingBlock:^(UIImage *img, NSUInteger idx, BOOL *stop) {
             NSString *filePath = [self filePathForIndex:idx];
-            [UIImageJPEGRepresentation(img, 1.0) writeToFile:filePath atomically:YES];
+            [UIImageJPEGRepresentation(img, compressionQuality) writeToFile:filePath atomically:YES];
         }];
     }
     return self;

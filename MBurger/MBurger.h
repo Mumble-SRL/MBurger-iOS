@@ -51,12 +51,14 @@
 #import "MBUploadableTextElement.h"
 #import "MBUploadableImagesElement.h"
 #import "MBUploadableFilesElement.h"
+#import "MBUploadableCheckboxElement.h"
 #import "MBUploadableElementsFactory.h"
 
 #import "MBAuth.h"
 #import "MBAuthContractAcceptanceParameter.h"
 #import "MBUser.h"
 #import "MBUserContractStatus.h"
+#import "MBUserPublishedSection.h"
 
 #import "MBPlugin.h"
 

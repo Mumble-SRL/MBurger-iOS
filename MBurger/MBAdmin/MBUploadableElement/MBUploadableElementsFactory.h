@@ -11,6 +11,7 @@
 #import "MBUploadableTextElement.h"
 #import "MBUploadableImagesElement.h"
 #import "MBUploadableFilesElement.h"
+#import "MBUploadableCheckboxElement.h"
 
 /**
  Utility class used to create MBUploadableElement objects without specifiyng the locale for every object.
@@ -61,6 +62,17 @@
 - (nonnull MBUploadableImagesElement *) imagesElementWithName: (nonnull NSString *) name Image: (nonnull UIImage *) image;
 
 /**
+ Creates an images element with a single image.
+ 
+ @param name The name of the element.
+ @param image The image of the element.
+ @param compressionQuality The compression quality of the image (from 0 to 1).
+
+ @return An `MBUploadableImagesElement` with the name and image specified.
+ */
+- (nonnull MBUploadableImagesElement *) imagesElementWithName: (nonnull NSString *) name Image: (nonnull UIImage *) image CompressionQuality: (CGFloat) compressionQuality;
+
+/**
  Creates an images element with an array of images.
  
  @param name The name of the element.
@@ -69,6 +81,17 @@
  @return An `MBUploadableImagesElement` with the name and images specified.
  */
 - (nonnull MBUploadableImagesElement *) imagesElementWithName: (nonnull NSString *) name Images: (nonnull NSArray <UIImage *> *) images;
+
+/**
+ Creates an images element with an array of images.
+ 
+ @param name The name of the element.
+ @param images The images of the element.
+ @param compressionQuality The compression quality of the image (from 0 to 1).
+ 
+ @return An `MBUploadableImagesElement` with the name and images specified.
+ */
+- (nonnull MBUploadableImagesElement *) imagesElementWithName: (nonnull NSString *) name Images: (nonnull NSArray <UIImage *> *) images CompressionQuality: (CGFloat) compressionQuality;
 
 #pragma mark - Files
 
@@ -91,5 +114,17 @@
  @return An `MBUploadableFilesElement` with the name and files specified.
  */
 - (nonnull MBUploadableFilesElement *) filesElementWithName: (nonnull NSString *) name FileURLs: (nonnull NSArray <NSURL *> *) fileUrls;
+
+#pragma mark - Checkbox
+
+/**
+ Creates a checkbox element with a value.
+ 
+ @param name The name of the element.
+ @param value The value of the element.
+ 
+ @return An `MBUploadableCheckboxElement` with the name and value specified.
+ */
+- (nonnull MBUploadableCheckboxElement*) checkboxElementWithName: (nonnull NSString *) name Value: (BOOL) value;
 
 @end
