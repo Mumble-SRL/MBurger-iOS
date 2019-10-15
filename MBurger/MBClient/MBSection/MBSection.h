@@ -36,16 +36,22 @@
 @property (nonatomic, retain, nullable) NSDate *availableAt;
 
 /**
+ Indicates if the section is in evidence.
+*/
+@property (nonatomic, assign) BOOL inEvidence;
+
+/**
  Initializes a section with a sectionId and the elements returned by the api.
  
  @param sectionId The id of the section.
  @param order The id order the section.
  @param elements The elements of the section as returned by the REST api.
  @param availableAt The date the section is available.
+ @param inEvidence Indicates if the section is in evidence.
 
  @return A newly created MBSection initialized with the sectionId and elements.
  */
-- (nonnull instancetype) initWithSectionId: (NSInteger) sectionId Order: (NSInteger) order Elements: (nullable NSDictionary *) elements AvailableAt: (nullable NSDate *) availableAt;
+- (nonnull instancetype) initWithSectionId: (NSInteger) sectionId Order: (NSInteger) order Elements: (nullable NSDictionary *) elements AvailableAt: (nullable NSDate *) availableAt InEvidence: (BOOL) inEvidence;
 
 /**
  Initializes a section with the dictionary returned by the api.
