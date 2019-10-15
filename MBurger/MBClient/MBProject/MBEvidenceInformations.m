@@ -27,8 +27,8 @@
     NSString *title = dictionary[@"evidence_title"];
     NSString *imageString = dictionary[@"evidence_image"];
     NSURL *imageUrl = [[NSURL alloc] initWithString:imageString];
-    NSInteger sectionId = [dictionary[@"evidence_id"] integerValue];
-    NSInteger blockId = [dictionary[@"evidence_id"] integerValue];
+    NSInteger sectionId = [dictionary[@"evidence_section_id"] integerValue];
+    NSInteger blockId = [dictionary[@"evidence_block_id"] integerValue];
 
     return [self initWithEvidenceId:evidenceId Title:title ImageUrl:imageUrl SectionId:sectionId BlockId:blockId];
 }
