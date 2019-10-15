@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MBurger"
-  s.version      = "1.0.12"
+  s.version      = "1.0.13"
   s.summary      = "MBurger SDK."
 
   # This description is used to generate tags and improve search results.
@@ -77,7 +77,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { git: 'https://github.com/Mumble-SRL/MBurger-iOS.git', :tag => '1.0.12'}
+  s.source       = { git: 'https://github.com/Mumble-SRL/MBurger-iOS.git', :tag => '1.0.13'}
   s.source_files = "MBurger/*.{h,m,swift}", "MBurger/**/*.{h,m,swift}"
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

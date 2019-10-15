@@ -13,13 +13,14 @@
 
 @implementation MBSection
 
-- (instancetype) initWithSectionId: (NSInteger) sectionId Order: (NSInteger) order Elements: (NSDictionary *) elements AvailableAt: (NSDate *) availableAt{
+- (instancetype) initWithSectionId: (NSInteger) sectionId Order: (NSInteger) order Elements: (NSDictionary *) elements AvailableAt: (NSDate *) availableAt InEvidence: (BOOL) inEvidence {
     self = [super init];
     if (self){
         self.sectionId = sectionId;
         self.order = order;
         self.elements = elements;
         self.availableAt = availableAt;
+        self.inEvidence = inEvidence;
     }
     return self;
 }
@@ -47,7 +48,8 @@
         NSInteger availableAt = [dictionary[@"available_at"] integerValue];
         availableAtDate = [NSDate dateWithTimeIntervalSince1970:availableAt];
     }
-    return [self initWithSectionId:sectionId Order:order Elements:elements AvailableAt:availableAtDate];
+    BOOL inEvidence = [dictionary[@"in_evidence"] boolValue];
+    return [self initWithSectionId:sectionId Order:order Elements:elements AvailableAt:availableAtDate InEvidence:inEvidence];
 }
 
 - (id) mapElementsToObject:(NSObject*)object withMapping:(NSDictionary*)mapping{
@@ -103,6 +105,8 @@
         self.sectionId = [aDecoder decodeIntegerForKey:@"sectionId"];
         self.order = [aDecoder decodeIntegerForKey:@"order"];
         self.elements = [aDecoder decodeObjectOfClass:NSDictionary.class forKey:@"elements"];
+        self.availableAt = [aDecoder decodeObjectOfClass:NSDate.class forKey:@"availableAt"];
+        self.inEvidence = [aDecoder decodeBoolForKey:@"inEvidence"];
     }
     return self;
 }
@@ -111,6 +115,8 @@
     [aCoder encodeInteger:_sectionId forKey:@"sectionId"];
     [aCoder encodeInteger:_order forKey:@"order"];
     [aCoder encodeObject:_elements forKey:@"elements"];
+    [aCoder encodeObject:_availableAt forKey:@"availableAt"];
+    [aCoder encodeBool:_inEvidence forKey:@"inEvidence"];
 }
 
 + (BOOL) supportsSecureCoding {

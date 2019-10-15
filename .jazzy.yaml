@@ -32,6 +32,7 @@ custom_categories:
     children:
     - MBProject
     - MBLegalContract
+    - MBEvidenceInformations
   - name: MBBlock
     children:
     - MBBlock

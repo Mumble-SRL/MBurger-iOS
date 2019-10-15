@@ -70,6 +70,7 @@
 		66F925AB20751BA600C850F3 /* MBImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F925AA20751BA600C850F3 /* MBImage.m */; };
 		66F925AE20751FA800C850F3 /* MBFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F925AD20751FA800C850F3 /* MBFile.m */; };
 		EC9112D62295414E006AE42E /* MBUserPublishedSection.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9112D52295414E006AE42E /* MBUserPublishedSection.m */; };
+		ECC9F8AC2355B3790013A497 /* MBEvidenceInformations.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC9F8AB2355B3790013A497 /* MBEvidenceInformations.m */; };
 		ECCD893722A6AA80007A952D /* MBUploadableCheckboxElement.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCD893622A6AA80007A952D /* MBUploadableCheckboxElement.m */; };
 /* End PBXBuildFile section */
 
@@ -225,6 +226,8 @@
 		D7D28725DB33F29961351BA5 /* Pods-MBurger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBurger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MBurger/Pods-MBurger.debug.xcconfig"; sourceTree = "<group>"; };
 		EC9112D42295414E006AE42E /* MBUserPublishedSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBUserPublishedSection.h; sourceTree = "<group>"; };
 		EC9112D52295414E006AE42E /* MBUserPublishedSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBUserPublishedSection.m; sourceTree = "<group>"; };
+		ECC9F8AA2355B3790013A497 /* MBEvidenceInformations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBEvidenceInformations.h; sourceTree = "<group>"; };
+		ECC9F8AB2355B3790013A497 /* MBEvidenceInformations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBEvidenceInformations.m; sourceTree = "<group>"; };
 		ECCD893522A6AA80007A952D /* MBUploadableCheckboxElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBUploadableCheckboxElement.h; sourceTree = "<group>"; };
 		ECCD893622A6AA80007A952D /* MBUploadableCheckboxElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBUploadableCheckboxElement.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -497,6 +500,8 @@
 				66AF677B206E7111003FD62F /* MBProject.m */,
 				667AD315216CADC9003F8344 /* MBLegalContract.h */,
 				667AD316216CADC9003F8344 /* MBLegalContract.m */,
+				ECC9F8AA2355B3790013A497 /* MBEvidenceInformations.h */,
+				ECC9F8AB2355B3790013A497 /* MBEvidenceInformations.m */,
 			);
 			path = MBProject;
 			sourceTree = "<group>";
@@ -713,7 +718,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MBurger/Pods-MBurger-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-MBurger/Pods-MBurger-resources.sh",
 				"${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -722,7 +727,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MBurger/Pods-MBurger-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MBurger/Pods-MBurger-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		57CDA275FCE80AF98FBC83B1 /* [CP] Check Pods Manifest.lock */ = {
@@ -772,6 +777,7 @@
 				667F40832077B76200B18D16 /* NewsDetailViewController.m in Sources */,
 				660E865E2076070C008DF597 /* MBSortParameter.m in Sources */,
 				660E866A20760741008DF597 /* MBGeneralParameter.m in Sources */,
+				ECC9F8AC2355B3790013A497 /* MBEvidenceInformations.m in Sources */,
 				66C4061020A1E1DA0044885E /* MBAuth.m in Sources */,
 				66AF6737206E3236003FD62F /* NewsListViewController.m in Sources */,
 				66AF6782206E7979003FD62F /* MBAddressElement.m in Sources */,
