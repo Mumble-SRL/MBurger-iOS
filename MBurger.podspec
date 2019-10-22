@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MBurger"
-  s.version      = "1.0.14"
+  s.version      = "1.0.15"
   s.summary      = "MBurger SDK."
 
   # This description is used to generate tags and improve search results.
@@ -76,7 +76,7 @@ Pod::Spec.new do |s|
   #  Specify the location from where the source should be retrieved.
   #  Supports git, hg, bzr, svn and HTTP.
   #
-  s.source       = { git: 'https://github.com/Mumble-SRL/MBurger-iOS.git', :tag => '1.0.14'}
+  s.source       = { git: 'https://github.com/Mumble-SRL/MBurger-iOS.git', :tag => '1.0.15'}
   s.source_files = "MBurger/*.{h,m,swift}", "MBurger/**/*.{h,m,swift}"
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -122,6 +122,6 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
 
-  s.dependency 'AFNetworking', '~> 3.0'
+  s.dependency 'AFNetworking/NSURLSession', '~> 3.0'
   s.dependency 'SAMKeychain', '~> 1.5'
 end

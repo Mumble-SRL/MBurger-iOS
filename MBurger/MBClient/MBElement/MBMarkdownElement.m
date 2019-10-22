@@ -28,7 +28,7 @@
 
 #pragma mark - Value
 
-- (NSString *) value {
+- (id) value {
     return self.text;
 }
 
@@ -50,6 +50,5 @@
 + (BOOL) supportsSecureCoding {
     return TRUE;
 }
-
 
 @end

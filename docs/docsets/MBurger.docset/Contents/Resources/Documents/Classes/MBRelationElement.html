@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>MBMarkdownElement Class Reference</title>
+    <title>MBRelationElement Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/objc/Class/MBMarkdownElement" class="dashAnchor"></a>
+    <a name="//apple_ref/objc/Class/MBRelationElement" class="dashAnchor"></a>
 
-    <a title="MBMarkdownElement Class Reference"></a>
+    <a title="MBRelationElement Class Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">MBurger Reference</a>
       <img class="carat" src="../img/carat.png" />
-      MBMarkdownElement Class Reference
+      MBRelationElement Class Reference
     </p>
 
     <div class="content-wrapper">
@@ -293,14 +293,14 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>MBMarkdownElement</h1>
+            <h1>MBRelationElement</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">MBMarkdownElement</span> <span class="p">:</span> <span class="nc"><a href="../Classes/MBElement.html">MBElement</a></span> <span class="o">&lt;</span><span class="n">NSCoding</span><span class="p">,</span> <span class="n">NSSecureCoding</span><span class="o">&gt;</span></code></pre>
+                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">MBRelationElement</span> <span class="p">:</span> <span class="nc"><a href="../Classes/MBElement.html">MBElement</a></span> <span class="o">&lt;</span><span class="n">NSCoding</span><span class="p">,</span> <span class="n">NSSecureCoding</span><span class="o">&gt;</span></code></pre>
 
                 </div>
               </div>
-            <p>This class represents a MBurger markdown element.</p>
+            <p>This class represents a MBurger relation element, a relation between two sections.</p>
 
           </div>
         </section>
@@ -312,9 +312,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)MBMarkdownElement(py)text"></a>
-                    <a name="//apple_ref/objc/Property/text" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)MBMarkdownElement(py)text">text</a>
+                    <a name="/c:objc(cs)MBRelationElement(py)blockId"></a>
+                    <a name="//apple_ref/objc/Property/blockId" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MBRelationElement(py)blockId">blockId</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -322,19 +322,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The value of the element.</p>
+                        <p>The block id of the section related to this section.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">text</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">NSInteger</span> <span class="n">blockId</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">blockId</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -344,9 +344,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)MBMarkdownElement(im)initWithElementId:Name:Order:Text:"></a>
-                    <a name="//apple_ref/objc/Method/-initWithElementId:Name:Order:Text:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)MBMarkdownElement(im)initWithElementId:Name:Order:Text:">-initWithElementId:Name:Order:Text:</a>
+                    <a name="/c:objc(cs)MBRelationElement(py)sectionId"></a>
+                    <a name="//apple_ref/objc/Property/sectionId" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MBRelationElement(py)sectionId">sectionId</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -354,7 +354,39 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Initializes a markdown element with an elementId and its value.</p>
+                        <p>The section id of the section related to this section.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">NSInteger</span> <span class="n">sectionId</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">sectionId</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MBRelationElement(im)initWithElementId:Name:Order:BlockId:SectionId:"></a>
+                    <a name="//apple_ref/objc/Method/-initWithElementId:Name:Order:BlockId:SectionId:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MBRelationElement(im)initWithElementId:Name:Order:BlockId:SectionId:">-initWithElementId:Name:Order:BlockId:SectionId:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initializes a relation element with an blockId and a sectionId.</p>
 <div class="aside aside-see">
     <p class="aside-title">See</p>
     <p>This function calls the super initializer <code><a href="../Classes/MBElement.html#/c:objc(cs)MBElement(im)initWithElementId:Name:Order:Type:">-[MBElement initWithElementId:Name:Order:Type:]</a></code></p>
@@ -369,12 +401,13 @@
                           <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithElementId</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">elementId</span>
                                      <span class="nf">Name</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">name</span>
                                     <span class="nf">Order</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">order</span>
-                                     <span class="nf">Text</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">text</span><span class="p">;</span></code></pre>
+                                  <span class="nf">BlockId</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">blockId</span>
+                                <span class="nf">SectionId</span><span class="p">:(</span><span class="n">NSInteger</span><span class="p">)</span><span class="nv">sectionId</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">elementId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">order</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">elementId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">order</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">blockId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">sectionId</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -421,12 +454,24 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>text</em>
+                                <em>blockId</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The text of the element.</p>
+                                  <p>The block id of the section related to this section.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sectionId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The section id of the section related to this section.</p>
                                 </div>
                               </td>
                             </tr>
@@ -435,7 +480,7 @@
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>A newly created MBMarkdownElement initialized with the elementId, the name and the value passed.</p>
+                        <p>A newly created MBRelationElement initialized with the elementId, the name and the blockid and section id passed.</p>
                       </div>
                     </section>
                   </div>

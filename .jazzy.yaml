@@ -54,6 +54,8 @@ custom_categories:
     - MBDropdownElement
     - MBDropdownElementOption
     - MBPollElement
+    - MBMarkdownElement
+    - MBRelationElement
     - MBGeneralElement
     - MBElementsFactory
   - name: MBAdmin

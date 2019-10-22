@@ -28,7 +28,7 @@
 
 #pragma mark - Value
 
-- (NSString *) value {
+- (id) value {
     return self.text;
 }
 
