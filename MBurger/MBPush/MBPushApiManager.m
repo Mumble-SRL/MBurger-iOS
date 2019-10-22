@@ -8,7 +8,7 @@
 
 #import "MBPushApiManager.h"
 
-#import <AFNetworking/AFNetworking.h>
+#import <AFNetworking/AFHTTPSessionManager.h>
 
 @implementation MBPushApiManager
 

@@ -8,7 +8,7 @@
 
 #import "MBApiManager.h"
 #import "MBAuth.h"
-#import <AFNetworking/AFNetworking.h>
+#import <AFNetworking/AFHTTPSessionManager.h>
 
 @implementation MBApiManager
 
