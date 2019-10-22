@@ -122,6 +122,6 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
 
-  s.dependency 'AFNetworking', '~> 3.0'
+  s.dependency 'AFNetworking/NSURLSession', '~> 3.0'
   s.dependency 'SAMKeychain', '~> 1.5'
 end
