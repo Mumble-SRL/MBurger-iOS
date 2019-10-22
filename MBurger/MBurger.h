@@ -40,6 +40,7 @@
 #import "MBDropdownElementOption.h"
 #import "MBPollElement.h"
 #import "MBMarkdownElement.h"
+#import "MBRelationElement.h"
 #import "MBGeneralElement.h"
 #import "MBElementsFactory.h"
 #import "MBApiManager.h"
