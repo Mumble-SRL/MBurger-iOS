@@ -23,9 +23,12 @@
         }
     }
     
-    NSString *token = deviceData.description;
-    token = [token stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
-    token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *token = [self stringFromDeviceToken: deviceData];
+    if (!token) {
+        if (failure){
+            failure([self tokenError]);
+        }
+    }
     
     NSDictionary *parameters = @{@"platform": @"ios",
                                  @"token": token};
@@ -45,6 +48,19 @@
                                            failure(error);
                                        }
                                    }];
+}
+
++ (NSString *)stringFromDeviceToken: (NSData *)deviceToken {
+    NSUInteger length = deviceToken.length;
+    if (length == 0) {
+        return nil;
+    }
+    const unsigned char *buffer = deviceToken.bytes;
+    NSMutableString *hexString  = [NSMutableString stringWithCapacity:(length * 2)];
+    for (int i = 0; i < length; ++i) {
+        [hexString appendFormat:@"%02x", buffer[i]];
+    }
+    return [hexString copy];
 }
 
 + (void) registerToTopic: (NSString *) topic
