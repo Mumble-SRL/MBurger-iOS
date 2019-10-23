@@ -63,7 +63,4 @@
 
 #import "MBPlugin.h"
 
-#import "MBPush.h"
-#import "MBPushApiManager.h"
-
 #endif /* MBurger_h */

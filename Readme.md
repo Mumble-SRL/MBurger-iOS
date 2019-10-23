@@ -327,10 +327,6 @@ Read the full admin documentation apis [here](https://github.com/Mumble-SRL/MBur
 
 Read the full admin documentation apis [here](https://github.com/Mumble-SRL/MBurger-iOS/tree/master/MBurger/MBAuth).
 
-# Push notifications
-
-Read the full push notifications documentation apis [here](https://github.com/Mumble-SRL/MBurger-iOS/tree/master/MBurger/MBPush).
-
 # Plugins
 You can add more to MBurger with plugins, classes that conforms to the `MPPlugin` protocol that can extend the functionalities of MBurger. An example of a plugin is [MPPayments](https://github.com/Mumble-SRL/MBPayments-iOS.git) a plugin that you to charge the users with single payments or sbscription.
 
