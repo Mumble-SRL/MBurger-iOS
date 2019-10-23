@@ -34,8 +34,6 @@
 		667F407D2077ADEB00B18D16 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 667F407C2077ADEB00B18D16 /* NewsTableViewCell.m */; };
 		667F40802077B3D500B18D16 /* MBElementsFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 667F407F2077B3D500B18D16 /* MBElementsFactory.m */; };
 		667F40832077B76200B18D16 /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 667F40822077B76200B18D16 /* NewsDetailViewController.m */; };
-		6697A5452155291C00575A7F /* MBPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 6697A5442155291C00575A7F /* MBPush.m */; };
-		6697A5482155292E00575A7F /* MBPushApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6697A5472155292E00575A7F /* MBPushApiManager.m */; };
 		66AF6734206E3236003FD62F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF6733206E3236003FD62F /* AppDelegate.m */; };
 		66AF6737206E3236003FD62F /* NewsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AF6736206E3236003FD62F /* NewsListViewController.m */; };
 		66AF673C206E3236003FD62F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66AF673B206E3236003FD62F /* Assets.xcassets */; };
@@ -151,10 +149,6 @@
 		6681D5FB2150E6AF00F71049 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6681D5FD2150E6AF00F71049 /* libSAMKeychain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSAMKeychain.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6684452520FDF18500118F62 /* MBPlugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBPlugin.h; sourceTree = "<group>"; };
-		6697A5432155291C00575A7F /* MBPush.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBPush.h; sourceTree = "<group>"; };
-		6697A5442155291C00575A7F /* MBPush.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBPush.m; sourceTree = "<group>"; };
-		6697A5462155292E00575A7F /* MBPushApiManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBPushApiManager.h; sourceTree = "<group>"; };
-		6697A5472155292E00575A7F /* MBPushApiManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBPushApiManager.m; sourceTree = "<group>"; };
 		6697A54921552C9100575A7F /* MBHTTPMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBHTTPMethod.h; sourceTree = "<group>"; };
 		66AF672F206E3236003FD62F /* MBurger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBurger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66AF6732206E3236003FD62F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -381,17 +375,6 @@
 			path = MBPlugin;
 			sourceTree = "<group>";
 		};
-		6697A5422155290300575A7F /* MBPush */ = {
-			isa = PBXGroup;
-			children = (
-				6697A5432155291C00575A7F /* MBPush.h */,
-				6697A5442155291C00575A7F /* MBPush.m */,
-				6697A5462155292E00575A7F /* MBPushApiManager.h */,
-				6697A5472155292E00575A7F /* MBPushApiManager.m */,
-			);
-			path = MBPush;
-			sourceTree = "<group>";
-		};
 		66AF6726206E3236003FD62F = {
 			isa = PBXGroup;
 			children = (
@@ -432,7 +415,6 @@
 				66B1F7B020A32179009602C6 /* MBClient */,
 				66B1F7AB20A319EB009602C6 /* MBAdmin */,
 				66C4060C20A1E0C70044885E /* MBAuth */,
-				6697A5422155290300575A7F /* MBPush */,
 				6608391B2073950000432DE7 /* MBApiManager */,
 				6684452420FDF14C00118F62 /* MBPlugin */,
 			);
@@ -772,9 +754,7 @@
 				667F40802077B3D500B18D16 /* MBElementsFactory.m in Sources */,
 				66F925AB20751BA600C850F3 /* MBImage.m in Sources */,
 				667F21EB207B606400C4CA92 /* MBPollElement.m in Sources */,
-				6697A5482155292E00575A7F /* MBPushApiManager.m in Sources */,
 				66AF6771206E63E2003FD62F /* MBWysiwygElement.m in Sources */,
-				6697A5452155291C00575A7F /* MBPush.m in Sources */,
 				667AD317216CADC9003F8344 /* MBLegalContract.m in Sources */,
 				66AF6760206E3A1F003FD62F /* MBElement.m in Sources */,
 				ECCBD8A2235EF753006BA4DF /* MBRelationElement.m in Sources */,

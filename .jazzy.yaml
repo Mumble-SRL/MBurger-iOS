@@ -73,10 +73,6 @@ custom_categories:
     - MBUser
     - MBAuthContractAcceptanceParameter
     - MBUserPublishedSection
-  - name: MBPush
-    children:
-    - MBPush
-    - MBPushApiManager
   - name: MBApiManager
     children:
     - MBApiManager
