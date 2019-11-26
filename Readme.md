@@ -1,5 +1,5 @@
 <p align="center" >
-<img src="https://raw.githubusercontent.com/Mumble-SRL/MBurger-iOS/master/Images/logo.png" alt="MBurger Logo" title="MBurger Logo">
+<img src="https://raw.githubusercontent.com/Mumble-SRL/MBurger-iOS/master/Images/mburger-icon.svg" alt="MBurger Logo" title="MBurger Logo">
 </p>
 
 ![Test Status](https://img.shields.io/badge/documentation-100%25-brightgreen.svg)
