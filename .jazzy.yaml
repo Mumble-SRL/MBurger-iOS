@@ -3,7 +3,7 @@ objc: true
 umbrella_header: MBurger/MBurger.h
 readme: Readme.md
 framework_root: MBurger
-module_version: 0.0.7
+module_version: 1.0.17
 sdk: iphonesimulator
 
 author: Mumble

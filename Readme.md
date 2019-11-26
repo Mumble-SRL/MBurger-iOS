@@ -1,9 +1,9 @@
 <p align="center" >
-<img src="https://raw.githubusercontent.com/Mumble-SRL/MBurger-iOS/master/Images/mburger-icon.png" alt="MBurger Logo" title="MBurger Logo" style="width:200px;height:200px;">
+<img src="https://raw.githubusercontent.com/Mumble-SRL/MBurger-iOS/master/Images/mburger-icon.png" alt="MBurger Logo" title="MBurger Logo">
 </p>
 
 ![Test Status](https://img.shields.io/badge/documentation-100%25-brightgreen.svg)
-![License: MIT](https://img.shields.io/badge/pod-v1.0-blue.svg)
+![License: MIT](https://img.shields.io/badge/pod-v1.0.17-blue.svg)
 [![CocoaPods](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](LICENSE)
 
 # MBurger
