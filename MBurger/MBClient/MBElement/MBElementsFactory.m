@@ -60,7 +60,8 @@
     }
     else if ([typeString isEqualToString:@"relation"]){
         return [[MBRelationElement alloc] initWithDictionary:elementDictionary];
-    } else if ([typeString isEqualToString:@"color"]){
+    }
+    else if ([typeString isEqualToString:@"color"]){
         return [[MBColorElement alloc] initWithDictionary:elementDictionary];
     }
     return [[MBGeneralElement alloc] initWithDictionary:elementDictionary];
