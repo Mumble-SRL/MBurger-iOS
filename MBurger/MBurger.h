@@ -41,6 +41,7 @@
 #import "MBPollElement.h"
 #import "MBMarkdownElement.h"
 #import "MBRelationElement.h"
+#import "MBColorElement.h"
 #import "MBGeneralElement.h"
 #import "MBElementsFactory.h"
 #import "MBApiManager.h"

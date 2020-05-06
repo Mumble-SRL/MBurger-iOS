@@ -18,6 +18,7 @@
 #import "MBPollElement.h"
 #import "MBMarkdownElement.h"
 #import "MBRelationElement.h"
+#import "MBColorElement.h"
 #import "MBGeneralElement.h"
 
 @implementation MBElementsFactory
@@ -59,6 +60,8 @@
     }
     else if ([typeString isEqualToString:@"relation"]){
         return [[MBRelationElement alloc] initWithDictionary:elementDictionary];
+    } else if ([typeString isEqualToString:@"color"]){
+        return [[MBColorElement alloc] initWithDictionary:elementDictionary];
     }
     return [[MBGeneralElement alloc] initWithDictionary:elementDictionary];
 }

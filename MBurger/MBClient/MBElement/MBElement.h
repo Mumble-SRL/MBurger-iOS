@@ -31,7 +31,9 @@ typedef NS_ENUM(NSUInteger, MBElementType) {
     /// A poll element
     MBElementTypePoll,
     /// A markdown element
-    MBElementTypeMarkdown
+    MBElementTypeMarkdown,
+    /// A color element
+    MBElementTypeColor,
 };
 
 /**
