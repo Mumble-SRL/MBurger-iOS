@@ -212,18 +212,23 @@
 }
 
 + (void) getSectionWithId: (NSInteger) sectionId
+               Parameters: (NSArray <id<MBParameter>> *) parameters
                   Success: (void (^)(MBSection *section)) success
                   Failure: (void (^)(NSError *error)) failure {
-    [self getSectionWithId:sectionId IncludeElements:FALSE Success:success Failure:failure];
+    [self getSectionWithId:sectionId Parameters:parameters IncludeElements:FALSE Success:success Failure:failure];
 }
 
 + (void) getSectionWithId:(NSInteger)sectionId
+               Parameters:(NSArray <id<MBParameter>> *) parameters
           IncludeElements:(BOOL)includeElements
                   Success:(void (^)(MBSection *))success
                   Failure:(void (^)(NSError *))failure {
     NSMutableDictionary *parametersMutable = [[NSMutableDictionary alloc] init];
     if (includeElements){
         parametersMutable[@"include"] = @"elements";
+    }
+    for (id <MBParameter> parameter in parameters){
+        [parametersMutable addEntriesFromDictionary:parameter.parameterRepresentation];
     }
     [MBApiManager callApiWithApiToken:[MBManager sharedManager].apiToken
                                Locale:[[MBManager sharedManager] localeString]

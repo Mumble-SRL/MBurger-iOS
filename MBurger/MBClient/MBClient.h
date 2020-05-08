@@ -171,10 +171,12 @@
  Retrieve the section with the specified id and all.
  @note This function calls `-[MBManager getSectionWithId:IncludeElements:Success:Failure:]` with the default value of 'false' for the parameter 'includeElements'
  @param sectionId The id of the section.
+ @param parameters An optional array of parameters used to specify additional options.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the section returned by the api.
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
 + (void) getSectionWithId: (NSInteger) sectionId
+               Parameters: (nullable NSArray <id<MBParameter>> *) parameters
                   Success: (nullable void (^)(MBSection * _Nonnull section)) success
                   Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
@@ -183,10 +185,12 @@
  If includeElements is true the informations about the elements of the sections are included in the response.
  @param sectionId The id of the section.
  @param includeElements If true the information of the element in the section are included in the response.
+ @param parameters An optional array of parameters used to specify additional options.
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the section returned by the api.
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
 + (void) getSectionWithId: (NSInteger) sectionId
+               Parameters: (nullable NSArray <id<MBParameter>> *) parameters
           IncludeElements: (BOOL) includeElements
                   Success: (nullable void (^)(MBSection * _Nonnull section)) success
                   Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
