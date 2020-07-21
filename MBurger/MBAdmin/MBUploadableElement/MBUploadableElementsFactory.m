@@ -56,4 +56,16 @@
     return [[MBUploadableCheckboxElement alloc] initWithElementName:name LocaleIdentifier:self.localeIdentifier Value:value];
 }
 
+#pragma mark - Color
+
+- (MBUploadableColorElement*) colorElement: (NSString *) name Color: (UIColor *) color {
+    return [[MBUploadableColorElement alloc] initWithElementName:name LocaleIdentifier:self.localeIdentifier Color:color];
+}
+
+#pragma mark - Relation
+
+- (MBUploadableRelationElement*) relationElementWithName: (NSString *) name SectionIds: (NSArray<NSNumber *> *) sectionIds {
+    return [[MBUploadableRelationElement alloc] initWithElementName:name LocaleIdentifier:self.localeIdentifier SectionIds: sectionIds];
+}
+
 @end

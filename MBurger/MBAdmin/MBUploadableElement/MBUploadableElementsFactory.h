@@ -12,6 +12,8 @@
 #import "MBUploadableImagesElement.h"
 #import "MBUploadableFilesElement.h"
 #import "MBUploadableCheckboxElement.h"
+#import "MBUploadableColorElement.h"
+#import "MBUploadableRelationElement.h"
 
 /**
  Utility class used to create MBUploadableElement objects without specifiyng the locale for every object.
@@ -30,7 +32,7 @@
 
 /**
  Initializes a factory with the locale identifier.
-
+ 
  @param localeIdentifier The locale identifier.
  
  @return A newly created MBUploadableElementsFactory with the given locale.
@@ -40,7 +42,7 @@
 
 /**
  Creates a text element.
-
+ 
  @param name The name of the element.
  @param text The text.
  
@@ -53,7 +55,7 @@
 
 /**
  Creates an images element with a single image.
-
+ 
  @param name The name of the element.
  @param image The image of the element.
  
@@ -67,7 +69,7 @@
  @param name The name of the element.
  @param image The image of the element.
  @param compressionQuality The compression quality of the image (from 0 to 1).
-
+ 
  @return An `MBUploadableImagesElement` with the name and image specified.
  */
 - (nonnull MBUploadableImagesElement *) imagesElementWithName: (nonnull NSString *) name Image: (nonnull UIImage *) image CompressionQuality: (CGFloat) compressionQuality;
@@ -126,5 +128,30 @@
  @return An `MBUploadableCheckboxElement` with the name and value specified.
  */
 - (nonnull MBUploadableCheckboxElement*) checkboxElementWithName: (nonnull NSString *) name Value: (BOOL) value;
+
+#pragma mark - Color
+
+/**
+Creates a color element with the color passed.
+
+@param name The name of the element.
+@param color The color of the element.
+
+@return An `MBUploadableColorElement` with the name and color specified.
+*/
+- (nonnull MBUploadableColorElement*) colorElement: (nonnull NSString *) name Color: (nonnull UIColor *) color;
+
+#pragma mark - Relation
+
+/**
+ Creates a relation element with the section ids passed.
+ 
+ @param name The name of the element.
+ @param sectionIds The section ids of the element.
+ 
+ @return An `MBUploadableRelationElement` with the name and section ids specified.
+ */
+
+- (nonnull MBUploadableRelationElement*) relationElementWithName: (nonnull NSString *) name SectionIds: (nonnull NSArray<NSNumber *> *) sectionIds;
 
 @end
