@@ -10,11 +10,10 @@
 
 @implementation MBRelationElement
 
-- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Order: (NSInteger) order BlockId: (NSInteger) blockId SectionId: (NSInteger) sectionId {
+- (instancetype) initWithElementId: (NSInteger) elementId Name: (NSString *) name Order: (NSInteger) order Sections: (NSArray <MBRelationSection *>*) sections {
     self = [super initWithElementId:elementId Name:name Order:order Type:MBElementTypeText];
     if (self){
-        self.blockId = blockId;
-        self.sectionId = sectionId;
+        self.sections = sections;
     }
     return self;
 }
@@ -23,18 +22,26 @@
     NSInteger elementId = [dictionary[@"id"] integerValue];
     NSString *name = dictionary[@"name"];
     NSInteger order = [dictionary[@"order"] integerValue];
-    NSDictionary *valueDictionary = dictionary[@"value"];
-    NSInteger blockId = [valueDictionary[@"block_id"] integerValue];
-    NSInteger sectionId = [valueDictionary[@"section_id"] integerValue];
-
-    return [self initWithElementId:elementId Name:name Order:order BlockId:blockId SectionId:sectionId];
+    NSArray *valueArray = dictionary[@"value"];
+    NSMutableArray *sections = [[NSMutableArray alloc] init];
+    for (id sectionDict in valueArray) {
+        if ([sectionDict isKindOfClass:[NSDictionary class]]) {
+            [sections addObject:[[MBRelationSection alloc] initWithDictionary:sectionDict]];
+        }
+    }
+    
+    return [self initWithElementId:elementId Name:name Order:order Sections:sections];
 }
 
 #pragma mark - Value
 
 - (id) value {
-    return @{@"block_id": @(self.blockId),
-             @"section_id": @(self.sectionId)};
+    NSMutableArray *dicts = [[NSMutableArray alloc] init];
+    for (MBRelationSection *section in self.sections) {
+        [dicts addObject:@{@"section_id": @(section.sectionId),
+                           @"block_id": @(section.blockId)}];
+    }
+    return dicts;
 }
 
 #pragma mark - NSCoding-NSSecureCoding
@@ -42,16 +49,14 @@
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder:aDecoder];
     if (self){
-        self.blockId = [aDecoder decodeIntegerForKey:@"block_id"];
-        self.sectionId = [aDecoder decodeIntegerForKey:@"section_id"];
+        self.sections = [aDecoder decodeObjectForKey:@"sections"];
     }
     return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder{
     [super encodeWithCoder:aCoder];
-    [aCoder encodeInteger:_blockId forKey:@"block_id"];
-    [aCoder encodeInteger:_sectionId forKey:@"section_id"];
+    [aCoder encodeObject:_sections forKey:@"sections"];
 }
 
 + (BOOL) supportsSecureCoding {
