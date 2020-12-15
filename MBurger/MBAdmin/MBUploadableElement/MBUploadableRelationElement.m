@@ -27,7 +27,7 @@
 }
 
 - (NSString *) parameterNameForIndex: (NSInteger) index {
-    return [NSString stringWithFormat:@"elements[%@][%ld]", self.elementName,  (long) index];
+    return [NSString stringWithFormat:@"%@[%ld]", self.elementName,  (long) index];
 }
 
 @end
