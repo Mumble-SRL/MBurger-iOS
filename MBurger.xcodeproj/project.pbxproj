@@ -67,7 +67,10 @@
 		66F925A02074DFC300C850F3 /* MBDropdownElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F9259F2074DFC300C850F3 /* MBDropdownElement.m */; };
 		66F925AB20751BA600C850F3 /* MBImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F925AA20751BA600C850F3 /* MBImage.m */; };
 		66F925AE20751FA800C850F3 /* MBFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 66F925AD20751FA800C850F3 /* MBFile.m */; };
+		EC315ED32462F9E600050053 /* MBColorElement.m in Sources */ = {isa = PBXBuildFile; fileRef = EC315ED22462F9E600050053 /* MBColorElement.m */; };
 		EC9112D62295414E006AE42E /* MBUserPublishedSection.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9112D52295414E006AE42E /* MBUserPublishedSection.m */; };
+		ECC1712C24C7112D00F45662 /* MBUploadableRelationElement.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC1712B24C7112D00F45662 /* MBUploadableRelationElement.m */; };
+		ECC1712F24C7139600F45662 /* MBUploadableColorElement.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC1712E24C7139600F45662 /* MBUploadableColorElement.m */; };
 		ECC9F8AC2355B3790013A497 /* MBEvidenceInformations.m in Sources */ = {isa = PBXBuildFile; fileRef = ECC9F8AB2355B3790013A497 /* MBEvidenceInformations.m */; };
 		ECCBD8A2235EF753006BA4DF /* MBRelationElement.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCBD8A1235EF753006BA4DF /* MBRelationElement.m */; };
 		ECCD893722A6AA80007A952D /* MBUploadableCheckboxElement.m in Sources */ = {isa = PBXBuildFile; fileRef = ECCD893622A6AA80007A952D /* MBUploadableCheckboxElement.m */; };
@@ -219,8 +222,14 @@
 		66F925AC20751FA800C850F3 /* MBFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBFile.h; sourceTree = "<group>"; };
 		66F925AD20751FA800C850F3 /* MBFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBFile.m; sourceTree = "<group>"; };
 		D7D28725DB33F29961351BA5 /* Pods-MBurger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MBurger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MBurger/Pods-MBurger.debug.xcconfig"; sourceTree = "<group>"; };
+		EC315ED12462F9E600050053 /* MBColorElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBColorElement.h; sourceTree = "<group>"; };
+		EC315ED22462F9E600050053 /* MBColorElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBColorElement.m; sourceTree = "<group>"; };
 		EC9112D42295414E006AE42E /* MBUserPublishedSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBUserPublishedSection.h; sourceTree = "<group>"; };
 		EC9112D52295414E006AE42E /* MBUserPublishedSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBUserPublishedSection.m; sourceTree = "<group>"; };
+		ECC1712A24C7112D00F45662 /* MBUploadableRelationElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBUploadableRelationElement.h; sourceTree = "<group>"; };
+		ECC1712B24C7112D00F45662 /* MBUploadableRelationElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBUploadableRelationElement.m; sourceTree = "<group>"; };
+		ECC1712D24C7139600F45662 /* MBUploadableColorElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBUploadableColorElement.h; sourceTree = "<group>"; };
+		ECC1712E24C7139600F45662 /* MBUploadableColorElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBUploadableColorElement.m; sourceTree = "<group>"; };
 		ECC9F8AA2355B3790013A497 /* MBEvidenceInformations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBEvidenceInformations.h; sourceTree = "<group>"; };
 		ECC9F8AB2355B3790013A497 /* MBEvidenceInformations.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBEvidenceInformations.m; sourceTree = "<group>"; };
 		ECCBD8A0235EF753006BA4DF /* MBRelationElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBRelationElement.h; sourceTree = "<group>"; };
@@ -463,6 +472,8 @@
 				6623CFAB211057C9007AB579 /* MBMarkdownElement.m */,
 				ECCBD8A0235EF753006BA4DF /* MBRelationElement.h */,
 				ECCBD8A1235EF753006BA4DF /* MBRelationElement.m */,
+				EC315ED12462F9E600050053 /* MBColorElement.h */,
+				EC315ED22462F9E600050053 /* MBColorElement.m */,
 				66AF677D206E7609003FD62F /* MBGeneralElement.h */,
 				66AF677E206E7609003FD62F /* MBGeneralElement.m */,
 				667F407E2077B3D500B18D16 /* MBElementsFactory.h */,
@@ -548,6 +559,10 @@
 				66D9636720A0865200037200 /* MBUploadableFilesElement.m */,
 				ECCD893522A6AA80007A952D /* MBUploadableCheckboxElement.h */,
 				ECCD893622A6AA80007A952D /* MBUploadableCheckboxElement.m */,
+				ECC1712D24C7139600F45662 /* MBUploadableColorElement.h */,
+				ECC1712E24C7139600F45662 /* MBUploadableColorElement.m */,
+				ECC1712A24C7112D00F45662 /* MBUploadableRelationElement.h */,
+				ECC1712B24C7112D00F45662 /* MBUploadableRelationElement.m */,
 				66D9636C20A0994D00037200 /* MBUploadableElementsFactory.h */,
 				66D9636D20A0994D00037200 /* MBUploadableElementsFactory.m */,
 			);
@@ -743,7 +758,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC9112D62295414E006AE42E /* MBUserPublishedSection.m in Sources */,
+				ECC1712F24C7139600F45662 /* MBUploadableColorElement.m in Sources */,
 				66D9636F20A09AA500037200 /* MBUploadableElementsFactory.m in Sources */,
+				EC315ED32462F9E600050053 /* MBColorElement.m in Sources */,
 				66EBBF1E20E0DD6600CCD6B1 /* MBDropdownElementOption.m in Sources */,
 				66D9635F20A0834800037200 /* MBUploadableElement.m in Sources */,
 				66AF675D206E38ED003FD62F /* MBSection.m in Sources */,
@@ -783,6 +800,7 @@
 				66F925AE20751FA800C850F3 /* MBFile.m in Sources */,
 				660839242073B8A800432DE7 /* News.m in Sources */,
 				660E866420760726008DF597 /* MBFilterParameter.m in Sources */,
+				ECC1712C24C7112D00F45662 /* MBUploadableRelationElement.m in Sources */,
 				ECCD893722A6AA80007A952D /* MBUploadableCheckboxElement.m in Sources */,
 				66AF6742206E3236003FD62F /* main.m in Sources */,
 				66D9636820A0865200037200 /* MBUploadableFilesElement.m in Sources */,

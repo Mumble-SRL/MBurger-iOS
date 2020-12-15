@@ -7,6 +7,7 @@
 //
 
 #import "MBElement.h"
+#import "MBRelationSection.h"
 
 /**
 This class represents a MBurger relation element, a relation between two sections.
@@ -14,14 +15,9 @@ This class represents a MBurger relation element, a relation between two section
 @interface MBRelationElement : MBElement <NSCoding, NSSecureCoding>
 
 /**
- The block id of the section related to this section.
+ The sections related to this section.
  */
-@property (nonatomic, assign) NSInteger blockId;
-
-/**
- The section id of the section related to this section.
- */
-@property (nonatomic, assign) NSInteger sectionId;
+@property (nonatomic, retain, nonnull) NSArray<MBRelationSection *> *sections;
 
 /**
  Initializes a relation element with an blockId and a sectionId.
@@ -30,11 +26,10 @@ This class represents a MBurger relation element, a relation between two section
  @param elementId The id of the element.
  @param name The name of the element.
  @param order The order of the element.
- @param blockId The block id of the section related to this section.
- @param sectionId The section id of the section related to this section.
+ @param sections The sections related to this section.
 
  @return A newly created MBRelationElement initialized with the elementId, the name and the blockid and section id passed.
  */
-- (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order BlockId: (NSInteger) blockId SectionId: (NSInteger) sectionId;
+- (nonnull instancetype) initWithElementId: (NSInteger) elementId Name: (nonnull NSString *) name Order: (NSInteger) order Sections: (nonnull NSArray<MBRelationSection *> *) sections;
 
 @end

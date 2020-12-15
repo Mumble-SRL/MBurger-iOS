@@ -171,6 +171,9 @@
                 <a class="nav-group-task-link" href="../Classes/MBRelationElement.html">MBRelationElement</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBColorElement.html">MBColorElement</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/MBGeneralElement.html">MBGeneralElement</a>
               </li>
               <li class="nav-group-task">
@@ -198,6 +201,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/MBUploadableCheckboxElement.html">MBUploadableCheckboxElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBUploadableRelationElement.html">MBUploadableRelationElement</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/MBUploadableElementsFactory.html">MBUploadableElementsFactory</a>
@@ -255,6 +261,9 @@
             <a class="nav-group-name-link" href="../Other%20Classes.html">Other Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBUploadableColorElement.html">MBUploadableColorElement</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/MBUserContractStatus.html">MBUserContractStatus</a>
               </li>
             </ul>
@@ -281,11 +290,17 @@
       <article class="main-content">
 
         <section class="section">
-          <div class="section-content">
+          <div class="section-content top-matter">
             <h1>MBUploadableElementsFactory</h1>
               <div class="declaration">
                 <div class="language">
+                  <p class="aside-title">Objective-C</p>
                   <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">MBUploadableElementsFactory</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                </div>
+                <div class="language">
+                  <p class="aside-title">Swift</p>
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MBUploadableElementsFactory</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                 </div>
               </div>
@@ -321,7 +336,7 @@ The locale is initialized with the factory and passed to all the objects. You ca
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">localeIdentifier</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">localeIdentifier</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -338,7 +353,7 @@ The locale is initialized with the factory and passed to all the objects. You ca
                     <code>
                     <a name="/c:objc(cs)MBUploadableElementsFactory(im)initWithLocaleIdentifier:"></a>
                     <a name="//apple_ref/objc/Method/-initWithLocaleIdentifier:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)MBUploadableElementsFactory(im)initWithLocaleIdentifier:">-initWithLocaleIdentifier:</a>
+                    <a class="token" href="#/c:objc(cs)MBUploadableElementsFactory(im)initWithLocaleIdentifier:">-initWithLocaleIdentifier:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -394,7 +409,7 @@ The locale is initialized with the factory and passed to all the objects. You ca
                     <code>
                     <a name="/c:objc(cs)MBUploadableElementsFactory(im)textElementWithName:Text:"></a>
                     <a name="//apple_ref/objc/Method/-textElementWithName:Text:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)MBUploadableElementsFactory(im)textElementWithName:Text:">-textElementWithName:Text:</a>
+                    <a class="token" href="#/c:objc(cs)MBUploadableElementsFactory(im)textElementWithName:Text:">-textElementWithName:<wbr>Text:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -464,9 +479,11 @@ The locale is initialized with the factory and passed to all the objects. You ca
               <div class="task-name-container">
                 <a name="/Images"></a>
                 <a name="//apple_ref/objc/Section/Images" class="dashAnchor"></a>
-                <a href="#/Images">
-                  <h3 class="section-name">Images</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Images"></a>
+                  <h3 class="section-name"><p>Images</p>
+</h3>
+                </div>
               </div>
               <ul class="item-container">
                 <li class="item">
@@ -474,7 +491,7 @@ The locale is initialized with the factory and passed to all the objects. You ca
                     <code>
                     <a name="/c:objc(cs)MBUploadableElementsFactory(im)imagesElementWithName:Image:"></a>
                     <a name="//apple_ref/objc/Method/-imagesElementWithName:Image:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)MBUploadableElementsFactory(im)imagesElementWithName:Image:">-imagesElementWithName:Image:</a>
+                    <a class="token" href="#/c:objc(cs)MBUploadableElementsFactory(im)imagesElementWithName:Image:">-imagesElementWithName:<wbr>Image:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -543,7 +560,7 @@ The locale is initialized with the factory and passed to all the objects. You ca
                     <code>
                     <a name="/c:objc(cs)MBUploadableElementsFactory(im)imagesElementWithName:Image:CompressionQuality:"></a>
                     <a name="//apple_ref/objc/Method/-imagesElementWithName:Image:CompressionQuality:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)MBUploadableElementsFactory(im)imagesElementWithName:Image:CompressionQuality:">-imagesElementWithName:Image:CompressionQuality:</a>
+                    <a class="token" href="#/c:objc(cs)MBUploadableElementsFactory(im)imagesElementWithName:Image:CompressionQuality:">-imagesElementWithName:<wbr>Image:<wbr>CompressionQuality:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -625,7 +642,7 @@ The locale is initialized with the factory and passed to all the objects. You ca
                     <code>
                     <a name="/c:objc(cs)MBUploadableElementsFactory(im)imagesElementWithName:Images:"></a>
                     <a name="//apple_ref/objc/Method/-imagesElementWithName:Images:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)MBUploadableElementsFactory(im)imagesElementWithName:Images:">-imagesElementWithName:Images:</a>
+                    <a class="token" href="#/c:objc(cs)MBUploadableElementsFactory(im)imagesElementWithName:Images:">-imagesElementWithName:<wbr>Images:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -694,7 +711,7 @@ The locale is initialized with the factory and passed to all the objects. You ca
                     <code>
                     <a name="/c:objc(cs)MBUploadableElementsFactory(im)imagesElementWithName:Images:CompressionQuality:"></a>
                     <a name="//apple_ref/objc/Method/-imagesElementWithName:Images:CompressionQuality:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)MBUploadableElementsFactory(im)imagesElementWithName:Images:CompressionQuality:">-imagesElementWithName:Images:CompressionQuality:</a>
+                    <a class="token" href="#/c:objc(cs)MBUploadableElementsFactory(im)imagesElementWithName:Images:CompressionQuality:">-imagesElementWithName:<wbr>Images:<wbr>CompressionQuality:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -777,9 +794,11 @@ The locale is initialized with the factory and passed to all the objects. You ca
               <div class="task-name-container">
                 <a name="/Files"></a>
                 <a name="//apple_ref/objc/Section/Files" class="dashAnchor"></a>
-                <a href="#/Files">
-                  <h3 class="section-name">Files</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Files"></a>
+                  <h3 class="section-name"><p>Files</p>
+</h3>
+                </div>
               </div>
               <ul class="item-container">
                 <li class="item">
@@ -787,7 +806,7 @@ The locale is initialized with the factory and passed to all the objects. You ca
                     <code>
                     <a name="/c:objc(cs)MBUploadableElementsFactory(im)filesElementWithName:FileURL:"></a>
                     <a name="//apple_ref/objc/Method/-filesElementWithName:FileURL:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)MBUploadableElementsFactory(im)filesElementWithName:FileURL:">-filesElementWithName:FileURL:</a>
+                    <a class="token" href="#/c:objc(cs)MBUploadableElementsFactory(im)filesElementWithName:FileURL:">-filesElementWithName:<wbr>FileURL:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -856,7 +875,7 @@ The locale is initialized with the factory and passed to all the objects. You ca
                     <code>
                     <a name="/c:objc(cs)MBUploadableElementsFactory(im)filesElementWithName:FileURLs:"></a>
                     <a name="//apple_ref/objc/Method/-filesElementWithName:FileURLs:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)MBUploadableElementsFactory(im)filesElementWithName:FileURLs:">-filesElementWithName:FileURLs:</a>
+                    <a class="token" href="#/c:objc(cs)MBUploadableElementsFactory(im)filesElementWithName:FileURLs:">-filesElementWithName:<wbr>FileURLs:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -926,9 +945,11 @@ The locale is initialized with the factory and passed to all the objects. You ca
               <div class="task-name-container">
                 <a name="/Checkbox"></a>
                 <a name="//apple_ref/objc/Section/Checkbox" class="dashAnchor"></a>
-                <a href="#/Checkbox">
-                  <h3 class="section-name">Checkbox</h3>
-                </a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Checkbox"></a>
+                  <h3 class="section-name"><p>Checkbox</p>
+</h3>
+                </div>
               </div>
               <ul class="item-container">
                 <li class="item">
@@ -936,7 +957,7 @@ The locale is initialized with the factory and passed to all the objects. You ca
                     <code>
                     <a name="/c:objc(cs)MBUploadableElementsFactory(im)checkboxElementWithName:Value:"></a>
                     <a name="//apple_ref/objc/Method/-checkboxElementWithName:Value:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)MBUploadableElementsFactory(im)checkboxElementWithName:Value:">-checkboxElementWithName:Value:</a>
+                    <a class="token" href="#/c:objc(cs)MBUploadableElementsFactory(im)checkboxElementWithName:Value:">-checkboxElementWithName:<wbr>Value:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1002,14 +1023,177 @@ The locale is initialized with the factory and passed to all the objects. You ca
                 </li>
               </ul>
             </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Color"></a>
+                <a name="//apple_ref/objc/Section/Color" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Color"></a>
+                  <h3 class="section-name"><p>Color</p>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MBUploadableElementsFactory(im)colorElement:Color:"></a>
+                    <a name="//apple_ref/objc/Method/-colorElement:Color:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MBUploadableElementsFactory(im)colorElement:Color:">-colorElement:<wbr>Color:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a color element with the color passed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/MBUploadableColorElement.html">MBUploadableColorElement</a></span> <span class="o">*</span><span class="p">)</span><span class="nf">colorElement</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">name</span>
+                                             <span class="nf">Color</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">UIColor</span> <span class="o">*</span><span class="p">)</span><span class="nv">color</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">colorElement</span><span class="p">(</span><span class="n">_</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">color</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/MBUploadableColorElement.html">MBUploadableColorElement</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the element.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The color of the element.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An <code><a href="../Classes/MBUploadableColorElement.html">MBUploadableColorElement</a></code> with the name and color specified.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Relation"></a>
+                <a name="//apple_ref/objc/Section/Relation" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Relation"></a>
+                  <h3 class="section-name"><p>Relation</p>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)MBUploadableElementsFactory(im)relationElementWithName:SectionIds:"></a>
+                    <a name="//apple_ref/objc/Method/-relationElementWithName:SectionIds:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MBUploadableElementsFactory(im)relationElementWithName:SectionIds:">-relationElementWithName:<wbr>SectionIds:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a relation element with the section ids passed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/MBUploadableRelationElement.html">MBUploadableRelationElement</a></span> <span class="o">*</span><span class="p">)</span>
+    <span class="nf">relationElementWithName</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">name</span>
+                 <span class="nf">SectionIds</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">NSNumber</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">sectionIds</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">relationElement</span><span class="p">(</span><span class="n">withName</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">sectionIds</span><span class="p">:</span> <span class="p">[</span><span class="kt">NSNumber</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/MBUploadableRelationElement.html">MBUploadableRelationElement</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>name</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the element.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sectionIds</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The section ids of the element.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An <code><a href="../Classes/MBUploadableRelationElement.html">MBUploadableRelationElement</a></code> with the name and section ids specified.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
 
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2019-11-26)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.12.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2020 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2020-07-22)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

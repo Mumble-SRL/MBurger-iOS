@@ -171,6 +171,9 @@
                 <a class="nav-group-task-link" href="../Classes/MBRelationElement.html">MBRelationElement</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBColorElement.html">MBColorElement</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/MBGeneralElement.html">MBGeneralElement</a>
               </li>
               <li class="nav-group-task">
@@ -198,6 +201,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/MBUploadableCheckboxElement.html">MBUploadableCheckboxElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBUploadableRelationElement.html">MBUploadableRelationElement</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/MBUploadableElementsFactory.html">MBUploadableElementsFactory</a>
@@ -255,6 +261,9 @@
             <a class="nav-group-name-link" href="../Other%20Classes.html">Other Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/MBUploadableColorElement.html">MBUploadableColorElement</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/MBUserContractStatus.html">MBUserContractStatus</a>
               </li>
             </ul>
@@ -281,11 +290,17 @@
       <article class="main-content">
 
         <section class="section">
-          <div class="section-content">
+          <div class="section-content top-matter">
             <h1>MBUploadableImagesElement</h1>
               <div class="declaration">
                 <div class="language">
+                  <p class="aside-title">Objective-C</p>
                   <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">MBUploadableImagesElement</span> <span class="p">:</span> <span class="nc"><a href="../Classes/MBUploadableElement.html">MBUploadableElement</a></span></code></pre>
+
+                </div>
+                <div class="language">
+                  <p class="aside-title">Swift</p>
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MBUploadableImagesElement</span> <span class="p">:</span> <span class="kt"><a href="../Classes/MBUploadableElement.html">MBUploadableElement</a></span></code></pre>
 
                 </div>
               </div>
@@ -319,7 +334,7 @@ When converted to form with <code><a href="../Classes/MBUploadableElement.html#/
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readwrite</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">UIImage</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">images</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">UIImage</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">images</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -351,7 +366,7 @@ When converted to form with <code><a href="../Classes/MBUploadableElement.html#/
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">CGFloat</span> <span class="n">compressionQuality</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">)</span> <span class="n">CGFloat</span> <span class="n">compressionQuality</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -368,7 +383,7 @@ When converted to form with <code><a href="../Classes/MBUploadableElement.html#/
                     <code>
                     <a name="/c:objc(cs)MBUploadableImagesElement(im)initWithElementName:LocaleIdentifier:Images:"></a>
                     <a name="//apple_ref/objc/Method/-initWithElementName:LocaleIdentifier:Images:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)MBUploadableImagesElement(im)initWithElementName:LocaleIdentifier:Images:">-initWithElementName:LocaleIdentifier:Images:</a>
+                    <a class="token" href="#/c:objc(cs)MBUploadableImagesElement(im)initWithElementName:LocaleIdentifier:Images:">-initWithElementName:<wbr>LocaleIdentifier:<wbr>Images:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -455,7 +470,7 @@ When converted to form with <code><a href="../Classes/MBUploadableElement.html#/
                     <code>
                     <a name="/c:objc(cs)MBUploadableImagesElement(im)initWithElementName:LocaleIdentifier:Images:CompressionQuality:"></a>
                     <a name="//apple_ref/objc/Method/-initWithElementName:LocaleIdentifier:Images:CompressionQuality:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)MBUploadableImagesElement(im)initWithElementName:LocaleIdentifier:Images:CompressionQuality:">-initWithElementName:LocaleIdentifier:Images:CompressionQuality:</a>
+                    <a class="token" href="#/c:objc(cs)MBUploadableImagesElement(im)initWithElementName:LocaleIdentifier:Images:CompressionQuality:">-initWithElementName:<wbr>LocaleIdentifier:<wbr>Images:<wbr>CompressionQuality:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -558,8 +573,8 @@ When converted to form with <code><a href="../Classes/MBUploadableElement.html#/
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2019-11-26)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.12.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2020 <a class="link" href="https://mumbleideas.it/" target="_blank" rel="external">Mumble</a>. All rights reserved. (Last updated: 2020-07-22)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

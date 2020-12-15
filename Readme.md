@@ -312,6 +312,8 @@ All the model objects implement the `NSCoding` and `NSSecureCoding` protocol so 
 * `MBAddressElement`
 * `MBDropdownElement`
 * `MBPollElement`
+* `MBColorElement`
+* `MBRelationElement`
 * `MBGeneralElement`
 * `MBUser`
 
