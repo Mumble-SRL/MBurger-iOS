@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>MBUploadableImagesElement Class Reference</title>
+    <title>MBRelationSection Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/objc/Class/MBUploadableImagesElement" class="dashAnchor"></a>
+    <a name="//apple_ref/objc/Class/MBRelationSection" class="dashAnchor"></a>
 
-    <a title="MBUploadableImagesElement Class Reference"></a>
+    <a title="MBRelationSection Class Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">MBurger Reference</a>
       <img class="carat" src="../img/carat.png" />
-      MBUploadableImagesElement Class Reference
+      MBRelationSection Class Reference
     </p>
 
     <div class="content-wrapper">
@@ -294,21 +294,20 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>MBUploadableImagesElement</h1>
+            <h1>MBRelationSection</h1>
               <div class="declaration">
                 <div class="language">
                   <p class="aside-title">Objective-C</p>
-                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">MBUploadableImagesElement</span> <span class="p">:</span> <span class="nc"><a href="../Classes/MBUploadableElement.html">MBUploadableElement</a></span></code></pre>
+                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">MBRelationSection</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n">NSCoding</span><span class="p">,</span> <span class="n">NSSecureCoding</span><span class="o">&gt;</span></code></pre>
 
                 </div>
                 <div class="language">
                   <p class="aside-title">Swift</p>
-                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MBUploadableImagesElement</span> <span class="p">:</span> <span class="kt"><a href="../Classes/MBUploadableElement.html">MBUploadableElement</a></span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MBRelationSection</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">NSCoding</span><span class="p">,</span> <span class="kt">NSSecureCoding</span></code></pre>
 
                 </div>
               </div>
-            <p>An uploadable element representing some images.
-When converted to form with <code><a href="../Classes/MBUploadableElement.html#/c:objc(cs)MBUploadableElement(im)toForm">-[MBUploadableElement toForm]</a></code> is returned an array with objects with name <code>elements[locale][name][index]</code> and value the file in which the image is saved.</p>
+            <p>A section for a relation element</p>
 
           </div>
         </section>
@@ -320,9 +319,9 @@ When converted to form with <code><a href="../Classes/MBUploadableElement.html#/
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)MBUploadableImagesElement(py)images"></a>
-                    <a name="//apple_ref/objc/Property/images" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)MBUploadableImagesElement(py)images">images</a>
+                    <a name="/c:objc(cs)MBRelationSection(py)blockId"></a>
+                    <a name="//apple_ref/objc/Property/blockId" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MBRelationSection(py)blockId">blockId</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -330,19 +329,19 @@ When converted to form with <code><a href="../Classes/MBUploadableElement.html#/
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The array of images.</p>
+                        <p>The block id of the section.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">retain</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">UIImage</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">images</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">)</span> <span class="n">NSInteger</span> <span class="n">blockId</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">images</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIImage</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">blockId</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -352,9 +351,9 @@ When converted to form with <code><a href="../Classes/MBUploadableElement.html#/
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)MBUploadableImagesElement(py)compressionQuality"></a>
-                    <a name="//apple_ref/objc/Property/compressionQuality" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)MBUploadableImagesElement(py)compressionQuality">compressionQuality</a>
+                    <a name="/c:objc(cs)MBRelationSection(py)sectionId"></a>
+                    <a name="//apple_ref/objc/Property/sectionId" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MBRelationSection(py)sectionId">sectionId</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -362,19 +361,19 @@ When converted to form with <code><a href="../Classes/MBUploadableElement.html#/
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The compression quality used to encode the image in jpg.</p>
+                        <p>The section id of the section.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">)</span> <span class="n">CGFloat</span> <span class="n">compressionQuality</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">)</span> <span class="n">NSInteger</span> <span class="n">sectionId</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">compressionQuality</span><span class="p">:</span> <span class="kt">CGFloat</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">sectionId</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -384,9 +383,9 @@ When converted to form with <code><a href="../Classes/MBUploadableElement.html#/
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)MBUploadableImagesElement(im)initWithElementName:LocaleIdentifier:Images:"></a>
-                    <a name="//apple_ref/objc/Method/-initWithElementName:LocaleIdentifier:Images:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)MBUploadableImagesElement(im)initWithElementName:LocaleIdentifier:Images:">-initWithElementName:<wbr>LocaleIdentifier:<wbr>Images:<wbr></a>
+                    <a name="/c:objc(cs)MBRelationSection(im)initWithDictionary:"></a>
+                    <a name="//apple_ref/objc/Method/-initWithDictionary:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)MBRelationSection(im)initWithDictionary:">-initWithDictionary:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -394,27 +393,19 @@ When converted to form with <code><a href="../Classes/MBUploadableElement.html#/
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Initializes an images element with the name, the locale and an array of images.</p>
-<div class="aside aside-see">
-    <p class="aside-title">See</p>
-    <p>This function calls the initializer <code>-[MBUploadableImagesElement initWithElementName:LocaleIdentifier:Images:CompressionQuality]</code></p>
-
-</div>
+                        <p>Initializes a relation section with the dictionary returned by the API.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithElementName</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">elementName</span>
-                           <span class="nf">LocaleIdentifier</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">localeIdentifier</span>
-                                     <span class="nf">Images</span><span class="p">:</span>
-                                         <span class="p">(</span><span class="n">nullable</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">UIImage</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">images</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithDictionary</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">dictionary</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">elementName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">localeIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">images</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIImage</span><span class="p">]?)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">dictionary</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">])</span></code></pre>
 
                         </div>
                       </div>
@@ -425,36 +416,12 @@ When converted to form with <code><a href="../Classes/MBUploadableElement.html#/
                             <tr>
                               <td>
                                 <code>
-                                <em>elementName</em>
+                                <em>dictionary</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The name/key of the element.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>localeIdentifier</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The locale of the element.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>images</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The images of the element.</p>
+                                  <p>The id of the dictionary returned by the API.</p>
                                 </div>
                               </td>
                             </tr>
@@ -463,107 +430,7 @@ When converted to form with <code><a href="../Classes/MBUploadableElement.html#/
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>A newly created MBUploadableImagesElement initialized with the name, locale and images.</p>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)MBUploadableImagesElement(im)initWithElementName:LocaleIdentifier:Images:CompressionQuality:"></a>
-                    <a name="//apple_ref/objc/Method/-initWithElementName:LocaleIdentifier:Images:CompressionQuality:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)MBUploadableImagesElement(im)initWithElementName:LocaleIdentifier:Images:CompressionQuality:">-initWithElementName:<wbr>LocaleIdentifier:<wbr>Images:<wbr>CompressionQuality:<wbr></a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Initializes an images element with the name, the locale and an array of images.</p>
-<div class="aside aside-see">
-    <p class="aside-title">See</p>
-    <p>This function calls the super initializer <code><a href="../Classes/MBUploadableElement.html#/c:objc(cs)MBUploadableElement(im)initWithElementName:LocaleIdentifier:">-[MBUploadableElement initWithElementName:LocaleIdentifier:]</a></code></p>
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithElementName</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">elementName</span>
-                           <span class="nf">LocaleIdentifier</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">localeIdentifier</span>
-                                     <span class="nf">Images</span><span class="p">:</span>
-                                         <span class="p">(</span><span class="n">nullable</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">UIImage</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">images</span>
-                         <span class="nf">CompressionQuality</span><span class="p">:(</span><span class="n">CGFloat</span><span class="p">)</span><span class="nv">compressionQuality</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">elementName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">localeIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">images</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIImage</span><span class="p">]?,</span> <span class="nv">compressionQuality</span><span class="p">:</span> <span class="kt">CGFloat</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>elementName</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The name/key of the element.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>localeIdentifier</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The locale of the element.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>images</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The images of the element.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>compressionQuality</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The compression quality used to encode the image in jpg.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>A newly created MBUploadableImagesElement initialized with the name, locale and images.</p>
+                        <p>A newly created MBRelationSection initialized with the dictionary returned by the API.</p>
                       </div>
                     </section>
                   </div>
