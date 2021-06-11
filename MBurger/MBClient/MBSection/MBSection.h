@@ -31,6 +31,11 @@
 @property (nonatomic, retain, nullable) NSDictionary *elements;
 
 /**
+ The beacons of the section. The key of the dictionary is the name of the element, the value is an instance of a MBElement that represents the object.
+ */
+@property (nonatomic, retain, nullable) NSDictionary *beacons;
+
+/**
  The date the section is available.
 */
 @property (nonatomic, retain, nullable) NSDate *availableAt;

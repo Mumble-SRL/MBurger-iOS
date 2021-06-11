@@ -8,6 +8,7 @@
 
 #import "MBSection.h"
 #import "MBElementsFactory.h"
+#import "MBBeacon.h"
 
 #import <objc/runtime.h>
 
@@ -41,6 +42,20 @@
         }
         if (elementsMutable.allKeys.count != 0){
             elements = elementsMutable;
+        }
+    }
+    NSDictionary *beacons = nil;
+    if (dictionary[@"beacons"] != nil && dictionary[@"beacons"] != [NSNull null]){
+        NSDictionary *beaconsDictionaryFromApi = dictionary[@"beacons"];
+        NSMutableDictionary *beaconsMutable = [[NSMutableDictionary alloc] init];
+        for (NSString *key in beaconsDictionaryFromApi.allKeys){
+            NSDictionary *objectDict = beaconsDictionaryFromApi[key];
+            NSLog(@"%@", objectDict);
+            // @TODO: map elements for beacons
+//            MBBeacon *b = [MBBeacon initWithDictionary:objectDict];
+        }
+        if (beaconsMutable.allKeys.count != 0){
+            beacons = beaconsMutable;
         }
     }
     NSDate *availableAtDate = nil;

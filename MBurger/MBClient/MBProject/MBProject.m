@@ -10,12 +10,13 @@
 
 @implementation MBProject
 
-- (instancetype) initWithProjectId: (NSInteger) projectId Name: (NSString *) name Contracts: (NSArray <MBLegalContract *> *) contracts EvidenceInformations: (MBEvidenceInformations *) evidenceInformations{
+- (instancetype)initWithProjectId:(NSInteger)projectId Name:(NSString *)name Contracts:(NSArray<MBLegalContract *> *)contracts Beacons:(NSArray<MBBeacon *> *)beacons EvidenceInformations:(MBEvidenceInformations *)evidenceInformations{
     self = [super init];
     if (self){
         self.projectId = projectId;
         self.projectName = name;
         self.contracts = contracts;
+        self.beacons = beacons;
         self.evidenceInformations = evidenceInformations;
     }
     return self;
@@ -33,11 +34,20 @@
         }
         contracts = mutableContracts;
     }
+    NSArray *beacons = nil;
+    if (dictionary[@"beacons"] != nil && dictionary[@"beacons"] != [NSNull null]){
+        NSArray *contractsFromDictionary = dictionary[@"beacons"];
+        NSMutableArray *mutableBeacons = [[NSMutableArray alloc] init];
+        for (NSDictionary *contractDictionary in contractsFromDictionary) {
+            [mutableBeacons addObject:[[MBBeacon alloc] initWithDictionary:contractDictionary]];
+        }
+        beacons = mutableBeacons;
+    }
     MBEvidenceInformations *evidenceInformations;
     if (dictionary[@"evidence_id"] != nil && dictionary[@"evidence_id"] != [NSNull null]){
         evidenceInformations = [[MBEvidenceInformations alloc] initWithDictionary:dictionary];
     }
-    return [self initWithProjectId:projectId Name:projectName Contracts:contracts EvidenceInformations:evidenceInformations];
+    return [self initWithProjectId:projectId Name:projectName Contracts:contracts Beacons:beacons EvidenceInformations:evidenceInformations];
 }
 
 - (BOOL) isEqual:(id)object {
