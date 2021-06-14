@@ -14,12 +14,13 @@
 
 @implementation MBSection
 
-- (instancetype) initWithSectionId: (NSInteger) sectionId Order: (NSInteger) order Elements: (NSDictionary *) elements AvailableAt: (NSDate *) availableAt InEvidence: (BOOL) inEvidence {
+- (instancetype) initWithSectionId: (NSInteger) sectionId Order: (NSInteger) order Elements: (NSDictionary *) elements Beacons:(NSArray *) beacons AvailableAt: (NSDate *) availableAt InEvidence: (BOOL) inEvidence {
     self = [super init];
     if (self){
         self.sectionId = sectionId;
         self.order = order;
         self.elements = elements;
+        self.beacons = beacons;
         self.availableAt = availableAt;
         self.inEvidence = inEvidence;
     }
@@ -44,19 +45,17 @@
             elements = elementsMutable;
         }
     }
-    NSDictionary *beacons = nil;
+    NSArray *beacons = nil;
     if (dictionary[@"beacons"] != nil && dictionary[@"beacons"] != [NSNull null]){
-        NSDictionary *beaconsDictionaryFromApi = dictionary[@"beacons"];
-        NSMutableDictionary *beaconsMutable = [[NSMutableDictionary alloc] init];
-        for (NSString *key in beaconsDictionaryFromApi.allKeys){
-            NSDictionary *objectDict = beaconsDictionaryFromApi[key];
-            NSLog(@"%@", objectDict);
-            // @TODO: map elements for beacons
-//            MBBeacon *b = [MBBeacon initWithDictionary:objectDict];
+        NSArray *beaconsArrayFromApi = dictionary[@"beacons"];
+        NSMutableArray *mutableBeacons = [[NSMutableArray alloc] init];
+        for (NSDictionary *beaconObject in beaconsArrayFromApi){
+            MBBeacon *b = [[MBBeacon alloc] initWithDictionary:beaconObject];
+            if (b) {
+                [mutableBeacons addObject:b];
+            }
         }
-        if (beaconsMutable.allKeys.count != 0){
-            beacons = beaconsMutable;
-        }
+        beacons = mutableBeacons;
     }
     NSDate *availableAtDate = nil;
     if (dictionary[@"available_at"] != nil && dictionary[@"available_at"] != [NSNull null]){
@@ -64,7 +63,7 @@
         availableAtDate = [NSDate dateWithTimeIntervalSince1970:availableAt];
     }
     BOOL inEvidence = [dictionary[@"in_evidence"] boolValue];
-    return [self initWithSectionId:sectionId Order:order Elements:elements AvailableAt:availableAtDate InEvidence:inEvidence];
+    return [self initWithSectionId:sectionId Order:order Elements:elements Beacons:beacons AvailableAt:availableAtDate InEvidence:inEvidence];
 }
 
 - (id) mapElementsToObject:(NSObject*)object withMapping:(NSDictionary*)mapping{

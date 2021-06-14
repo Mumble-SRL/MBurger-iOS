@@ -26,7 +26,8 @@
     NSString *mimeType = dictionary[@"mime_type"];
     NSInteger size = [dictionary[@"size"] integerValue];
     NSString *imageUrlString = dictionary[@"url"];
-    NSURL *imageUrl = [NSURL URLWithString:imageUrlString];
+    NSString* imageUrlEscaped = [imageUrlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
+    NSURL *imageUrl = [NSURL URLWithString:imageUrlEscaped];
     return [self initWithId:imageId Url:imageUrl MimeType:mimeType Size:size];
 }
 

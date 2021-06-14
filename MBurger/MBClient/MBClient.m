@@ -55,14 +55,14 @@
 #pragma mark - Blocks
 
 + (void) getBlocksWithParameters: (NSArray <id<MBParameter>> *) parameters
-                         Success: (void (^)(NSArray <MBBlock *> *blocks, MBPaginationInfo *pagintaionInfo)) success
+                         Success: (void (^)(NSArray <MBBlock *> *blocks, MBPaginationInfo *paginationInfo)) success
                          Failure: (void (^)(NSError * error)) failure {
     [self getBlocksWithParameters:parameters IncludingSections:FALSE AndElements:FALSE Success:success Failure:failure];
 }
 
 + (void) getBlocksWithParameters: (NSArray <id<MBParameter>> *) parameters
                IncludingSections: (BOOL) includeSections
-                         Success: (void (^)(NSArray <MBBlock *> *blocks, MBPaginationInfo *pagintaionInfo)) success
+                         Success: (void (^)(NSArray <MBBlock *> *blocks, MBPaginationInfo *paginationInfo)) success
                          Failure: (void (^)(NSError *error)) failure {
     [self getBlocksWithParameters:parameters IncludingSections:includeSections AndElements:FALSE Success:success Failure:failure];
 }
@@ -70,7 +70,7 @@
 + (void) getBlocksWithParameters: (NSArray <id<MBParameter>> *) parameters
                IncludingSections: (BOOL) includeSections
                      AndElements: (BOOL) includeElements
-                         Success: (void (^)(NSArray <MBBlock *> *blocks, MBPaginationInfo *pagintaionInfo)) success
+                         Success: (void (^)(NSArray <MBBlock *> *blocks, MBPaginationInfo *paginationInfo)) success
                          Failure: (void (^)(NSError *error)) failure {
     NSMutableDictionary *parametersMutable = [[NSMutableDictionary alloc] init];
     if (includeSections){
@@ -170,7 +170,7 @@
 
 + (void) getSectionsWithBlockId: (NSInteger) blockId
                      Parameters: (NSArray <id<MBParameter>> *) parameters
-                        Success: (void (^)(NSArray <MBSection *> *sections, MBPaginationInfo *pagintaionInfo)) success
+                        Success: (void (^)(NSArray <MBSection *> *sections, MBPaginationInfo *paginationInfo)) success
                         Failure: (void (^)(NSError *error)) failure {
     [self getSectionsWithBlockId:blockId Parameters:parameters IncludeElements:FALSE IncludeBeacons:FALSE Success:success Failure:failure];
 }
@@ -178,8 +178,16 @@
 + (void) getSectionsWithBlockId: (NSInteger) blockId
                      Parameters: (NSArray <id<MBParameter>> *) parameters
                 IncludeElements: (BOOL) includeElements
+                        Success: (void (^)(NSArray <MBSection *> *sections, MBPaginationInfo *paginationInfo)) success
+                        Failure: (void (^)(NSError *error)) failure {
+    [self getSectionsWithBlockId:blockId Parameters:parameters IncludeElements:includeElements IncludeBeacons:FALSE Success:success Failure:failure];
+}
+
++ (void) getSectionsWithBlockId: (NSInteger) blockId
+                     Parameters: (NSArray <id<MBParameter>> *) parameters
+                IncludeElements: (BOOL) includeElements
                  IncludeBeacons: (BOOL) includeBeacons
-                        Success: (void (^)(NSArray <MBSection *> *sections, MBPaginationInfo *pagintaionInfo)) success
+                        Success: (void (^)(NSArray <MBSection *> *sections, MBPaginationInfo *paginationInfo)) success
                         Failure: (void (^)(NSError *error)) failure {
     NSMutableDictionary *parametersMutable = [[NSMutableDictionary alloc] init];
     if (includeElements && includeBeacons) {

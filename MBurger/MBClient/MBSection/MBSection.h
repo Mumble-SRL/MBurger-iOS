@@ -33,7 +33,7 @@
 /**
  The beacons of the section. The key of the dictionary is the name of the element, the value is an instance of a MBElement that represents the object.
  */
-@property (nonatomic, retain, nullable) NSDictionary *beacons;
+@property (nonatomic, retain, nullable) NSArray *beacons;
 
 /**
  The date the section is available.
@@ -51,12 +51,13 @@
  @param sectionId The id of the section.
  @param order The id order the section.
  @param elements The elements of the section as returned by the REST api.
+ @param beacons The beacons of the section as returned by the REST api.
  @param availableAt The date the section is available.
  @param inEvidence Indicates if the section is in evidence.
 
  @return A newly created MBSection initialized with the sectionId and elements.
  */
-- (nonnull instancetype) initWithSectionId: (NSInteger) sectionId Order: (NSInteger) order Elements: (nullable NSDictionary *) elements AvailableAt: (nullable NSDate *) availableAt InEvidence: (BOOL) inEvidence;
+- (nonnull instancetype) initWithSectionId: (NSInteger) sectionId Order: (NSInteger) order Elements: (nullable NSDictionary *) elements Beacons:(nullable NSArray *) beacons AvailableAt: (nullable NSDate *) availableAt InEvidence: (BOOL) inEvidence;
 
 /**
  Initializes a section with the dictionary returned by the api.

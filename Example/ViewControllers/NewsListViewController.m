@@ -26,12 +26,7 @@
     self.tableView.dataSource = self;
     self.tableView.tableFooterView = [UIView new];
     
-    [MBClient getSectionsWithBlockId:263 Parameters:nil IncludeElements:TRUE IncludeBeacons: TRUE Success:^(NSArray<MBSection *> * _Nonnull sections, MBPaginationInfo * _Nonnull pagintaionInfo) {
-        
-    } Failure:^(NSError * _Nonnull error) {
-        [self showError:error];
-    }];
-//    [self loadNews];
+    [self loadNews];
 }
 
 

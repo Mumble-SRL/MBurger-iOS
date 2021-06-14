@@ -36,12 +36,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, retain, nullable) NSString *beaconUUID;
 
 /**
- If the contract is active or not
+ The major code of the beacon
  */
 @property (nonatomic, assign) NSInteger major;
 
 /**
- The creation date of the contract
+ The minor code of the beacon
  */
 @property (nonatomic, assign) NSInteger minor;
 
@@ -55,11 +55,11 @@ NS_ASSUME_NONNULL_BEGIN
  
  @param beaconId The id of the beacon.
  @param beaconName The name of the beacon.
- @param subtitle The link of the contract.
- @param beaconUUID The text of the contract.
- @param major If the contract is active or not.
- @param minor The creation date of the contract.
- @param beaconCode The update date of the contract.
+ @param subtitle The subtitle of the beacon.
+ @param beaconUUID The UUID of the beacon.
+ @param major The major code of the beacon.
+ @param minor The minor code of the beacon.
+ @param beaconCode The code associated to the beacon.
 
  @return A newly created MBBeacon initialized with the sectionId and name.
  */

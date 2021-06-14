@@ -82,8 +82,10 @@
 }
 
 - (MBFile *) firstMedia{
-    if (self.medias.count > 0){
-        return self.medias.firstObject;
+    if (self.medias != nil) {
+        if (self.medias.count > 0){
+            return self.medias.firstObject;
+        }
     }
     return nil;
 }
