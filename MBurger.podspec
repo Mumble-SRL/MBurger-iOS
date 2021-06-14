@@ -1,5 +1,5 @@
 #
-#  Be sure to run `pod spec lint VAInstrumentation.podspec' to ensure this is a
+#  Be sure to run `pod spec lint MBurger.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
 #
 #  To learn more about Podspec attributes see http://docs.cocoapods.org/specification.html
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MBurger"
-  s.version      = "1.0.19"
+  s.version      = "1.0.20"
   s.summary      = "MBurger SDK."
 
   # This description is used to generate tags and improve search results.
@@ -62,7 +62,7 @@ Pod::Spec.new do |s|
   #
 
   s.platform     = :ios
-  s.ios.deployment_target = "10.0"
+  s.ios.deployment_target = "12.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -76,7 +76,7 @@ Pod::Spec.new do |s|
   #  Specify the location from where the source should be retrieved.
   #  Supports git, hg, bzr, svn and HTTP.
   #
-  s.source       = { git: 'https://github.com/Mumble-SRL/MBurger-iOS.git', :tag => '1.0.19'}
+  s.source       = { git: 'https://github.com/Mumble-SRL/MBurger-iOS.git', :tag => '1.0.20'}
   s.source_files = "MBurger/*.{h,m,swift}", "MBurger/**/*.{h,m,swift}"
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
