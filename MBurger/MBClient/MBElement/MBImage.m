@@ -26,8 +26,9 @@
     NSString *mimeType = dictionary[@"mime_type"];
     NSInteger size = [dictionary[@"size"] integerValue];
     NSString *imageUrlString = dictionary[@"url"];
-    NSString* imageUrlEscaped = [imageUrlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
-    NSURL *imageUrl = [NSURL URLWithString:imageUrlEscaped];
+    // replace whitespaces in path if founded
+    NSString *imageUrlWithoutWhitespaces = [imageUrlString stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    NSURL *imageUrl = [NSURL URLWithString:imageUrlWithoutWhitespaces];
     return [self initWithId:imageId Url:imageUrl MimeType:mimeType Size:size];
 }
 
