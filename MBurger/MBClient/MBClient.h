@@ -32,10 +32,12 @@
 /**
  Retrieve the informations about the project.
  @param includeContracts if true contracts are included in the project
+ @param includeBeacons if true beacons are included in the project
  @param success A block object to be executed when the task finishes successfully. This block has no return value and takes one argument: the project returned by the api.
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
 + (void) getProjectIncludingContracts: (BOOL) includeContracts
+                           AndBeacons: (BOOL) includeBeacons
                               Success: (nullable void (^)(MBProject * _Nonnull project)) success
                               Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
@@ -50,7 +52,7 @@
  @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
  */
 + (void) getBlocksWithParameters: (nullable NSArray <id<MBParameter>> *) parameters
-                         Success: (nullable void (^)(NSArray <MBBlock *> * _Nonnull blocks, MBPaginationInfo * _Nonnull pagintaionInfo)) success
+                         Success: (nullable void (^)(NSArray <MBBlock *> * _Nonnull blocks, MBPaginationInfo * _Nonnull paginationInfo)) success
                          Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 /**
@@ -65,7 +67,7 @@
  */
 + (void) getBlocksWithParameters: (nullable NSArray <id<MBParameter>> *) parameters
                IncludingSections: (BOOL) includeSections
-                         Success: (nullable void (^)(NSArray <MBBlock *> * _Nonnull blocks, MBPaginationInfo * _Nonnull pagintaionInfo)) success
+                         Success: (nullable void (^)(NSArray <MBBlock *> * _Nonnull blocks, MBPaginationInfo * _Nonnull paginationInfo)) success
                          Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 /**
@@ -82,7 +84,7 @@
 + (void) getBlocksWithParameters: (nullable NSArray <id<MBParameter>> *) parameters
                IncludingSections: (BOOL) includeSections
                      AndElements: (BOOL) includeElements
-                         Success: (nullable void (^)(NSArray <MBBlock *> * _Nonnull blocks, MBPaginationInfo * _Nonnull pagintaionInfo)) success
+                         Success: (nullable void (^)(NSArray <MBBlock *> * _Nonnull blocks, MBPaginationInfo * _Nonnull paginationInfo)) success
                          Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 /**
@@ -148,7 +150,7 @@
  */
 + (void) getSectionsWithBlockId: (NSInteger) blockId
                      Parameters: (nullable NSArray <id<MBParameter>> *) parameters
-                        Success: (nullable void (^)(NSArray <MBSection *> * _Nonnull sections, MBPaginationInfo * _Nonnull pagintaionInfo)) success
+                        Success: (nullable void (^)(NSArray <MBSection *> * _Nonnull sections, MBPaginationInfo * _Nonnull paginationInfo)) success
                         Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 /**
  Retrieve the sections of the block with the specified id.
@@ -163,7 +165,24 @@
 + (void) getSectionsWithBlockId: (NSInteger) blockId
                      Parameters: (nullable NSArray <id<MBParameter>> *) parameters
                 IncludeElements: (BOOL) includeElements
-                        Success: (nullable void (^)(NSArray <MBSection *> * _Nonnull sections, MBPaginationInfo * _Nonnull pagintaionInfo)) success
+                        Success: (nullable void (^)(NSArray <MBSection *> * _Nonnull sections, MBPaginationInfo * _Nonnull paginationInfo)) success
+                        Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
+/**
+ Retrieve the sections of the block with the specified id.
+ If includeElements is true the informations about the elements of the sections are included in the response.
+ @see `MBParameter`
+ @param blockId The id of the block that has the sections.
+ @param parameters An optional array of parameters used to sort, filter orpaginate the blocks returned.
+ @param includeElements If true the information of the elements in the sections are included in the response.
+ @param includeBeacons If true the beacons associated to this section are included in the response.
+ @param success A block object to be executed when the task finishes successfully. This block has no return value and takes two arguments: the array of sections returned by the api and the informations about the pagination.
+ @param failure A block object to be executed when the task finishes unsuccessfully, or that finishes successfully, but the server encountered an error. This block has no return value and takes one argument: the error describing the error that occurred.
+ */
++ (void) getSectionsWithBlockId: (NSInteger) blockId
+                     Parameters: (nullable NSArray <id<MBParameter>> *) parameters
+                IncludeElements: (BOOL) includeElements
+                 IncludeBeacons: (BOOL) includeBeacons
+                        Success: (nullable void (^)(NSArray <MBSection *> * _Nonnull sections, MBPaginationInfo * _Nonnull paginationInfo)) success
                         Failure: (nullable void (^)(NSError * _Nonnull error)) failure;
 
 

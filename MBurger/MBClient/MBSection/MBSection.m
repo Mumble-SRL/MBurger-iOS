@@ -8,17 +8,19 @@
 
 #import "MBSection.h"
 #import "MBElementsFactory.h"
+#import "MBBeacon.h"
 
 #import <objc/runtime.h>
 
 @implementation MBSection
 
-- (instancetype) initWithSectionId: (NSInteger) sectionId Order: (NSInteger) order Elements: (NSDictionary *) elements AvailableAt: (NSDate *) availableAt InEvidence: (BOOL) inEvidence {
+- (instancetype) initWithSectionId: (NSInteger) sectionId Order: (NSInteger) order Elements: (NSDictionary *) elements Beacons:(NSArray *) beacons AvailableAt: (NSDate *) availableAt InEvidence: (BOOL) inEvidence {
     self = [super init];
     if (self){
         self.sectionId = sectionId;
         self.order = order;
         self.elements = elements;
+        self.beacons = beacons;
         self.availableAt = availableAt;
         self.inEvidence = inEvidence;
     }
@@ -43,13 +45,25 @@
             elements = elementsMutable;
         }
     }
+    NSArray *beacons = nil;
+    if (dictionary[@"beacons"] != nil && dictionary[@"beacons"] != [NSNull null]){
+        NSArray *beaconsArrayFromApi = dictionary[@"beacons"];
+        NSMutableArray *mutableBeacons = [[NSMutableArray alloc] init];
+        for (NSDictionary *beaconObject in beaconsArrayFromApi){
+            MBBeacon *b = [[MBBeacon alloc] initWithDictionary:beaconObject];
+            if (b) {
+                [mutableBeacons addObject:b];
+            }
+        }
+        beacons = mutableBeacons;
+    }
     NSDate *availableAtDate = nil;
     if (dictionary[@"available_at"] != nil && dictionary[@"available_at"] != [NSNull null]){
         NSInteger availableAt = [dictionary[@"available_at"] integerValue];
         availableAtDate = [NSDate dateWithTimeIntervalSince1970:availableAt];
     }
     BOOL inEvidence = [dictionary[@"in_evidence"] boolValue];
-    return [self initWithSectionId:sectionId Order:order Elements:elements AvailableAt:availableAtDate InEvidence:inEvidence];
+    return [self initWithSectionId:sectionId Order:order Elements:elements Beacons:beacons AvailableAt:availableAtDate InEvidence:inEvidence];
 }
 
 - (id) mapElementsToObject:(NSObject*)object withMapping:(NSDictionary*)mapping{

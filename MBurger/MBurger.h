@@ -24,6 +24,7 @@
 #import "MBGeneralParameter.h"
 #import "MBProject.h"
 #import "MBLegalContract.h"
+#import "MBBeacon.h"
 #import "MBBlock.h"
 #import "MBSection.h"
 #import "MBElement.h"
